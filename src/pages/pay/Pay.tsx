@@ -3,9 +3,10 @@ import { Layout, Menu, Icon, message } from 'antd';
 import { gHandler } from '../../lib/gHandler';
 import { Api } from '../../lib/Api';
 import Axios from 'axios';
-import {AliPayPaymentIndex} from '../../interface/pay'
-import './Pay.scss'
-import RgDc from '../../components/RgDc'
+import {AliPayPaymentIndex} from '../../interface/pay_interface';
+import './Pay.scss';
+import RgDc from '../../components/RgDc';
+import Recharge from '../../components/Recharge';
 const { Header, Content, Sider } = Layout;
 interface arrItem {
     text:string,
@@ -21,7 +22,7 @@ export default class Pay extends Component<{}, State> {
             text:'',
             icon:'dollar'
         }],
-        title:''
+        title:'人工代充值'
     }
     componentDidMount() {
         this.AxiosIndex()
@@ -89,16 +90,16 @@ export default class Pay extends Component<{}, State> {
                     className='pay_sider'
                 >
                     <div className="pay_logo" />
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={[`${this.state.navArr.length}`]}>{mapNav()}</Menu>
+                    <Menu theme="light" mode="inline" defaultSelectedKeys={[`0`]}>{mapNav()}</Menu>
                 </Sider>
                 <Layout className ='rightLayout'>
-                    <Header style={{ background: '#fff', padding: 0 }}>
+                    <Header style={{ background: '#fff', padding: 0,minWidth:750 }}>
                         <div className='headerBox'>充值</div>
                     </Header>
                     <Content className="pay_content">
-                        <div style={{ padding: 24, background: '#fff', minHeight: 500 ,height:"100%"}}>
+                        <div style={{ padding: 24, background: '#fff', minHeight: 500 ,height:"100%",minWidth:750}}>
                             {
-                                this.state.title==='人工代充值' ? <RgDc/>:''
+                                this.state.title==='人工代充值' ? <RgDc/>:<Recharge title ={this.state.title} IndexResults={this.IndexResults}/>
                             }
                         </div>
                     </Content>
