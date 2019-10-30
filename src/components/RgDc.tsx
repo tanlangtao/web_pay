@@ -1,4 +1,4 @@
-/*左侧导航组件*/
+/*人工代充组件*/
 import React from 'react'
 import {gHandler} from '../lib/gHandler'
 import { Api } from '../lib/Api';
@@ -47,6 +47,11 @@ export default class RgDc extends React.Component<{},State>{
     }
     componentDidMount(){
         this.AxiosIndex()
+    }
+    componentWillUnmount(){
+        this.setState = (state,callback)=>{
+            return
+        }
     }
     private async AxiosIndex(){
         let url = `${gHandler.UrlData.imHost}${Api.imlist}?skip=0&limit=6&token=c7a9d6g21v87s&package_id=${gHandler.UrlData.package_id}&user_type=1`;
@@ -129,11 +134,12 @@ export default class RgDc extends React.Component<{},State>{
      * 确认充值
      */
     handleOk = (e:any) => {
-        this.setState({
-            visible: false,
-        }); 
+        
         if(this.state.money){
             this.Axios_checkOrder()
+            this.setState({
+                visible: false,
+            }); 
         }else{
             message.warn('金额不能为空！')
         }

@@ -1,0 +1,48 @@
+
+.cash{
+    font-family: 'Microsoft Yahei';
+    height: 100vh;
+    background: white;
+    .cash_logo {
+        height: 65px;
+        border-right: 1px solid rgb(237,240,243);
+        border-bottom: 1px solid rgb(237,240,243);
+      }
+    .cash_headerBox{
+        width: 20%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    .cash_content{
+        margin: 10px 10px;
+        height: 100%;
+    }
+    .cash_rightLayout{
+        height: 100vh;
+    }
+}
+.flex-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.normal-border{
+    border: 1px solid rgb(197,197,197);
+    cursor: pointer;
+}
+.cur-border{
+    border: 2px solid rgb(254,80,66);
+    cursor: pointer;
+}
+.hover-border{
+    border: 1px solid rgb(197,197,197);
+    cursor: pointer;
+}
+:hover.hover-border{
+    background: rgb(224,246,254);
+}

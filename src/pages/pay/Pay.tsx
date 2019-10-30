@@ -7,6 +7,7 @@ import {AliPayPaymentIndex} from '../../interface/pay_interface';
 import './Pay.scss';
 import RgDc from '../../components/RgDc';
 import Recharge from '../../components/Recharge';
+import RechargeHistory from '../../components/RechargeHistory';
 const { Header, Content, Sider } = Layout;
 interface arrItem {
     text:string,
@@ -22,7 +23,7 @@ export default class Pay extends Component<{}, State> {
             text:'',
             icon:'dollar'
         }],
-        title:'人工代充值'
+        title:'专享快付'
     }
     componentDidMount() {
         this.AxiosIndex()
@@ -56,13 +57,14 @@ export default class Pay extends Component<{}, State> {
         }
     }
     private setNavArr(){
-        var arr = [{icon:'aliwangwang',text :'人工代充值' }];
+        var arr = [{icon:'aliwangwang',text :'专享快付' }];
         if (this.IndexResults.data.alipay.length > 0 ) { arr.push({icon:'alipay-circle',text :'支付宝', })}
         if (this.IndexResults.data.bankcard_transfer.length > 0 ) {arr.push({icon:'credit-card',text :'转账到银行卡' } )}
         if (this.IndexResults.data.union_pay.length > 0 ) {arr.push({icon:'credit-card',text :'银联扫码' } )}
         if (this.IndexResults.data.wechat_pay.length > 0 ) { arr.push({icon:'wechat',text :'微信' } )}
         if (gHandler.UrlData.client==='desktop' && this.IndexResults.data.quick_pay.length > 0 ) { arr.push({icon:'credit-card',text :'快捷支付'} )}
         if (gHandler.UrlData.client==='desktop' && this.IndexResults.data.bank_pay.length > 0  ) {arr.push({icon:'credit-card',text :'网银支付'}) }
+        arr.push({icon:'unordered-list',text:'充值历史'})
         this.setState({
             navArr:arr
         })
@@ -99,7 +101,7 @@ export default class Pay extends Component<{}, State> {
                     <Content className="pay_content">
                         <div style={{ padding: 24, background: '#fff', minHeight: 500 ,height:"100%",minWidth:750}}>
                             {
-                                this.state.title==='人工代充值' ? <RgDc/>:<Recharge title ={this.state.title} IndexResults={this.IndexResults}/>
+                                this.state.title==='专享快付' ? <RgDc/>:(this.state.title==='充值历史'?<RechargeHistory/>:<Recharge title ={this.state.title} IndexResults={this.IndexResults}/>)
                             }
                         </div>
                     </Content>
