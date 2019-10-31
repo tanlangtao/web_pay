@@ -6,7 +6,7 @@ import Axios from 'axios';
 import {message, Button} from 'antd';
 import {AliPayPaymentIndex,orderData,channelItem} from '../interface/pay_interface';
 import { InputNumber } from 'antd';
-import { Modal } from 'antd';
+import OrderAlert from '../components/OrderAlert';
 interface Props {
     title:string,
     IndexResults:AliPayPaymentIndex
@@ -42,37 +42,25 @@ export default class Recharge extends React.Component<Props,State>{
             card_num:'',//收款帐号
             remark:'',
             user_name:'',
-        }
+        },
+        title:'',
+
     }
     componentDidMount(){
-        this.setData(this.props)
        
     }
-    componentWillReceiveProps(prpos:Props){
-        this.setData(prpos);
-        //当props改变时候，充值初始值
-        this.setState({
-            money:0,
-            cur:0
-        })
+    static getDerivedStateFromProps(props:Props,state:State){
+        if(props.title ==='支付宝'){ return { data:props.IndexResults.data.alipay} }
+        else if( props.title === '转账到银行卡'){ return {data:props.IndexResults.data.bankcard_transfer}}
+        else if( props.title === '银联扫码'){ return {data:props.IndexResults.data.union_pay} }
+        else if( props.title === '微信'){return {data:props.IndexResults.data.wechat_pay} }
+        else if( props.title === '快捷支付'){ return {data:props.IndexResults.data.quick_pay}}
+        else if( props.title === '网银支付'){ return {data:props.IndexResults.data.bank_pay} }
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
             return
         }
-    }
-    /**
-     * 根据pros，确定显示的数据
-     * @param props 
-     */
-    setData(props:Props){
-        let {IndexResults,title} = props;
-        if (title === '支付宝'){ this.setState({ data:IndexResults.data.alipay }) } 
-        else if( title === '转账到银行卡'){ this.setState({ data:IndexResults.data.bankcard_transfer }) }
-        else if( title === '银联扫码'){ this.setState({ data:IndexResults.data.union_pay }) }
-        else if( title === '微信'){ this.setState({ data:IndexResults.data.wechat_pay }) }
-        else if( title === '快捷支付'){ this.setState({ data:IndexResults.data.quick_pay }) }
-        else if( title === '网银支付'){ this.setState({ data:IndexResults.data.bank_pay }) }
     }
     /**
      * 切换渠道
@@ -88,7 +76,6 @@ export default class Recharge extends React.Component<Props,State>{
      * @param index 
      */
     usedAmountClick=(e:number)=>{
-        console.log(this.state.money)
         this.setState({
             money:this.state.money+Number(e)
         })
@@ -224,29 +211,15 @@ export default class Recharge extends React.Component<Props,State>{
                 <div className="flex-box" style={{height:'80px'}} >
                     <Button type="primary" onClick={this.paymentClick}>充值</Button>
                 </div>
-                <Modal
-                    title="订单信息"
-                    visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    width ='600px'
-                    style={{minWidth:'400px'}}
-                >
-                    <p>充值方式 : 银行卡转账</p>
-                    <p>用户昵称 : {this.state.orderData.user_name}</p>
-                    <p>收款银行 : {this.state.orderData.bank_name}</p>
-                    <p>收款账号 : {this.state.orderData.card_num}</p>
-                    <p>收款姓名 : {this.state.orderData.card_name}</p>
-                    <p>转账金额 : {Number(this.state.orderData.amount).toFixed(2)}</p>
-                    <p>转账备注 : {this.state.orderData.remark}</p>
-                    <div style={{fontSize:'12px'}}>
-                        注意事项:
-                        <div>1、请务必按照该金额(包括小数点)进行转账，并填写备注信息(为空则不填)；</div>
-                        <div>2、请在30分钟内完成支付，超时系统将不予处理；</div>
-                        <div>3、完成转账后，请在60分钟后查询您的账号余额，若未到账请及时联系在线客服；</div>
-                        <div>4、此处仅支持个人网银转账，不支持ATM机、柜台、支付宝或其他方式转账；</div>
-                    </div>
-                </Modal>
+                <OrderAlert 
+                    orderData={this.state.orderData} 
+                    visible={this.state.visible} 
+                    handleCancel={()=>{
+                        this.setState({
+                            visible:false
+                        })
+                    }}
+                ></OrderAlert> 
             </div>
         )
     }

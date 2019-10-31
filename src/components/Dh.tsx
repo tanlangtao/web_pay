@@ -78,7 +78,7 @@ export default class Dh extends React.Component<Props,State>{
         });
         
     }
-    componentWillReceiveProps(props:Props){
+    UNSAFE_componentWillReceiveProps(props:Props){
         this.setData(props);
         //当props改变时候，初始值
         this.setState({

@@ -3,8 +3,9 @@ import React from 'react'
 import {gHandler} from '../lib/gHandler'
 import { Api } from '../lib/Api';
 import Axios from 'axios';
-import {message, Button,Modal} from 'antd';
-import {RechargeHistoryResults,RechargeHistrotyListItem} from '../interface/pay_interface'
+import {message, Button} from 'antd';
+import {RechargeHistoryResults,RechargeHistrotyListItem} from '../interface/pay_interface';
+import OrderAlert from './OrderAlert';
 interface State {
     visible:boolean,
     page:number,
@@ -91,29 +92,12 @@ export default class RechargeHistory extends React.Component<{},State>{
             })
         }
     }
-    /**
-    * 确认充值
-    */
-   handleOk = (e:any) => {
-       this.setState({
-           visible: false,
-       }); 
-       
-   };
-   /**
-    * 取消
-    */
-   handleCancel = (e:any) => {
-       this.setState({
-           visible: false,
-       });
-   };
-   showModel = (index:number) => {
-       this.setState({
-            orderData:this.state.HistoryResults.data.list[index],
-            visible: true,
-       });
-   };
+    showModel = (index:number) => {
+        this.setState({
+                orderData:this.state.HistoryResults.data.list[index],
+                visible: true,
+        });
+    };
     render (){
         let title =['下单金额','到账金额','状态','类型','下单时间','到账时间','操作'];
         let mapTitle = title.map((item,index)=>{
@@ -160,29 +144,15 @@ export default class RechargeHistory extends React.Component<{},State>{
                     <div className="flex-box" style={{padding:'0 20px'}}>{this.state.page} / {this.state.HistoryResults.data.total_page}</div>
                     <Button onClick={this.pageDown}>下一页</Button>
                 </div>
-                <Modal
-                    title="订单信息"
-                    visible={this.state.visible}
-                    onOk={this.handleOk}
-                    onCancel={this.handleCancel}
-                    width ='600px'
-                    style={{minWidth:'400px'}}
-                >
-                    <p>充值方式 : 银行卡转账</p>
-                    <p>用户昵称 : {this.state.orderData.user_name}</p>
-                    <p>收款银行 : {this.state.orderData.bank_name}</p>
-                    <p>收款账号 : {this.state.orderData.card_num}</p>
-                    <p>收款姓名 : {this.state.orderData.card_name}</p>
-                    <p>转账金额 : {Number(this.state.orderData.amount).toFixed(2)}</p>
-                    <p>转账备注 : {this.state.orderData.remark}</p>
-                    <div style={{fontSize:'12px'}}>
-                        注意事项:
-                        <div>1、请务必按照该金额(包括小数点)进行转账，并填写备注信息(为空则不填)；</div>
-                        <div>2、请在30分钟内完成支付，超时系统将不予处理；</div>
-                        <div>3、完成转账后，请在60分钟后查询您的账号余额，若未到账请及时联系在线客服；</div>
-                        <div>4、此处仅支持个人网银转账，不支持ATM机、柜台、支付宝或其他方式转账；</div>
-                    </div>
-                </Modal>
+                <OrderAlert 
+                    orderData={this.state.orderData} 
+                    visible={this.state.visible} 
+                    handleCancel={()=>{
+                        this.setState({
+                            visible:false
+                        })
+                    }}
+                ></OrderAlert> 
             </div>
         )
     }
