@@ -4,8 +4,7 @@ import {gHandler} from '../lib/gHandler'
 import { Api } from '../lib/Api';
 import Axios from 'axios';
 import {message,Avatar,Icon,Button,Modal,InputNumber} from 'antd';
-import {RgDcResults,RgDcItem} from "../interface/pay_interface"
-
+import {RgDcResults,RgDcItem} from "../interface/pay_interface";
 interface State {
     visible:boolean,
     IndexResults:RgDcResults,
@@ -13,7 +12,6 @@ interface State {
     money:number,
 }
 export default class RgDc extends React.Component<{},State>{
-
     state= {
         visible:false,//model显隐
         IndexResults:{//客服列表
@@ -57,7 +55,9 @@ export default class RgDc extends React.Component<{},State>{
         let url = `${gHandler.UrlData.imHost}${Api.imlist}?skip=0&limit=6&token=c7a9d6g21v87s&package_id=${gHandler.UrlData.package_id}&user_type=1`;
         let  response= await Axios.get(url).then(response=>{
             return response.data
-        }).catch(err=>{  message.error(err) })
+        }).catch(err=>{ 
+            message.error(err) 
+        })
         this.setState({
             IndexResults:response
         })

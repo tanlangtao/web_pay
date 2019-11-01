@@ -56,6 +56,7 @@ export default class Recharge extends React.Component<Props,State>{
         else if( props.title === '微信'){return {data:props.IndexResults.data.wechat_pay} }
         else if( props.title === '快捷支付'){ return {data:props.IndexResults.data.quick_pay}}
         else if( props.title === '网银支付'){ return {data:props.IndexResults.data.bank_pay} }
+        return null
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
