@@ -73,5 +73,19 @@ class gHandlerC  {
         return data;
 
     }
+    public transitionTime(time:number){
+        let transTime =``
+        if(time <10){
+            transTime = `0${time}:00`
+        }else{
+            if(time === 24){
+                transTime = `23:59:59`
+            }else{
+                transTime = `${time}:00`
+            }
+            
+        }
+        return transTime
+    }
 }
 export const gHandler = new gHandlerC()

@@ -8,15 +8,16 @@ $src:'../../asses/activity/package_9/';
     height: 100vh;
     font-size: 0.25rem;
     color: white;
+    position: relative;
     .group{
         width: 5.4rem;
         height: 2.9rem;
         position: absolute;
-        left: 2.9rem;
+        left: 0.5rem;
         bottom: 0.4rem;
         padding-top: 0.05rem;
         .line{
-            margin-top: 0.045rem;
+            margin-top: 0.03rem;
             display: flex;
             .li1{
                 width: 1.5rem;
@@ -53,7 +54,7 @@ $src:'../../asses/activity/package_9/';
     .rule{
         position: absolute;
         width: 5rem;
-        left: 8.5rem;
+        right: 0.1rem;
         line-height: 0.3rem;
         top: 1.7rem;
         color: #E8C999;

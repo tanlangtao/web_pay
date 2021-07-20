@@ -1,4 +1,4 @@
-/*兑换组件*/
+/*活动组件*/
 import React from 'react'
 import {gHandler} from '../../lib/gHandler'
 import { Api } from '../../lib/Api';
@@ -13,7 +13,6 @@ interface State {
     info:any,
     PerformanceInfo:any
 }
-
 export default class Bwfcjl extends React.Component<Props,State>{
     state = {
         info:{
@@ -58,7 +57,6 @@ export default class Bwfcjl extends React.Component<Props,State>{
                 }
             })
         }
-        this.btnActive = true
         if(this.state.PerformanceInfo.received_info[0].receive_amount> 0){
             this.state.PerformanceInfo.received_info.forEach((e)=>{
                 this.state.info.range.forEach((item,index)=>{
@@ -92,13 +90,13 @@ export default class Bwfcjl extends React.Component<Props,State>{
         data.append('center_auth',gHandler.UrlData.center_auth);
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
-            return response.data
+            return response.data;
         }).catch(err => { message.error(err)} )
         if(response.status === 0){
             message.success('申请成功！');
-            this.Axios_getReceivePerformanceInfo()
+            this.Axios_getReceivePerformanceInfo();
         }else{
-            message.warn(response.msg);
+            message.error(response.msg)
         }
     }
     private async  Axios_getReceivePerformanceInfo(){

@@ -14,6 +14,8 @@ import RechargeHistory from '../../../components/RechargeHistory';
 import { url } from 'inspector';
 import { width } from 'dom7';
 import Bwfcjl from 'components/package_9/Bwfcjl';
+import FfcBpQiQu from 'components/package_9/FfcBpQiQu';
+import Xyhschd from 'components/package_9/Xyhschd';
 const { Header, Content, Sider } = Layout;
 
 interface State{
@@ -65,7 +67,8 @@ export default class Activity extends Component<{}, State> {
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
         this.setState({
-            navArr:navArr
+            navArr:navArr,
+            curData:navArr[0],
         })
     }
     render() {
@@ -80,12 +83,16 @@ export default class Activity extends Component<{}, State> {
                             title:item.name,
                             curData:item
                         })
-                    }} className={`navItem ${item.name ===this.state.title?"curNavItem":""}`}>
+                        console.log("点击nav",item.name)
+                    }} className={`navItem ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className="navText flexBox">{item.name.substring(0,item.name.length-1)}</div>
                         <div className="xian_dh"></div>
                     </div>
                 </SwiperSlide>
             })
+        }
+        if(this.state.curData.id ===""){
+            return <div></div>
         }
         return (
             <Layout className='activity9'>
@@ -113,7 +120,10 @@ export default class Activity extends Component<{}, State> {
                     <Content className="content">
                         {
                             this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
-                                <RechargeHistory/>
+                                (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
+                                    (this.state.title === "新用户首存活动9" ? <Xyhschd curData={this.state.curData}/>:
+                                        <div></div>)
+                                )
                         }
                     </Content>
                 </Layout>

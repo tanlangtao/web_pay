@@ -14,4 +14,10 @@ export const Api ={
     activityConfig:"/api/activity_config/activityConfig",
     receivePerformanceGold:"/api/activity/receivePerformanceGold",
     getReceivePerformanceInfo:"/api/activity/getReceivePerformanceInfo",
+    getRewardFFCFlag:"/api/activity/getRewardFFCFlag",
+    receiveRewardHeNei:"/api/activity/receiveRewardHeNei",
+    applyHandleFFC:"/api/activity/applyHandleFFC",
+    receiveFristPayGold:"/api/activity/receiveFristPayGold",
+    getFristPayAmount:"/api/activity/getFristPayAmount",
+    applyFristPay:"/api/activity/applyFristPay",
 }
