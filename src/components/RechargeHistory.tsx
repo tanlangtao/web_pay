@@ -40,16 +40,16 @@ export default class RechargeHistory extends React.Component<{},State>{
         }, 
         orderData:{
             amount:'',
-                type:'',
-                arrival_amount:'',
-                status:'',
-                created_at:'',
-                arrival_at:'',
-                bank_name:'',
-                card_name:'',
-                card_num:'',
-                user_name:'',
-                remark:''
+            type:'',
+            arrival_amount:'',
+            status:'',
+            created_at:'',
+            arrival_at:'',
+            bank_name:'',
+            card_name:'',
+            card_num:'',
+            user_name:'',
+            remark:''
         }
     }
     componentDidMount(){
@@ -94,8 +94,8 @@ export default class RechargeHistory extends React.Component<{},State>{
     }
     showModel = (index:number) => {
         this.setState({
-                orderData:this.state.HistoryResults.data.list[index],
-                visible: true,
+            orderData:this.state.HistoryResults.data.list[index],
+            visible: true,
         });
     };
     render (){
@@ -106,30 +106,30 @@ export default class RechargeHistory extends React.Component<{},State>{
         let list = this.state.HistoryResults.data.list
         let mapList = list.map((item,index)=>{
             return  <div key={index} className="flex-box" style={{width:'100%',height:'40px',marginTop:'10px'}} >
-                        <div style={{width:'14%'}} className="flex-box">{Number(item.amount).toFixed(2)}</div>
-                        <div style={{width:'14%'}} className="flex-box">{Number(item.arrival_amount).toFixed(2)}</div>
-                        <div style={{width:'14%'}} className="flex-box">{item.status ==='6'?'已成功' :(item.status==='4'?'已撤销':'未成功')}</div>
-                        <div style={{width:'14%'}} className="flex-box">{
-                            item.type==="1" ?
-                                '支付宝充值':(item.type==='2'?'转账到银行卡':(
-                                    (item.type==='6'?'微信支付':
-                                        (item.type==='7'?'银联支付':
-                                           ( item.type ==='8'?'网银支付':
-                                                (item.type==='9'?'快捷支付':
-                                                    (item.type==='14'?'专享快付':'')
-                                                )
-                                           )
+                <div style={{width:'14%'}} className="flex-box">{Number(item.amount).toFixed(2)}</div>
+                <div style={{width:'14%'}} className="flex-box">{Number(item.arrival_amount).toFixed(2)}</div>
+                <div style={{width:'14%'}} className="flex-box">{item.status ==='6'?'已成功' :(item.status==='4'?'已撤销':'未成功')}</div>
+                <div style={{width:'14%'}} className="flex-box">{
+                    item.type==="1" ?
+                        '支付宝充值':(item.type==='2'?'转账到银行卡':(
+                            (item.type==='6'?'微信支付':
+                                (item.type==='7'?'银联支付':
+                                    ( item.type ==='8'?'网银支付':
+                                        (item.type==='9'?'快捷支付':
+                                            (item.type==='14'?'专享快付':'')
                                         )
                                     )
                                 )
                             )
-                        }</div>
-                        <div style={{width:'14%'}} className="flex-box">{item.created_at === "0" ? '无':gHandler.getTime(Number(item.created_at))}</div>
-                        <div style={{width:'14%'}} className="flex-box">{item.arrival_at === "0" ? '无':gHandler.getTime(Number(item.arrival_at))}</div>
-                        <div style={{width:'14%'}} className="flex-box">
-                            {item.type==='2'?<Button onClick={()=>this.showModel(index)}>订单</Button> :''}
-                        </div>
-                     </div>
+                        )
+                        )
+                }</div>
+                <div style={{width:'14%'}} className="flex-box">{item.created_at === "0" ? '无':gHandler.getTime(Number(item.created_at))}</div>
+                <div style={{width:'14%'}} className="flex-box">{item.arrival_at === "0" ? '无':gHandler.getTime(Number(item.arrival_at))}</div>
+                <div style={{width:'14%'}} className="flex-box">
+                    {item.type==='2'?<Button onClick={()=>this.showModel(index)}>订单</Button> :''}
+                </div>
+            </div>
         })
         return (
             <div>

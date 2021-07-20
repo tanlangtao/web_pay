@@ -10,6 +10,10 @@ interface UrlData{
     imHost:string,
     path:string,
     env:string,
+    center_auth:string,
+    login_ip:string,
+    regin_ip:string,
+    device_id:string,
 }
 class gHandlerC  {
 
@@ -25,6 +29,10 @@ class gHandlerC  {
         imHost:'',
         path:'',
         env:'',
+        center_auth:'',
+        login_ip:'',
+        regin_ip:'',
+        device_id:'',
     }
     constructor(){
         this.UrlData =this.getUrlData()

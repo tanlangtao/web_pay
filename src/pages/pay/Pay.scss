@@ -1,29 +1,38 @@
 
 .pay{
     font-family: 'Microsoft Yahei';
-    height: 100vh;
-    background: white;
-    .pay_logo {
-        height: 65px;
-        border-right: 1px solid rgb(237,240,243);
-        border-bottom: 1px solid rgb(237,240,243);
-      }
+    font-size: 0.3rem;
     .pay_sider{
-        // border-right: 1px solid rgb(237,240,243);
+        border-right: 1px solid rgb(237,240,243);
+        .nav-item{
+            height: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+        }
+        .nav-icon{
+            font-size: 0.3rem
+        }
+        .nav-text{
+            font-size: 0.25rem;
+        }
     }
     .headerBox{
-        width: 20%;
-        height: 100%;
+        width: 100%;
+        height: 0.7rem;
         margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 25px;
+        font-size: 0.4rem;
         font-weight: bold;
     }
     .pay_content{
         margin: 10px 10px;
         height: 100%;
+        padding: 24; 
+        background: white;
+        height:"20%";
     }
     .rightLayout{
         height: 100vh;

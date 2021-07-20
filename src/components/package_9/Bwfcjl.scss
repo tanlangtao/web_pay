@@ -1,0 +1,64 @@
+$src:'../../asses/activity/package_9/';
+
+.BwfcjlBg{
+    background-image:url($src+"bg/XG_event_20210625-5.png");
+    background-repeat: no-repeat;
+    background-position: -2.3rem;
+    background-size: cover;
+    height: 100vh;
+    font-size: 0.25rem;
+    color: white;
+    .group{
+        width: 5.4rem;
+        height: 2.9rem;
+        position: absolute;
+        left: 2.9rem;
+        bottom: 0.4rem;
+        padding-top: 0.05rem;
+        .line{
+            margin-top: 0.045rem;
+            display: flex;
+            .li1{
+                width: 1.5rem;
+            }
+            .li2{
+                width: 1.4rem;
+            }
+            .li3{
+                width: 1.4rem;
+            }
+            .li4{
+                width: 1.1rem;
+                .btn_linqu{
+                    width: 0.8rem;
+                    height: 0.3rem;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                .btn_Ylinqu{
+                    width: 0.8rem;
+                    height: 0.3rem;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+        .content{
+            height: 2.4rem;
+            border: 1px solid blue;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 5rem;
+        left: 8.5rem;
+        line-height: 0.3rem;
+        top: 1.7rem;
+        color: #E8C999;
+        p{
+            margin: 0.06rem;
+        }
+    }
+}

@@ -88,18 +88,18 @@ export default class DhHistory extends React.Component<{},State>{
         let list = this.state.HistoryResults.data.list
         let mapList = list.map((item,index)=>{
             return  <div key={index} className="flex-box" style={{width:'100%',height:'40px',marginTop:'10px'}} >
-                        <div style={{width:'12%'}} className="flex-box">{item.type==="1" ?'支付宝':(item.type==='2'?'银行卡':'人工兑换')}</div>
-                        <div style={{width:'12%'}} className="flex-box">{Number(item.amount).toFixed(2)}</div>
-                        <div style={{width:'12%'}} className="flex-box">{item.type==="1"||item.type==="2" ?
-                            `${( ( Number(item.platform_rate)+Number(item.channel_rate))*100).toFixed(1)}%`
-                            :`${(Number(item.platform_rate)*100).toFixed(1)}%`}
-                        </div>
-                        <div style={{width:'12%'}} className="flex-box">{Number(item.arrival_amount).toFixed(2)}</div>
-                        <div style={{width:'12%'}} className="flex-box">{item.status ==='4'?'已成功' :'未成功'}</div>
-                        <div style={{width:'12%'}} className="flex-box">{item.created_at === "0" ? '无':gHandler.getTime(Number(item.created_at))}</div>
-                        <div style={{width:'12%'}} className="flex-box">{item.arrival_at === "0" ? '无':gHandler.getTime(Number(item.arrival_at))}</div>
-                        <div style={{width:'12%'}} className="flex-box">{item.user_remark}</div>
-                     </div>
+                <div style={{width:'12%'}} className="flex-box">{item.type==="1" ?'支付宝':(item.type==='2'?'银行卡':'人工兑换')}</div>
+                <div style={{width:'12%'}} className="flex-box">{Number(item.amount).toFixed(2)}</div>
+                <div style={{width:'12%'}} className="flex-box">{item.type==="1"||item.type==="2" ?
+                    `${( ( Number(item.platform_rate)+Number(item.channel_rate))*100).toFixed(1)}%`
+                    :`${(Number(item.platform_rate)*100).toFixed(1)}%`}
+                </div>
+                <div style={{width:'12%'}} className="flex-box">{Number(item.arrival_amount).toFixed(2)}</div>
+                <div style={{width:'12%'}} className="flex-box">{item.status ==='4'?'已成功' :'未成功'}</div>
+                <div style={{width:'12%'}} className="flex-box">{item.created_at === "0" ? '无':gHandler.getTime(Number(item.created_at))}</div>
+                <div style={{width:'12%'}} className="flex-box">{item.arrival_at === "0" ? '无':gHandler.getTime(Number(item.arrival_at))}</div>
+                <div style={{width:'12%'}} className="flex-box">{item.user_remark}</div>
+            </div>
         })
         return (
             <div>

@@ -11,4 +11,7 @@ export const Api ={
     withDrawApply:'/api/with_draw/withDrawApply',
     withDrawHistory:'/api/with_draw/withDrawHistory',
     payHistory:'/api/payment/payHistory',
+    activityConfig:"/api/activity_config/activityConfig",
+    receivePerformanceGold:"/api/activity/receivePerformanceGold",
+    getReceivePerformanceInfo:"/api/activity/getReceivePerformanceInfo",
 }

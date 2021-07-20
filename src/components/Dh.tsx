@@ -219,11 +219,10 @@ export default class Dh extends React.Component<Props,State>{
         let mapChannel = ()=>{
             return this.state.data.channel.map((item:channelItem,index:number)=>{
                 return <div key={index} className= {`flex-box ${this.state.cur===index?"cur-border":"normal-border"}`} 
-                            style={{width:'150px',height:"30px",marginRight:'10px'}} 
-                            onClick={()=>this.changeChannel(index)}
-                        >
-                            {item.channel_name} 
-                        </div>
+                    style={{width:'150px',height:"30px",marginRight:'10px'}} 
+                    onClick={()=>this.changeChannel(index)}>
+                    {item.channel_name} 
+                </div>
             })
         }
         let current = this.state.data.channel[this.state.cur];
@@ -232,8 +231,8 @@ export default class Dh extends React.Component<Props,State>{
             <div>
                 <div style={{height:'40px',borderBottom:'1px solid black',padding:'0px 5px'}}>{title} (兑换比例 1元 = 1金币)</div>
                 <div className="flex-box" style={{height:'40px',padding:'0px 5px',justifyContent:'flex-start',marginTop:'20px'}} >
-                        <span>账户余额 </span>
-                        <div style={{display:'flex',marginLeft:'20px'}}> {DhResults.data.game_gold.toFixed(2)} </div>
+                    <span>账户余额 </span>
+                    <div style={{display:'flex',marginLeft:'20px'}}> {DhResults.data.game_gold.toFixed(2)} </div>
                 </div>
                 <div className="flex-box" style={{height:'40px',padding:'0px 5px',marginTop:'10px',justifyContent:'flex-start'}} >
                     <span>兑换方式 </span>
@@ -261,7 +260,7 @@ export default class Dh extends React.Component<Props,State>{
                     width ='400px'
                     style={{minWidth:'400px'}}
                 >
-                   { `申请兑换金额为${this.state.money},扣除手续费${this.state.money*rate},实际到账金额为${this.state.money -this.state.money*rate},确认要提交兑换申请吗？`}
+                    { `申请兑换金额为${this.state.money},扣除手续费${this.state.money*rate},实际到账金额为${this.state.money -this.state.money*rate},确认要提交兑换申请吗？`}
                 </Modal>
             </div>
         )

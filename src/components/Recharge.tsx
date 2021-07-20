@@ -173,22 +173,22 @@ export default class Recharge extends React.Component<Props,State>{
         let mapChannel = ()=>{
             return this.state.data.map((item:any,index:number)=>{
                 return <div key={index} className= {`flex-box ${this.state.cur===index?"cur-border":"normal-border"}`} 
-                            style={{width:'150px',height:"30px",marginLeft:'10px'}} 
-                            onClick={()=>this.changeChannel(index)}
-                        >
-                            {item.name} 
-                        </div>
+                    style={{width:'150px',height:"30px",marginLeft:'10px'}} 
+                    onClick={()=>this.changeChannel(index)}
+                >
+                    {item.name} 
+                </div>
             })
         }
         let span_amount = this.state.data[this.state.cur].span_amount.split(",");
         let mapUsedAmount = ()=>{
             return span_amount.map((item:any,index)=>{
                 return <div key={index} className= "flex-box hover-border"
-                            style={{width:'150px',height:"30px",marginLeft:'10px',marginBottom:'5px'}} 
-                            onClick={()=>this.usedAmountClick(item)}
-                        >
-                            {item}
-                        </div>
+                    style={{width:'150px',height:"30px",marginLeft:'10px',marginBottom:'5px'}} 
+                    onClick={()=>this.usedAmountClick(item)}
+                >
+                    {item}
+                </div>
             })
         }
         return (

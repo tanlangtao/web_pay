@@ -43,9 +43,9 @@ export default class Pay extends Component<{}, State> {
     }
     //请求首页
     private async  AxiosIndex(){
-        let url = `${gHandler.UrlData.host}${Api.aliPayPaymentIndex}?user_id=${gHandler.UrlData.user_id}&token=${gHandler.token}`;
+        let url = `${gHandler.UrlData.host}${Api.aliPayPaymentIndex}?user_id=${gHandler.UrlData.user_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
-           return response.data
+            return response.data
         }).catch(err=>{
             message.error(err)
         })
@@ -78,32 +78,38 @@ export default class Pay extends Component<{}, State> {
         //渲染左侧导航
         let mapNav=()=>{
             return this.state.navArr.map((item,index)=>{
-                return <Menu.Item key={index} title={item.text} onClick={this.setTitle.bind(this)}>
-                    <Icon type={item.icon} />
+                return <Menu.Item  
+                    key={index} 
+                    title={item.text} 
+                    onClick={this.setTitle.bind(this)}
+                    className="nav-item"
+                >
+                    <Icon 
+                        type={item.icon} 
+                        className="nav-icon"
+                    />
                     <span className="nav-text">{item.text}</span>
                 </Menu.Item>
             })
         }
         return (
             <Layout className='pay'>
-                <Sider
-                    trigger={null} collapsible 
-                    theme ='light'
-                    className='pay_sider'
-                >
-                    <div className="pay_logo" />
-                    <Menu theme="light" mode="inline" defaultSelectedKeys={[`0`]}>{mapNav()}</Menu>
-                </Sider>
+                <Header className='headerBox' style={{ background: '#fff', padding: 0,minWidth:650 }}>
+                    充值
+                </Header>
                 <Layout className ='rightLayout'>
-                    <Header style={{ background: '#fff', padding: 0,minWidth:750 }}>
-                        <div className='headerBox'>充值</div>
-                    </Header>
+                    <Sider
+                        trigger={null} collapsible 
+                        theme ='light'
+                        className='pay_sider'
+                        width='30vh'
+                    >
+                        <Menu theme="light" mode="inline" defaultSelectedKeys={[`0`]}>{mapNav()}</Menu>
+                    </Sider>
                     <Content className="pay_content">
-                        <div style={{ padding: 24, background: '#fff', minHeight: 500 ,height:"100%",minWidth:750}}>
-                            {
-                                this.state.title==='专享快付' ? <RgDc/>:(this.state.title==='充值历史'?<RechargeHistory/>:<Recharge title ={this.state.title} IndexResults={this.IndexResults}/>)
-                            }
-                        </div>
+                        {
+                            this.state.title==='专享快付' ? <RgDc/>:(this.state.title==='充值历史'?<RechargeHistory/>:<Recharge title ={this.state.title} IndexResults={this.IndexResults}/>)
+                        }
                     </Content>
                 </Layout>
             </Layout>
