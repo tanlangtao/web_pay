@@ -1,0 +1,91 @@
+$src:'../../asses/activity/package_9/';
+
+.RedRain{
+    background-image:url($src+"bg/XG_event_20210628-1.png");
+    background-repeat: no-repeat;
+    background-position: -2.3rem;
+    background-size: cover;
+    height: 100vh;
+    font-size: 0.25rem;
+    color: white;
+    position: relative;
+    .group{
+        width: 8.9rem;
+        height: 2.5rem;
+        position: absolute;
+        left: 1.2rem;
+        top: 2.7rem;
+        padding-top: 0.05rem;
+        font-size: 0.2rem;
+        position: relative;
+        .title{
+            color: #CD7358;
+            display: flex;
+            height: 0.78rem;
+            .li1{
+                width: 1.5rem;
+            }
+            .li2{
+                width: 1.4rem;
+            }
+            .li3{
+                width: 1.4rem;
+            }
+            .li4{
+                width: 1.2rem;
+            }
+            .li5{
+                width: 1.2rem;
+            }
+            .li6{
+                width: 1.2rem;
+            }
+            .li7{
+                width: 1.2rem;
+            }
+        }
+        .line{
+            display: flex;
+            height: 0.41rem;
+            .li1{
+                width: 1.5rem;
+            }
+            .li2{
+                width: 1.5rem;
+            }
+            .li3{
+                width: 1.45rem;
+            }
+            .li4{
+                width: 1.2rem;
+            }
+            .li5{
+                width: 1.2rem;
+            }
+            .li6{
+                width: 1.2rem;
+            }
+            .li7{
+                width: 1.2rem;
+            }
+        }
+        .label1{
+            position: absolute;
+            width: 0.8rem;
+            height: 1.1rem;
+            bottom: 0rem;
+            right: 0.1rem;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 10.4rem;
+        left: 1rem;
+        line-height: 0.30rem;
+        bottom: 0.5rem;
+        color: #E8C999;
+        p{
+            margin: 0.06rem;
+        }
+    }
+}

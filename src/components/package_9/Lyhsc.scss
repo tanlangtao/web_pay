@@ -1,7 +1,7 @@
 $src:'../../asses/activity/package_9/';
 
-.Xyhschd{
-    background-image:url($src+"bg/XG_event_20210623-1.png");
+.Lyhsc{
+    background-image:url($src+"bg/event12-3_lhysc_content.png");
     background-repeat: no-repeat;
     background-position: -2.3rem;
     background-size: cover;
@@ -11,16 +11,16 @@ $src:'../../asses/activity/package_9/';
     position: relative;
     .group{
         width: 7.4rem;
-        height: 1.3rem;
+        height: 3rem;
         position: absolute;
-        left: 1.65rem;
-        top: 2.75rem;
+        left: 3.7rem;
+        top: 1.7rem;
         padding-top: 0.05rem;
         font-size: 0.2rem;
         position: relative;
         .line{
             display: flex;
-            height: 0.42rem;
+            height: 0.41rem;
             .li1{
                 width: 1.5rem;
             }
@@ -28,10 +28,10 @@ $src:'../../asses/activity/package_9/';
                 width: 1.4rem;
             }
             .li3{
-                width: 1.5rem;
+                width: 1.4rem;
             }
             .li4{
-                width: 1.3rem;
+                width: 1.1rem;
                 .btn_linqu{
                     width: 0.8rem;
                     height: 0.3rem;
@@ -51,9 +51,9 @@ $src:'../../asses/activity/package_9/';
         .label1{
             position: absolute;
             width: 1.2rem;
-            height: 0.7rem;
-            bottom: 0rem;
-            left: 3.1rem;
+            height: 2.5rem;
+            top: 0.5rem;
+            left: 3rem;
         }
         .applyBtn{
             position: absolute;
@@ -90,12 +90,12 @@ $src:'../../asses/activity/package_9/';
     }
     .rule{
         position: absolute;
-        width: 10.4rem;
-        right: 0.15rem;
-        line-height: 0.26rem;
-        bottom: 0.35rem;
+        width: 10.3rem;
+        left:0.7rem;
+        line-height: 0.23rem;
+        bottom: 0.27rem;
         color: #E8C999;
-        font-size: 0.20rem;
+        font-size: 0.19rem;
         p{
             margin: 0.06rem;
         }

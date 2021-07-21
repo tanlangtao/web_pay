@@ -20,4 +20,9 @@ export const Api ={
     receiveFristPayGold:"/api/activity/receiveFristPayGold",
     getFristPayAmount:"/api/activity/getFristPayAmount",
     applyFristPay:"/api/activity/applyFristPay",
+    receivePaymentGold:"/api/activity/receivePaymentGold",
+    getPayAmountByDay:"/api/activity/getPayAmountByDay",
+    GetFristPayAmountByWeek:"/api/activity/GetFristPayAmountByWeek",
+    oldReimburse:"/api/activity/oldReimburse",
+    oldUserApplyReimburse:"/api/activity/oldUserApplyReimburse",
 }

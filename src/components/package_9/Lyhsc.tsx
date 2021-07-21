@@ -4,22 +4,19 @@ import {gHandler} from '../../lib/gHandler'
 import { Api } from '../../lib/Api';
 import Axios from 'axios';
 import {message, Button} from 'antd';
-import "./Xyhschd.scss";
+import "./Lyhsc.scss";
 import {ConfigItem} from '../../interface/activity_interface';
 interface Props {
     curData:ConfigItem
 }
 interface State {
     info:any,
-    frist_pay_amount:number,
+    pay_amount_byday:number,
     is_received:number
 }
-export default class Xyhschd extends React.Component<Props,State>{
+export default class Lyhsc extends React.Component<Props,State>{
     state = {
         info:{
-            flow_rate:0,
-            start:0,
-            end:0,
             range:[
                 {
                     bonus:0,
@@ -29,7 +26,7 @@ export default class Xyhschd extends React.Component<Props,State>{
             ]
         },
         is_received:0,
-        frist_pay_amount:0
+        pay_amount_byday:0
     }
     btnIndex= 0 
     btnActive =false
@@ -40,14 +37,14 @@ export default class Xyhschd extends React.Component<Props,State>{
         this.setState({
             info:this.props.curData.info
         },()=>{
-            this.ApplyBtnInit()
+            console.log(this.state.info)
         })
-        this.Axios_getFristPayAmount()
+        this.Axios_getPayAmountByDay()
     }
     UNSAFE_componentWillUpdate(){
-        if(this.state.is_received === 0 && this.state.frist_pay_amount !==0){
+        if(this.state.is_received === 0 && this.state.pay_amount_byday!==0){
             this.state.info.range.forEach((item,index)=>{
-                if(this.state.frist_pay_amount >= item.recharge_amount) {
+                if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
                     this.btnActive = true
                 }
@@ -64,7 +61,7 @@ export default class Xyhschd extends React.Component<Props,State>{
         }
     }
     onClick =(e:any)=>{
-        this.Axios_receiveFristPayGold()
+        this.Axios_receivePaymentGold()
     }
     applyBtnonClick =()=>{
         if(this.applyBtnInteractable){
@@ -73,8 +70,8 @@ export default class Xyhschd extends React.Component<Props,State>{
             message.info('未到开放时间！')
         }
     }
-    private async Axios_receiveFristPayGold(){
-        let url = `${gHandler.UrlData.host}${Api.receiveFristPayGold}`;
+    private async Axios_receivePaymentGold(){
+        let url = `${gHandler.UrlData.host}${Api.receivePaymentGold}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
@@ -90,7 +87,7 @@ export default class Xyhschd extends React.Component<Props,State>{
         }).catch(err => { message.error(err)} )
         if(response.status === 0){
             message.success('领取成功！');
-            this.Axios_getFristPayAmount();
+            this.Axios_getPayAmountByDay();
         }else{
             message.error(response.msg)
         }
@@ -115,13 +112,12 @@ export default class Xyhschd extends React.Component<Props,State>{
             message.success('申请成功！');
             //缓存申请结果
             this.setLocal()
-            this.ApplyBtnInit()
         }else{
             message.error(response.msg)
         }
     }
-    private async  Axios_getFristPayAmount(){
-        let url = `${gHandler.UrlData.host}${Api.getFristPayAmount}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+    private async  Axios_getPayAmountByDay(){
+        let url = `${gHandler.UrlData.host}${Api.getPayAmountByDay}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -129,7 +125,7 @@ export default class Xyhschd extends React.Component<Props,State>{
         })
         if(response.status === 0){
             this.setState({
-                frist_pay_amount:response.data.frist_pay_amount,
+                pay_amount_byday:response.data.pay_amount_byday,
                 is_received:response.data.is_received
             })
         }else{
@@ -154,57 +150,56 @@ export default class Xyhschd extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhschd">
+            <div className ="Lyhsc">
                 <div className = "group">
                     <div className ="line">
-                        <div className ="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>
-                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>活动彩金</div>
-                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>提现流水要求</div>
+                        <div className ="li1 flexBox" style={{color:"#646CBD"}}>充值金额</div>
+                        <div className ="li2 flexBox" style={{color:"#646CBD"}}>赠送金额</div>
+                        <div className ="li3 flexBox" style={{color:"#646CBD"}}>兑换限制</div>
                     </div>
                     {
                         rangeLine()
                     }
-                    <div className ="label1 ">
-                        <div className="flexBox">本金一倍+</div>
-                        <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
+                    <div className ="label1 flexBox">
+                        <div className="flexBox">彩金{this.state.info.range[0].flow_rate}倍流水</div>
                     </div>
-                    <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
+                    {/* <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
                         console.log("申请")
                         this.applyBtnonClick()
                     }}></div>
                     <div className ="applyBtnLabel">
                         <div className="flexBox">开放时间</div>
                         <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className = "rule">
-                    <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。</p>
-                    <p>所有未进行申请的玩家无法领取活动彩金。</p>
-                    <p>2.平台中的新用户活动只能参加一个，申请后即视为参加此活动。</p>
-                    <p>3. 玩家必须充值成功未下注时进行领取，需满足首充金额一倍流水+赠送彩金的{this.state.info.flow_rate}倍流水才能申请兑换。</p>
-                    <p>4. 游戏规则：仅参加以下游戏《财神到》《水果机》《捕鱼·海王》《捕鱼·聚宝盆》《多福多财》《疯狂旋涡》《CQ9电子游戏》《PT电子游戏》《JDB电子游戏》《PG电子游戏》《AG电子游戏》。</p>
-                    <p>5. 同一用户仅限领取一次，恶意套利者将封号处理。\n6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                    <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
+                    <p>2.游戏规则：仅限参加以下游戏《财神到》《水果机》《捕鱼·海王》《捕鱼·聚宝盆》《多福多财》《疯狂漩涡》《CQ9电子游戏》《AG电子游戏》《PT电子游戏》《JDP电子游戏》《PG电子游戏》《百人牛牛》《奔驰宝马》。</p>
+                    <p>3.单日充值金额累加统计，达到指定档位即可领取活动规定的相应金币。</p>
+                    <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
+                    <p>5.每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
+                    <p>6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
                 </div>
             </div>
         )
     }
-    ApplyBtnInit(){
-        let h = new Date().getHours()
-        if(this.getLocal()){
-            if(h < this.state.info.start || h >= this.state.info.end){
-                this.applyBtnInteractable = false
-            }else{
-                this.applyBtnInteractable = true
-            }
-            this.is_apply = false
-        }else{
-            this.is_apply = true
-        }
-        console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
-        this.render()
-    }
+    // ApplyBtnInit(){
+    //     let h = new Date().getHours()
+    //     if(this.getLocal()){
+    //         if(h < this.state.info.start || h >= this.state.info.end){
+    //             this.applyBtnInteractable = false
+    //         }else{
+    //             this.applyBtnInteractable = true
+    //         }
+    //         this.is_apply = false
+    //     }else{
+    //         this.is_apply = true
+    //     }
+    //     console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
+    //     this.render()
+    // }
     getLocal(){
-        let local = localStorage.getItem(`ApplyXyhschd_${gHandler.UrlData.user_id}`)
+        let local = localStorage.getItem(`ApplyLyhsc_${gHandler.UrlData.user_id}`)
         if(local){
             return false
         }else{
@@ -212,6 +207,6 @@ export default class Xyhschd extends React.Component<Props,State>{
         }
     }
     setLocal(){
-        localStorage.setItem(`ApplyXyhschd_${gHandler.UrlData.user_id}`,JSON.stringify(true))
+        localStorage.setItem(`ApplyLyhsc_${gHandler.UrlData.user_id}`,JSON.stringify(true))
     }
 }

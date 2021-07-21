@@ -46,7 +46,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         this.Axios_getRewardFFCFlag()
     }
     UNSAFE_componentWillUpdate(){
-        if(this.state.is_received === "0" && this.state.lose_amount >= this.state.info.lose_range[0].lose_min){
+        if(this.state.is_received === "0" &&this.state.lose_amount!==0){
             this.state.info.lose_range.forEach((item,index)=>{
                 if(this.state.lose_amount >= item.lose_min && this.state.lose_amount < item.lose_max) {
                     this.btnIndex = index
@@ -210,6 +210,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
             this.is_apply = true
         }
         console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
+        this.render()
     }
     getLocal(){
         let local = localStorage.getItem(`ApplyFfcBaoPei_QiQu_${gHandler.UrlData.user_id}`)

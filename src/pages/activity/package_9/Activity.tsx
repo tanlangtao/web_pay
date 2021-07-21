@@ -16,6 +16,9 @@ import { width } from 'dom7';
 import Bwfcjl from 'components/package_9/Bwfcjl';
 import FfcBpQiQu from 'components/package_9/FfcBpQiQu';
 import Xyhschd from 'components/package_9/Xyhschd';
+import Lyhsc from 'components/package_9/Lyhsc';
+import Lyhbp from 'components/package_9/Lyhbp';
+import RedRain from 'components/package_9/RedRain';
 const { Header, Content, Sider } = Layout;
 
 interface State{
@@ -122,7 +125,14 @@ export default class Activity extends Component<{}, State> {
                             this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
                                 (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
                                     (this.state.title === "新用户首存活动9" ? <Xyhschd curData={this.state.curData}/>:
-                                        <div></div>)
+                                        (this.state.title === "老会员每日首存活动9" ? <Lyhsc curData={this.state.curData}/>:
+                                            (this.state.title === "老用户包赔活动9" ? <Lyhbp curData={this.state.curData}/>:
+                                                (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
+                                                    <div></div>
+                                                )
+                                            )
+                                        )
+                                    )
                                 )
                         }
                     </Content>

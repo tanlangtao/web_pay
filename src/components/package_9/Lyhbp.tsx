@@ -4,7 +4,7 @@ import {gHandler} from '../../lib/gHandler'
 import { Api } from '../../lib/Api';
 import Axios from 'axios';
 import {message, Button} from 'antd';
-import "./Xyhschd.scss";
+import "./Lyhbp.scss";
 import {ConfigItem} from '../../interface/activity_interface';
 interface Props {
     curData:ConfigItem
@@ -14,22 +14,23 @@ interface State {
     frist_pay_amount:number,
     is_received:number
 }
-export default class Xyhschd extends React.Component<Props,State>{
+export default class Lyhbp extends React.Component<Props,State>{
     state = {
         info:{
             flow_rate:0,
             start:0,
             end:0,
-            range:[
+            balance:0,
+            conf:[
                 {
-                    bonus:0,
-                    flow_rate:0,
-                    recharge_amount:0
+                    gold:0,
+                    first_pay_max:0,
+                    first_pay_min:0
                 }
             ]
         },
-        is_received:0,
-        frist_pay_amount:0
+        frist_pay_amount:0,
+        is_received:0
     }
     btnIndex= 0 
     btnActive =false
@@ -42,12 +43,12 @@ export default class Xyhschd extends React.Component<Props,State>{
         },()=>{
             this.ApplyBtnInit()
         })
-        this.Axios_getFristPayAmount()
+        this.getLocal()
     }
     UNSAFE_componentWillUpdate(){
         if(this.state.is_received === 0 && this.state.frist_pay_amount !==0){
-            this.state.info.range.forEach((item,index)=>{
-                if(this.state.frist_pay_amount >= item.recharge_amount) {
+            this.state.info.conf.forEach((item,index)=>{
+                if(this.state.frist_pay_amount >= item.first_pay_min) {
                     this.btnIndex = index
                     this.btnActive = true
                 }
@@ -56,7 +57,7 @@ export default class Xyhschd extends React.Component<Props,State>{
         if(this.state.is_received === 1){
             this.is_received = true
         }
-        console.log("componentWillUpdate 结束 this.btnIndex",this.btnIndex,"this.btnActive",this.btnActive,"this.is_received",this.is_received)
+        // console.log("componentWillUpdate 结束 this.btnIndex",this.btnIndex,"this.btnActive",this.btnActive,"this.is_received",this.is_received)
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
@@ -64,17 +65,36 @@ export default class Xyhschd extends React.Component<Props,State>{
         }
     }
     onClick =(e:any)=>{
-        this.Axios_receiveFristPayGold()
+        this.Axios_oldReimburse()
     }
     applyBtnonClick =()=>{
         if(this.applyBtnInteractable){
-            this.Axios_applyFristPay()
+            this.Axios_oldUserApplyReimbursee()
         }else{
             message.info('未到开放时间！')
         }
     }
-    private async Axios_receiveFristPayGold(){
-        let url = `${gHandler.UrlData.host}${Api.receiveFristPayGold}`;
+    
+    private async  Axios_GetFristPayAmountByWeek(){
+        let url = `${gHandler.UrlData.host}${Api.GetFristPayAmountByWeek}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+        let response = await Axios.get(url).then(response=>{
+            return response.data
+        }).catch(err=>{
+            message.error(err)
+        })
+        if(response.status === 0){
+            this.setState({
+                is_received:response.data.is_received,
+                frist_pay_amount:response.data.frist_pay_amount
+            })
+            this.setLocal()
+        }else{
+            message.error(response.msg)
+        }
+    }
+    //领取
+    private async Axios_oldReimburse(){
+        let url = `${gHandler.UrlData.host}${Api.oldReimburse}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
@@ -90,14 +110,20 @@ export default class Xyhschd extends React.Component<Props,State>{
         }).catch(err => { message.error(err)} )
         if(response.status === 0){
             message.success('领取成功！');
-            this.Axios_getFristPayAmount();
+            //手动将领取结果赋值为1
+            this.setState({
+                is_received :1
+            },()=>{
+                //缓存领取结果
+                this.setLocal()
+            })
         }else{
             message.error(response.msg)
         }
     }
     //确认申请
-    private async Axios_applyFristPay(){
-        let url = `${gHandler.UrlData.host}${Api.applyFristPay}`;
+    private async Axios_oldUserApplyReimbursee(){
+        let url = `${gHandler.UrlData.host}${Api.oldUserApplyReimburse}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
@@ -113,37 +139,23 @@ export default class Xyhschd extends React.Component<Props,State>{
         }).catch(err => { message.error(err)} )
         if(response.status === 0){
             message.success('申请成功！');
-            //缓存申请结果
-            this.setLocal()
+            this.setLocalApply()
             this.ApplyBtnInit()
         }else{
             message.error(response.msg)
         }
     }
-    private async  Axios_getFristPayAmount(){
-        let url = `${gHandler.UrlData.host}${Api.getFristPayAmount}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
-        let response = await Axios.get(url).then(response=>{
-            return response.data
-        }).catch(err=>{
-            message.error(err)
-        })
-        if(response.status === 0){
-            this.setState({
-                frist_pay_amount:response.data.frist_pay_amount,
-                is_received:response.data.is_received
-            })
-        }else{
-            message.error(response.msg)
-        }
-    }
+    
     render (){
+        console.log("render")
         let rangeLine = ()=>{
-            return  this.state.info.range.map((e:any,index:number) => {
+            return  this.state.info.conf.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
-                    <div className ="li1 flexBox">{e.recharge_amount}</div>
-                    <div className ="li2 flexBox">{e.bonus}</div>
-                    <div className ="li3 flexBox"></div>
-                    <div className ="li4 flexBox"> 
+                    <div className ="li1 flexBox">{e.first_pay_min}</div>
+                    <div className ="li2 flexBox">{e.gold}</div>
+                    <div className ="li3 flexBox">{e.first_pay_min*2}</div>
+                    <div className ="li4 flexBox">10</div>
+                    <div className ="li5 flexBox"> 
                         {
                             this.btnActive && this.btnIndex === index ?<div className = { this.is_received ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
@@ -154,20 +166,17 @@ export default class Xyhschd extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhschd">
+            <div className ="Lyhbp">
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>
-                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>活动彩金</div>
-                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>提现流水要求</div>
+                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>包赔金额</div>
+                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>最高兑换金额</div>
+                        <div className ="li4 flexBox" style={{color:"#E8B56F"}}>限制最高注</div>
                     </div>
                     {
                         rangeLine()
                     }
-                    <div className ="label1 ">
-                        <div className="flexBox">本金一倍+</div>
-                        <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
-                    </div>
                     <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
                         console.log("申请")
                         this.applyBtnonClick()
@@ -190,7 +199,7 @@ export default class Xyhschd extends React.Component<Props,State>{
     }
     ApplyBtnInit(){
         let h = new Date().getHours()
-        if(this.getLocal()){
+        if(this.getLocalApply()){
             if(h < this.state.info.start || h >= this.state.info.end){
                 this.applyBtnInteractable = false
             }else{
@@ -203,15 +212,36 @@ export default class Xyhschd extends React.Component<Props,State>{
         console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
         this.render()
     }
-    getLocal(){
-        let local = localStorage.getItem(`ApplyXyhschd_${gHandler.UrlData.user_id}`)
+    getLocalApply(){
+        let local = localStorage.getItem(`ApplyLyhBp_${gHandler.UrlData.user_id}`)
         if(local){
             return false
         }else{
             return true
         }
     }
+    setLocalApply(){
+        localStorage.setItem(`ApplyLyhBp_${gHandler.UrlData.user_id}`,`${true}`)            
+    }
     setLocal(){
-        localStorage.setItem(`ApplyXyhschd_${gHandler.UrlData.user_id}`,JSON.stringify(true))
+        let time = new Date().getTime()/1000
+        let FristPayAmount = {
+            time:time,
+            frist_pay_amount:this.state.frist_pay_amount,
+            is_received:this.state.is_received
+        }
+        localStorage.setItem(`oldUserFristPayAmount_${gHandler.UrlData.user_id}`,JSON.stringify(FristPayAmount))
+    }
+    getLocal(){
+        let newTime = new Date().getTime()/1000
+        let localFristPayAmount :any= localStorage.getItem(`oldUserFristPayAmount_${gHandler.UrlData.user_id}`)
+        if (localFristPayAmount && JSON.parse(localFristPayAmount).frist_pay_amount >0 && (newTime-JSON.parse(localFristPayAmount).time ) < 3600){
+            this.setState({
+                is_received:JSON.parse(localFristPayAmount).is_received,
+                frist_pay_amount:JSON.parse(localFristPayAmount).frist_pay_amount
+            })
+        }else{
+            this.Axios_GetFristPayAmountByWeek()
+        }
     }
 }
