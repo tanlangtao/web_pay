@@ -19,6 +19,8 @@ import Xyhschd from 'components/package_9/Xyhschd';
 import Lyhsc from 'components/package_9/Lyhsc';
 import Lyhbp from 'components/package_9/Lyhbp';
 import RedRain from 'components/package_9/RedRain';
+import Ryjhd from 'components/package_9/Ryjhd';
+import UsdtCunKuan from 'components/package_9/UsdtCunKuan';
 const { Header, Content, Sider } = Layout;
 
 interface State{
@@ -128,7 +130,11 @@ export default class Activity extends Component<{}, State> {
                                         (this.state.title === "老会员每日首存活动9" ? <Lyhsc curData={this.state.curData}/>:
                                             (this.state.title === "老用户包赔活动9" ? <Lyhbp curData={this.state.curData}/>:
                                                 (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
-                                                    <div></div>
+                                                    (this.state.title === "日业绩活动9" ? <Ryjhd curData={this.state.curData}/>:
+                                                        (this.state.title === "USDT存款大礼包9" ? <UsdtCunKuan curData={this.state.curData}/>:
+                                                            <div></div>
+                                                        )
+                                                    )
                                                 )
                                             )
                                         )

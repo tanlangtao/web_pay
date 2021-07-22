@@ -1,0 +1,75 @@
+$src:'../../asses/activity/package_9/';
+
+.UsdtCunKuan{
+    background-image:url($src+"bg/usdtck_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 80vh;
+    font-size: 0.25rem;
+    color: white;
+    position: relative;
+    .group{
+        width: 7.3rem;
+        height: 1.5rem;
+        position: absolute;
+        left: 0.1rem;
+        top: 3rem;
+        padding-top: 0.05rem;
+        background-image:url($src+"sprite/biao.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-top: 0.4rem;
+        .line{
+            display: flex;
+            .li1{
+                width: 2.3rem;
+            }
+            .li2{
+                width: 1.3rem;
+            }
+            .li3{
+                width: 2.1rem;
+            }
+            .li4{
+                width: 1.6rem;
+                .btn_linqu{
+                    width: 0.8rem;
+                    height: 0.3rem;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                .btn_Ylinqu{
+                    width: 0.8rem;
+                    height: 0.3rem;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+    .label1{
+        position: absolute;
+        left: 4.1rem;
+        bottom: 2rem;
+    }
+    .rule{
+        position: absolute;
+        width: 10.5rem;
+        left: 0.3rem;
+        line-height: 0.22rem;
+        bottom: 0rem;
+        font-size: 0.20rem;
+        height: 2rem;
+        bottom: -1.4rem;
+        background-image:url($src+"2.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding-left: 0.1rem;
+        padding-top: 0.1rem;
+        p{
+            margin: 0.06rem;
+        }
+    }
+}

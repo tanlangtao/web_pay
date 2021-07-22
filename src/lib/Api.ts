@@ -25,4 +25,6 @@ export const Api ={
     GetFristPayAmountByWeek:"/api/activity/GetFristPayAmountByWeek",
     oldReimburse:"/api/activity/oldReimburse",
     oldUserApplyReimburse:"/api/activity/oldUserApplyReimburse",
+    receiveUsdtPayGold:"/api/activity/receiveUsdtPayGold",
+    getRewardUsdtInfo:"/api/activity/getRewardUsdtInfo",
 }
