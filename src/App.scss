@@ -5,14 +5,14 @@
     margin: 0;
     padding: 0;
     color: rgba(0, 0, 0, 0.65);
-    font-size: 50px;
+    font-size: 8px;
     font-variant: tabular-nums;
     line-height: 1.5;
     list-style: none;
     -webkit-font-feature-settings: 'tnum';
             font-feature-settings: 'tnum';
     position: fixed;
-    top: 16px;
+    top: 1px;
     left: 0;
     z-index: 1010;
     width: 100%;
@@ -21,6 +21,6 @@
 .ant-message .anticon{
     position: relative;
     top: 1px;
-    margin-right: 8px;
-    font-size: 50px;
+    margin-right: 4px;
+    font-size: 8px;
 }

@@ -12,7 +12,10 @@ interface Props {
 interface State {
     info:any,
     frist_pay_amount:number,
-    is_received:number
+    is_received:number,
+    btnActive :boolean,
+    applyBtnInteractable : boolean,
+    is_apply : boolean
 }
 export default class Lyhbp extends React.Component<Props,State>{
     state = {
@@ -30,13 +33,13 @@ export default class Lyhbp extends React.Component<Props,State>{
             ]
         },
         frist_pay_amount:0,
-        is_received:0
+        is_received:0,
+        btnActive :false,
+        applyBtnInteractable : true,
+        is_apply : false
     }
     btnIndex= 0 
-    btnActive =false
-    is_received= false
-    applyBtnInteractable = true
-    is_apply = false
+    
     componentDidMount(){
         this.setState({
             info:this.props.curData.info
@@ -45,17 +48,16 @@ export default class Lyhbp extends React.Component<Props,State>{
         })
         this.getLocal()
     }
-    UNSAFE_componentWillUpdate(){
+    renderBtn(){
         if(this.state.is_received === 0 && this.state.frist_pay_amount !==0){
             this.state.info.conf.forEach((item,index)=>{
                 if(this.state.frist_pay_amount >= item.first_pay_min) {
                     this.btnIndex = index
-                    this.btnActive = true
+                    this.setState({
+                        btnActive :true
+                    })
                 }
             })
-        }
-        if(this.state.is_received === 1){
-            this.is_received = true
         }
         // console.log("componentWillUpdate 结束 this.btnIndex",this.btnIndex,"this.btnActive",this.btnActive,"this.is_received",this.is_received)
     }
@@ -68,7 +70,7 @@ export default class Lyhbp extends React.Component<Props,State>{
         this.Axios_oldReimburse()
     }
     applyBtnonClick =()=>{
-        if(this.applyBtnInteractable){
+        if(this.state.applyBtnInteractable){
             this.Axios_oldUserApplyReimbursee()
         }else{
             message.info('未到开放时间！')
@@ -86,6 +88,8 @@ export default class Lyhbp extends React.Component<Props,State>{
             this.setState({
                 is_received:response.data.is_received,
                 frist_pay_amount:response.data.frist_pay_amount
+            },()=>{
+                this.renderBtn()
             })
             this.setLocal()
         }else{
@@ -157,7 +161,7 @@ export default class Lyhbp extends React.Component<Props,State>{
                     <div className ="li4 flexBox">10</div>
                     <div className ="li5 flexBox"> 
                         {
-                            this.btnActive && this.btnIndex === index ?<div className = { this.is_received ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received===0 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -166,7 +170,11 @@ export default class Lyhbp extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhbp">
+            <div className ="Lyhbp" style={{
+                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                marginLeft:gHandler.getLeftOff(),
+                marginTop:gHandler.getTopOff()
+            }}>
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>
@@ -177,7 +185,7 @@ export default class Lyhbp extends React.Component<Props,State>{
                     {
                         rangeLine()
                     }
-                    <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
+                    <div className ={ `applyBtn ${this.state.applyBtnInteractable ?"":"applyFilter"} ${this.state.is_apply?"applyYlingqu":''}`} onClick={()=>{
                         console.log("申请")
                         this.applyBtnonClick()
                     }}></div>
@@ -187,12 +195,13 @@ export default class Lyhbp extends React.Component<Props,State>{
                     </div>
                 </div>
                 <div className = "rule">
-                    <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。</p>
+                    <p>1. 老会员每周限制参加一次，绑定手机以及银行卡后前往当前活动进行申请，申请时间：每周五/周六{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。</p>
                     <p>所有未进行申请的玩家无法领取活动彩金。</p>
-                    <p>2.平台中的新用户活动只能参加一个，申请后即视为参加此活动。</p>
-                    <p>3. 玩家必须充值成功未下注时进行领取，需满足首充金额一倍流水+赠送彩金的{this.state.info.flow_rate}倍流水才能申请兑换。</p>
-                    <p>4. 游戏规则：仅参加以下游戏《财神到》《水果机》《捕鱼·海王》《捕鱼·聚宝盆》《多福多财》《疯狂旋涡》《CQ9电子游戏》《PT电子游戏》《JDB电子游戏》《PG电子游戏》《AG电子游戏》。</p>
-                    <p>5. 同一用户仅限领取一次，恶意套利者将封号处理。\n6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                    <p>2. 参加活动的会员，只能进行指定游戏《财神到》《捕鱼·聚宝盆》游戏，进行其他游戏便视为放弃此活动。</p>
+                    <p>3. 在规定游戏中投注对应档位最高单注金额内，亏损至余额低于10金币时即可前往本活动界面进行领取活动彩金。</p>
+                    <p>4. 赢金到规定金额不兑换视为放弃包赔资格（输完不能赔付）。</p>
+                    <p>5. 同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金无需流水限制可直接申请兑换。</p>
+                    <p>6.平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据活动情况随时调整活动内容。</p>
                 </div>
             </div>
         )
@@ -201,16 +210,22 @@ export default class Lyhbp extends React.Component<Props,State>{
         let h = new Date().getHours()
         if(this.getLocalApply()){
             if(h < this.state.info.start || h >= this.state.info.end){
-                this.applyBtnInteractable = false
+                this.setState({
+                    applyBtnInteractable:false
+                })
             }else{
-                this.applyBtnInteractable = true
+                this.setState({
+                    applyBtnInteractable:true
+                })
             }
-            this.is_apply = false
+            this.setState({
+                is_apply:false
+            })
         }else{
-            this.is_apply = true
+            this.setState({
+                is_apply:true
+            })
         }
-        console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
-        this.render()
     }
     getLocalApply(){
         let local = localStorage.getItem(`ApplyLyhBp_${gHandler.UrlData.user_id}`)

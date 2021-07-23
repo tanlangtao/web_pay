@@ -3,71 +3,71 @@ $src:'../../asses/activity/package_9/';
 .UsdtCunKuan{
     background-image:url($src+"bg/usdtck_bg.png");
     background-repeat: no-repeat;
-    background-size: contain;
-    height: 80vh;
-    font-size: 0.25rem;
+    background-size: cover;
+    height: 200px;
+    font-size: 7px;
+    width: 380px;
     color: white;
     position: relative;
     .group{
-        width: 7.3rem;
-        height: 1.5rem;
+        width: 250px;
+        height: 60px;
         position: absolute;
-        left: 0.1rem;
-        top: 3rem;
-        padding-top: 0.05rem;
+        left: 5px;
+        top: 100px;
         background-image:url($src+"sprite/biao.png");
         background-repeat: no-repeat;
         background-size: contain;
-        padding-top: 0.4rem;
+        padding-top: 14px;
         .line{
             display: flex;
+            height: 12.5px;
             .li1{
-                width: 2.3rem;
+                width: 80px;
             }
             .li2{
-                width: 1.3rem;
+                width: 42px;
             }
             .li3{
-                width: 2.1rem;
+                width: 74px;
             }
             .li4{
-                width: 1.6rem;
+                width: 50px;
                 .btn_linqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
                 .btn_Ylinqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
             }
         }
-    }
-    .label1{
-        position: absolute;
-        left: 4.1rem;
-        bottom: 2rem;
+        .label1{
+            position: absolute;
+            left: 140px;
+            top: 25px;
+        }
     }
     .rule{
+        font-size: 7px;
         position: absolute;
-        width: 10.5rem;
-        left: 0.3rem;
-        line-height: 0.22rem;
-        bottom: 0rem;
-        font-size: 0.20rem;
-        height: 2rem;
-        bottom: -1.4rem;
+        width: 350px;
+        left: 5px;
+        line-height: 7px;
+        height: 65px;
+        bottom: -50px;
         background-image:url($src+"2.png");
         background-repeat: no-repeat;
         background-size: contain;
-        padding-left: 0.1rem;
-        padding-top: 0.1rem;
+        padding-left: 2px;
+        padding-top: 2px;
         p{
             margin: 0.06rem;
         }

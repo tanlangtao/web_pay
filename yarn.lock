@@ -12035,7 +12035,7 @@ postcss-pseudo-class-any-link@^6.0.0:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0-rc.3"
 
-postcss-px2rem-exclude@0.0.6:
+postcss-px2rem-exclude@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/postcss-px2rem-exclude/-/postcss-px2rem-exclude-0.0.6.tgz#470f74fb9f839941264394fbb80bffc9be494628"
   integrity sha1-Rw90+5+DmUEmQ5T7uAv/yb5JRig=

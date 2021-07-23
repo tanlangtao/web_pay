@@ -68,7 +68,11 @@ export default class RedRain extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="RedRain">
+            <div className ="RedRain" style={{
+                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                marginLeft:gHandler.getLeftOff(),
+                marginTop:gHandler.getTopOff()
+            }}>
                 <div className = "group">
                     <div className ="title">
                         <div className ="li1  flexBox" >四季发财红包雨</div>

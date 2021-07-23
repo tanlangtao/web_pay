@@ -3,45 +3,45 @@ $src:'../../asses/activity/package_9/';
 .Xyhschd{
     background-image:url($src+"bg/XG_event_20210623-1.png");
     background-repeat: no-repeat;
-    background-position: -2.3rem;
     background-size: cover;
-    height: 99vh;
-    font-size: 0.25rem;
+    background-position: -77px;
+    width: 385px;
+    height: 260px;
     color: white;
     position: relative;
     .group{
-        width: 7.4rem;
-        height: 1.3rem;
+        width:245px;
+        height: 44px;
         position: absolute;
-        left: 1.65rem;
-        top: 2.75rem;
-        padding-top: 0.05rem;
-        font-size: 0.2rem;
+        left: 58px;
+        top: 95px;
+        font-size: 7px;
+        padding-top: 1px;
         position: relative;
         .line{
             display: flex;
-            height: 0.42rem;
+            height: 14px;
             .li1{
-                width: 1.5rem;
+                width: 50px;
             }
             .li2{
-                width: 1.4rem;
+                width: 50px;
             }
             .li3{
-                width: 1.5rem;
+                width: 50px;
             }
             .li4{
-                width: 1.3rem;
+                width: 40px;
                 .btn_linqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
                 .btn_Ylinqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -50,27 +50,26 @@ $src:'../../asses/activity/package_9/';
         }
         .label1{
             position: absolute;
-            width: 1.2rem;
-            height: 0.7rem;
-            bottom: 0rem;
-            left: 3.1rem;
+            width: 50px;
+            bottom: 3px;
+            left: 100px;
         }
         .applyBtn{
             position: absolute;
-            width: 1.2rem;
-            height: 0.4rem;
-            bottom: 0.7rem;
-            left: 5.9rem;
+            width: 50px;
+            height: 15px;
+            bottom: 20px;
+            left: 198px;
             background-image:url($src+"sprite/btn_apply.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
-            width: 1.2rem;
-            height: 0.4rem;
-            bottom: 0.7rem;
-            left: 5.9rem;
+            width: 50px;
+            height: 15px;
+            bottom: 20px;
+            left: 198px;
             background-image:url($src+"sprite/btn_apply.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -82,20 +81,20 @@ $src:'../../asses/activity/package_9/';
         }
         .applyBtnLabel{
             position: absolute;
-            width: 1.5rem;
-            height: 0.4rem;
-            bottom: 0.3rem;
-            left: 5.8rem;
+            width: 70px;
+            height: 20px;
+            bottom: 1px;
+            left: 189px;
         }
     }
     .rule{
         position: absolute;
-        width: 10.4rem;
-        right: 0.15rem;
-        line-height: 0.26rem;
-        bottom: 0.35rem;
+        width: 340px;
+        left: 23px;
+        line-height: 7px;
+        top: 165px;
         color: #E8C999;
-        font-size: 0.20rem;
+        font-size: 7px;
         p{
             margin: 0.06rem;
         }

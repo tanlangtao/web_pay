@@ -11,7 +11,9 @@ interface Props {
 }
 interface State {
     info:any,
-    PerformanceInfo:any
+    PerformanceInfo:any,
+    is_received:boolean,
+    btnActive :boolean,
 }
 export default class Ryjhd extends React.Component<Props,State>{
     state = {
@@ -29,36 +31,39 @@ export default class Ryjhd extends React.Component<Props,State>{
             received_info:[{
                 receive_amount:0
             }]
-        }
+        },
+        is_received:false,
+        btnActive :false,
     }
     btnIndex= 0 
-    btnActive =false
-    is_received= false
     componentDidMount(){
         this.setState({
             info:this.props.curData.info
         })
         this.Axios_getReceivePerformanceInfo()
     }
-    UNSAFE_componentWillUpdate(){
+    renderBtn(){
         if(this.state.info.range[0].performance !==0 ){
             this.state.info.range.forEach((item,index)=>{
                 if(index < 6 &&  this.state.PerformanceInfo.amount >=item.performance && this.state.PerformanceInfo.grant >=item.grant) {
                     this.btnIndex = index
-                    this.btnActive = true
+                    this.setState({
+                        btnActive:true
+                    })
                 }
             })
         }
-        if(this.state.PerformanceInfo.received_info[0].receive_amount> 0){
+        if(this.state.PerformanceInfo.received_info && this.state.PerformanceInfo.received_info[0].receive_amount> 0){
             this.state.PerformanceInfo.received_info.forEach((e)=>{
                 this.state.info.range.forEach((item,index)=>{
                     if(e.receive_amount === item.gold){
-                        this.is_received = true
+                        this.setState({
+                            is_received:true
+                        })
                     }
                 })
             })
         }
-        console.log("componentWillUpdate 结束 this.btnIndex",this.btnIndex,"this.btnActive",this.btnActive,"this.is_received",this.is_received)
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
@@ -101,6 +106,8 @@ export default class Ryjhd extends React.Component<Props,State>{
         if(response.status === 0){
             this.setState({
                 PerformanceInfo:response.data
+            },()=>{
+                this.renderBtn()
             })
         }else{
             message.error(response.msg)
@@ -115,7 +122,7 @@ export default class Ryjhd extends React.Component<Props,State>{
                     <div className ="li3 flexBox">{e.gold}</div>
                     <div className ="li4 flexBox"> 
                         {
-                            this.btnActive && this.btnIndex === index ?<div className = { this.is_received ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -124,7 +131,11 @@ export default class Ryjhd extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Ryjhd">
+            <div className ="Ryjhd" style={{
+                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                marginLeft:gHandler.getLeftOff(),
+                marginTop:gHandler.getTopOff()
+            }}>
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>团队周业绩</div>

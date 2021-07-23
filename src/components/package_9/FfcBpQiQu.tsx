@@ -12,7 +12,10 @@ interface Props {
 interface State {
     info:any,
     is_received:string,
-    lose_amount:Number
+    lose_amount:Number,
+    btnActive :boolean,
+    applyBtnInteractable : boolean,
+    is_apply :boolean,
 }
 export default class FfcBpQiQu extends React.Component<Props,State>{
     state = {
@@ -30,13 +33,13 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
             }]
         },
         lose_amount:0,
-        is_received:"0"
+        is_received:"0",
+        btnActive :false,
+        applyBtnInteractable : true,
+        is_apply :false,
     }
     btnIndex= 0 
-    btnActive =false
-    is_received= false
-    applyBtnInteractable = true
-    is_apply = false
+    
     componentDidMount(){
         this.setState({
             info:this.props.curData.info
@@ -45,19 +48,17 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         })
         this.Axios_getRewardFFCFlag()
     }
-    UNSAFE_componentWillUpdate(){
+    renderBtn(){
         if(this.state.is_received === "0" &&this.state.lose_amount!==0){
             this.state.info.lose_range.forEach((item,index)=>{
                 if(this.state.lose_amount >= item.lose_min && this.state.lose_amount < item.lose_max) {
                     this.btnIndex = index
-                    this.btnActive = true
+                    this.setState({
+                        btnActive:true
+                    })
                 }
             })
         }
-        if(this.state.is_received === "1"){
-            this.is_received = true
-        }
-        console.log("componentWillUpdate 结束 this.btnIndex",this.btnIndex,"this.btnActive",this.btnActive,"this.is_received",this.is_received)
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
@@ -68,7 +69,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         this.Axios_receiveRewardHeNei()
     }
     applyBtnonClick =()=>{
-        if(this.applyBtnInteractable){
+        if(this.state.applyBtnInteractable){
             this.Axios_onapplyHandleFFC()
         }else{
             message.info('未到开放时间！')
@@ -133,6 +134,8 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
             this.setState({
                 lose_amount:response.data.amount,
                 is_received:response.data.is_received
+            },()=>{
+                this.renderBtn()
             })
         }else{
             message.error(response.msg)
@@ -150,7 +153,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
                     <div className ="li6 flexBox"></div>
                     <div className ="li7 flexBox"> 
                         {
-                            this.btnActive && this.btnIndex === index ?<div className = { this.is_received ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received==="1" ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -159,7 +162,11 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="FfcBaopei_QiQu">
+            <div className ="FfcBaopei_QiQu" style={{
+                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                marginLeft:gHandler.getLeftOff(),
+                marginTop:gHandler.getTopOff()
+            }}>
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>游戏房间</div>
@@ -176,7 +183,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
                     <div className ="label2">连续{this.state.info.round}局</div>
                     <div className ="label3">{this.state.info.bet_min}-{this.state.info.bet_max}</div>
                     <div className ="label4">彩金{this.state.info.flow_rate}倍流水</div>
-                    <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
+                    <div className ={ `applyBtn ${this.state.applyBtnInteractable ?"":"applyFilter"} ${this.state.is_apply?"applyYlingqu":''}`} onClick={()=>{
                         console.log("申请")
                         this.applyBtnonClick()
                     }}></div>
@@ -201,16 +208,22 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         let h = new Date().getHours()
         if(this.getLocal()){
             if(h < this.state.info.start || h >= this.state.info.end){
-                this.applyBtnInteractable = false
+                this.setState({
+                    applyBtnInteractable:false
+                })
             }else{
-                this.applyBtnInteractable = true
+                this.setState({
+                    applyBtnInteractable:true
+                })
             }
-            this.is_apply = false
+            this.setState({
+                is_apply:false
+            })
         }else{
-            this.is_apply = true
+            this.setState({
+                is_apply:true
+            })
         }
-        console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
-        this.render()
     }
     getLocal(){
         let local = localStorage.getItem(`ApplyFfcBaoPei_QiQu_${gHandler.UrlData.user_id}`)

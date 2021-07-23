@@ -3,64 +3,60 @@ $src:'../../asses/activity/package_9/';
 .Ryjhd{
     background-image:url($src+"bg/XG_event_20210625-4.png");
     background-repeat: no-repeat;
-    background-position: -2.3rem;
     background-size: cover;
-    height: 100vh;
-    font-size: 0.25rem;
+    background-position: -77px;
+    width: 385px;
+    height: 260px;
     color: white;
     position: relative;
     .group{
-        width: 5.4rem;
-        height: 2.9rem;
+        width: 185px;
+        height: 105px;
         position: absolute;
-        right: 0.42rem;
-        top: 1.48rem;
-        padding-top: 0.05rem;
+        left: 180px;
+        top: 49px;
+        padding-top: 3px;
         .line{
-            margin-top: 0.035rem;
             display: flex;
+            height: 14px;
             .li1{
-                width: 1.5rem;
+                width: 50px;
             }
             .li2{
-                width: 1.4rem;
+                width: 50px;
             }
             .li3{
-                width: 1.4rem;
+                width: 50px;
             }
             .li4{
-                width: 1.1rem;
+                width: 30px;
                 .btn_linqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
                 .btn_Ylinqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
             }
         }
-        .content{
-            height: 2.4rem;
-            border: 1px solid blue;
-        }
     }
     .rule{
         position: absolute;
-        width: 10rem;
-        left: 0.6rem;
-        line-height: 0.27rem;
-        bottom: 0.4rem;
+        width: 350px;
+        left: 20px;
+        line-height: 9px;
+        top: 170px;
         color: #E8C999;
-        font-size: 0.24rem;
+        font-size: 7px;
         p{
-            margin: 0.06rem;
+            margin: 2px;
         }
     }
 }

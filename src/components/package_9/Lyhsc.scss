@@ -3,45 +3,43 @@ $src:'../../asses/activity/package_9/';
 .Lyhsc{
     background-image:url($src+"bg/event12-3_lhysc_content.png");
     background-repeat: no-repeat;
-    background-position: -2.3rem;
     background-size: cover;
-    height: 99vh;
-    font-size: 0.25rem;
+    background-position: -77px;
+    width: 385px;
+    height: 260px;
     color: white;
     position: relative;
     .group{
-        width: 7.4rem;
-        height: 3rem;
+        width: 185px;
+        height: 105px;
         position: absolute;
-        left: 3.7rem;
-        top: 1.7rem;
-        padding-top: 0.05rem;
-        font-size: 0.2rem;
-        position: relative;
+        left: 130px;
+        top: 57px;
+        padding-top: 3px;
         .line{
             display: flex;
-            height: 0.41rem;
+            height: 14px;
             .li1{
-                width: 1.5rem;
+                width: 50px;
             }
             .li2{
-                width: 1.4rem;
+                width: 50px;
             }
             .li3{
-                width: 1.4rem;
+                width: 50px;
             }
             .li4{
-                width: 1.1rem;
+                width: 30px;
                 .btn_linqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
                 .btn_Ylinqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -50,54 +48,20 @@ $src:'../../asses/activity/package_9/';
         }
         .label1{
             position: absolute;
-            width: 1.2rem;
-            height: 2.5rem;
-            top: 0.5rem;
-            left: 3rem;
-        }
-        .applyBtn{
-            position: absolute;
-            width: 1.2rem;
-            height: 0.4rem;
-            bottom: 0.7rem;
-            left: 5.9rem;
-            background-image:url($src+"sprite/btn_apply.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-        .applyFilter{
-            position: absolute;
-            width: 1.2rem;
-            height: 0.4rem;
-            bottom: 0.7rem;
-            left: 5.9rem;
-            background-image:url($src+"sprite/btn_apply.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%)
-        }
-        .applyYlingqu{
-            background-image:url($src+"sprite/btn_done.png");
-        }
-        .applyBtnLabel{
-            position: absolute;
-            width: 1.5rem;
-            height: 0.4rem;
-            bottom: 0.3rem;
-            left: 5.8rem;
+            left: 101px;
+            top: 50px;
         }
     }
     .rule{
         position: absolute;
-        width: 10.3rem;
-        left:0.7rem;
-        line-height: 0.23rem;
-        bottom: 0.27rem;
+        width: 350px;
+        left: 28px;
+        line-height: 8px;
+        top: 176px;
         color: #E8C999;
-        font-size: 0.19rem;
+        font-size: 7px;
         p{
-            margin: 0.06rem;
+            margin: 0px;
         }
     }
 }

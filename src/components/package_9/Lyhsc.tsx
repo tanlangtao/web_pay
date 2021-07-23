@@ -12,7 +12,10 @@ interface Props {
 interface State {
     info:any,
     pay_amount_byday:number,
-    is_received:number
+    is_received:number,
+    btnActive :boolean,
+    applyBtnInteractable : boolean,
+    is_apply : boolean
 }
 export default class Lyhsc extends React.Component<Props,State>{
     state = {
@@ -26,13 +29,12 @@ export default class Lyhsc extends React.Component<Props,State>{
             ]
         },
         is_received:0,
-        pay_amount_byday:0
+        pay_amount_byday:0,
+        btnActive :false,
+        applyBtnInteractable : true,
+        is_apply : false
     }
     btnIndex= 0 
-    btnActive =false
-    is_received= false
-    applyBtnInteractable = true
-    is_apply = false
     componentDidMount(){
         this.setState({
             info:this.props.curData.info
@@ -41,19 +43,17 @@ export default class Lyhsc extends React.Component<Props,State>{
         })
         this.Axios_getPayAmountByDay()
     }
-    UNSAFE_componentWillUpdate(){
+    renderBtn(){
         if(this.state.is_received === 0 && this.state.pay_amount_byday!==0){
             this.state.info.range.forEach((item,index)=>{
                 if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
-                    this.btnActive = true
+                    this.setState({
+                        btnActive : true
+                    })
                 }
             })
         }
-        if(this.state.is_received === 1){
-            this.is_received = true
-        }
-        console.log("componentWillUpdate 结束 this.btnIndex",this.btnIndex,"this.btnActive",this.btnActive,"this.is_received",this.is_received)
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
@@ -64,7 +64,7 @@ export default class Lyhsc extends React.Component<Props,State>{
         this.Axios_receivePaymentGold()
     }
     applyBtnonClick =()=>{
-        if(this.applyBtnInteractable){
+        if(this.state.applyBtnInteractable){
             this.Axios_applyFristPay()
         }else{
             message.info('未到开放时间！')
@@ -127,6 +127,8 @@ export default class Lyhsc extends React.Component<Props,State>{
             this.setState({
                 pay_amount_byday:response.data.pay_amount_byday,
                 is_received:response.data.is_received
+            },()=>{
+                this.renderBtn()
             })
         }else{
             message.error(response.msg)
@@ -141,7 +143,7 @@ export default class Lyhsc extends React.Component<Props,State>{
                     <div className ="li3 flexBox"></div>
                     <div className ="li4 flexBox"> 
                         {
-                            this.btnActive && this.btnIndex === index ?<div className = { this.is_received ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received===1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -150,7 +152,11 @@ export default class Lyhsc extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhsc">
+            <div className ="Lyhsc" style={{
+                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                marginLeft:gHandler.getLeftOff(),
+                marginTop:gHandler.getTopOff()
+            }}>
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#646CBD"}}>充值金额</div>
@@ -187,16 +193,22 @@ export default class Lyhsc extends React.Component<Props,State>{
     //     let h = new Date().getHours()
     //     if(this.getLocal()){
     //         if(h < this.state.info.start || h >= this.state.info.end){
-    //             this.applyBtnInteractable = false
+    //             this.setState({
+    //                 applyBtnInteractable:false
+    //             })
     //         }else{
-    //             this.applyBtnInteractable = true
+    //             this.setState({
+    //                 applyBtnInteractable:true
+    //             })
     //         }
-    //         this.is_apply = false
+    //         this.setState({
+    //             is_apply:false
+    //         })
     //     }else{
-    //         this.is_apply = true
+    //         this.setState({
+    //             is_apply:true
+    //         })
     //     }
-    //     console.log("is_apply",this.is_apply,"applyBtnInteractable",this.applyBtnInteractable)
-    //     this.render()
     // }
     getLocal(){
         let local = localStorage.getItem(`ApplyLyhsc_${gHandler.UrlData.user_id}`)

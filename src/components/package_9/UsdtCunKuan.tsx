@@ -165,13 +165,17 @@ export default class UsdtCunKuan extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="UsdtCunKuan">
+            <div className ="UsdtCunKuan" style={{
+                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                marginLeft:gHandler.getLeftOff(),
+                marginTop:gHandler.getTopOff()
+            }}>
                 <div className = "group">
                     {
                         rangeLine()
                     }
+                    <div className="label1">彩金{this.state.info.flow_rate}倍流水</div>
                 </div>
-                <div className="label1">彩金{this.state.info.flow_rate}倍流水</div>
                 <div className = "rule">
                     <p>活动规则：</p>
                     <p>1. 只要您使用虚拟货币USDT进行存款，单笔充值100USDT以上，累计达到相对应的充值次数即可领取相对应的彩金（彩金5倍流水即可申请兑换）。</p>

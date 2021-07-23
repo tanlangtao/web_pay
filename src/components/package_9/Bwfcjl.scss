@@ -3,63 +3,59 @@ $src:'../../asses/activity/package_9/';
 .BwfcjlBg{
     background-image:url($src+"bg/XG_event_20210625-5.png");
     background-repeat: no-repeat;
-    background-position: -2.3rem;
     background-size: cover;
-    height: 100vh;
-    font-size: 0.25rem;
+    background-position: -77px;
+    width: 385px;
+    height: 260px;
     color: white;
     position: relative;
     .group{
-        width: 5.4rem;
-        height: 2.9rem;
+        width: 185px;
+        height: 105px;
         position: absolute;
-        left: 0.5rem;
-        bottom: 0.4rem;
-        padding-top: 0.05rem;
+        left: 16px;
+        top: 146px;
+        padding-top: 3px;
         .line{
-            margin-top: 0.03rem;
             display: flex;
+            height: 14px;
             .li1{
-                width: 1.5rem;
+                width: 50px;
             }
             .li2{
-                width: 1.4rem;
+                width: 50px;
             }
             .li3{
-                width: 1.4rem;
+                width: 50px;
             }
             .li4{
-                width: 1.1rem;
+                width: 30px;
                 .btn_linqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
                 .btn_Ylinqu{
-                    width: 0.8rem;
-                    height: 0.3rem;
+                    width: 30px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
             }
         }
-        .content{
-            height: 2.4rem;
-            border: 1px solid blue;
-        }
     }
     .rule{
         position: absolute;
-        width: 5rem;
-        right: 0.1rem;
-        line-height: 0.3rem;
-        top: 1.7rem;
+        width: 168px;
+        left: 205px;
+        line-height: 11px;
+        top: 58px;
         color: #E8C999;
         p{
-            margin: 0.06rem;
+            margin: 2px;
         }
     }
 }

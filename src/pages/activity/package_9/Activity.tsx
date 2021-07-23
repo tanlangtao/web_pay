@@ -9,10 +9,6 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import RgDc from '../../../components/RgDc';
-import RechargeHistory from '../../../components/RechargeHistory';
-import { url } from 'inspector';
-import { width } from 'dom7';
 import Bwfcjl from 'components/package_9/Bwfcjl';
 import FfcBpQiQu from 'components/package_9/FfcBpQiQu';
 import Xyhschd from 'components/package_9/Xyhschd';
@@ -40,8 +36,10 @@ export default class Activity extends Component<{}, State> {
             order_by:"",
         }
     }
+    
     componentDidMount() {
         this.AxiosIndex()
+
     }
     //请求首页
     private async  AxiosIndex(){
@@ -100,50 +98,46 @@ export default class Activity extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <Layout className='activity9'>
-                <Sider
-                    trigger={null} collapsible 
+            <div className='activity9'>
+                <div
                     className='sider'
-                    width='31vh'
                 >
-                    <Header className='headerBox' >
+                    <div className='headerBox' >
                         <div className='title_jchd'></div>
-                    </Header>
+                    </div>
                     <div className="navBox">
                         <Swiper
                             direction={"vertical"}
                             spaceBetween={0}
-                            height={130}
+                            height={100}
                             // onSlideChange={() => console.log('slide change')}
                             // onSwiper={(swiper) => console.log(swiper)}
                         >
                             {mapNav()}
                         </Swiper>
                     </div>
-                </Sider>
-                <Layout className ='rightLayout'>
-                    <Content className="content">
-                        {
-                            this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
-                                (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
-                                    (this.state.title === "新用户首存活动9" ? <Xyhschd curData={this.state.curData}/>:
-                                        (this.state.title === "老会员每日首存活动9" ? <Lyhsc curData={this.state.curData}/>:
-                                            (this.state.title === "老用户包赔活动9" ? <Lyhbp curData={this.state.curData}/>:
-                                                (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
-                                                    (this.state.title === "日业绩活动9" ? <Ryjhd curData={this.state.curData}/>:
-                                                        (this.state.title === "USDT存款大礼包9" ? <UsdtCunKuan curData={this.state.curData}/>:
-                                                            <div></div>
-                                                        )
+                </div>
+                <div className="content">
+                    {
+                        this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
+                            (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
+                                (this.state.title === "新用户首存活动9" ? <Xyhschd curData={this.state.curData}/>:
+                                    (this.state.title === "老会员每日首存活动9" ? <Lyhsc curData={this.state.curData}/>:
+                                        (this.state.title === "老用户包赔活动9" ? <Lyhbp curData={this.state.curData}/>:
+                                            (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
+                                                (this.state.title === "日业绩活动9" ? <Ryjhd curData={this.state.curData}/>:
+                                                    (this.state.title === "USDT存款大礼包9" ? <UsdtCunKuan curData={this.state.curData}/>:
+                                                        <div></div>
                                                     )
                                                 )
                                             )
                                         )
                                     )
                                 )
-                        }
-                    </Content>
-                </Layout>
-            </Layout>
+                            )
+                    }
+                </div>
+            </div>
         )
     }
 }

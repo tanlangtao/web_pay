@@ -87,5 +87,14 @@ class gHandlerC  {
         }
         return transTime
     }
+    public getNodeScale(){
+        return window.screen.height /375
+    }
+    public getLeftOff(){
+        return window.screen.width - 667
+    }
+    public getTopOff(){
+        return window.screen.height - 375
+    }
 }
 export const gHandler = new gHandlerC()
