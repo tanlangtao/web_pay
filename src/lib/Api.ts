@@ -27,4 +27,10 @@ export const Api ={
     oldUserApplyReimburse:"/api/activity/oldUserApplyReimburse",
     receiveUsdtPayGold:"/api/activity/receiveUsdtPayGold",
     getRewardUsdtInfo:"/api/activity/getRewardUsdtInfo",
+    applyReimburse:"/api/activity/applyReimburse",
+    reimburse:"/api/activity/reimburse",
+    getSignWeekInfo:"/api/activity/getSignWeekInfo",
+    signInByWeek:"/api/activity/signInByWeek",
+    receiveHandleHeNeiWin:"/api/activity/receiveHandleHeNeiWin",
+    game_HandleQiQuWin:"/caidaxiao/api/HandleQiQuWin",
 }

@@ -169,7 +169,9 @@ export default class Dh extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return null
+        })
         if(response.status === 0){
             message.success('申请成功！');
             //更新余额

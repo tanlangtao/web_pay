@@ -82,7 +82,7 @@ export default class Lyhbp extends React.Component<Props,State>{
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
-            message.error(err)
+            return message.error("failed to load response data")
         })
         if(response.status === 0){
             this.setState({
@@ -111,7 +111,9 @@ export default class Lyhbp extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data;
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('领取成功！');
             //手动将领取结果赋值为1
@@ -140,7 +142,9 @@ export default class Lyhbp extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data;
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('申请成功！');
             this.setLocalApply()
@@ -161,7 +165,7 @@ export default class Lyhbp extends React.Component<Props,State>{
                     <div className ="li4 flexBox">10</div>
                     <div className ="li5 flexBox"> 
                         {
-                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received===0 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received===1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -254,6 +258,8 @@ export default class Lyhbp extends React.Component<Props,State>{
             this.setState({
                 is_received:JSON.parse(localFristPayAmount).is_received,
                 frist_pay_amount:JSON.parse(localFristPayAmount).frist_pay_amount
+            },()=>{
+                this.renderBtn()
             })
         }else{
             this.Axios_GetFristPayAmountByWeek()

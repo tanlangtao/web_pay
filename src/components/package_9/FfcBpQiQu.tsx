@@ -90,7 +90,9 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data;
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('领取成功！');
             this.Axios_getRewardFFCFlag();
@@ -113,7 +115,9 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data;
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('申请成功！');
             //缓存申请结果
@@ -128,7 +132,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
-            message.error(err)
+            return message.error("failed to load response data")
         })
         if(response.status === 0){
             this.setState({

@@ -62,7 +62,7 @@ export default class Bwfcjl extends React.Component<Props,State>{
                 }
             })
         }
-        if(this.state.PerformanceInfo.received_info[0].receive_amount> 0){
+        if(this.state.PerformanceInfo["received_info"] &&  this.state.PerformanceInfo.received_info[0].receive_amount> 0){
             this.state.PerformanceInfo.received_info.forEach((e)=>{
                 this.state.info.range.forEach((item,index)=>{
                     if(e.receive_amount === item.gold){
@@ -97,7 +97,9 @@ export default class Bwfcjl extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data;
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('申请成功！');
             this.Axios_getReceivePerformanceInfo();
@@ -110,7 +112,7 @@ export default class Bwfcjl extends React.Component<Props,State>{
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
-            message.error(err)
+            return message.error("failed to load response data")
         })
         if(response.status === 0){
             this.setState({

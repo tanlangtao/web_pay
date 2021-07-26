@@ -1,0 +1,93 @@
+$src:'../../asses/activity/package_10/';
+
+.CdxHeNei{
+    background-image: url($src+"bg/cdxbg_hn.png") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px;
+    width: 355px;
+    height: 210px;
+    font-size: 7px;
+    color: white;
+    position: relative;
+    .group{
+        width: 250px;
+        height: 90px;
+        position: absolute;
+        left: 10px;
+        top: 50px;
+        padding-top: 1.5px;
+        background-image: url($src+"sprite/biao1.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        .line{
+            display: flex;
+            height: 14.5px;
+            .li1{
+                width: 42px;
+            }
+            .li2{
+                width: 42px;
+            }
+            .li3{
+                width: 40px;
+            }
+            .li4{
+                width: 42px;
+            }
+            .li5{
+                width: 40px;
+            }
+            .li6{
+                width: 43px;
+                .btn_linqu{
+                    width: 40px;
+                    height: 12px;
+                    background-image: url($src+"sprite/btn_lq.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 40px;
+                    height: 12px;
+                    background-image: url($src+"sprite/btn_ylq.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .label1{
+            position: absolute;
+            left: 3px;
+            top: 45px;
+        }
+        .label2{
+            position: absolute;
+            width: 40px;
+            left: 85px;
+            top: 45px;
+            text-align: center;
+        }
+        .label3{
+            position: absolute;
+            left: 167px;
+            width: 40px;
+            top: 45px;
+            text-align: center;
+        }
+    }
+    .rule{
+        background: rgb(122, 132, 222);
+        position: absolute;
+        width: 340px;
+        left: 10px;
+        line-height: 8px;
+        top: 145px;
+        font-size: 6px;
+        color: white;
+        padding: 2px 0 0 2px;
+        p{
+            margin: 0px;
+        }
+    }
+}

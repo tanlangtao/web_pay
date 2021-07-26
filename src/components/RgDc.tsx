@@ -89,7 +89,9 @@ export default class RgDc extends React.Component<{},State>{
         data.append('user_id',gHandler.UrlData.user_id);
         let response = await Axios.post(url,data).then(response=>{
             return response.data
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.code === 0){
             self.Axios_artificial()
         }else{
@@ -113,7 +115,9 @@ export default class RgDc extends React.Component<{},State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.code === 0){
             message.success('操作成功,请到聊天中心交易！');
             //唤起IM

@@ -180,7 +180,9 @@ export default class RgDh extends React.Component<{},State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('申请成功！');
             //更新余额

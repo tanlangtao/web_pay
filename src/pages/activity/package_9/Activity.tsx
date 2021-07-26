@@ -17,6 +17,9 @@ import Lyhbp from 'components/package_9/Lyhbp';
 import RedRain from 'components/package_9/RedRain';
 import Ryjhd from 'components/package_9/Ryjhd';
 import UsdtCunKuan from 'components/package_9/UsdtCunKuan';
+import Xyhbpdfs from 'components/package_9/Xyhbpdfs';
+import DailySign from 'components/package_9/DailySign';
+import DailyActivity from 'components/package_9/DailyActivity';
 const { Header, Content, Sider } = Layout;
 
 interface State{
@@ -24,7 +27,7 @@ interface State{
     title :string,
     curData:ConfigItem
 }
-export default class Activity extends Component<{}, State> {
+export default class Activity9 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -47,9 +50,8 @@ export default class Activity extends Component<{}, State> {
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
-            message.error(err)
+            return message.error("failed to load response data")
         })
-        console.log(response)
         if(response.status === 0){
             this.setNavArr(response.data)
         }else{
@@ -72,6 +74,7 @@ export default class Activity extends Component<{}, State> {
         this.setState({
             navArr:navArr,
             curData:navArr[0],
+            title:navArr[0].name
         })
     }
     render() {
@@ -98,7 +101,7 @@ export default class Activity extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <div className='activity9'>
+            <div className='activity'>
                 <div
                     className='sider'
                 >
@@ -127,7 +130,13 @@ export default class Activity extends Component<{}, State> {
                                             (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
                                                 (this.state.title === "日业绩活动9" ? <Ryjhd curData={this.state.curData}/>:
                                                     (this.state.title === "USDT存款大礼包9" ? <UsdtCunKuan curData={this.state.curData}/>:
-                                                        <div></div>
+                                                        (this.state.title === "新用户包赔大放送9" ? <Xyhbpdfs curData={this.state.curData}/>:
+                                                            (this.state.title === "每日签到9" ? <DailySign curData={this.state.curData}/>:
+                                                                (this.state.title === "每日任务9" ? <DailyActivity curData={this.state.curData}/>:
+                                                                    <div></div>
+                                                                )
+                                                            )
+                                                        )
                                                     )
                                                 )
                                             )

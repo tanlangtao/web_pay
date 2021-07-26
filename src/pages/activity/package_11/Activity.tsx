@@ -47,7 +47,7 @@ export default class Activity extends Component<{}, State> {
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
-            message.error(err)
+            return message.error("failed to load response data")
         })
         this.IndexResults = response;
         if(this.IndexResults.status === 0){

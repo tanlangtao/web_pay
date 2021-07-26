@@ -51,7 +51,9 @@ export default class DhHistory extends React.Component<{},State>{
         let url = `${gHandler.UrlData.host}${Api.withDrawHistory}?${user_id}&${order_status}&${page}&${page_set}&${token}`;
         let  response= await Axios.get(url).then(response=>{
             return response.data
-        }).catch(err=>{  message.error(err) })
+        }).catch(err=>{
+            return null
+        })
         this.setState({
             HistoryResults:response
         })

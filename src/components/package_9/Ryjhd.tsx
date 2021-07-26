@@ -88,7 +88,9 @@ export default class Ryjhd extends React.Component<Props,State>{
         data.append('token',gHandler.token);
         let response = await Axios.post(url,data).then(response=>{
             return response.data;
-        }).catch(err => { message.error(err)} )
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
         if(response.status === 0){
             message.success('申请成功！');
             this.Axios_getReceivePerformanceInfo();
@@ -101,7 +103,7 @@ export default class Ryjhd extends React.Component<Props,State>{
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
-            message.error(err)
+            return message.error("failed to load response data")
         })
         if(response.status === 0){
             this.setState({
