@@ -161,7 +161,7 @@ export default class Xyhschd extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhschd" style={{
+            <div className ="Xyhschd9" style={{
                 transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                 marginLeft:gHandler.getLeftOff(),
                 marginTop:gHandler.getTopOff()

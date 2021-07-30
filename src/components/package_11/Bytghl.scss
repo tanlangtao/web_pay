@@ -1,0 +1,80 @@
+$src:'../../asses/activity/package_11/';
+
+.Bytghl{
+    background-image: url($src+"bg/event_xh_bytghl_content.png") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -88px -30px;
+    width: 450px;
+    height: 280px;
+    font-size: 7px;
+    color: white;
+    position: relative;
+    .group{
+        width: 250px;
+        height: 140px;
+        position: absolute;
+        left: 7px;
+        top: 70px;
+        padding-top: 1px;
+
+        .line{
+            display: flex;
+            height: 13.5px;
+            .li1{
+                width: 40px;
+            }
+            .li2{
+                width: 43px;
+            }
+            .li3{
+                width: 46px;
+            }
+            .li4{
+                width: 35px;
+            }
+            .li5{
+                width: 38px;
+            }
+            .li6{
+                width: 34px;
+                .btn_linqu{
+                    width: 30px;
+                    height: 12px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 30px;
+                    height: 12px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .label1{
+            position: absolute;
+            left: 7px;
+            top: 65px;
+        }
+        .label2{
+            position: absolute;
+            left: 170px;
+            top: 65px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 100px;
+        left: 250px;
+        line-height: 9px;
+        top: 28px;
+        font-size: 7px;
+        color: #FEFFC9;
+        p{
+            margin: 0px;
+        }
+    }
+}

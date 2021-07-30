@@ -101,7 +101,7 @@ export default class Activity9 extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <div className='activity'>
+            <div className='activity9'>
                 <div
                     className='sider'
                 >
@@ -112,7 +112,7 @@ export default class Activity9 extends Component<{}, State> {
                         <Swiper
                             direction={"vertical"}
                             spaceBetween={0}
-                            height={100}
+                            height={100+gHandler.getHeightDiff()}
                             // onSlideChange={() => console.log('slide change')}
                             // onSwiper={(swiper) => console.log(swiper)}
                         >

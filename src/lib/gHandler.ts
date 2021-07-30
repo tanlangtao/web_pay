@@ -96,5 +96,14 @@ class gHandlerC  {
     public getTopOff(){
         return window.screen.height - 375
     }
+    public getHeightDiff(){
+        let height = window.screen.height - 375 
+        if(height === 0){
+            height = (window.screen.width - 667)/2
+        }else if(height <0){
+            height = -10
+        }
+        return height
+    }
 }
 export const gHandler = new gHandlerC()

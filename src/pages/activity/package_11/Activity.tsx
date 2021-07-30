@@ -1,120 +1,155 @@
 import React ,{Component} from 'react';
 import { Layout, Menu, Icon, message } from 'antd';
-import { gHandler } from '../../../lib/gHandler';
+import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
-import {AliPayPaymentIndex} from '../../../interface/pay_interface';
+import {ConfigItem} from '../../../interface/activity_interface';
 import './Activity.scss';
-import RgDc from '../../../components/RgDc';
-import Recharge from '../../../components/Recharge';
-import RechargeHistory from '../../../components/RechargeHistory';
-const { Header, Content, Sider } = Layout;
-interface arrItem {
-    text:string,
-    icon:string
-}
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/swiper.scss';
+import Xyhschd11 from 'components/package_11/Xyhschd';
+import Lyhsc11 from 'components/package_11/Lyhsc';
+import RedRain11 from 'components/package_11/RedRain';
+import Bytghl from 'components/package_11/Bytghl';
+import DailyActivity11 from 'components/package_11/DailyActivity';
+import DailySign11 from 'components/package_11/DailySign';
+
 interface State{
-    navArr :arrItem[],
-    title :string
+    navArr :ConfigItem[],
+    title :string,
+    curData:ConfigItem
 }
-export default class Activity extends Component<{}, State> {
+export default class Activity11 extends Component<{}, State> {
     state = {
-        navArr:[{
-            text:'',
-            icon:'dollar'
-        }],
-        title:'专享快付'
+        navArr:[],
+        title:'',
+        curData:{
+            id:"",
+            info:"",
+            name:"",
+            is_close:"",
+            order_by:"",
+        }
     }
+    
     componentDidMount() {
         this.AxiosIndex()
-    }
-    IndexResults :AliPayPaymentIndex={
-        data:{
-            alipay:[],
-            bank_pay:[],
-            bankcard_transfer:[],
-            interval:[],
-            quick_pay:[],
-            union_pay:[],
-            wechat_pay:[]
-        },
-        msg:'',
-        status:-1
+
     }
     //请求首页
     private async  AxiosIndex(){
-        let url = `${gHandler.UrlData.host}${Api.aliPayPaymentIndex}?user_id=${gHandler.UrlData.user_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+        let url = `${gHandler.UrlData.host}${Api.activityConfig}?package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
             return message.error("failed to load response data")
         })
-        this.IndexResults = response;
-        if(this.IndexResults.status === 0){
-            this.setNavArr()
+        if(response.status === 0){
+            this.setNavArr(response.data)
         }else{
-            message.error(this.IndexResults.msg)
+            message.error(response.msg)
         }
     }
-    private setNavArr(){
-        var arr = [{icon:'aliwangwang',text :'专享快付' }];
-        if (this.IndexResults.data.alipay.length > 0 ) { arr.push({icon:'alipay-circle',text :'支付宝', })}
-        if (this.IndexResults.data.bankcard_transfer.length > 0 ) {arr.push({icon:'credit-card',text :'转账到银行卡' } )}
-        if (this.IndexResults.data.union_pay.length > 0 ) {arr.push({icon:'credit-card',text :'银联扫码' } )}
-        if (this.IndexResults.data.wechat_pay.length > 0 ) { arr.push({icon:'wechat',text :'微信' } )}
-        if (gHandler.UrlData.client==='desktop' && this.IndexResults.data.quick_pay.length > 0 ) { arr.push({icon:'credit-card',text :'快捷支付'} )}
-        if (gHandler.UrlData.client==='desktop' && this.IndexResults.data.bank_pay.length > 0  ) {arr.push({icon:'credit-card',text :'网银支付'}) }
-        arr.push({icon:'unordered-list',text:'充值历史'})
-        this.setState({
-            navArr:arr
+    private setNavArr(data:ConfigItem[]){
+        let navArr:ConfigItem[] = []
+        data.forEach(e=>{
+            if(e.info !== "" && e.info !== "{}"){
+                e.info = JSON.parse(e.info)
+            }else{
+                console.log("请检查配置信息！",e.name)
+            }
+            if(e.is_close === "2"){
+                navArr.push(e)
+            } 
         })
-    }
-    private setTitle(item:any){
+        navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
         this.setState({
-            title:item.item.props.title
+            navArr:navArr,
+            curData:navArr[0],
+            title:navArr[0].name
         })
     }
     render() {
         //渲染左侧导航
         let mapNav=()=>{
-            return this.state.navArr.map((item,index)=>{
-                return <Menu.Item  
+            return this.state.navArr.map((item:ConfigItem,index)=>{
+                return <SwiperSlide 
                     key={index} 
-                    title={item.text} 
-                    onClick={this.setTitle.bind(this)}
-                    className="nav-item"
                 >
-                    <Icon 
-                        type={item.icon} 
-                        className="nav-icon"
-                    />
-                    <span className="nav-text">{item.text}</span>
-                </Menu.Item>
+                    <div  onClick={()=>{
+                        this.setState({
+                            title:item.name,
+                            curData:item
+                        })
+                        console.log("点击nav",item.name)
+                    }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
+                        <div className = "btnline"></div>
+                        <div className={`navText ${
+                            item.name==="捕鱼通关豪礼11"?(item.name ===this.state.title ?"btn_bytghl1":"btn_bytghl2"):
+                                item.name==="新用户首存活动11"?(item.name ===this.state.title ?"btn_db_xyhsccj1":"btn_db_xyhsccj2"):
+                                    item.name==="老会员每日首存活动11"?(item.name ===this.state.title ?"btn_lhyschd1":"btn_lhyschd2"):
+                                        item.name==="四季发财红包雨11"?(item.name ===this.state.title ?"btn_redRain1":"btn_redRain2"):
+                                            item.name==="幸运轮盘11"?(item.name ===this.state.title ?"btn_xyzp1":"btn_xyzp2"):
+                                                item.name==="每日任务11"?(item.name ===this.state.title ?"btn_dailyMission1":"btn_dailyMission2"):   
+                                                    item.name==="每日签到11"?(item.name ===this.state.title ?"btn_qd1":"btn_qd2"):""
+                        }`} ></div>
+                    </div>
+                </SwiperSlide>
             })
         }
+        if(this.state.curData.id ===""){
+            return <div></div>
+        }
         return (
-            <Layout className='pay'>
-                <Header className='headerBox' style={{ background: '#fff', padding: 0,minWidth:650 }}>
-                    充值
-                </Header>
-                <Layout className ='rightLayout'>
-                    <Sider
-                        trigger={null} collapsible 
-                        theme ='light'
-                        className='pay_sider'
-                        width='30vh'
+            <div className='activity11'>
+                <div className='headerBox' >
+                    <div className={`title ${
+                        this.state.title==="捕鱼通关豪礼11"?"dm_title_bytghl":
+                            this.state.title==="新用户首存活动11"?"dm_title_xyhsc":
+                                this.state.title==="老会员每日首存活动11"?"dm_title_lhyschd":
+                                    this.state.title==="四季发财红包雨11"?"db_redrain":
+                                        this.state.title==="幸运轮盘11"?"xingyunlunpan":
+                                            this.state.title==="每日任务11"?"dm_title":   
+                                                this.state.title==="每日签到11"?"mrqd":""
+                    }`} ></div>
+                </div>
+                <div className ="contentBox">
+                    <div
+                        className='sider'
                     >
-                        <Menu theme="light" mode="inline" defaultSelectedKeys={[`0`]}>{mapNav()}</Menu>
-                    </Sider>
-                    <Content className="pay_content">
+                        <div className="navBox">
+                            <Swiper
+                                direction={"vertical"}
+                                spaceBetween={0}
+                                height={100+gHandler.getHeightDiff()}
+                                // onSlideChange={() => console.log('slide change')}
+                                // onSwiper={(swiper) => console.log(swiper)}
+                            >
+                                {mapNav()}
+                            </Swiper>
+                        </div>
+                    </div>
+                    <div className="content">
                         {
-                            this.state.title==='专享快付' ? <RgDc/>:
-                                (this.state.title==='充值历史'?<RechargeHistory/>:
-                                    <Recharge title ={this.state.title} IndexResults={this.IndexResults}/>)
+                            (this.state.title==='捕鱼通关豪礼11' ? <Bytghl curData={this.state.curData}/>:
+                                (this.state.title==='四季发财红包雨11' ? <RedRain11 curData={this.state.curData}/>:
+                                    (this.state.title==='老会员每日首存活动11' ? <Lyhsc11 curData={this.state.curData}/>:
+                                        (this.state.title==='新用户首存活动11' ? <Xyhschd11 curData={this.state.curData}/>:
+                                            (this.state.title==='每日任务11' ? <DailyActivity11 curData={this.state.curData}/>:
+                                                (this.state.title==='每日签到11' ? <DailySign11 curData={this.state.curData}/>:
+                                                    <div></div>
+                                                )   
+                                            )
+                                        )
+                                    )
+                                )
+                            )
                         }
-                    </Content>
-                </Layout>
-            </Layout>
+                    </div>
+                </div>
+            </div>
         )
     }
 }

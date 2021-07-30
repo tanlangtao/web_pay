@@ -16,6 +16,8 @@ import Xyhschd10 from 'components/package_10/Xyhschd';
 import AGAbp from 'components/package_10/AGAbp';
 import CdxHeNei from 'components/package_10/CdxHeNei';
 import CdxQiQu from 'components/package_10/CdxQiQu';
+import FfcBaoPeiQiQu from 'components/package_10/FfcBaoPeiQiQu';
+import FfcBaoPeiHeNei from 'components/package_10/FfcBaoPeiHeNei';
 
 interface State{
     navArr :ConfigItem[],
@@ -61,7 +63,7 @@ export default class Activity10 extends Component<{}, State> {
             }else{
                 console.log("请检查配置信息！",e.name)
             }
-            if(e.is_close === "1"){
+            if(e.is_close === "2"){
                 navArr.push(e)
             } 
         })
@@ -105,7 +107,7 @@ export default class Activity10 extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <div className='activity'>
+            <div className='activity10'>
                 <div className='headerBox flexBox' >
                     <div className='title_jchd'></div>
                 </div>
@@ -117,7 +119,7 @@ export default class Activity10 extends Component<{}, State> {
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100}
+                                height={100+gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -134,7 +136,11 @@ export default class Activity10 extends Component<{}, State> {
                                             (this.state.title==='AGA专属包赔10' ? <AGAbp curData={this.state.curData}/>:
                                                 (this.state.title==='河内连赢活动10' ? <CdxHeNei curData={this.state.curData}/>:
                                                     (this.state.title==='奇趣连赢活动10' ? <CdxQiQu curData={this.state.curData}/>:
-                                                        <div></div>
+                                                        (this.state.title==='奇趣分分彩包赔10' ? <FfcBaoPeiQiQu curData={this.state.curData}/>:
+                                                            (this.state.title==='河内分分彩包赔10' ? <FfcBaoPeiHeNei curData={this.state.curData}/>:
+                                                                <div></div>
+                                                            )
+                                                        )
                                                     )
                                                 )
                                             )

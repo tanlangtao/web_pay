@@ -6,66 +6,72 @@ import Axios from 'axios';
 import {message, Button} from 'antd';
 import "./DailyActivity.scss";
 import {ConfigItem} from '../../interface/activity_interface';
+import DailyActivityItem from "./DailyActivityItem";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/swiper.scss';
 interface Props {
     curData:ConfigItem
 }
 interface State {
-    info:any,
-    received_index:Array<number>,
+    Detail:any,
+    mapArray:any
 }
 export default class DailyActivity extends React.Component<Props,State>{
     state = {
-        info:{
-            flow_rate:0,
-            game:{
-                "5b1f3a3cb76a591e7f25170":{
-                    "101":{
-                        rounds:0,
-                        integral:0
-                    }
-                }
-            }
-        },
-        received_index:[0],
+        mapArray:[],
+        Detail:{}
     }
     btnIndex= 0 
-    
+    info :any={
+        flow_rate:0,
+        game:{
+            "5b1f3a3cb76a591e7f25170":{
+                "101":{
+                    rounds:0,
+                    integral:0
+                }
+            }
+        }
+    }
+    ActivityConfig :any=[]
     componentDidMount(){
-        this.setState({
-            info:this.props.curData.info
-        })
-        console.log(this.state.info,this.props.curData)
-        this.Axios_getSignWeekInfo()
+        this.info = this.props.curData.info
+        this.setActivityConfig()
+        console.log(this.info)
+        this.Axios_dayTaskDetail()
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
             return
         }
     }
-    onClick =(e:any)=>{
-        this.Axios_signInByWeek()
-    }
-    private async  Axios_getSignWeekInfo(){
-        let url = `${gHandler.UrlData.host}${Api.getSignWeekInfo}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+    private async  Axios_dayTaskDetail(){
+        let url = `${gHandler.UrlData.host}${Api.dayTaskDetail}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
             return message.error("failed to load response data")
         })
         if(response.status === 0){
-            
+            this.setState({
+                Detail:response.data
+            })
         }else{
             message.error(response.msg)
         }
     }
     //领取
-    private async Axios_signInByWeek(){
-        let url = `${gHandler.UrlData.host}${Api.signInByWeek}`;
+    private async Axios_getTask(game_id:string,task_id:string,callBack = ()=>{}){
+        let url = `${gHandler.UrlData.host}${Api.getTask}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
         data.append('package_id',gHandler.UrlData.package_id);
         data.append('activity_id',this.props.curData.id);
+        data.append('game_id',game_id);
+        data.append('task_id',task_id);
         data.append('login_ip',gHandler.UrlData.login_ip?gHandler.UrlData.login_ip:gHandler.UrlData.regin_ip);
         data.append('regin_ip',gHandler.UrlData.regin_ip);
         data.append('device_id',gHandler.UrlData.device_id);
@@ -78,39 +84,57 @@ export default class DailyActivity extends React.Component<Props,State>{
         })
         if(response.status === 0){
             message.success('领取成功！');
-            this.Axios_getSignWeekInfo()
+            this.Axios_dayTaskDetail()
+            callBack()
         }else{
             message.error(response.msg)
         }
     }
+    setActivityConfig(){
+        for(var game_id in this.info['game'] ){
+            for( var task_id in this.info['game'][game_id]){
+                var item = this.info['game'][game_id][task_id]
+                let data = {
+                    game_id : game_id,
+                    task_id :task_id,
+                    item :item,
+                }
+                this.ActivityConfig.push(data)
+                this.setState({
+                    mapArray:this.ActivityConfig
+                })
+            }
+        }
+        this.render()
+    }
     render (){
-        
+        if(JSON.stringify(this.state.Detail )=== "{}"){
+            return <div></div>
+        }
         let rangeLine = ()=>{
-            // this.state.info.sign_conf.map((e:any,index:number) => {
-            //     if(index<6){
-            //         return <div className ="li1 flexBox" key={index} onClick={this.onClick}>
-            //             <div className="font flexBox">第{e.sign_in}天</div>
-            //             <div className={`icon icon${index+1} `}>
-            //                 {
-            //                     this.state.received_index.indexOf(index+1)>-1?<div className="icon yilingqu"></div> :null
-            //                 }
-            //             </div>
-            //             <div className="jifen flexBox">{e.integral}积分</div>
-                        
-            //         </div>
-            //     }else{
-            //         return null
-            //     }
-            // })
+            return this.state.mapArray.map((e:any,index:number) => {
+                return <SwiperSlide key={index}>
+                    <DailyActivityItem  data={e} Detail={this.state.Detail} Axios_getTask={this.Axios_getTask.bind(this)}></DailyActivityItem>
+                </SwiperSlide>
+                
+            })
         }
         return (
-            <div className ="DailyActivity" style={{
+            <div className ="DailyActivity9" style={{
                 transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                 marginLeft:gHandler.getLeftOff(),
                 marginTop:gHandler.getTopOff()
             }}>
-                <div className = "group">
-                    
+                <div className="Swiper">
+                    <Swiper
+                        direction={"vertical"}
+                        spaceBetween={10}
+                        height={170+gHandler.getHeightDiff()}
+                        // onSlideChange={() => console.log('slide change')}
+                        // onSwiper={(swiper) => console.log(swiper)}
+                    >
+                        {rangeLine()}
+                    </Swiper>
                 </div>
             </div>
         )

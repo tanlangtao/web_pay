@@ -1,0 +1,115 @@
+$src:'../../asses/activity/package_10/';
+
+.FfcBaoPeiHeNei{
+    background-image:url($src+"bg/ffcBaoPeiBg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px;
+
+    width: 355px;
+    height: 210px;
+    font-size: 7px;
+    color: white;
+    position: relative;
+    .xyhbp_bg{
+        height: 100px;
+        width: 300px;
+        background-image: url($src+"bg/xyhbp_bg.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 0px;
+        top: 15px;
+    }
+    .group{
+        width: 340px;
+        height: 70px;
+        position: absolute;
+        left: 7px;
+        top: 70px;
+        font-size: 7px;
+        background-image: url($src+"sprite/ffc_biao.png") ;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        .line{
+            display: flex;
+            height: 14px;
+            .li1{
+                width: 50px;
+            }
+            .li2{
+                width: 56px;
+            }
+            .li3{
+                width: 61px;
+            }
+            .li4{
+                width: 45px;
+            }
+            .li5{
+                width: 45px;
+            }
+            .li6{
+                width: 38px;
+                .btn_linqu{
+                    width: 30px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_lq.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 30px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_ylq.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .applyBtn{
+            position: absolute;
+            width: 40px;
+            height: 12px;
+            top: 20px;
+            left: 302px;
+            background-image:url($src+"sprite/anniu.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .applyFilter{
+            position: absolute;
+            width: 40px;
+            height: 12px;
+            top: 20px;
+            left: 302px;
+            background-image:url($src+"sprite/anniu.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyYlingqu{
+
+        }
+        .applyBtnLabel{
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            top: 35px;
+            left: 298px;
+            font-size: 6px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 350px;
+        left: 5px;
+        line-height: 7px;
+        top: 142px;
+        font-size: 6px;
+        p{
+            margin: 1px;
+        }
+    }
+}

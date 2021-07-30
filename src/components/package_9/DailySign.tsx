@@ -113,7 +113,7 @@ export default class DailySign extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="DailySign" style={{
+            <div className ="DailySign9" style={{
                 transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                 marginLeft:gHandler.getLeftOff(),
                 marginTop:gHandler.getTopOff()

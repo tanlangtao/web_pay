@@ -1,0 +1,120 @@
+$src:'../../asses/activity/DailySign/';
+
+.DailyActivity11{
+    background-image:url($src+"contentBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 360px;
+    height: 215px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    .title{
+        position: absolute;
+        top: 10px;
+        font-size: 10px;
+        width: 100%;
+    }
+    .DailyActivityItem{
+        width: 350px;
+        margin-left: 5px;
+        height: 100%;
+        background-image:url($src+"dailyitembg.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        .icon{
+            width: 60px;
+            height: 80%;
+            background-image:url($src+"vs.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;  
+            position: absolute;
+            top: 10%;
+        }
+        .gameLabel{
+            color: #FFF0A0;
+            width: 150px;
+            height: 20%;
+            position: absolute;
+            top: 10%;
+            left: 65px;
+        }
+        .rewardLabel{
+            width: 30px;
+            height: 15px;
+            position: absolute;
+            top: 10%;
+            left: 205px;
+            background-repeat: no-repeat;
+            background-size: contain;  
+            justify-content: flex-end;
+        }
+        .fen{
+            background-image:url($src+"fen.png");
+        }
+        .jb{
+            background-image:url($src+"jb.png");
+        }
+        .targetlabel{
+            width: 150x;
+            height: 20%;
+            position: absolute;
+            top: 65%;
+            left: 65px;
+        }
+        .progresslabel{
+            width: 20px;
+            height: 20%;
+            position: absolute;
+            top: 65%;
+            left: 220px;
+        }
+        .btn{
+            width: 60px;
+            height: 20px;
+            position: absolute;
+            top: 35%;
+            right: 20px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        .lingquBtn{
+            background-image:url($src+"fdsafsd.png");
+        }
+        .goToBtn{
+            background-image:url($src+"yrt.png");
+        }
+        .lingquDoneBtn{
+            background-image:url($src+"hgrt.png");
+        }
+        .progress{
+            background-image:url($src+"jd1.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            width: 4rem;
+            height: 13px;
+            position: absolute;
+            top: 40%;
+            left: 65px; 
+            overflow: hidden;
+            .progressBar{
+                background-image:url($src+"jd2.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 0;
+                height: 11px;
+                margin-top:1px;
+                border-radius: 5px;
+            }
+        }
+        
+    }
+    .Swiper{
+        height: 230px;
+        overflow: hidden;
+        width: 360px;
+        margin: 0 auto;
+        margin-top: 10px;
+    }
+}

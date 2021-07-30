@@ -33,4 +33,8 @@ export const Api ={
     signInByWeek:"/api/activity/signInByWeek",
     receiveHandleHeNeiWin:"/api/activity/receiveHandleHeNeiWin",
     game_HandleQiQuWin:"/caidaxiao/api/HandleQiQuWin",
+    receiveFishPassGold:"/api/activity/receiveFishPassGold",
+    getReceiveFishInfo:"/api/activity/getReceiveFishInfo",
+    getTask:"/api/activity/getTask",
+    dayTaskDetail:"/api/activity/dayTaskDetail",
 }
