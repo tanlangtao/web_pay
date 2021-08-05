@@ -173,11 +173,7 @@ export default class Xyhbp10 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhbp10" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Xyhbp10" >
                 <div className ="zxbp_zi "></div>
                 <div className ="zxbpBg "></div>
                 <div className = "group">

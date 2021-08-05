@@ -177,11 +177,7 @@ export default class FfcBaoPeiHeNei extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="FfcBaoPeiHeNei" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="FfcBaoPeiHeNei" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#4D5F95"}}>游戏局数</div>

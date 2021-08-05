@@ -1,0 +1,61 @@
+$src:'../../asses/activity/package_12/';
+
+.Bwfcjl12{
+    background-image:url($src+"bg/XL_event_20210802-3_content.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -88px -35px;
+    width: 370px;
+    height: 255px;
+    color: white;
+    position: relative;
+    .group{
+        width: 185px;
+        height: 105px;
+        position: absolute;
+        left: 16px;
+        top: 146px;
+        padding-top: 3px;
+        .line{
+            display: flex;
+            height: 14px;
+            .li1{
+                width: 50px;
+            }
+            .li2{
+                width: 50px;
+            }
+            .li3{
+                width: 50px;
+            }
+            .li4{
+                width: 30px;
+                .btn_linqu{
+                    width: 30px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+                .btn_Ylinqu{
+                    width: 30px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                }
+            }
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 168px;
+        left: 205px;
+        line-height: 11px;
+        top: 58px;
+        color: #E8C999;
+        p{
+            margin: 2px;
+        }
+    }
+}

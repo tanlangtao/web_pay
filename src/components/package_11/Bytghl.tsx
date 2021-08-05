@@ -153,11 +153,7 @@ export default class Bytghl extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Bytghl" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Bytghl" >
                 <div className = "group">
                     <div className="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>活动对象</div>

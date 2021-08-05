@@ -7,7 +7,7 @@ module.exports = override(
     }),
     addPostcssPlugins([
         require('postcss-px2rem-exclude')({ 
-            remUnit: 37.5 
+            remUnit: 37.5
         ,exclude:/node_modules/i})
     ])
 )

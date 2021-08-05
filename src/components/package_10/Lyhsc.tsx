@@ -156,11 +156,7 @@ export default class Lyhsc10 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhsc10" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Lyhsc10" >
                 <div className = "group">
                     {
                         rangeLine()

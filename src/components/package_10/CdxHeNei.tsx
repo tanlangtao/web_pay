@@ -141,11 +141,7 @@ export default class CdxHeNei extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="CdxHeNei" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="CdxHeNei" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#4D5F95"}}>游戏房间</div>

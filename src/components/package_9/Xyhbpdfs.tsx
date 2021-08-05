@@ -173,11 +173,7 @@ export default class Xyhbpdfs extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhbpdfs" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Xyhbpdfs" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>

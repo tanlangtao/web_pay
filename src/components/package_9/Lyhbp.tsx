@@ -174,11 +174,7 @@ export default class Lyhbp extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhbp" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Lyhbp" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>

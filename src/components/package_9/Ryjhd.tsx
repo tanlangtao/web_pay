@@ -133,11 +133,7 @@ export default class Ryjhd extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Ryjhd" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Ryjhd" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>团队周业绩</div>

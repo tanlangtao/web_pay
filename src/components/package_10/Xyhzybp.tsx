@@ -173,11 +173,7 @@ export default class Xyhzybp extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhzybp10" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Xyhzybp10" >
                 <div className ="xyhbp_bg"></div>
                 <div className = "group">
                     <div className ="line">

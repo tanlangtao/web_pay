@@ -156,11 +156,7 @@ export default class Lyhsc extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhsc" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="Lyhsc" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#646CBD"}}>充值金额</div>

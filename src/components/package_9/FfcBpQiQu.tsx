@@ -166,11 +166,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="FfcBaopei_QiQu" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="FfcBaopei_QiQu" >
                 <div className = "group">
                     <div className ="line">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>游戏房间</div>

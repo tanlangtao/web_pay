@@ -120,16 +120,12 @@ export default class DailyActivity extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="DailyActivity9" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="DailyActivity9" >
                 <div className="Swiper">
                     <Swiper
                         direction={"vertical"}
                         spaceBetween={10}
-                        height={170+gHandler.getHeightDiff()}
+                        height={170}
                         // onSlideChange={() => console.log('slide change')}
                         // onSwiper={(swiper) => console.log(swiper)}
                     >

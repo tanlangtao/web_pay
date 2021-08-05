@@ -119,7 +119,8 @@ export default class Activity10 extends Component<{}, State> {
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100+gHandler.getHeightDiff()}
+                                // height={100+gHandler.getHeightDiff()}
+                                height={100}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >

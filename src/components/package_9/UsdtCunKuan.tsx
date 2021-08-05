@@ -167,11 +167,7 @@ export default class UsdtCunKuan extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="UsdtCunKuan" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="UsdtCunKuan" >
                 <div className = "group">
                     {
                         rangeLine()

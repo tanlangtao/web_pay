@@ -113,11 +113,7 @@ export default class DailySign extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="DailySign9" style={{
-                transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                marginLeft:gHandler.getLeftOff(),
-                marginTop:gHandler.getTopOff()
-            }}>
+            <div className ="DailySign9" >
                 <div className ="title flexBox" style={{color:"#E8B56F"}}>每周累计签到达到指定天数, 即可获得相应奖励</div>
                 <div className = "group">
                     {
