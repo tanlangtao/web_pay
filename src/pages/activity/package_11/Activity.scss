@@ -18,6 +18,16 @@ $src:'../../../asses/activity/package_11/';
         background-repeat: no-repeat;
         background-size: contain;
         position: relative;
+        .returnToHall{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url($src+"sprite/fanhui.png");
+            height: 30px;
+            width: 40px;
+            position: absolute;
+            left:0px;
+            top: -5px;
+        }
         .title{
             background-repeat: no-repeat;
             background-size: contain;

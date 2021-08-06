@@ -14,32 +14,32 @@ $src:'../../asses/activity/package_12/';
         width: 190px;
         height: 100px;
         position: absolute;
-        left: 14px;
-        top: 52px;
+        left: 177px;
+        top: 13px;
         .line{
             display: flex;
-            height: 11.8px;
+            height: 13.7px;
             .li1{
-                width: 52px;
+                width: 51px;
             }
             .li2{
-                width: 52px;
+                width: 47px;
             }
             .li3{
-                width: 52px;
+                width: 47px;
             }
             .li4{
-                width: 32px;
+                width: 36px;
                 .btn_linqu{
-                    width: 30px;
-                    height: 12px;
+                    width: 26px;
+                    height: 11px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 30px;
-                    height: 12px;
+                    width: 26px;
+                    height: 11px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
@@ -48,16 +48,16 @@ $src:'../../asses/activity/package_12/';
         }
         .label1{
             position: absolute;
-            left: 112px;
-            top: 27px;
+            left: 102px;
+            top: 45px;
         }
     }
     .rule{
         position: absolute;
         width: 320px;
-        left: 15px;
+        left: 35px;
         line-height: 10px;
-        top: 135px;
+        top: 131px;
         font-size: 7px;
         color: #FEFFC9;
         p{

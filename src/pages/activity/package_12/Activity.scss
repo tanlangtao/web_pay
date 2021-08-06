@@ -17,13 +17,22 @@ $src:'../../../asses/activity/package_12/';
         background-size: 100% 100%;
         background-image: url($src+"sprite/header.png");
         position: relative;
+        .returnToHall{
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-image: url($src+"sprite/fanhui2.png");
+            height: 40px;
+            width: 120px;
+            position: absolute;
+            left:0px;
+        }
         .title{
             background-repeat: no-repeat;
             background-size: contain;
             height: 35px;
             width: 150px;
             position: absolute;
-            left: 90px;
+            left: 100px;
             top: 10px;
         }
         .event_xl_bwfc_title{background-image: url($src+"title/event_xl_bwfc_title.png")}

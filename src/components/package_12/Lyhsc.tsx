@@ -159,9 +159,9 @@ export default class Lyhsc12 extends React.Component<Props,State>{
             <div className ="Lyhsc12" >
                 <div className = "group">
                     <div className="line">
-                        <div className ="li1 flexBox" style={{color:"#E8B56F"}}>充值金额</div>
-                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>赠送金额</div>
-                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>流水要求</div>
+                        <div className ="li1 flexBox" style={{color:"#6F6BDA"}}>充值金额</div>
+                        <div className ="li2 flexBox" style={{color:"#6F6BDA"}}>赠送金额</div>
+                        <div className ="li3 flexBox" style={{color:"#6F6BDA"}}>流水要求</div>
                     </div>
                     {
                         rangeLine()
@@ -181,11 +181,11 @@ export default class Lyhsc12 extends React.Component<Props,State>{
                 </div>
                 <div className = "rule">
                     <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
-                    <p>2.游戏规则：仅限参与财神到，水果机，捕鱼·海王，捕鱼·聚宝盆，百人牛牛，红包乱斗，二八杠，21点，奔驰宝马游戏。</p>
+                    <p>2.游戏规则：仅参加以下游戏《财神到》《水果机》《多福多财》《疯狂旋涡》《捕鱼·聚宝盆》《捕鱼·海王》。</p>
                     <p>3.单日充值金额累加统计，当日累计充值金额达到指定档位，即可领取活动规定的相应金币。</p>
                     <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
                     <p>5.每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
-                    <p>6. 本活动最终解释权归新豪所有。</p>
+                    <p>6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
                 </div>
             </div>
         )

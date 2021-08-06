@@ -194,7 +194,7 @@ export default class Xyhbpdfs extends React.Component<Props,State>{
                     </div>
                 </div>
                 <div className = "rule">
-                    <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天${gHandler.transitionTime(this.state.info.start)}-${gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
+                    <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
                     <p>2. 平台中的新玩家活动只能参加其中一个，申请后即视为参加此活动。</p>
                     <p>3. 参加活动的玩家只能进行《财神到》《捕鱼·海王》《捕鱼·聚宝盆》《水果机》《多福多财》《疯狂旋涡》指定游戏，进行其他游戏视为放弃活动。</p>
                     <p>4. 在规定游戏中投注对应档位最高单注金额内，亏损至余额低于10金币时即可在本活动界面领取活动彩金，当日23:59:59未进行领取视为自动放弃。</p>

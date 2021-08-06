@@ -70,6 +70,9 @@ export default class Activity12 extends Component<{}, State> {
             title:navArr[0].name
         })
     }
+    returnToHall(){
+        gHandler.closewebview()
+    }
     render() {
         //渲染左侧导航
         let mapNav=()=>{
@@ -101,6 +104,7 @@ export default class Activity12 extends Component<{}, State> {
         return (
             <div className='activity12'>
                 <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className={`title ${
                         this.state.title==="捕鱼包赔活动12"?"event_xl_bybp_title":
                             this.state.title==="新用户首存活动12"?"event_xl_xyhsc_title":
@@ -117,7 +121,7 @@ export default class Activity12 extends Component<{}, State> {
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={145}
+                                height={145+gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -125,7 +129,11 @@ export default class Activity12 extends Component<{}, State> {
                             </Swiper>
                         </div>
                     </div>
-                    <div className="content">
+                    <div className="content"style={{
+                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                        marginLeft:gHandler.getLeftOff(),
+                        marginTop:gHandler.getTopOff()
+                    }}>
                         {
                             (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
                                 (this.state.title==='新用户首存活动12' ? <Xyhschd12 curData={this.state.curData}/>:

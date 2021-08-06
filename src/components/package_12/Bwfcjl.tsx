@@ -18,6 +18,8 @@ interface State {
 export default class Bwfcjl12 extends React.Component<Props,State>{
     state = {
         info:{
+            start:0,
+            end:0,
             range:[{
                 performance:0,
                 gold:0,
@@ -146,9 +148,9 @@ export default class Bwfcjl12 extends React.Component<Props,State>{
             <div className ="Bwfcjl12" >
                 <div className = "group">
                     <div className ="line">
-                        <div className ="li1 flexBox" style={{color:"#E8B56F"}}>团队周业绩</div>
-                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>我的返佣</div>
-                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>扶持彩金</div>
+                        <div className ="li1 flexBox" style={{color:"#6F6BDA"}}>团队周业绩</div>
+                        <div className ="li2 flexBox" style={{color:"#6F6BDA"}}>我的返佣</div>
+                        <div className ="li3 flexBox" style={{color:"#6F6BDA"}}>扶持彩金</div>
                     </div>
                     {
                         rangeLine()
@@ -158,7 +160,7 @@ export default class Bwfcjl12 extends React.Component<Props,State>{
                     <p>1. 玩家需要绑定手机号和银行卡才能参与。</p>
                     <p>2. 统计规则：只统计棋牌类游戏+第三方电子类游戏的有效投注。</p>
                     <p>3. 玩家上周团队总业绩和我的总返佣均达标可前往活动界面进行领取彩金。</p>
-                    <p>4. 领取时间： 每周一12:00:00-23:59:59， 逾期未领取视为自动放弃。</p>
+                    <p>4. 领取时间： 每周一{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}， 逾期未领取视为自动放弃。</p>
                     <p>5. 同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金可直接申请兑换。</p>
                     <p>6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
                 </div>

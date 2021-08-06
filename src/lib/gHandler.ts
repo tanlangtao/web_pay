@@ -105,5 +105,8 @@ class gHandlerC  {
         }
         return height
     }
+    closewebview(){
+        window.location.href = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? "closewebview://a=1&b=2" :  "http://closewebview";
+    }
 }
 export const gHandler = new gHandlerC()

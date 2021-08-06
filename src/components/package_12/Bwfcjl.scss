@@ -13,47 +13,47 @@ $src:'../../asses/activity/package_12/';
         width: 185px;
         height: 105px;
         position: absolute;
-        left: 16px;
-        top: 146px;
-        padding-top: 3px;
+        left: 186px;
+        top: 4px;
         .line{
             display: flex;
-            height: 14px;
+            height: 13.4px;
             .li1{
-                width: 50px;
+                width: 48px;
             }
             .li2{
-                width: 50px;
+                width: 45px;
             }
             .li3{
-                width: 50px;
+                width: 45px;
             }
             .li4{
                 width: 30px;
                 .btn_linqu{
-                    width: 30px;
-                    height: 10px;
+                    width: 26px;
+                    height: 11px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
-                    background-size: cover;
+                    background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 30px;
-                    height: 10px;
+                    width: 26px;
+                    height: 11px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
-                    background-size: cover;
+                    background-size: contain;
                 }
             }
         }
     }
     .rule{
         position: absolute;
-        width: 168px;
-        left: 205px;
-        line-height: 11px;
-        top: 58px;
-        color: #E8C999;
+        width: 330px;
+        left: 30px;
+        line-height: 7.5px;
+        top: 141px;
+        color: #FEFFC9;
+        font-size: 7px;
         p{
             margin: 2px;
         }

@@ -77,6 +77,9 @@ export default class Activity9 extends Component<{}, State> {
             title:navArr[0].name
         })
     }
+    returnToHall(){
+        gHandler.closewebview()
+    }
     render() {
         //渲染左侧导航
         let mapNav=()=>{
@@ -106,13 +109,14 @@ export default class Activity9 extends Component<{}, State> {
                     className='sider'
                 >
                     <div className='headerBox' >
+                        
                         <div className='title_jchd'></div>
                     </div>
                     <div className="navBox">
                         <Swiper
                             direction={"vertical"}
                             spaceBetween={0}
-                            height={100}
+                            height={100+gHandler.getHeightDiff()}
                             // onSlideChange={() => console.log('slide change')}
                             // onSwiper={(swiper) => console.log(swiper)}
                         >
@@ -120,7 +124,11 @@ export default class Activity9 extends Component<{}, State> {
                         </Swiper>
                     </div>
                 </div>
-                <div className="content">
+                <div className="content"style={{
+                    transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                    marginLeft:gHandler.getLeftOff(),
+                    marginTop:gHandler.getTopOff()
+                }}>
                     {
                         this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
                             (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
@@ -146,6 +154,7 @@ export default class Activity9 extends Component<{}, State> {
                             )
                     }
                 </div>
+                <div className="returnToHall" onClick={this.returnToHall}></div>
             </div>
         )
     }

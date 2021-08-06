@@ -21,6 +21,7 @@ $src:'../../../asses/activity/package_9/';
             background-image:url($src+"d_title.png");
             background-repeat: no-repeat;
             background-size: contain;
+            
             .title_jchd{
                 background-image:url($src+"title/title_jchd.png");
                 background-repeat: no-repeat;
@@ -62,6 +63,16 @@ $src:'../../../asses/activity/package_9/';
     .content{
         margin-left: 2px;
         margin-top: 2px;
+    }
+    .returnToHall{
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url($src+"sprite/btn_fh.png");
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        right:0px;
+        top: 0px;
     }
 }
 .flexBox{
