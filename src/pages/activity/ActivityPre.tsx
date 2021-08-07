@@ -9,7 +9,6 @@ interface State{
 export default class ActivityPre extends Component<{}, State> {
     
     render() {
-        
         return (
             gHandler.UrlData.package_id==='9' ? <Activity9/>:
                 (gHandler.UrlData.package_id==='10' ?<Activity10/>:

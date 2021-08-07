@@ -15,8 +15,9 @@ import RedRain11 from 'components/package_11/RedRain';
 import Bytghl from 'components/package_11/Bytghl';
 import DailyActivity11 from 'components/package_11/DailyActivity';
 import DailySign11 from 'components/package_11/DailySign';
-
+import FirstComponent from '../../../FirstComponent';
 interface State{
+    loading:Boolean,
     navArr :ConfigItem[],
     title :string,
     curData:ConfigItem
@@ -31,12 +32,19 @@ export default class Activity11 extends Component<{}, State> {
             name:"",
             is_close:"",
             order_by:"",
-        }
+        },
+        loading:false
     }
-    
-    componentDidMount() {
+    componentWillMount(){
+        this.setState({
+            loading:true
+        })
+    }
+    componentDidMount(){
+        this.setState({
+            loading:false
+        })
         this.AxiosIndex()
-
     }
     //请求首页
     private async  AxiosIndex(){
@@ -106,7 +114,7 @@ export default class Activity11 extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <div className='activity11'>
+            !this.state.loading?<div className='activity11'>
                 <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className={`title ${
@@ -121,13 +129,15 @@ export default class Activity11 extends Component<{}, State> {
                 </div>
                 <div className ="contentBox">
                     <div
-                        className='sider'
-                    >
+                        className='sider' style={{
+                            transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                            marginTop:gHandler.getTopOff()
+                        }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100+gHandler.getHeightDiff()}
+                                height={100*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -158,6 +168,7 @@ export default class Activity11 extends Component<{}, State> {
                     </div>
                 </div>
             </div>
+                :<FirstComponent></FirstComponent>
         )
     }
 }

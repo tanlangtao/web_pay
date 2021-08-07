@@ -14,11 +14,12 @@ import Xyhschd12 from 'components/package_12/Xyhschd';
 import Lyhsc12 from 'components/package_12/Lyhsc';
 import Xyhbp12 from 'components/package_12/Xyhbp';
 import Bwfcjl12 from 'components/package_12/Bwfcjl';
-
+import FirstComponent from '../../../FirstComponent';
 interface State{
     navArr :ConfigItem[],
     title :string,
-    curData:ConfigItem
+    curData:ConfigItem,
+    loading:Boolean
 }
 export default class Activity12 extends Component<{}, State> {
     state = {
@@ -30,12 +31,19 @@ export default class Activity12 extends Component<{}, State> {
             name:"",
             is_close:"",
             order_by:"",
-        }
+        },
+        loading:false
     }
-    
-    componentDidMount() {
+    componentWillMount(){
+        this.setState({
+            loading:true
+        })
+    }
+    componentDidMount(){
+        this.setState({
+            loading:false
+        })
         this.AxiosIndex()
-
     }
     //请求首页
     private async  AxiosIndex(){
@@ -102,7 +110,7 @@ export default class Activity12 extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <div className='activity12'>
+            !this.state.loading?<div className='activity12'>
                 <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className={`title ${
@@ -114,14 +122,15 @@ export default class Activity12 extends Component<{}, State> {
                     }`} ></div>
                 </div>
                 <div className ="contentBox">
-                    <div
-                        className='sider'
-                    >
+                    <div className='sider' style={{
+                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                        marginTop:gHandler.getTopOff12()
+                    }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={145+gHandler.getHeightDiff()}
+                                height={145*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -132,7 +141,7 @@ export default class Activity12 extends Component<{}, State> {
                     <div className="content"style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff()
+                        marginTop:gHandler.getTopOff12()
                     }}>
                         {
                             (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
@@ -150,6 +159,7 @@ export default class Activity12 extends Component<{}, State> {
                     </div>
                 </div>
             </div>
+                :<FirstComponent></FirstComponent>
         )
     }
 }

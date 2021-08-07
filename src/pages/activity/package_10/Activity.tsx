@@ -18,8 +18,9 @@ import CdxHeNei from 'components/package_10/CdxHeNei';
 import CdxQiQu from 'components/package_10/CdxQiQu';
 import FfcBaoPeiQiQu from 'components/package_10/FfcBaoPeiQiQu';
 import FfcBaoPeiHeNei from 'components/package_10/FfcBaoPeiHeNei';
-
+import FirstComponent from '../../../FirstComponent';
 interface State{
+    loading:Boolean,
     navArr :ConfigItem[],
     title :string,
     curData:ConfigItem
@@ -34,12 +35,19 @@ export default class Activity10 extends Component<{}, State> {
             name:"",
             is_close:"",
             order_by:"",
-        }
+        },
+        loading:false
     }
-    
-    componentDidMount() {
+    componentWillMount(){
+        this.setState({
+            loading:true
+        })
+    }
+    componentDidMount(){
+        this.setState({
+            loading:false
+        })
         this.AxiosIndex()
-
     }
     //请求首页
     private async  AxiosIndex(){
@@ -110,20 +118,21 @@ export default class Activity10 extends Component<{}, State> {
             return <div></div>
         }
         return (
-            <div className='activity10'>
+            !this.state.loading ?<div className='activity10'>
                 <div className='headerBox flexBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className='title_jchd'></div>
                 </div>
                 <div className ="contentBox">
-                    <div
-                        className='sider'
-                    >
+                    <div className='sider' style={{
+                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                        marginTop:gHandler.getTopOff10()
+                    }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100+gHandler.getHeightDiff()}
+                                height={100*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -134,7 +143,7 @@ export default class Activity10 extends Component<{}, State> {
                     <div className="content" style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff()
+                        marginTop:gHandler.getTopOff10()
                     }}>
                         {
                             (this.state.title==='专线包赔活动10' ? <Xyhbp10 curData={this.state.curData}/>:
@@ -160,6 +169,7 @@ export default class Activity10 extends Component<{}, State> {
                     </div>
                 </div>
             </div>
+                :<FirstComponent></FirstComponent>
         )
     }
 }

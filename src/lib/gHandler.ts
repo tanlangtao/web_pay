@@ -93,17 +93,34 @@ class gHandlerC  {
     public getLeftOff(){
         return window.screen.width - 667
     }
+    public getTopOff10(){
+        let topoff = window.screen.height - 375
+        
+        return topoff
+    }
+    public getTopOff12(){
+        let topoff = window.screen.height - 375
+        if(topoff <0){
+            topoff =  375 - window.screen.height
+        }
+        return topoff
+    }
     public getTopOff(){
-        return window.screen.height - 375
+        let topoff = window.screen.height - 375
+        if(topoff <0){
+            topoff =  0
+        }
+        return topoff
     }
     public getHeightDiff(){
-        let height = window.screen.height - 375 
-        if(height === 0){
-            height = (window.screen.width - 667)/2
-        }else if(height <0){
-            height = -10
+        let fontSize = document.getElementsByTagName("html")[0].style.fontSize
+        let neHeight=0
+        if(fontSize){
+            neHeight = Number(fontSize.slice(0,-2))/108
+        }else{
+            neHeight = 1
         }
-        return height
+        return neHeight
     }
     closewebview(){
         window.location.href = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? "closewebview://a=1&b=2" :  "http://closewebview";
