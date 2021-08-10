@@ -80,11 +80,13 @@ export default class Activity9 extends Component<{}, State> {
             } 
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
-        this.setState({
-            navArr:navArr,
-            curData:navArr[0],
-            title:navArr[0].name
-        })
+        if(navArr.length>0){
+            this.setState({
+                navArr:navArr,
+                curData:navArr[0],
+                title:navArr[0].name
+            })
+        }
     }
     returnToHall(){
         gHandler.closewebview()
@@ -110,16 +112,20 @@ export default class Activity9 extends Component<{}, State> {
             })
         }
         if(this.state.curData.id ===""){
-            return <div></div>
+            return <div className='activity9'>
+                <div className='headerBox' >
+                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
+                </div>
+            </div>
         }
         return (
             !this.state.loading?<div className='activity9'>
                 <div className='sider' style={{
+                    zIndex:2,
                     transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                     marginTop:gHandler.getTopOff10()
                 }}>
                     <div className='headerBox' >
-                        
                         <div className='title_jchd'></div>
                     </div>
                     <div className="navBox">
@@ -135,6 +141,7 @@ export default class Activity9 extends Component<{}, State> {
                     </div>
                 </div>
                 <div className="content"style={{
+                    zIndex:1,
                     transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                     marginLeft:gHandler.getLeftOff(),
                     marginTop:gHandler.getTopOff10()
@@ -164,7 +171,7 @@ export default class Activity9 extends Component<{}, State> {
                             )
                     }
                 </div>
-                <div className="returnToHall" onClick={this.returnToHall}></div>
+                {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
             </div>
                 :<FirstComponent></FirstComponent>
         )

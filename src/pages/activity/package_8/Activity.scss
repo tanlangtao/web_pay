@@ -1,5 +1,5 @@
 $src:'../../../asses/activity/package_12/';
-.activity12{
+.activity8{
     font-family: 'Microsoft Yahei';
     font-size: 8px;
     background-image:url($src+"bg/bg.png");
@@ -35,11 +35,8 @@ $src:'../../../asses/activity/package_12/';
             left: 100px;
             top: 10px;
         }
-        .event_xl_bwfc_title{background-image: url($src+"title/event_xl_bwfc_title.png")}
-        .event_xl_bybp_title{background-image: url($src+"title/event_xl_bybp_title.png")}
+        .db_redrain{background-image: url($src+"title/db_redrain.png")}
         .event_xl_lyhsc_title{background-image: url($src+"title/event_xl_lyhsc_title.png")}
-        .event_xl_xyhbp_title{background-image: url($src+"title/event_xl_xyhbp_title.png")}
-        .event_xl_xyhsc_title{background-image: url($src+"title/event_xl_xyhsc_title.png")}
     }
     .contentBox{
         width: 100%;
@@ -48,7 +45,7 @@ $src:'../../../asses/activity/package_12/';
     }
     .sider{
         background:transparent;
-        width: 90px;
+        width: 100px;
         height: 220px;
         .navBox{
             height: 220px;
@@ -71,16 +68,10 @@ $src:'../../../asses/activity/package_12/';
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
-                .btn_bybp1{ background-image: url($src+"menu/btn_bybp1.png");}
-                .btn_bybp2{ background-image: url($src+"menu/btn_bybp2.png");}
-                .btn_xyhschd1{ background-image: url($src+"menu/btn_xyhschd1.png");}
-                .btn_xyhschd2{ background-image: url($src+"menu/btn_xyhschd2.png");}
+                .btn_redRain1{ background-image: url($src+"menu/btn_redRain1.png");}
+                .btn_redRain2{ background-image: url($src+"menu/btn_redRain2.png");}
                 .btn_lyhbc1{ background-image: url($src+"menu/btn_lyhbc1.png");}
                 .btn_lyhbc2{ background-image: url($src+"menu/btn_lyhbc2.png");}
-                .btn_xyhbp1{ background-image: url($src+"menu/btn_xyhbp1.png");}
-                .btn_xyhbp2{ background-image: url($src+"menu/btn_xyhbp2.png");}
-                .btn_bwfc1{ background-image: url($src+"menu/btn_bwfc1.png");}
-                .btn_bwfc2{ background-image: url($src+"menu/btn_bwfc2.png");}
             }
             .curNavItem{
                 background-image: url($src+"sprite/navBg.png");

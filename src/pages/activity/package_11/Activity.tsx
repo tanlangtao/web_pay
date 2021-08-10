@@ -73,11 +73,13 @@ export default class Activity11 extends Component<{}, State> {
             } 
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
-        this.setState({
-            navArr:navArr,
-            curData:navArr[0],
-            title:navArr[0].name
-        })
+        if(navArr.length>0){
+            this.setState({
+                navArr:navArr,
+                curData:navArr[0],
+                title:navArr[0].name
+            })
+        }
     }
     returnToHall(){
         gHandler.closewebview()
@@ -111,12 +113,16 @@ export default class Activity11 extends Component<{}, State> {
             })
         }
         if(this.state.curData.id ===""){
-            return <div></div>
+            return <div className='activity11'>
+                <div className='headerBox' >
+                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
+                </div>
+            </div>
         }
         return (
             !this.state.loading?<div className='activity11'>
                 <div className='headerBox' >
-                    <div className="returnToHall" onClick={this.returnToHall}></div>
+                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
                     <div className={`title ${
                         this.state.title==="捕鱼通关豪礼11"?"dm_title_bytghl":
                             this.state.title==="新用户首存活动11"?"dm_title_xyhsc":

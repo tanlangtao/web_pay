@@ -1,0 +1,87 @@
+$src:'../../asses/activity/package_11/';
+
+.RedRain2{
+    background-image:url($src+"bg/event_db_sjfchby_content.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -88px -30px;
+    width: 450px;
+    height: 280px;
+    font-size: 7px;
+    color: white;
+    position: relative;
+    .group{
+        width: 300px;
+        height: 105px;
+        position: absolute;
+        left: 29px;
+        top: 71px;
+        .title{
+            color: #CD7358;
+            display: flex;
+            height: 26px;
+            .li1{
+                width:50px;
+            }
+            .li2{
+                width: 47px;
+            }
+            .li3{
+                width: 44px;
+            }
+            .li4{
+                width: 38px;
+            }
+            .li5{
+                width:40px;
+            }
+            .li6{
+                width:40px;
+            }
+            .li7{
+                width:35px;
+            }
+        }
+        .line{
+            display: flex;
+            height: 13.2px;
+            .li1{
+                width:50px;
+            }
+            .li2{
+                width: 45px;
+            }
+            .li3{
+                width: 45px;
+            }
+            .li4{
+                width: 40px;
+            }
+            .li5{
+                width:40px;
+            }
+            .li6{
+                width:38px;
+            }
+            .li7{
+                width:35px;
+            }
+        }
+        .label1{
+            position: absolute;
+            left: 265px;
+            top: 48px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 350px;
+        left: 18px;
+        line-height: 7px;
+        top: 170px;
+        color: #E8C999;
+        p{
+            margin: 5px;
+        }
+    }
+}

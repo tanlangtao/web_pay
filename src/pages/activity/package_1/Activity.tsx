@@ -9,19 +9,13 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import Bybphd from 'components/package_12/Bybphd';
-import Xyhschd12 from 'components/package_12/Xyhschd';
-import Lyhsc12 from 'components/package_12/Lyhsc';
-import Xyhbp12 from 'components/package_12/Xyhbp';
-import Bwfcjl12 from 'components/package_12/Bwfcjl';
-import FirstComponent from '../../../FirstComponent';
 interface State{
+    loading:Boolean,
     navArr :ConfigItem[],
     title :string,
-    curData:ConfigItem,
-    loading:Boolean
+    curData:ConfigItem
 }
-export default class Activity12 extends Component<{}, State> {
+export default class Activity1 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -97,46 +91,33 @@ export default class Activity12 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
-                        <div className={`navText ${
-                            item.name==="捕鱼包赔活动12"?(item.name ===this.state.title ?"btn_bybp1":"btn_bybp2"):
-                                item.name==="新用户首存活动12"?(item.name ===this.state.title ?"btn_xyhschd1":"btn_xyhschd2"):
-                                    item.name==="老用户首存活动12"?(item.name ===this.state.title ?"btn_lyhbc1":"btn_lyhbc2"):
-                                        item.name==="新用户包赔活动12"?(item.name ===this.state.title ?"btn_xyhbp1":"btn_xyhbp2"):
-                                            item.name==="百万扶持奖励活动12"?(item.name ===this.state.title ?"btn_bwfc1":"btn_bwfc2"):""
-                        }`} ></div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity12'>
+            return <div className='activity1'>
                 <div className='headerBox' >
                     {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
                 </div>
             </div>
         }
         return (
-            !this.state.loading?<div className='activity12'>
+            <div className='activity1'>
                 <div className='headerBox' >
                     {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                    <div className={`title ${
-                        this.state.title==="捕鱼包赔活动12"?"event_xl_bybp_title":
-                            this.state.title==="新用户首存活动12"?"event_xl_xyhsc_title":
-                                this.state.title==="老用户首存活动12"?"event_xl_lyhsc_title":
-                                    this.state.title==="新用户包赔活动12"?"event_xl_xyhbp_title":
-                                        this.state.title==="百万扶持奖励活动12"?"event_xl_bwfc_title":""
-                    }`} ></div>
                 </div>
                 <div className ="contentBox">
-                    <div className='sider' style={{
-                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginTop:gHandler.getTopOff12()
-                    }}>
+                    <div
+                        className='sider' style={{
+                            transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                            marginTop:gHandler.getTopOff()
+                        }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={145*gHandler.getHeightDiff()}
+                                height={100*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -144,28 +125,14 @@ export default class Activity12 extends Component<{}, State> {
                             </Swiper>
                         </div>
                     </div>
-                    <div className="content"style={{
+                    <div className="content" style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff12()
+                        marginTop:gHandler.getTopOff()
                     }}>
-                        {
-                            (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
-                                (this.state.title==='新用户首存活动12' ? <Xyhschd12 curData={this.state.curData}/>:
-                                    (this.state.title==='老用户首存活动12' ? <Lyhsc12 curData={this.state.curData}/>:
-                                        (this.state.title==='新用户包赔活动12' ? <Xyhbp12 curData={this.state.curData}/>:
-                                            (this.state.title==='百万扶持奖励活动12' ? <Bwfcjl12 curData={this.state.curData}/>:
-                                                <div></div>
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        }
                     </div>
                 </div>
             </div>
-                :<FirstComponent></FirstComponent>
         )
     }
 }

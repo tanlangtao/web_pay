@@ -125,7 +125,7 @@ export default class DailyActivity11 extends React.Component<Props,State>{
                     <Swiper
                         direction={"vertical"}
                         spaceBetween={10}
-                        height={170}
+                        height={170*gHandler.getHeightDiff()}
                         // onSlideChange={() => console.log('slide change')}
                         // onSwiper={(swiper) => console.log(swiper)}
                     >

@@ -13,7 +13,7 @@ interface State {
     info:any,
     type:any
 }
-export default class RedRain11 extends React.Component<Props,State>{
+export default class RedRain8 extends React.Component<Props,State>{
     state = {
         info:{
             end_date:"",
@@ -68,7 +68,7 @@ export default class RedRain11 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="RedRain11" >
+            <div className ="RedRain8" >
                 <div className = "group">
                     <div className ="title">
                         <div className ="li1  flexBox" >四季发财红包雨</div>

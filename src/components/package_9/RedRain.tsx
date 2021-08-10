@@ -102,7 +102,7 @@ export default class RedRain extends React.Component<Props,State>{
                 <div className = "rule">
                     <p>1.每场红包雨下雨时间前达成领取条件, 即可参加这一场红包雨。</p>
                     <p>2.每场雨可随机获得最小红包至财神红包数额区间的随机数额红包。</p>
-                    <p>3.当日存款、流水可累计, 所获红包一倍流水即可兑换。</p>
+                    <p>3.当日存款、流水可累计, 所获红包{this.state.info.flow_rate}倍流水即可兑换。</p>
                 </div>
             </div>
         )

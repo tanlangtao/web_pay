@@ -1,0 +1,79 @@
+$src:'../../asses/activity/package_11/';
+
+.Fxpyq{
+    background-image:url($src+"bg/event_stjzhd_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -88px -30px;
+    width: 450px;
+    height: 280px;
+    color: white;
+    position: relative;
+    font-size: 7px;
+    .Swiper{
+        .SwiperSlide{
+            background-image:url($src+"bg/event1_fxpyq_content.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 1089px;
+            height: 300px;
+            position: relative;
+            .label1{
+                position: absolute;
+                left: 40px;
+                top: 45px;
+                p{
+                    color: #E8C999;
+                    margin: 0px;
+                }
+            }
+            .group{
+                width: 300px;
+                height: 80px;
+                position: absolute;
+                left: 49px;
+                top: 75px;
+                .line{
+                    display: flex;
+                    height: 14.5px;
+                    .li1{
+                        width: 80px;
+                    }
+                    .li2{
+                        width: 72px;
+                    }
+                    .li3{
+                        width: 85px;
+                    }
+                }
+            }
+            .label2{
+                position: absolute;
+                width: 300px;
+                left: 35px;
+                line-height: 10px;
+                top: 160px;
+                font-size: 7px;
+                color: white;
+                color: #E8C999;
+                p{
+                    margin: 0px;
+                }
+            }
+            .label3{
+                position: absolute;
+                width: 300px;
+                left: 37px;
+                line-height: 7x;
+                top: 222px;
+                font-size: 6px;
+                color: white;
+                color: #E8C999;
+                p{
+                    margin: 0px;
+                }
+            }
+        }
+    }
+    
+}

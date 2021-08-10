@@ -9,11 +9,8 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import Bybphd from 'components/package_12/Bybphd';
-import Xyhschd12 from 'components/package_12/Xyhschd';
-import Lyhsc12 from 'components/package_12/Lyhsc';
-import Xyhbp12 from 'components/package_12/Xyhbp';
-import Bwfcjl12 from 'components/package_12/Bwfcjl';
+import RedRain8 from 'components/package_8/RedRain';
+import Lyhsc8 from 'components/package_8/Lyhsc';
 import FirstComponent from '../../../FirstComponent';
 interface State{
     navArr :ConfigItem[],
@@ -21,7 +18,7 @@ interface State{
     curData:ConfigItem,
     loading:Boolean
 }
-export default class Activity12 extends Component<{}, State> {
+export default class Activity8 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -67,11 +64,12 @@ export default class Activity12 extends Component<{}, State> {
             }else{
                 console.log("请检查配置信息！",e.name)
             }
-            if(e.is_close === "2"){
+            if(e.is_close === "2" && (e.name === "四季发财红包雨8" ||e.name === "老会员每日首存活动8")){
                 navArr.push(e)
             } 
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
+        console.log(navArr)
         if(navArr.length>0){
             this.setState({
                 navArr:navArr,
@@ -98,33 +96,27 @@ export default class Activity12 extends Component<{}, State> {
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className={`navText ${
-                            item.name==="捕鱼包赔活动12"?(item.name ===this.state.title ?"btn_bybp1":"btn_bybp2"):
-                                item.name==="新用户首存活动12"?(item.name ===this.state.title ?"btn_xyhschd1":"btn_xyhschd2"):
-                                    item.name==="老用户首存活动12"?(item.name ===this.state.title ?"btn_lyhbc1":"btn_lyhbc2"):
-                                        item.name==="新用户包赔活动12"?(item.name ===this.state.title ?"btn_xyhbp1":"btn_xyhbp2"):
-                                            item.name==="百万扶持奖励活动12"?(item.name ===this.state.title ?"btn_bwfc1":"btn_bwfc2"):""
+                            item.name==="四季发财红包雨8"?(item.name ===this.state.title ?"btn_redRain1":"btn_redRain2"):
+                                item.name==="老会员每日首存活动8"?(item.name ===this.state.title ?"btn_lyhbc1":"btn_lyhbc2"):""
                         }`} ></div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity12'>
+            return <div className='activity8'>
                 <div className='headerBox' >
                     {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
                 </div>
             </div>
         }
         return (
-            !this.state.loading?<div className='activity12'>
+            !this.state.loading?<div className='activity8'>
                 <div className='headerBox' >
                     {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
                     <div className={`title ${
-                        this.state.title==="捕鱼包赔活动12"?"event_xl_bybp_title":
-                            this.state.title==="新用户首存活动12"?"event_xl_xyhsc_title":
-                                this.state.title==="老用户首存活动12"?"event_xl_lyhsc_title":
-                                    this.state.title==="新用户包赔活动12"?"event_xl_xyhbp_title":
-                                        this.state.title==="百万扶持奖励活动12"?"event_xl_bwfc_title":""
+                        this.state.title==="四季发财红包雨8"?"db_redrain":
+                            this.state.title==="老会员每日首存活动8"?"event_xl_lyhsc_title":""
                     }`} ></div>
                 </div>
                 <div className ="contentBox">
@@ -150,15 +142,9 @@ export default class Activity12 extends Component<{}, State> {
                         marginTop:gHandler.getTopOff12()
                     }}>
                         {
-                            (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
-                                (this.state.title==='新用户首存活动12' ? <Xyhschd12 curData={this.state.curData}/>:
-                                    (this.state.title==='老用户首存活动12' ? <Lyhsc12 curData={this.state.curData}/>:
-                                        (this.state.title==='新用户包赔活动12' ? <Xyhbp12 curData={this.state.curData}/>:
-                                            (this.state.title==='百万扶持奖励活动12' ? <Bwfcjl12 curData={this.state.curData}/>:
-                                                <div></div>
-                                            )
-                                        )
-                                    )
+                            (this.state.title==='四季发财红包雨8' ? <RedRain8 curData={this.state.curData}/>:
+                                (this.state.title==='老会员每日首存活动8' ? <Lyhsc8 curData={this.state.curData}/>:
+                                    <div></div> 
                                 )
                             )
                         }

@@ -88,10 +88,18 @@ class gHandlerC  {
         return transTime
     }
     public getNodeScale(){
-        return window.screen.height /375
+        let scale = window.screen.height /375
+        if(scale > 1.2){
+            scale = 1.2
+        }
+        return 1.2
     }
     public getLeftOff(){
-        return window.screen.width - 667
+        let leftDiff = window.screen.width - 667
+        if(leftDiff >60){
+            leftDiff = 60
+        }
+        return leftDiff
     }
     public getTopOff10(){
         let topoff = window.screen.height - 375
