@@ -33,12 +33,7 @@ export default class Activity11 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
-    }
-    componentWillMount(){
-        this.setState({
-            loading:true
-        })
+        loading:true
     }
     componentDidMount(){
         this.setState({
@@ -114,15 +109,15 @@ export default class Activity11 extends Component<{}, State> {
         }
         if(this.state.curData.id ===""){
             return <div className='activity11'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
+                </div> */}
             </div>
         }
         return (
             !this.state.loading?<div className='activity11'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className={`title ${
                         this.state.title==="捕鱼通关豪礼11"?"dm_title_bytghl":
                             this.state.title==="新用户首存活动11"?"dm_title_xyhsc":
@@ -132,12 +127,11 @@ export default class Activity11 extends Component<{}, State> {
                                             this.state.title==="每日任务11"?"dm_title":   
                                                 this.state.title==="每日签到11"?"mrqd":""
                     }`} ></div>
-                </div>
+                </div> */}
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                            marginTop:gHandler.getTopOff()
                         }}>
                         <div className="navBox">
                             <Swiper
@@ -154,7 +148,6 @@ export default class Activity11 extends Component<{}, State> {
                     <div className="content" style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff()
                     }}>
                         {
                             (this.state.title==='捕鱼通关豪礼11' ? <Bytghl curData={this.state.curData}/>:

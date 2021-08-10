@@ -40,12 +40,7 @@ export default class Activity9 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
-    }
-    componentWillMount(){
-        this.setState({
-            loading:true
-        })
+        loading:true
     }
     componentDidMount(){
         this.setState({
@@ -144,7 +139,7 @@ export default class Activity9 extends Component<{}, State> {
                     zIndex:1,
                     transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                     marginLeft:gHandler.getLeftOff(),
-                    marginTop:gHandler.getTopOff10()
+                    marginTop:gHandler.getTopOff10(),
                 }}>
                     {
                         this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:

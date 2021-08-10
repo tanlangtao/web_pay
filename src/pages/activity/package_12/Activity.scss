@@ -7,6 +7,7 @@ $src:'../../../asses/activity/package_12/';
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     height: 100vh;
     overflow: hidden;
     .headerBox{
@@ -48,7 +49,7 @@ $src:'../../../asses/activity/package_12/';
     }
     .sider{
         background:transparent;
-        width: 90px;
+        width: 100px;
         height: 220px;
         .navBox{
             height: 220px;

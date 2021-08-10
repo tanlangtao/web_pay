@@ -29,12 +29,7 @@ export default class Activity8 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
-    }
-    componentWillMount(){
-        this.setState({
-            loading:true
-        })
+        loading:true
     }
     componentDidMount(){
         this.setState({
@@ -112,17 +107,16 @@ export default class Activity8 extends Component<{}, State> {
         }
         return (
             !this.state.loading?<div className='activity8'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className={`title ${
                         this.state.title==="四季发财红包雨8"?"db_redrain":
                             this.state.title==="老会员每日首存活动8"?"event_xl_lyhsc_title":""
                     }`} ></div>
-                </div>
+                </div> */}
                 <div className ="contentBox">
                     <div className='sider' style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginTop:gHandler.getTopOff12()
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -139,7 +133,6 @@ export default class Activity8 extends Component<{}, State> {
                     <div className="content"style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff12()
                     }}>
                         {
                             (this.state.title==='四季发财红包雨8' ? <RedRain8 curData={this.state.curData}/>:

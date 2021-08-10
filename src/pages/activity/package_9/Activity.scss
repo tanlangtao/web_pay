@@ -8,6 +8,7 @@ $src:'../../../asses/activity/package_9/';
     display: flex;
     flex-direction: row;
     height: 100vh;
+    overflow: hidden;
     .sider{
         background:transparent;
         width: 80px;
@@ -61,8 +62,7 @@ $src:'../../../asses/activity/package_9/';
         }
     }
     .content{
-        margin-left: 2px;
-        margin-top: 2px;
+        margin-top: 10px;
     }
     .returnToHall{
         background-repeat: no-repeat;

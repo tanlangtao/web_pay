@@ -5,8 +5,8 @@ $src:'../../asses/activity/package_11/';
     background-repeat: no-repeat;
     background-size: contain;
     background-position: -88px -30px;
-    width: 450px;
-    height: 280px;
+    width: 465px;
+    height: 290px;
     color: white;
     position: relative;
     font-size: 7px;
@@ -14,16 +14,16 @@ $src:'../../asses/activity/package_11/';
         width: 250px;
         height: 80px;
         position: absolute;
-        left: 20px;
-        top: 66px;
+        left: 22px;
+        top: 70px;
         .line{
             display: flex;
             height: 14px;
             .li1{
-                width: 48px;
+                width: 52px;
             }
             .li2{
-                width: 49px;
+                width: 50px;
             }
             .li3{
                 width: 49px;
@@ -50,14 +50,14 @@ $src:'../../asses/activity/package_11/';
             position: absolute;
             width: 50px;
             bottom: 40px;
-            left: 98px;
+            left: 103px;
         }
         .applyBtn{
             position: absolute;
             width: 50px;
             height: 15px;
             bottom: 60px;
-            left: 192px;
+            left: 200px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -67,7 +67,7 @@ $src:'../../asses/activity/package_11/';
             width: 50px;
             height: 15px;
             bottom: 60px;
-            left: 192px;
+            left: 200px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -82,7 +82,7 @@ $src:'../../asses/activity/package_11/';
             width: 70px;
             height: 20px;
             bottom: 40px;
-            left: 180px;
+            left: 190px;
         }
     }
     .rule{

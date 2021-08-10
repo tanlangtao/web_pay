@@ -36,12 +36,7 @@ export default class Activity10 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
-    }
-    componentWillMount(){
-        this.setState({
-            loading:true
-        })
+        loading:true
     }
     componentDidMount(){
         this.setState({
@@ -118,22 +113,21 @@ export default class Activity10 extends Component<{}, State> {
         }
         if(this.state.curData.id ===""){
             return <div className='activity10'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
+                </div> */}
             </div>
         }
         return (
             !this.state.loading ?<div className='activity10'>
-                <div className='headerBox flexBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
+                {/* <div className='headerBox flexBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className='title_jchd'></div>
-                </div>
+                </div> */}
                 <div className ="contentBox">
                     <div className='sider' style={{
                         zIndex:2,
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginTop:gHandler.getTopOff10()
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -151,7 +145,6 @@ export default class Activity10 extends Component<{}, State> {
                         zIndex:1,
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff10()
                     }}>
                         {
                             (this.state.title==='专线包赔活动10' ? <Xyhbp10 curData={this.state.curData}/>:

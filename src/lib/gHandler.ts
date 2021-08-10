@@ -92,7 +92,7 @@ class gHandlerC  {
         if(scale > 1.2){
             scale = 1.2
         }
-        return 1.2
+        return scale
     }
     public getLeftOff(){
         let leftDiff = window.screen.width - 667
@@ -103,20 +103,8 @@ class gHandlerC  {
     }
     public getTopOff10(){
         let topoff = window.screen.height - 375
-        
-        return topoff
-    }
-    public getTopOff12(){
-        let topoff = window.screen.height - 375
-        if(topoff <0){
-            topoff =  375 - window.screen.height
-        }
-        return topoff
-    }
-    public getTopOff(){
-        let topoff = window.screen.height - 375
-        if(topoff <0){
-            topoff =  0
+        if(topoff >20){
+            topoff = 20
         }
         return topoff
     }

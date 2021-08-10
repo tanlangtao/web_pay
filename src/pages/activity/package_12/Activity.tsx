@@ -32,12 +32,7 @@ export default class Activity12 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
-    }
-    componentWillMount(){
-        this.setState({
-            loading:true
-        })
+        loading:true
     }
     componentDidMount(){
         this.setState({
@@ -110,15 +105,15 @@ export default class Activity12 extends Component<{}, State> {
         }
         if(this.state.curData.id ===""){
             return <div className='activity12'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
+                </div> */}
             </div>
         }
         return (
             !this.state.loading?<div className='activity12'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
                     <div className={`title ${
                         this.state.title==="捕鱼包赔活动12"?"event_xl_bybp_title":
                             this.state.title==="新用户首存活动12"?"event_xl_xyhsc_title":
@@ -126,11 +121,10 @@ export default class Activity12 extends Component<{}, State> {
                                     this.state.title==="新用户包赔活动12"?"event_xl_xyhbp_title":
                                         this.state.title==="百万扶持奖励活动12"?"event_xl_bwfc_title":""
                     }`} ></div>
-                </div>
+                </div> */}
                 <div className ="contentBox">
                     <div className='sider' style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginTop:gHandler.getTopOff12()
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -147,7 +141,6 @@ export default class Activity12 extends Component<{}, State> {
                     <div className="content"style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff12()
                     }}>
                         {
                             (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:

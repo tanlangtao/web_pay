@@ -26,12 +26,7 @@ export default class Activity3 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
-    }
-    componentWillMount(){
-        this.setState({
-            loading:true
-        })
+        loading:true
     }
     componentDidMount(){
         this.setState({
@@ -109,7 +104,6 @@ export default class Activity3 extends Component<{}, State> {
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                            marginTop:gHandler.getTopOff()
                         }}>
                         <div className="navBox">
                             <Swiper
@@ -126,7 +120,6 @@ export default class Activity3 extends Component<{}, State> {
                     <div className="content" style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
                         marginLeft:gHandler.getLeftOff(),
-                        marginTop:gHandler.getTopOff()
                     }}>
                     </div>
                 </div>

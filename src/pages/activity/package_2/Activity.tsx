@@ -33,12 +33,9 @@ export default class Activity2 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:false
+        loading:true
     }
     componentWillMount(){
-        this.setState({
-            loading:true
-        })
     }
     componentDidMount(){
         this.setState({
@@ -119,15 +116,6 @@ export default class Activity2 extends Component<{}, State> {
         }
         return (
             !this.state.loading?<div className='activity2'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                    <div className={`title ${
-                        this.state.title==="分享朋友圈活动3"?"dm_title_fxpyq":
-                            this.state.title==="新会员首存活动三重奏2"?"dm_title_xhysc":
-                                this.state.title==="老会员每日首存活动非自动领取2"?"dm_title_lhysc":
-                                    this.state.title==="四季发财红包雨2"?"db_redrain":""
-                    }`} ></div>
-                </div>
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
