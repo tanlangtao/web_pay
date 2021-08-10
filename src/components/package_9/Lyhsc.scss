@@ -3,63 +3,64 @@ $src:'../../asses/activity/package_9/';
 .Lyhsc{
     background-image:url($src+"bg/event12-3_lhysc_content.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -77px;
-    width: 385px;
-    height: 260px;
+    background-size: contain;
+    background-position: -55px -0px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
         width: 185px;
         height: 105px;
         position: absolute;
-        left: 130px;
-        top: 57px;
-        padding-top: 3px;
+        left: 114px;
+        top: 48px;
+        padding-top: 1px;
         .line{
             display: flex;
-            height: 14px;
+            height: 11.5px;
             .li1{
-                width: 50px;
+                width: 42px;
             }
             .li2{
-                width: 50px;
+                width: 40px;
             }
             .li3{
-                width: 50px;
+                width: 38px;
             }
             .li4{
-                width: 30px;
+                width: 32px;
                 .btn_linqu{
-                    width: 30px;
+                    width: 20px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
-                    background-size: cover;
+                    background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 30px;
+                    width: 20px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
-                    background-size: cover;
+                    background-size: contain;
                 }
             }
         }
         .label1{
             position: absolute;
-            left: 101px;
-            top: 50px;
+            left: 85px;
+            top: 40px;
         }
     }
     .rule{
         position: absolute;
-        width: 350px;
-        left: 28px;
-        line-height: 8px;
-        top: 176px;
+        width: 285px;
+        left: 30px;
+        line-height: 7px;
+        top: 145px;
         color: #E8C999;
-        font-size: 7px;
+        font-size: 5.5px;
         p{
             margin: 0px;
         }

@@ -144,7 +144,6 @@ export default class Activity10 extends Component<{}, State> {
                     <div className="content" style={{
                         zIndex:1,
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:gHandler.getLeftOff(),
                     }}>
                         {
                             (this.state.title==='专线包赔活动10' ? <Xyhbp10 curData={this.state.curData}/>:

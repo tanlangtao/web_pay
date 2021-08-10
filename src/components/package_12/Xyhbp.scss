@@ -3,11 +3,11 @@ $src:'../../asses/activity/package_12/';
 .Xyhbp12{
     background-image:url($src+"bg/XL_event_20210802-2_content.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -88px -35px;
-    width: 370px;
-    height: 255px;
-    font-size: 7px;
+    background-size: contain;
+    background-position: -70px -30px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
@@ -15,26 +15,25 @@ $src:'../../asses/activity/package_12/';
         height: 71px;
         position: absolute;
         left: 10px;
-        top: 68px;
-        font-size: 7px;
+        top: 57px;
         position: relative;
         .line{
             display: flex;
-            height: 14px;
+            height: 11px;
             .li1{
-                width: 44px;
+                width: 38px;
             }
             .li2{
-                width: 44px;
+                width: 38px;
             }
             .li3{
-                width: 47px;
+                width: 40px;
             }
             .li4{
-                width: 41px;
+                width: 34px;
             }
             .li5{
-                width: 40px;
+                width: 30px;
                 .btn_linqu{
                     width: 26px;
                     height: 11px;
@@ -55,8 +54,8 @@ $src:'../../asses/activity/package_12/';
             position: absolute;
             width: 40px;
             height: 12px;
-            top: 5px;
-            left: 215px;
+            top: 3px;
+            left: 180px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -65,8 +64,8 @@ $src:'../../asses/activity/package_12/';
             position: absolute;
             width: 40px;
             height: 12px;
-            top: 5px;
-            left: 215px;
+            top: 3px;
+            left: 180px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -80,20 +79,20 @@ $src:'../../asses/activity/package_12/';
             position: absolute;
             width: 50px;
             height: 20px;
-            top: 20px;
-            left: 210px;
+            top: 15px;
+            left: 175px;
         }
     }
     .rule{
         position: absolute;
-        width: 350px;
+        width: 290px;
         left: 10px;
-        line-height: 6.8px;
-        top: 127px;
+        line-height: 6.5px;
+        top: 104px;
         color: #FEFFC9;
-        font-size: 6px;
+        font-size: 5.5px;
         p{
-            margin: 2px;
+            margin: 0px;
         }
     }
 }

@@ -9,6 +9,7 @@ $src:'../../../asses/activity/package_9/';
     flex-direction: row;
     height: 100vh;
     overflow: hidden;
+    position: absolute;
     .sider{
         background:transparent;
         width: 80px;
@@ -33,7 +34,7 @@ $src:'../../../asses/activity/package_9/';
             }
         }
         .navBox{
-            height: 200px;
+            height: 170px;
             overflow: hidden;
             color: white;
             .navItem{
@@ -44,6 +45,10 @@ $src:'../../../asses/activity/package_9/';
                     padding-left: 2%;
                     line-height: 11px;
                     justify-content: center;
+                    flex-direction: column;
+                    p{
+                        margin: 0px;
+                    }
                 }
                 .xian_dh{
                     height: 2px;

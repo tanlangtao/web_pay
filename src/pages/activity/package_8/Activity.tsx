@@ -117,6 +117,7 @@ export default class Activity8 extends Component<{}, State> {
                 <div className ="contentBox">
                     <div className='sider' style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                        marginLeft:-20*gHandler.getHeightDiff()
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -132,7 +133,7 @@ export default class Activity8 extends Component<{}, State> {
                     </div>
                     <div className="content"style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:gHandler.getLeftOff(),
+                        marginLeft:-120*gHandler.getHeightDiff(),
                     }}>
                         {
                             (this.state.title==='四季发财红包雨8' ? <RedRain8 curData={this.state.curData}/>:

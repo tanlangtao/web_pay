@@ -5,24 +5,24 @@ $src:'../../asses/activity/package_10/';
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0px;
-    width: 355px;
-    height: 210px;
-    font-size: 7px;
+    width: 310px;
+    height: 180px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
-        width: 250px;
+        width: 220px;
         height: 90px;
         position: absolute;
         left: 10px;
-        top: 50px;
+        top: 40px;
         padding-top: 1.5px;
         background-image: url($src+"sprite/biao1.png") ;
         background-repeat: no-repeat;
         background-size: contain;
         .line{
             display: flex;
-            height: 14.5px;
+            height: 12.5px;
             .li1{
                 width: 42px;
             }
@@ -59,31 +59,30 @@ $src:'../../asses/activity/package_10/';
         .label1{
             position: absolute;
             left: 3px;
-            top: 45px;
+            top: 40px;
         }
         .label2{
             position: absolute;
             width: 40px;
-            left: 85px;
-            top: 45px;
+            left: 70px;
+            top: 40px;
             text-align: center;
         }
         .label3{
             position: absolute;
-            left: 167px;
+            left: 144px;
             width: 40px;
-            top: 45px;
+            top: 40px;
             text-align: center;
         }
     }
     .rule{
         background: rgb(122, 132, 222);
         position: absolute;
-        width: 340px;
-        left: 10px;
+        width: 300px;
+        left: 5px;
         line-height: 8px;
-        top: 145px;
-        font-size: 6px;
+        top: 118px;
         color: white;
         padding: 2px 0 0 2px;
         p{

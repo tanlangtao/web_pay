@@ -147,7 +147,6 @@ export default class Activity11 extends Component<{}, State> {
                     </div>
                     <div className="content" style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:gHandler.getLeftOff(),
                     }}>
                         {
                             (this.state.title==='捕鱼通关豪礼11' ? <Bytghl curData={this.state.curData}/>:

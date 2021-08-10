@@ -3,33 +3,33 @@ $src:'../../asses/activity/package_12/';
 .Xyhschd12{
     background-image:url($src+"bg/XL_event_20210727-1_content.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -88px -35px;
-    width: 370px;
-    height: 255px;
+    background-size: contain;
+    background-position: -70px -30px;
+    width: 380px;
+    height: 270px;
     color: white;
     position: relative;
-    font-size: 7px;
+    font-size: 6px;
     .group{
         width: 225px;
         height: 110px;
         position: absolute;
-        left: 135px;
+        left: 116px;
         top: 3px;
         .line{
             display: flex;
-            height: 13.5px;
+            height: 11px;
             .li1{
-                width: 47px;
+                width: 40px;
             }
             .li2{
-                width: 45px;
+                width: 38px;
             }
             .li3{
-                width: 45px;
+                width: 38px;
             }
             .li4{
-                width: 35px;
+                width: 30px;
                 .btn_linqu{
                     width: 26px;
                     height: 11px;
@@ -49,25 +49,25 @@ $src:'../../asses/activity/package_12/';
         .label1{
             position: absolute;
             width: 50px;
-            bottom: 40px;
-            left: 90px;
+            bottom: 50px;
+            left: 72px;
         }
         .applyBtn{
             position: absolute;
-            width: 50px;
+            width: 40px;
             height: 15px;
             bottom: 60px;
-            left: 174px;
+            left: 148px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
-            width: 50px;
+            width: 40px;
             height: 15px;
             bottom: 60px;
-            left: 174px;
+            left: 148px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -82,19 +82,19 @@ $src:'../../asses/activity/package_12/';
             width: 70px;
             height: 20px;
             bottom: 40px;
-            left: 164px;
+            left: 132px;
         }
     }
     .rule{
         position: absolute;
-        width: 340px;
-        left: 10px;
+        width: 290px;
+        left: 15px;
         line-height: 7px;
-        top: 128px;
-        font-size: 6px;
+        top: 105px;
+        font-size: 5.5px;
         color: #FEFFC9;
         p{
-            margin: 0.06rem;
+            margin: 0.02rem;
         }
     }
 }

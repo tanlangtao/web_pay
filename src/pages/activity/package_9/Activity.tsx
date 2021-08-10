@@ -100,7 +100,10 @@ export default class Activity9 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
-                        <div className="navText flexBox">{item.name.substring(0,item.name.length-1)}</div>
+                        <div className="navText flexBox">
+                            <p>{item.name.substring(0,5)}</p>
+                            <p>{item.name.substring(0,item.name.length-1).length>5?item.name.substring(5,item.name.length-1):""}</p>
+                        </div>
                         <div className="xian_dh"></div>
                     </div>
                 </SwiperSlide>
@@ -118,7 +121,7 @@ export default class Activity9 extends Component<{}, State> {
                 <div className='sider' style={{
                     zIndex:2,
                     transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                    marginTop:gHandler.getTopOff10()
+                    marginTop:gHandler.getTopOff10(),
                 }}>
                     <div className='headerBox' >
                         <div className='title_jchd'></div>
@@ -138,8 +141,8 @@ export default class Activity9 extends Component<{}, State> {
                 <div className="content"style={{
                     zIndex:1,
                     transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                    marginLeft:gHandler.getLeftOff(),
                     marginTop:gHandler.getTopOff10(),
+                    marginLeft:-20*gHandler.getHeightDiff()
                 }}>
                     {
                         this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:

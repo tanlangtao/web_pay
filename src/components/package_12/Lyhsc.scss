@@ -3,33 +3,33 @@ $src:'../../asses/activity/package_12/';
 .Lyhsc12{
     background-image: url($src+"bg/XL_event_20210802-4_content.png") ;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -88px -35px;
-    width: 370px;
-    height: 255px;
-    font-size: 7px;
+    background-size: contain;
+    background-position: -70px -30px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
         width: 190px;
         height: 100px;
         position: absolute;
-        left: 177px;
-        top: 13px;
+        left: 150px;
+        top: 11px;
         .line{
             display: flex;
-            height: 13.7px;
+            height: 11.3px;
             .li1{
-                width: 51px;
+                width: 46px;
             }
             .li2{
-                width: 47px;
+                width: 38px;
             }
             .li3{
-                width: 47px;
+                width: 38px;
             }
             .li4{
-                width: 36px;
+                width: 30px;
                 .btn_linqu{
                     width: 26px;
                     height: 11px;
@@ -48,18 +48,18 @@ $src:'../../asses/activity/package_12/';
         }
         .label1{
             position: absolute;
-            left: 102px;
-            top: 45px;
+            left: 86px;
+            top: 40px;
         }
     }
     .rule{
         position: absolute;
-        width: 320px;
-        left: 35px;
-        line-height: 10px;
-        top: 131px;
-        font-size: 7px;
+        width: 270px;
+        left: 30px;
+        line-height: 7px;
+        top: 111px;
         color: #FEFFC9;
+        font-size: 5.5px;
         p{
             margin: 0px;
         }

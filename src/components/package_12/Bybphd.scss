@@ -3,38 +3,37 @@ $src:'../../asses/activity/package_12/';
 .Bybphd{
     background-image:url($src+"bg/XL_event_20210802-1_content.png");
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -88px -35px;
-    width: 370px;
-    height: 255px;
-    font-size: 7px;
+    background-size: contain;
+    background-position: -70px -30px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
         width: 300px;
         height: 71px;
         position: absolute;
-        left:5px;
-        top: 44px;
-        font-size: 7px;
+        left:8px;
+        top: 36px;
         position: relative;
         .line{
             display: flex;
-            height: 13.5px;
+            height: 11px;
             .li1{
-                width: 45px;
+                width: 38px;
             }
             .li2{
-                width: 43px;
+                width: 36px;
             }
             .li3{
-                width: 48px;
+                width: 40px;
             }
             .li4{
-                width: 42px;
+                width: 36px;
             }
             .li5{
-                width: 34px;
+                width: 26px;
                 .btn_linqu{
                     width: 26px;
                     height: 11px;
@@ -56,7 +55,7 @@ $src:'../../asses/activity/package_12/';
             width: 40px;
             height: 12px;
             top: 5px;
-            left: 216px;
+            left: 178px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -66,7 +65,7 @@ $src:'../../asses/activity/package_12/';
             width: 40px;
             height: 12px;
             top: 5px;
-            left: 216px;
+            left: 178px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -81,19 +80,19 @@ $src:'../../asses/activity/package_12/';
             width: 50px;
             height: 20px;
             top: 20px;
-            left: 212px;
+            left: 174px;
         }
     }
     .rule{
         position: absolute;
-        width: 350px;
-        left: 7px;
-        line-height: 6.8px;
-        top: 130px;
+        width: 290px;
+        left: 12px;
+        line-height: 6.3px;
+        top: 104px;
         color: #FEFFC9;
-        font-size: 6px;
+        font-size: 5.5px;
         p{
-            margin: 2px;
+            margin: 0px;
         }
     }
 }

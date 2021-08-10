@@ -6,15 +6,14 @@ $src:'../../asses/activity/package_10/';
     border: 3px solid rgb(141, 172, 255);
     border-radius: 3px;
     box-shadow:0 0 9px 3px rgb(71,77,155) inset;
-    
-    width: 355px;
-    height: 210px;
-    font-size: 7px;
+    width: 310px;
+    height: 180px;
+    font-size: 6px;
     color: white;
     position: relative;
     .zxbp_zi{
         height: 30px;
-        width: 200px;
+        width: 170px;
         margin: 0 auto;
         margin-top: 10px;
         background-image: url($src+"sprite/zxbp_zi.png") ;
@@ -22,8 +21,8 @@ $src:'../../asses/activity/package_10/';
         background-size: contain;
     }
     .zxbpBg{
-        height: 100px;
-        width: 100px;
+        height: 80px;
+        width: 80px;
         margin-top: 15px;
         background-image: url($src+"sprite/zxbpBg.png") ;
         background-repeat: no-repeat;
@@ -33,33 +32,32 @@ $src:'../../asses/activity/package_10/';
         top: 15px;
     }
     .group{
-        width: 240px;
+        width: 220px;
         height: 45px;
         position: absolute;
-        left: 10px;
+        left: 5px;
         top: 58px;
-        font-size: 7px;
         background-image: url($src+"sprite/biao2.png") ;
         background-repeat: no-repeat;
         background-size: contain;
-        padding-top: 2.5px;
+        padding-top: 2px;
         .line{
             display: flex;
-            height: 13px;
+            height: 12px;
             .li1{
-                width: 32px;
+                width: 30px;
             }
             .li2{
-                width: 36px;
+                width: 32px;
             }
             .li3{
-                width: 48px;
+                width: 44px;
             }
             .li4{
-                width: 40px;
+                width: 38px;
             }
             .li5{
-                width: 40px;
+                width: 38px;
                 .btn_linqu{
                     width: 30px;
                     height: 10px;
@@ -104,19 +102,18 @@ $src:'../../asses/activity/package_10/';
             position: absolute;
             width: 40px;
             height: 20px;
-            top: 7px;
-            left: 200px;
+            top: 10px;
+            left: 182px;
         }
     }
     .rule{
         position: absolute;
-        width: 340px;
+        width: 300px;
         left: 5px;
         line-height: 7px;
-        top: 115px;
-        font-size: 7px;
+        top: 110px;
         p{
-            margin: 2px;
+            margin: 0px;
         }
     }
 }

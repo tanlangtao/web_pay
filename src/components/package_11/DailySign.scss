@@ -4,7 +4,7 @@ $src:'../../asses/activity/DailySign/';
     background-image:url($src+"contentBg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 360px;
+    width: 300px;
     height: 215px;
     color: white;
     position: relative;
@@ -15,7 +15,7 @@ $src:'../../asses/activity/DailySign/';
         width: 100%;
     }
     .group{
-        width: 240px;
+        width: 210px;
         height: 180px;
         position: relative;
         left: 15px;
@@ -24,8 +24,8 @@ $src:'../../asses/activity/DailySign/';
         display: flex;
         flex-wrap: wrap;
         .li1{
-            width: 80px;
-            height: 90px;
+            width: 70px;
+            height: 80px;
             background-image:url($src+"d1.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -34,8 +34,8 @@ $src:'../../asses/activity/DailySign/';
             justify-content: space-between;
         }
         .li2{
-            width: 80px;
-            height: 180px;
+            width: 70px;
+            height: 170px;
             background-image:url($src+"d2.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
@@ -46,11 +46,11 @@ $src:'../../asses/activity/DailySign/';
             right: -80px;
         }
         .font{
-            height: 20px;
+            height: 15px;
             color: #EFEFD2;
         }
         .jifen{
-            height: 20px;
+            height: 15px;
         }
         .icon{
             width: 60px;

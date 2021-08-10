@@ -7,48 +7,47 @@ $src:'../../asses/activity/package_10/';
     border-radius: 3px;
     box-shadow:0 0 9px 3px rgb(71,77,155) inset;
     
-    width: 355px;
-    height: 210px;
-    font-size: 7px;
+    width: 310px;
+    height: 180px;
+    font-size: 6px;
     color: white;
     position: relative;
     .xyhbp_bg{
         height: 100px;
-        width: 300px;
+        width: 280px;
         background-image: url($src+"bg/xyhbp_bg.png") ;
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
         right: 0px;
-        top: 15px;
+        top: 0px;
     }
     .group{
-        width: 260px;
+        width: 220px;
         height: 40px;
         position: absolute;
-        left: 10px;
-        top: 58px;
-        font-size: 7px;
+        left: 5px;
+        top: 40px;
         background-image: url($src+"sprite/biao.png") ;
         background-repeat: no-repeat;
         background-size: contain;
         .line{
             display: flex;
-            height: 12px;
+            height: 10.5px;
             .li1{
-                width: 40px;
+                width: 34px;
             }
             .li2{
-                width: 47px;
+                width: 40px;
             }
             .li3{
-                width: 50px;
+                width: 42px;
             }
             .li4{
-                width: 46px;
+                width: 40px;
             }
             .li5{
-                width: 40px;
+                width: 32px;
                 .btn_linqu{
                     width: 30px;
                     height: 10px;
@@ -67,20 +66,20 @@ $src:'../../asses/activity/package_10/';
         }
         .applyBtn{
             position: absolute;
-            width: 40px;
+            width: 30px;
             height: 12px;
             top: 5px;
-            left: 225px;
+            left: 189px;
             background-image:url($src+"sprite/anniu.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
-            width: 40px;
+            width: 30px;
             height: 12px;
             top: 5px;
-            left: 225px;
+            left: 189px;
             background-image:url($src+"sprite/anniu.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -94,21 +93,20 @@ $src:'../../asses/activity/package_10/';
             position: absolute;
             width: 40px;
             height: 20px;
-            top: 17px;
-            left: 222px;
-            font-size: 6px;
+            top: 16px;
+            left: 185px;
+            font-size: 5px;
         }
     }
     .rule{
         background: rgb(122, 132, 222);
         position: absolute;
-        width: 340px;
+        width: 290px;
         left: 5px;
-        line-height: 7px;
-        top: 115px;
-        font-size: 6px;
+        line-height: 6.5px;
+        top: 95px;
         p{
-            margin: 2px;
+            margin: 0px;
         }
     }
 }

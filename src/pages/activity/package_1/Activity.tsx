@@ -106,6 +106,7 @@ export default class Activity1 extends Component<{}, State> {
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                            marginLeft:-20*gHandler.getHeightDiff()
                         }}>
                         <div className="navBox">
                             <Swiper
@@ -121,7 +122,7 @@ export default class Activity1 extends Component<{}, State> {
                     </div>
                     <div className="content" style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:gHandler.getLeftOff(),
+                        marginLeft:-120*gHandler.getHeightDiff(),
                     }}>
                     </div>
                 </div>

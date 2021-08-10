@@ -5,17 +5,17 @@ $src:'../../asses/activity/package_10/';
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 0px;
-    width: 355px;
-    height: 210px;
-    font-size: 7px;
+    width: 310px;
+    height: 180px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
-        width: 340px;
+        width: 300px;
         height: 100px;
         position: absolute;
-        left: 8px;
-        top: 43px;
+        left: 5px;
+        top: 35px;
         padding-top: 3px;
         background-image: url($src+"sprite/lyhsc_biao.png") ;
         background-repeat: no-repeat;
@@ -23,7 +23,7 @@ $src:'../../asses/activity/package_10/';
         padding-top: 16px;
         .line{
             display: flex;
-            height: 14px;
+            height: 12px;
             .li1{
                 width: 90px;
             }
@@ -53,17 +53,16 @@ $src:'../../asses/activity/package_10/';
         }
         .label1{
             position: absolute;
-            left: 210px;
-            top: 45px;
+            left: 185px;
+            top: 40px;
         }
     }
     .rule{
         position: absolute;
-        width: 340px;
-        left: 10px;
-        line-height: 8px;
-        top: 145px;
-        font-size: 6px;
+        width: 300px;
+        left: 5px;
+        line-height: 6.5px;
+        top: 126px;
         color: white;
         p{
             margin: 0px;

@@ -53,15 +53,15 @@ $src:'../../../asses/activity/package_11/';
     }
     .sider{
         background:transparent;
-        width: 100px;
-        height:240px;
+        width: 110px;
+        height:200px;
         .navBox{
-            height: 240px;
+            height:200px;
             overflow: hidden;
             color: white;
             .navItem{
-                width: 80px;
-                height: 30px;
+                width: 90px;
+                height: 40px;
                 .btnline{
                     height: 2px;
                     width: 80px;
@@ -69,11 +69,11 @@ $src:'../../../asses/activity/package_11/';
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                     position: absolute;
-                    top: -5px;
+                    top: -0;
                 }
                 .navText{
-                    height: 30px;
-                    width: 80px;
+                    height: 40px;
+                    width: 90px;
                     padding-left: 2%;
                     line-height: 11px;
                     justify-content: center;

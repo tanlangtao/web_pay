@@ -89,17 +89,21 @@ class gHandlerC  {
     }
     public getNodeScale(){
         let scale = window.screen.height /375
-        if(scale > 1.2){
-            scale = 1.2
+        if(scale > 1){
+            scale = 1
         }
         return scale
     }
     public getLeftOff(){
         let leftDiff = window.screen.width - 667
-        if(leftDiff >60){
-            leftDiff = 60
+        console.log(leftDiff)
+        if(leftDiff >0){
+            leftDiff = -60
+        }else if(leftDiff <= 0){
+            leftDiff -=40
         }
-        return leftDiff
+        
+        return leftDiff 
     }
     public getTopOff10(){
         let topoff = window.screen.height - 375
@@ -117,6 +121,9 @@ class gHandlerC  {
             neHeight = 1
         }
         return neHeight
+    }
+    public getActiveScale(){
+        return 0.75
     }
     closewebview(){
         window.location.href = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? "closewebview://a=1&b=2" :  "http://closewebview";

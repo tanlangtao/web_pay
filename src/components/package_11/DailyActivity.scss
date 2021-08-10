@@ -4,7 +4,7 @@ $src:'../../asses/activity/DailySign/';
     background-image:url($src+"contentBg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 360px;
+    width: 300px;
     height: 215px;
     color: white;
     position: relative;
@@ -16,7 +16,7 @@ $src:'../../asses/activity/DailySign/';
         width: 100%;
     }
     .DailyActivityItem{
-        width: 350px;
+        width: 300px;
         margin-left: 5px;
         height: 60px;
         background-image:url($src+"dailyitembg.png");
@@ -71,11 +71,11 @@ $src:'../../asses/activity/DailySign/';
             left: 220px;
         }
         .btn{
-            width: 60px;
-            height: 20px;
+            width: 40px;
+            height: 15px;
             position: absolute;
             top: 35%;
-            right: 20px;
+            right: 10px;
             background-repeat: no-repeat;
             background-size: 100% 100%;
         }

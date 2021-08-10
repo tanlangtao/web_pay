@@ -71,7 +71,7 @@ export default class UsdtCunKuan extends React.Component<Props,State>{
             })
             
         }
-        if(Number(this.state.UsdtInfo.received_info[0].receive_amount)> 0){
+        if(this.state.UsdtInfo.received_info && Number(this.state.UsdtInfo.received_info[0].receive_amount)> 0){
             this.state.UsdtInfo.received_info.forEach((e)=>{
                 this.state.info.range.forEach((item,index)=>{
                     if(Number(e.receive_amount) === item.bonus){

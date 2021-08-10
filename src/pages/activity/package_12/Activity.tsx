@@ -140,7 +140,6 @@ export default class Activity12 extends Component<{}, State> {
                     </div>
                     <div className="content"style={{
                         transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:gHandler.getLeftOff(),
                     }}>
                         {
                             (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
