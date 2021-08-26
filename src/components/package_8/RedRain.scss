@@ -4,84 +4,84 @@ $src:'../../asses/activity/package_12/';
     background-image:url($src+"bg/event_xs_sjfchby_content.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -88px -30px;
-    width: 450px;
-    height: 280px;
-    font-size: 7px;
+    background-position: -70px -30px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
         width: 300px;
         height: 105px;
         position: absolute;
-        left: 29px;
-        top: 71px;
+        left: 30px;
+        top: 55px;
         .title{
             color: #CD7358;
             display: flex;
-            height: 26px;
+            height: 20.5px;
             .li1{
-                width:50px;
+                width:44px;
             }
             .li2{
-                width: 47px;
+                width: 36px;
             }
             .li3{
-                width: 44px;
+                width: 40px;
             }
             .li4{
-                width: 38px;
+                width: 32px;
             }
             .li5{
-                width:40px;
+                width:32px;
             }
             .li6{
-                width:40px;
+                width:32px;
             }
             .li7{
-                width:35px;
+                width:32px;
             }
         }
         .line{
             display: flex;
-            height: 13.2px;
+            height: 12px;
             .li1{
-                width:50px;
+                width:44px;
             }
             .li2{
-                width: 45px;
+                width: 36px;
             }
             .li3{
-                width: 45px;
-            }
-            .li4{
                 width: 40px;
             }
+            .li4{
+                width: 32px;
+            }
             .li5{
-                width:40px;
+                width:32px;
             }
             .li6{
-                width:38px;
+                width:32px;
             }
             .li7{
-                width:35px;
+                width:32px;
             }
         }
         .label1{
             position: absolute;
-            left: 265px;
-            top: 48px;
+            left: 222px;
+            top: 40px;
         }
     }
     .rule{
         position: absolute;
         width: 350px;
-        left: 18px;
+        left: 10px;
         line-height: 7px;
-        top: 170px;
+        top: 140px;
         color: #E8C999;
         p{
-            margin: 5px;
+            margin: 3px;
         }
     }
 }

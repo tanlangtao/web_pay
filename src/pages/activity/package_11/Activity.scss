@@ -50,21 +50,23 @@ $src:'../../../asses/activity/package_11/';
         width: 100%;
         display: flex;
         flex-direction: row;
+        height: 210px;
     }
     .sider{
         background:transparent;
-        width: 110px;
+        width: 60px;
         height:200px;
         .navBox{
             height:200px;
-            overflow: hidden;
             color: white;
             .navItem{
-                width: 90px;
-                height: 40px;
+                width: 58px;
+                height: 20px;
+                color: rgb(161,159,155);
+                padding-top:1px;
                 .btnline{
                     height: 2px;
-                    width: 80px;
+                    width: 52px;
                     background-image:url($src+"sprite/btnline.png");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
@@ -72,13 +74,18 @@ $src:'../../../asses/activity/package_11/';
                     top: -0;
                 }
                 .navText{
-                    height: 40px;
-                    width: 90px;
+                    width: 55px;
+                    height: 20px;
                     padding-left: 2%;
-                    line-height: 11px;
+                    line-height: 9px;
                     justify-content: center;
                     background-repeat: no-repeat;
                     background-size: contain;
+                    flex-direction: column;
+                    font-size: 6px;
+                    p{
+                        margin: 0px;
+                    }
                 }
                 .btn_bytghl1{ background-image: url($src+"menu/btn_bytghl1.png");}
                 .btn_bytghl2{ background-image: url($src+"menu/btn_bytghl2.png");}
@@ -95,11 +102,18 @@ $src:'../../../asses/activity/package_11/';
                 .btn_qd1{ background-image: url($src+"menu/btn_qd1.png");}
                 .btn_qd2{ background-image: url($src+"menu/btn_qd2.png");}
             }
+            .curNavItem{
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url($src+"menu/menu_bg.png");
+                background-size: contain;
+                color: #fffee6;
+            }
         }
     }
     .content{
         width: 370px;
-        height: 240px;
+        height: 210px;
     }
 }
 .flexBox{

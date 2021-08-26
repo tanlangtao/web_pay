@@ -128,5 +128,20 @@ class gHandlerC  {
     closewebview(){
         window.location.href = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? "closewebview://a=1&b=2" :  "http://closewebview";
     }
+    getFontsizeScale(){
+        let fontSize = document.getElementsByTagName("html")[0].style.fontSize
+        let fonsize  = Number(String(fontSize).slice(0,-2))
+        let scale = 0
+        if( fonsize >= 150){
+            scale = 150/fonsize
+        }else{
+            scale = 1
+        }
+        if(scale<=1&&scale>0){
+            return scale
+        }else{
+            return 1
+        }
+    }
 }
 export const gHandler = new gHandlerC()

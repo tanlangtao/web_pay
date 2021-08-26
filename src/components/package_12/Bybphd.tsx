@@ -30,7 +30,12 @@ export default class Bybphd extends React.Component<Props,State>{
                     first_pay_max:0,
                     first_pay_min:0
                 }
-            ]
+            ],
+            withdraw_conf:{
+                condition:[{
+                    max_withdraw_amount:0
+                }]
+            }
         },
         frist_pay_amount:0,
         is_received:0,
@@ -160,7 +165,7 @@ export default class Bybphd extends React.Component<Props,State>{
                 return <div className ="line" key={index}>
                     <div className ="li1 flexBox">{e.first_pay_min}</div>
                     <div className ="li2 flexBox">{e.gold}</div>
-                    <div className ="li3 flexBox">{e.first_pay_min*2}</div>
+                    <div className ="li3 flexBox">{this.state.info.withdraw_conf.condition[index].max_withdraw_amount}</div>
                     <div className ="li4 flexBox">10</div>
                     <div className ="li5 flexBox"> 
                         {

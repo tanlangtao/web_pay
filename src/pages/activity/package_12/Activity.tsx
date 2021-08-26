@@ -124,22 +124,30 @@ export default class Activity12 extends Component<{}, State> {
                 </div> */}
                 <div className ="contentBox">
                     <div className='sider' style={{
-                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={145*gHandler.getHeightDiff()}
+                                height={100*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {mapNav()}
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
-                    <div className="content"style={{
-                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
+                    <div className="content" style={{
+                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
                             (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:

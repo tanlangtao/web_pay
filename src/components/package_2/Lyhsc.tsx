@@ -19,12 +19,42 @@ interface State {
 }
 export default class Lyhsc2 extends React.Component<Props,State>{
     state = {
-        info:[
+        info:[   
             {
-                bonus:0,
-                recharge_amount:0,
-                flow_rate:0
-            }
+                bonus:8,
+                recharge_amount:100,
+                flow_rate:1, 
+            },
+            {
+                bonus:18,
+                recharge_amount:500,
+                flow_rate:1, 
+            },
+            {
+                bonus:38,
+                recharge_amount:1000,
+                flow_rate:1, 
+            },
+            {
+                bonus:78,
+                recharge_amount:2000,
+                flow_rate:1, 
+            },
+            {
+                bonus:118,
+                recharge_amount:3000,
+                flow_rate:1, 
+            },
+            {
+                bonus:198,
+                recharge_amount:5000,
+                flow_rate:1, 
+            },
+            {
+                bonus:388,
+                recharge_amount:10000,
+                flow_rate:1, 
+            },
         ],
         is_received:0,
         pay_amount_byday:0,
@@ -34,11 +64,6 @@ export default class Lyhsc2 extends React.Component<Props,State>{
     }
     btnIndex= 0 
     componentDidMount(){
-        this.setState({
-            info:this.props.curData.info
-        },()=>{
-            console.log(this.state.info)
-        })
         this.Axios_getPayAmountByDay()
     }
     renderBtn(){
@@ -178,12 +203,12 @@ export default class Lyhsc2 extends React.Component<Props,State>{
                     </div> */}
                 </div>
                 <div className = "rule">
-                    <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
-                    <p>2.游戏规则：仅限参与财神到，水果机，捕鱼·海王，捕鱼·聚宝盆，百人牛牛，红包乱斗，二八杠，21点，奔驰宝马游戏。</p>
-                    <p>3.单日充值金额累加统计，当日累计充值金额达到指定档位，即可领取活动规定的相应金币。</p>
-                    <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
-                    <p>5.每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
-                    <p>6. 本活动最终解释权归新盛所有。</p>
+                    <p>1.实名限制2及2个以上不符合。</p>
+                    <p>2.只限游戏（财神到，水果机，捕鱼，百人牛牛，红包乱斗，二八杠，21点，奔驰宝马）。</p>
+                    <p>3.每个账号一天只限第一次充值（如果遇到无法一笔充值达到有效的档位，可充值两次以上）。</p>
+                    <p>4.充值成功未下注之前找专线客服专员申请。</p>
+                    <p>5.每一个账号（同一ip，同一设备，同一姓名）视为一个账号，只能申请一次。</p>
+                    <p>6. 本活动最终解释权归德比所有。</p>
                 </div>
             </div>
         )

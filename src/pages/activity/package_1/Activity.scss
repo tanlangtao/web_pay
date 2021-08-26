@@ -46,33 +46,46 @@ $src:'../../../asses/activity/package_11/';
     }
     .sider{
         background:transparent;
-        width: 100px;
-        height: 220px;
+        width: 70px;
+        height:200px;
         .navBox{
-            height: 220px;
-            overflow: hidden;
-            color: white;
+            width: 58px;
+            height: 20px;
+            color: rgb(161,159,155);
+            padding-top:1px;
             .navItem{
-                width: 80px;
-                height: 30px;
+                width: 60px;
+                height: 40px;
                 .btnline{
                     height: 2px;
-                    width: 80px;
+                    width: 50px;
                     background-image:url($src+"sprite/btnline.png");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                     position: absolute;
-                    top: -5px;
+                    top: -0;
                 }
                 .navText{
-                    height: 30px;
-                    width: 80px;
+                    width: 55px;
+                    height: 20px;
                     padding-left: 2%;
-                    line-height: 11px;
+                    line-height: 9px;
                     justify-content: center;
                     background-repeat: no-repeat;
                     background-size: contain;
+                    flex-direction: column;
+                    font-size: 6px;
+                    p{
+                        margin: 0px;
+                    }
                 }
+            }
+            .curNavItem{
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url($src+"menu/menu_bg.png");
+                background-size: contain;
+                color: #fffee6;
             }
         }
     }

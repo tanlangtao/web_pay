@@ -1,7 +1,7 @@
 $src:'../../../asses/activity/package_9/';
 .activity9{
     font-family: 'Microsoft Yahei';
-    font-size: 8px;
+    font-size: 6px;
     background-image:url($src+"bg.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -12,7 +12,7 @@ $src:'../../../asses/activity/package_9/';
     position: absolute;
     .sider{
         background:transparent;
-        width: 80px;
+        width: 50px;
         height: 260px;
         .headerBox{
             margin-top: 20px;
@@ -34,16 +34,16 @@ $src:'../../../asses/activity/package_9/';
             }
         }
         .navBox{
+            margin-top: 5px;
             height: 170px;
-            overflow: hidden;
             color: white;
             .navItem{
-                height: 30px;
+                height: 20px;
                 .navText{
-                    height: 30px;
+                    height: 22px;
                     width: 90%;
                     padding-left: 2%;
-                    line-height: 11px;
+                    line-height: 9px;
                     justify-content: center;
                     flex-direction: column;
                     p{
@@ -52,7 +52,7 @@ $src:'../../../asses/activity/package_9/';
                 }
                 .xian_dh{
                     height: 2px;
-                    width: 85%;
+                    width: 75%;
                     background-image:url($src+"xian_dh.png");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
@@ -62,12 +62,11 @@ $src:'../../../asses/activity/package_9/';
                 background-image:url($src+"btn_2.png");
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
-                height: 32px;
+                height: 22px;
             }
         }
     }
     .content{
-        margin-top: 10px;
     }
     .returnToHall{
         background-repeat: no-repeat;

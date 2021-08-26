@@ -1,7 +1,7 @@
 $src:'../../../asses/activity/package_11/';
 .activity2{
     font-family: 'Microsoft Yahei';
-    font-size: 8px;
+    font-size: 7px;
     background-image:url($src+"bg/bg_1.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -52,32 +52,38 @@ $src:'../../../asses/activity/package_11/';
     }
     .sider{
         background:transparent;
-        width: 100px;
-        height: 220px;
+        width: 70px;
+        height:200px;
         .navBox{
-            height: 220px;
-            overflow: hidden;
+            height:200px;
             color: white;
             .navItem{
-                width: 80px;
-                height: 30px;
+                width: 58px;
+                height: 20px;
+                color: rgb(161,159,155);
+                padding-top:1px;
                 .btnline{
                     height: 2px;
-                    width: 80px;
+                    width: 52px;
                     background-image:url($src+"sprite/btnline.png");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
                     position: absolute;
-                    top: -5px;
+                    top: -0;
                 }
                 .navText{
-                    height: 30px;
-                    width: 80px;
+                    width: 55px;
+                    height: 20px;
                     padding-left: 2%;
-                    line-height: 11px;
+                    line-height: 9px;
                     justify-content: center;
                     background-repeat: no-repeat;
                     background-size: contain;
+                    flex-direction: column;
+                    font-size: 6px;
+                    p{
+                        margin: 0px;
+                    }
                 }
                 .btn_fpyq1{ background-image: url($src+"menu/btn_fpyq1.png");}
                 .btn_fpyq2{ background-image: url($src+"menu/btn_fpyq2.png");}
@@ -87,6 +93,13 @@ $src:'../../../asses/activity/package_11/';
                 .btn_lhysc2{ background-image: url($src+"menu/btn_lhysc2.png");}
                 .btn_redRain1{ background-image: url($src+"menu/btn_redRain1.png");}
                 .btn_redRain2{ background-image: url($src+"menu/btn_redRain2.png");}
+            }
+            .curNavItem{
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url($src+"menu/menu_bg.png");
+                background-size: contain;
+                color: #fffee6;
             }
         }
     }

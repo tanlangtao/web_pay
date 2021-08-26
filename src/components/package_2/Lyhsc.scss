@@ -1,35 +1,35 @@
-$src:'../../asses/activity/package_12/';
+$src:'../../asses/activity/package_11/';
 
 .Lyhsc2{
     background-image: url($src+"bg/event12-3_lhysc_content.png") ;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: -88px -35px;
-    width: 370px;
-    height: 255px;
-    font-size: 7px;
+    background-size: contain;
+    background-position: -70px -30px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
         width: 190px;
         height: 100px;
         position: absolute;
-        left: 43px;
-        top: 49px;
+        left: 39px;
+        top: 40px;
         .line{
             display: flex;
-            height: 11.6px;
+            height: 9.6px;
             .li1{
-                width: 51px;
+                width: 46px;
             }
             .li2{
-                width: 52px;
+                width: 42px;
             }
             .li3{
-                width: 54px;
+                width: 44px;
             }
             .li4{
-                width: 32px;
+                width: 28px;
                 .btn_linqu{
                     width: 26px;
                     height: 11px;
@@ -48,17 +48,17 @@ $src:'../../asses/activity/package_12/';
         }
         .label1{
             position: absolute;
-            left: 112px;
-            top: 45px;
+            left: 95px;
+            top: 30px;
         }
     }
     .rule{
         position: absolute;
-        width: 230px;
+        width: 200px;
         left: 20px;
-        line-height: 7px;
-        top: 148px;
-        font-size: 6px;
+        line-height: 6px;
+        top: 126px;
+        font-size: 5px;
         color: #FEFFC9;
         p{
             margin: 0px;

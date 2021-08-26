@@ -9,6 +9,7 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
+import ChuangGuan from "../../../components/package_3/ChuangGuan"
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -61,11 +62,13 @@ export default class Activity3 extends Component<{}, State> {
             } 
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
-        this.setState({
-            navArr:navArr,
-            curData:navArr[0],
-            title:navArr[0].name
-        })
+        if(navArr.length>0){
+            this.setState({
+                navArr:navArr,
+                curData:navArr[0],
+                title:navArr[0].name
+            })
+        }
     }
     returnToHall(){
         gHandler.closewebview()
@@ -84,44 +87,61 @@ export default class Activity3 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
+                        <div className = "btnline"></div>
+                        <div className ="navText flexBox">
+                            <p>{item.name.length<=7?item.name.substring(0,item.name.length):item.name.substring(0,7)}</p>
+                            <p>{item.name.substring(0,item.name.length).length>7?item.name.substring(7,item.name.length):""}</p>
+                        </div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
             return <div className='activity3'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
+                </div> */}
             </div>
         }
         return (
             <div className='activity3'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
+                {/* <div className='headerBox' >
+                    <div className="returnToHall" onClick={this.returnToHall}></div>
+                </div> */}
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
-                            transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                            marginLeft:-20*gHandler.getHeightDiff()
+                            transform:`scale(${gHandler.getFontsizeScale()})`,
+                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100*gHandler.getHeightDiff()}
+                                height={55*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {mapNav()}
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
                     <div className="content" style={{
-                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:-120*gHandler.getHeightDiff(),
+                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
+                        {
+                            this.state.title==='流水闯关活动' ?<ChuangGuan curData={this.state.curData}></ChuangGuan>:<div></div>
+                        }
+                        
                     </div>
                 </div>
             </div>

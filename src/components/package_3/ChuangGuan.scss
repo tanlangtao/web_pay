@@ -1,0 +1,218 @@
+$src:'../../asses/activity/chuangguan/';
+
+.ChuangGuan{
+    background-image:url($src+"bg_kuang.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 310px;
+    height: 200px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    padding-top: 2px;
+    margin-left: 5px;
+    .title{
+        background-image:url($src+"txt_title01.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 15px;
+        margin: 0 auto;
+    }
+    .rule{
+        color: #FEFFC9;
+        p{
+            margin: 1px;
+        }
+    }
+    .btn_history{
+        background-image:url($src+"btn_record.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 15px;
+        position: absolute;
+        right: 20px;
+        top:20px;
+    }
+    .group{
+        width: 290px;
+        height: 60px;
+        position: absolute;
+        left: 10px;
+        top: 60px;
+        display: flex;
+        .item{
+            height: 60px;
+            width: 57px;
+            background-image:url($src+"falidikuang.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            .li1{
+                height: 45px;
+                width: 100%;
+                font-size: 10px;
+                color: rgb(63,29,16);
+            }
+        }
+        .activeBg{
+            background-image:url($src+"falidikuang2.png");
+        }
+       
+    }
+    .progress{
+        background-image:url($src+"jindutiao1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 8rem;
+        height: 10px;
+        position: absolute;
+        top: 130px;
+        left:5px; 
+        overflow: hidden;
+        .progressBar{
+            background-image:url($src+"jindutiao2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 6px;
+            margin-top:0.5px;
+            border-radius: 5px;
+        }
+    }
+    .jinri{
+        background-image:url($src+"wenzi_jrls.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 30px;
+        height: 10px;
+        position: absolute;
+        top: 142px;
+        left: 120px;
+    }
+    .statement{
+        position: absolute;
+        top: 139.5px;
+        left: 155px;
+        color: rgb(255,199,5);
+        font-size: 8px;
+    }
+    .foot{
+        background-image:url($src+"xiankuang.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 310px;
+        height: 34px;
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 1px;
+        .jrkl{
+            background-image:url($src+"jrkl.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 50px;
+            height: 30px;
+        }
+        .txt_jinbi{
+            background-image:url($src+"txt_jinbi.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 20px;
+            height: 8px;
+        }
+        .goldlabel{
+            margin-left: 5px;
+            color: rgb(255,199,5);
+            font-size: 8px;
+        }
+        .btn_lingqu{
+            background-image:url($src+"btn_lingqu.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 50px;
+            height: 15px;
+            margin-left: 160px;
+        }
+        .btn_lingqu_done{
+            background-image:url($src+"btn_lingqu_done.png");
+        }
+    }
+    .GoldHistory{
+        background-image:url($src+"db1.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 200px;
+        height: 125px;
+        left: 50px;
+        top:20px;
+        position: absolute;
+        padding-top: 3px;
+        overflow: hidden;
+        .title{
+            background-image:url($src+"lsjl.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 80px;
+            height: 15px; 
+            margin: 0 auto;
+        }
+        .closeBtn{
+            background-image:url($src+"close.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 15px;
+            height: 15px; 
+            position: absolute;
+            right: 2px;
+            top: 2px;
+        }
+        .line1{
+            display: flex;
+            height: 11.3px;
+            text-align: center;
+            width: 190px;
+            margin: 0 auto;
+            margin-top: 4px;
+            .li{
+                width: 50px;
+                height: 10px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            .li1{
+                background-image:url($src+"rq.png");
+            }
+            .li2{
+                background-image:url($src+"drls.png");
+            }
+            .li3{
+                background-image:url($src+"lqje.png");
+            }
+            .li4{
+                background-image:url($src+"lqsj.png");
+            }
+        }
+        .db2{
+            background-image:url($src+"db2.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 190px;
+            height: 85px;
+            margin: 0 auto;
+            .line2{
+                display: flex;
+                height: 10px;
+                text-align: center;
+                .li{
+                    width: 50px;
+                    height: 10px;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}

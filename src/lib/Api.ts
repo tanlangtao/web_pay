@@ -37,4 +37,7 @@ export const Api ={
     getReceiveFishInfo:"/api/activity/getReceiveFishInfo",
     getTask:"/api/activity/getTask",
     dayTaskDetail:"/api/activity/dayTaskDetail",
+    receiveGoldInfo:"/api/activity/receiveGoldInfo",
+    receiveGold:"/api/activity/receiveGold",
+    activityList:"/api/activity/activityList",
 }

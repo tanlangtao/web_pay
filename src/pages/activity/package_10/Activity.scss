@@ -41,25 +41,25 @@ $src:'../../../asses/activity/package_10/';
         width: 100%;
         display: flex;
         flex-direction: row;
+        height: 210px;
     }
     .sider{
         background:transparent;
-        width: 100px;
+        width: 60px;
         height: 220px;
         .navBox{
             height: 220px;
-            overflow: hidden;
             color: white;
             .navItem{
-                width: 80px;
-                height: 30px;
+                width: 55px;
+                height: 21px;
                 background-image: url($src+"sprite/anniu2.png");
                 background-repeat: no-repeat;
                 background-size: 100% 100%;
                 .navText{
-                    height: 10px;
-                    width: 60px;
-                    padding-left: 2%;
+                    height: 7px;
+                    width:55px;
+                    margin-left: 2px;
                     line-height: 11px;
                     justify-content: center;
                     background-repeat: no-repeat;
@@ -86,12 +86,12 @@ $src:'../../../asses/activity/package_10/';
 
             }
             .curNavItem{
-                width: 100px;
-                padding-right: 20px;
+                width: 80px;
+                padding-right: 25px;
                 background-image: url($src+"sprite/anniu1.png");
                 background-repeat: no-repeat;
                 background-size: contain;
-                height: 32px;
+                height: 21px;
             }
         }
     }

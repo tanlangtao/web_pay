@@ -102,11 +102,11 @@ export default class Activity1 extends Component<{}, State> {
                 <div className='headerBox' >
                     {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
                 </div>
-                <div className ="contentBox">
+                <div className ="contentBox" >
                     <div
                         className='sider' style={{
-                            transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                            marginLeft:-20*gHandler.getHeightDiff()
+                            transform:`scale(${gHandler.getFontsizeScale()})`,
+                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }}>
                         <div className="navBox">
                             <Swiper
@@ -117,12 +117,20 @@ export default class Activity1 extends Component<{}, State> {
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {mapNav()}
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
                     <div className="content" style={{
-                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:-120*gHandler.getHeightDiff(),
+                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                     </div>
                 </div>

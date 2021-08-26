@@ -10,8 +10,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import Lyhsc2 from 'components/package_2/Lyhsc';
-import RedRain11 from 'components/package_11/RedRain';
-import Bytghl from 'components/package_11/Bytghl';
 import FirstComponent from '../../../FirstComponent';
 import RedRain2 from 'components/package_2/RedRain';
 import Xyhschd2 from 'components/package_2/Xyhschd';
@@ -65,7 +63,7 @@ export default class Activity2 extends Component<{}, State> {
             }else{
                 console.log("请检查配置信息！",e.name)
             }
-            if(e.is_close === "1" && (e.name === "分享朋友圈活动3" || e.name === "新会员首存活动三重奏2" || e.name === "老会员每日首存活动非自动领取2" || e.name === "四季发财红包雨2")){
+            if(e.is_close === "2" && (e.name === "分享朋友圈活动3" || e.name === "新会员首存活动三重奏2" || e.name === "老会员每日首存活动非自动领取2" || e.name === "四季发财红包雨2")){
                 navArr.push(e)
             } 
         })
@@ -97,12 +95,16 @@ export default class Activity2 extends Component<{}, State> {
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className = "btnline"></div>
-                        <div className={`navText ${
+                        {/* <div className={`navText ${
                             item.name==="分享朋友圈活动3"?(item.name ===this.state.title ?"btn_fpyq1":"btn_fpyq2"):
                                 item.name==="新会员首存活动三重奏2"?(item.name ===this.state.title ?"btn_xhysc1":"btn_xhysc2"):
                                     item.name==="老会员每日首存活动非自动领取2"?(item.name ===this.state.title ?"btn_lhysc1":"btn_lhysc2"):
                                         item.name==="四季发财红包雨2"?(item.name ===this.state.title ?"btn_redRain1":"btn_redRain2"):""
-                        }`} ></div>
+                        }`} ></div> */}
+                        <div className ="navText flexBox">
+                            <p>{item.name.length<=7?item.name.substring(0,item.name.length-1):item.name.substring(0,item.name.length-1).substring(0,7)}</p>
+                            <p>{item.name.substring(0,item.name.length-1).length>7?item.name.substring(7,item.name.length-1):""}</p>
+                        </div>
                     </div>
                 </SwiperSlide>
             })
@@ -119,25 +121,33 @@ export default class Activity2 extends Component<{}, State> {
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
-                            transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                            marginLeft:-20*gHandler.getHeightDiff()
+                            transform:`scale(${gHandler.getFontsizeScale()})`,
+                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100*gHandler.getHeightDiff()}
+                                height={55*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {mapNav()}
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
                             </Swiper>
                         </div>
                     </div>
                     <div className="content" style={{
-                        transform:`scale(${gHandler.getNodeScale()},${gHandler.getNodeScale()})`,
-                        marginLeft:-120*gHandler.getHeightDiff(),
-                    }}>
+                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
+                    }} >
                         {
                             (this.state.title==='分享朋友圈活动3' ? <Fxpyq curData={this.state.curData}/>:
                                 (this.state.title==='新会员首存活动三重奏2' ? <Xyhschd2 curData={this.state.curData}/>:
