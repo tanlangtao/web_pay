@@ -58,13 +58,13 @@ $src:'../../../asses/activity/package_11/';
             height:200px;
             color: white;
             .navItem{
-                width: 58px;
+                width: 50px;
                 height: 20px;
                 color: rgb(161,159,155);
                 padding-top:1px;
                 .btnline{
                     height: 2px;
-                    width: 52px;
+                    width: 45px;
                     background-image:url($src+"sprite/btnline.png");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;
@@ -98,7 +98,7 @@ $src:'../../../asses/activity/package_11/';
                 background-repeat: no-repeat;
                 background-size: contain;
                 background-image: url($src+"menu/menu_bg.png");
-                background-size: contain;
+                background-size: 100% 100%;
                 color: #fffee6;
             }
         }

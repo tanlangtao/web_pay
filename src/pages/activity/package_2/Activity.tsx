@@ -145,7 +145,7 @@ export default class Activity2 extends Component<{}, State> {
                     </div>
                     <div className="content" style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
                         marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }} >
                         {
