@@ -38,24 +38,32 @@ $src:'../../../asses/activity/package_11/';
             right: 0px;
             top: 2px;
         }
+        .dm_title_bytghl{background-image: url($src+"title/dm_title_bytghl.png")}
+        .dm_title_xyhsc{background-image: url($src+"title/dm_title_xyhsc.png")}
+        .dm_title_lhyschd{background-image: url($src+"title/dm_title_lhyschd.png")}
+        .db_redrain{background-image: url($src+"title/db_redrain.png")}
+        .xingyunlunpan{background-image: url($src+"title/xingyunlunpan.png")}
+        .dm_title{background-image: url($src+"title/dm_title.png")}
+        .mrqd{background-image: url($src+"title/mrqd.png")}
     }
     .contentBox{
         width: 100%;
         display: flex;
         flex-direction: row;
+        height: 175px;
     }
     .sider{
         background:transparent;
-        width: 70px;
+        width: 60px;
         height:200px;
         .navBox{
-            width: 50px;
-            height: 20px;
-            color: rgb(161,159,155);
-            padding-top:1px;
+            height:200px;
+            color: white;
             .navItem{
-                width: 60px;
-                height: 40px;
+                width: 50px;
+                height: 20px;
+                color: rgb(161,159,155);
+                padding-top:1px;
                 .btnline{
                     height: 2px;
                     width: 45px;
@@ -79,6 +87,20 @@ $src:'../../../asses/activity/package_11/';
                         margin: 0px;
                     }
                 }
+                .btn_bytghl1{ background-image: url($src+"menu/btn_bytghl1.png");}
+                .btn_bytghl2{ background-image: url($src+"menu/btn_bytghl2.png");}
+                .btn_db_xyhsccj1{ background-image: url($src+"menu/btn_db_xyhsccj1.png");}
+                .btn_db_xyhsccj2{ background-image: url($src+"menu/btn_db_xyhsccj2.png");}
+                .btn_lhyschd1{ background-image: url($src+"menu/btn_lhyschd1.png");}
+                .btn_lhyschd2{ background-image: url($src+"menu/btn_lhyschd2.png");}
+                .btn_redRain1{ background-image: url($src+"menu/btn_redRain1.png");}
+                .btn_redRain2{ background-image: url($src+"menu/btn_redRain2.png");}
+                .btn_xyzp1{ background-image: url($src+"menu/btn_xyzp1.png");}
+                .btn_xyzp2{ background-image: url($src+"menu/btn_xyzp2.png");}
+                .btn_dailyMission1{ background-image: url($src+"menu/btn_dailyMission1.png");}
+                .btn_dailyMission2{ background-image: url($src+"menu/btn_dailyMission2.png");}
+                .btn_qd1{ background-image: url($src+"menu/btn_qd1.png");}
+                .btn_qd2{ background-image: url($src+"menu/btn_qd2.png");}
             }
             .curNavItem{
                 background-repeat: no-repeat;
@@ -90,9 +112,7 @@ $src:'../../../asses/activity/package_11/';
         }
     }
     .content{
-        margin-left: 2px;
-        margin-top: 2px;
-        width: 356px;
+        width: 370px;
         height: 210px;
     }
 }

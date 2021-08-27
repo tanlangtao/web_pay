@@ -128,7 +128,6 @@ export default class Activity10 extends Component<{}, State> {
                     <div className='sider' style={{
                         zIndex:2,
                         transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -151,7 +150,6 @@ export default class Activity10 extends Component<{}, State> {
                         zIndex:1,
                         transform:`scale(${gHandler.getFontsizeScale()})`,
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
                             (this.state.title==='专线包赔活动10' ? <Xyhbp10 curData={this.state.curData}/>:

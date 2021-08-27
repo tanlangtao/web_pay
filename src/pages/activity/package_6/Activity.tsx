@@ -108,7 +108,6 @@ export default class Activity6 extends Component<{}, State> {
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getFontsizeScale()})`,
-                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }} >
                         <div className="navBox">
                             <Swiper
@@ -130,7 +129,6 @@ export default class Activity6 extends Component<{}, State> {
                     <div className="content" style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
                             (this.state.title==='新用户首存活动6' ? <Xyhschd6 curData={this.state.curData}/>:

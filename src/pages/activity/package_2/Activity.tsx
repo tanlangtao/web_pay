@@ -122,13 +122,12 @@ export default class Activity2 extends Component<{}, State> {
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getFontsizeScale()})`,
-                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={55*gHandler.getHeightDiff()}
+                                height={65*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -146,7 +145,6 @@ export default class Activity2 extends Component<{}, State> {
                     <div className="content" style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }} >
                         {
                             (this.state.title==='分享朋友圈活动3' ? <Fxpyq curData={this.state.curData}/>:

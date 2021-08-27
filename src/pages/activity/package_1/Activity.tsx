@@ -86,6 +86,10 @@ export default class Activity1 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
+                        <div className ="navText flexBox">
+                            <p>{item.name.length<=7?item.name.substring(0,item.name.length-1):item.name.substring(0,item.name.length-1).substring(0,7)}</p>
+                            <p>{item.name.substring(0,item.name.length-1).length>7?item.name.substring(7,item.name.length-1):""}</p>
+                        </div>
                     </div>
                 </SwiperSlide>
             })
@@ -112,7 +116,7 @@ export default class Activity1 extends Component<{}, State> {
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100*gHandler.getHeightDiff()}
+                                height={65*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >

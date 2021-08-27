@@ -125,7 +125,6 @@ export default class Activity12 extends Component<{}, State> {
                 <div className ="contentBox">
                     <div className='sider' style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -147,7 +146,6 @@ export default class Activity12 extends Component<{}, State> {
                     <div className="content" style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
                             (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
