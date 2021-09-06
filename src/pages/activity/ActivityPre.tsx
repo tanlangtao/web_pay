@@ -10,6 +10,7 @@ import Activity3 from './package_3/Activity';
 import Activity8 from './package_8/Activity';
 import Activity6 from './package_6/Activity';
 import Activity15 from './package_15/Activity';
+import Activity13 from './package_13/Activity';
 interface State{
 }
 export default class ActivityPre extends Component<{}, State> {
@@ -25,7 +26,8 @@ export default class ActivityPre extends Component<{}, State> {
                                     gHandler.UrlData.package_id==='8' ?<Activity8/>:
                                         gHandler.UrlData.package_id==='6' ?<Activity6/>:
                                             gHandler.UrlData.package_id==='15' ?<Activity15/>:
-                                                <Activity1></Activity1>    
+                                                gHandler.UrlData.package_id==='13' ?<Activity13/>:
+                                                    <Activity1></Activity1>    
                 )
         )
     }
