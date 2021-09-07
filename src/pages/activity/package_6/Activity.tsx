@@ -12,6 +12,7 @@ import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
 import Xyhschd6 from 'components/package_6/Xyhschd';
 import Lyhsc6 from 'components/package_6/Lyhsc';
+import Zcsyj from 'components/package_6/Zcsyj';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -133,7 +134,9 @@ export default class Activity6 extends Component<{}, State> {
                         {
                             (this.state.title==='新用户首存活动6' ? <Xyhschd6 curData={this.state.curData}/>:
                                 (this.state.title==='老用户首存活动6' ? <Lyhsc6 curData={this.state.curData}/>:
-                                    <div></div>
+                                    (this.state.title==='注册送佣金6' ? <Zcsyj curData={this.state.curData}/>:
+                                        <div></div>
+                                    )
                                 )
                             )
                         }

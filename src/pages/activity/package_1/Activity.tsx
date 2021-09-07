@@ -9,13 +9,14 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
+import FirstComponent from '../../../FirstComponent';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
     title :string,
     curData:ConfigItem
 }
-export default class Activity1 extends Component<{}, State> {
+export default class activity1 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -86,6 +87,7 @@ export default class Activity1 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
+                        <div className = "btnline"></div>
                         <div className ="navText flexBox">
                             <p>{item.name.length<=7?item.name.substring(0,item.name.length-1):item.name.substring(0,item.name.length-1).substring(0,7)}</p>
                             <p>{item.name.substring(0,item.name.length-1).length>7?item.name.substring(7,item.name.length-1):""}</p>
@@ -96,22 +98,16 @@ export default class Activity1 extends Component<{}, State> {
         }
         if(this.state.curData.id ===""){
             return <div className='activity1'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
             </div>
         }
         return (
-            <div className='activity1'>
-                <div className='headerBox' >
-                    {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
-                </div>
-                <div className ="contentBox" >
+            !this.state.loading?<div className='activity1'>
+                <div className ="contentBox">
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getFontsizeScale()})`,
                             marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
-                        }}>
+                        }} >
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
@@ -121,8 +117,6 @@ export default class Activity1 extends Component<{}, State> {
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
                                 {mapNav()}
-                                <SwiperSlide></SwiperSlide>
-                                <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
@@ -139,6 +133,7 @@ export default class Activity1 extends Component<{}, State> {
                     </div>
                 </div>
             </div>
+                :<FirstComponent></FirstComponent>
         )
     }
 }

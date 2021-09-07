@@ -1,0 +1,35 @@
+$src:'../../asses/activity/package_11/';
+.Zcsyj{
+    background-image: url($src+"bg/zcsyj_6.png") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -52px -32px;
+    width: 380px;
+    height: 270px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .logo{
+        background-image: url($src+"sprite/91_logo.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 70px;
+        height: 50px;
+        position: absolute;
+        left:225px;
+        top: 140px;
+    }
+    .rule{
+        position: absolute;
+        width: 266px;
+        left: 10px;
+        line-height: 18px;
+        top: 50px;
+        color: rgb(187,173,143);
+        font-size: 8px;
+        font-weight: bold;
+        p{
+            margin: 0px;
+        }
+    }
+}
