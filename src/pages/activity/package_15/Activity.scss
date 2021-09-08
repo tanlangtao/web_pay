@@ -1,8 +1,8 @@
-$src:'../../../asses/activity/package_10/';
-.activity10{
+$src:'../../../asses/activity/package_15/';
+.activity15{
     font-family: 'Microsoft Yahei';
-    font-size: 8px;
-    background-image:url($src+"bj_da.png");
+    font-size: 6.5px;
+    background-image:url($src+"jd_event_back.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: flex;
@@ -18,24 +18,6 @@ $src:'../../../asses/activity/package_10/';
         background: transparent;
         background-repeat: no-repeat;
         background-size: contain;
-        .returnToHall{
-            background-repeat: no-repeat;
-            background-size: contain;
-            background-image: url($src+"sprite/fanhui.png");
-            height: 30px;
-            width: 50px;
-            position: absolute;
-            left:0px;
-            top: 0px;
-        }
-        .title_jchd{
-            background-image: url($src+"sprite/jchd.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 20px;
-            width: 80px;
-            margin-left: 5px;
-        }
     }
     .contentBox{
         width: 100%;
@@ -46,52 +28,38 @@ $src:'../../../asses/activity/package_10/';
     .sider{
         background:transparent;
         width: 60px;
-        height: 220px;
+        height: 180px;
+        background-image: url($src+"bg/jd_event_leftMenu.png");
+        background-repeat: no-repeat;
+        background-size: cover;
         .navBox{
-            height: 220px;
+            height: 180px;
             color: white;
             .navItem{
-                width: 55px;
-                height: 21px;
-                background-image: url($src+"sprite/anniu2.png");
+                width: 60px;
+                height: 24px;
+                background-image: url($src+"sprite/jd_event_btn_2.png");
                 background-repeat: no-repeat;
-                background-size: 100% 100%;
+                background-size: contain;
                 .navText{
                     height: 7px;
                     width:55px;
-                    margin-left: 2px;
                     line-height: 11px;
                     justify-content: center;
                     background-repeat: no-repeat;
                     background-size: contain;
+                    -webkit-text-stroke:0.1px rgb(0,0,80);
+                    p{
+                        margin: 0px;
+                    }
                 }
-                .zsbp1{ background-image: url($src+"menu/zsbp1.png");}
-                .zsbp2{ background-image: url($src+"menu/zsbp2.png");}
-                .hnly1{ background-image: url($src+"menu/hnly1.png");}
-                .hnly2{ background-image: url($src+"menu/hnly2.png");}
-                .qqly1{ background-image: url($src+"menu/qqly1.png");}
-                .qqly2{ background-image: url($src+"menu/qqly2.png");}
-                .bphn1{ background-image: url($src+"menu/bphn1.png");}
-                .bphn2{ background-image: url($src+"menu/bphn2.png");}
-                .AGA1{ background-image: url($src+"menu/AGA1.png");}
-                .AGA2{ background-image: url($src+"menu/AGA2.png");}
-                .xyhbp1{ background-image: url($src+"menu/xyhbp1.png");}
-                .xyhbp2{ background-image: url($src+"menu/xyhbp2.png");}
-                .xyh1{ background-image: url($src+"menu/xyh1.png");}
-                .xyh2{ background-image: url($src+"menu/xyh2.png");}
-                .lyh1{ background-image: url($src+"menu/lyh1.png");}
-                .lyh2{ background-image: url($src+"menu/lyh2.png");}
-                .bpqq1{ background-image: url($src+"menu/bpqq1.png");}
-                .bpqq2{ background-image: url($src+"menu/bpqq2.png");}
-
             }
             .curNavItem{
-                width: 80px;
-                padding-right: 25px;
-                background-image: url($src+"sprite/anniu1.png");
+                width: 60px;
+                background-image: url($src+"sprite/jd_event_btn_1.png");
                 background-repeat: no-repeat;
                 background-size: contain;
-                height: 21px;
+                height: 24px;
             }
         }
     }

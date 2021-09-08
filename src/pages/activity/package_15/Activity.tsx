@@ -9,16 +9,9 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import Xyhbp10 from 'components/package_10/Xyhbp';
-import Xyhzybp from 'components/package_10/Xyhzybp';
 import Lyhsc10 from 'components/package_10/Lyhsc';
-import Xyhschd10 from 'components/package_10/Xyhschd';
-import AGAbp from 'components/package_10/AGAbp';
-import CdxHeNei from 'components/package_10/CdxHeNei';
-import CdxQiQu from 'components/package_10/CdxQiQu';
-import FfcBaoPeiQiQu from 'components/package_10/FfcBaoPeiQiQu';
-import FfcBaoPeiHeNei from 'components/package_10/FfcBaoPeiHeNei';
 import FirstComponent from '../../../FirstComponent';
+import Xyhschd15 from 'components/package_15/Xyhschd';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -96,34 +89,23 @@ export default class Activity15 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
-                        <div className={`navText ${
-                            item.name==="专线包赔活动15"?(item.name ===this.state.title ?"zsbp1":"zsbp2"):
-                                item.name==="河内连赢活动15"?(item.name ===this.state.title ?"hnly1":"hnly2"):
-                                    item.name==="奇趣连赢活动15"?(item.name ===this.state.title ?"qqly1":"qqly2"):
-                                        item.name==="河内分分彩包赔15"?(item.name ===this.state.title ?"bphn1":"bphn2"):
-                                            item.name==="AGA专属包赔15"?(item.name ===this.state.title ?"AGA1":"AGA2"):
-                                                item.name==="新用户包赔活动15"?(item.name ===this.state.title ?"xyhbp1":"xyhbp2"):   
-                                                    item.name==="新用户首存活动15"?(item.name ===this.state.title ?"xyh1":"xyh2"):   
-                                                        item.name==="老用户首存活动15"?(item.name ===this.state.title ?"lyh1":"lyh2"):   
-                                                            item.name==="奇趣分分彩包赔15"?(item.name ===this.state.title ?"bpqq1":"bpqq2"): ""
-                        }`} ></div>
+                        <div className ="navText flexBox">
+                            <p>{item.name.length<=8?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,8)}</p>
+                            <p>{item.name.substring(0,item.name.length-2).length>8?item.name.substring(8,item.name.length-2):""}</p>
+                        </div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity10'>
+            return <div className='activity15'>
                 {/* <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                 </div> */}
             </div>
         }
         return (
-            !this.state.loading ?<div className='activity10'>
-                {/* <div className='headerBox flexBox' >
-                    <div className="returnToHall" onClick={this.returnToHall}></div>
-                    <div className='title_jchd'></div>
-                </div> */}
+            !this.state.loading ?<div className='activity15'>
                 <div className ="contentBox">
                     <div className='sider' style={{
                         zIndex:2,
@@ -152,23 +134,9 @@ export default class Activity15 extends Component<{}, State> {
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
-                            (this.state.title==='专线包赔活动10' ? <Xyhbp10 curData={this.state.curData}/>:
-                                (this.state.title==='新用户包赔活动10' ? <Xyhzybp curData={this.state.curData}/>:
-                                    (this.state.title==='老用户首存活动10' ? <Lyhsc10 curData={this.state.curData}/>:
-                                        (this.state.title==='新用户首存活动10' ? <Xyhschd10 curData={this.state.curData}/>:
-                                            (this.state.title==='AGA专属包赔10' ? <AGAbp curData={this.state.curData}/>:
-                                                (this.state.title==='河内连赢活动10' ? <CdxHeNei curData={this.state.curData}/>:
-                                                    (this.state.title==='奇趣连赢活动10' ? <CdxQiQu curData={this.state.curData}/>:
-                                                        (this.state.title==='奇趣分分彩包赔10' ? <FfcBaoPeiQiQu curData={this.state.curData}/>:
-                                                            (this.state.title==='河内分分彩包赔10' ? <FfcBaoPeiHeNei curData={this.state.curData}/>:
-                                                                <div></div>
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
+                            (this.state.title==='老用户首存活动15' ? <Lyhsc10 curData={this.state.curData}/>:
+                                (this.state.title==='新用户首存活动15' ? <Xyhschd15 curData={this.state.curData}/>:
+                                    <div></div>
                                 )
                             )
                         }
