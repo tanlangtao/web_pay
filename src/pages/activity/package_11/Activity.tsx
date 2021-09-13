@@ -163,7 +163,7 @@ export default class Activity11 extends Component<{}, State> {
                         {
                             (this.state.title==='捕鱼通关豪礼11' ? <Bytghl curData={this.state.curData}/>:
                                 (this.state.title==='四季发财红包雨11' ? <RedRain11 curData={this.state.curData}/>:
-                                    (this.state.title==='老会员每日首存活动11' ? <Lyhsc11 curData={this.state.curData}/>:
+                                    (this.state.title==='每日充值赠送活动11' ? <Lyhsc11 curData={this.state.curData}/>:
                                         (this.state.title==='新用户首存活动11' ? <Xyhschd11 curData={this.state.curData}/>:
                                             (this.state.title==='每日任务11' ? <DailyActivity11 curData={this.state.curData}/>:
                                                 (this.state.title==='每日签到11' ? <DailySign11 curData={this.state.curData}/>:

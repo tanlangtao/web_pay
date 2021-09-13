@@ -29,7 +29,10 @@ export default class Xzdlphb extends React.Component<Props,State>{
         },
         is_received:0,
         lastweek: {},
-        lastweekList:[],
+        lastweekList:[{
+            id:"",
+            ren:0
+        }],
         num:0,
     }
     componentDidMount(){
@@ -107,13 +110,13 @@ export default class Xzdlphb extends React.Component<Props,State>{
     }
     render (){
         let rangeLine = ()=>{
-            return  this.state.lastweekList.map((e:any,index:number) => {
+            return  this.state.info.bonus.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
                     <div className ="li1 flexBox">第{index+1}名</div>
-                    <div className ="li2 flexBox">{this.state.info.bonus[index]}</div>
+                    <div className ="li2 flexBox">{e}</div>
                     <div className ="li3 flexBox"> 
                         {
-                            e.id === gHandler.UrlData.user_id?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.lastweekList[index] && this.state.lastweekList[index].id === gHandler.UrlData.user_id?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }

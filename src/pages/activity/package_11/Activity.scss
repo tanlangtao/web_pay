@@ -2,9 +2,9 @@ $src:'../../../asses/activity/package_11/';
 .activity11{
     font-family: 'Microsoft Yahei';
     font-size: 8px;
-    background-image:url($src+"bg/bg_1.jpg");
+    background-image:url($src+"bg/hd_bg.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,18 +55,21 @@ $src:'../../../asses/activity/package_11/';
     .sider{
         background:transparent;
         width: 60px;
-        height:200px;
+        height: 180px;
+        background-image: url($src+"bg/hd_bg_menu.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
         .navBox{
             height:200px;
             color: white;
             .navItem{
-                width: 50px;
+                width: 60px;
                 height: 20px;
                 color: rgb(161,159,155);
                 padding-top:1px;
                 .btnline{
                     height: 2px;
-                    width: 44px;
+                    width: 56px;
                     background-image:url($src+"sprite/btnline.png");
                     background-repeat: no-repeat;
                     background-size: 100% 100%;

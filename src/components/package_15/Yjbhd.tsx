@@ -14,11 +14,16 @@ interface msgItem {
     id:Number,
     win:Number
 }
+interface dayItem{
+    id:Number,
+    lose_total:Number,
+    win_total:Number,
+}
 interface State {
     info:any,
     is_received:number,
-    today:number,
-    yesterday:number,
+    today:dayItem[],
+    yesterday:dayItem[],
     GetWinRankList :msgItem[],
 }
 export default class Yjbhd extends React.Component<Props,State>{
@@ -28,8 +33,16 @@ export default class Yjbhd extends React.Component<Props,State>{
             flow_rate:0,
             bonus:[]
         },
-        today:0,
-        yesterday:0,
+        today:[{
+            id:0,
+            lose_total:0,
+            win_total:0
+        }],
+        yesterday:[{
+            id:0,
+            lose_total:0,
+            win_total:0
+        }],
         is_received:0,
         GetWinRankList:[{
             game_nick:"",
@@ -56,7 +69,7 @@ export default class Yjbhd extends React.Component<Props,State>{
     }
     //领取
     private async Axios_receiveGoldByWin(){
-        let url = `${gHandler.UrlData.host}${Api.receiveRankGoldByPid}`;
+        let url = `${gHandler.UrlData.host}${Api.receiveGoldByWin}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
@@ -88,8 +101,8 @@ export default class Yjbhd extends React.Component<Props,State>{
         })
         if(response.status === 0){
             this.setState({
-                today:response.data.today === null ?0:response.data.today ,
-                yesterday:response.data.yesterday=== null ?0:response.data.yesterday,
+                today:response.data.today === null ?this.state.today:response.data.today ,
+                yesterday:response.data.yesterday=== null ?this.state.yesterday:response.data.yesterday,
                 is_received:response.data.is_received
             })
             
@@ -119,6 +132,9 @@ export default class Yjbhd extends React.Component<Props,State>{
     render (){
         let rangeLine = ()=>{
             return  this.state.GetWinRankList.map((e:any,index:number) => {
+                if(e.win <=0){
+                    return <div key={index}></div>
+                }
                 return <div className ="line" key={index}>
                     <div className ="li1 flexBox">第{index+1}名</div>
                     <div className ="li2 flexBox">{e.game_nick}</div>
@@ -152,11 +168,11 @@ export default class Yjbhd extends React.Component<Props,State>{
                 <div className="foot">
                     <div className="line">
                         <div className = "icon1"></div>
-                        <div className = "icon2">{gHandler.toDecimal(this.state.yesterday)}</div>
+                        <div className = "icon2">{gHandler.toDecimal(this.state.yesterday[0].win_total - Math.abs(this.state.yesterday[0].lose_total))}</div>
                     </div>
                     <div className="line">
                         <div className = "icon3"></div>
-                        <div className = "icon2">{gHandler.toDecimal(this.state.today)}</div>
+                        <div className = "icon2">{gHandler.toDecimal(this.state.today[0].win_total - Math.abs(this.state.today[0].lose_total))}</div>
                     </div>
                 </div>
                 <div className = "rule">

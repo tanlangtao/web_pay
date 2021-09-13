@@ -167,7 +167,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
                         rangeLine()
                     }
                     <div className ="label1 ">
-                        <div className="flexBox">本金1倍</div>
+                        <div className="flexBox">本金1倍+</div>
                         <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
                     </div>
                     {/* <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
