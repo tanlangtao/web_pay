@@ -143,5 +143,19 @@ class gHandlerC  {
             return 1
         }
     }
+    //保留两位小数
+    public toDecimal(num:any) {
+        num = Math.abs(num).toFixed(7)
+        var result = num.toString()
+        if (isNaN(result)) {
+            return ''
+        }
+        let newNum = result.indexOf(".") >-1 ?result.substring(0,result.indexOf(".")+3) :result;
+        var pos_decimal = newNum.indexOf('.')
+        while (newNum.length > 1 && newNum.length <= pos_decimal + 2) {
+            newNum += '0'
+        }
+        return newNum
+    }
 }
 export const gHandler = new gHandlerC()

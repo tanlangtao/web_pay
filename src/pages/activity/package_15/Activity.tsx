@@ -9,9 +9,11 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import Lyhsc10 from 'components/package_10/Lyhsc';
 import FirstComponent from '../../../FirstComponent';
 import Xyhschd15 from 'components/package_15/Xyhschd';
+import Jcbshl from 'components/package_15/Jcbshl';
+import Xzdlphb from 'components/package_15/Xzdlphb';
+import Yjbhd from 'components/package_15/Yjbhd';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -134,10 +136,15 @@ export default class Activity15 extends Component<{}, State> {
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
-                            (this.state.title==='老用户首存活动15' ? <Lyhsc10 curData={this.state.curData}/>:
+                            (this.state.title==='奖池榜送豪礼15' ? <Jcbshl curData={this.state.curData}/>:
                                 (this.state.title==='新用户首存活动15' ? <Xyhschd15 curData={this.state.curData}/>:
-                                    <div></div>
+                                    (this.state.title==='新增代理排行榜15' ? <Xzdlphb curData={this.state.curData}/>:
+                                        (this.state.title==='赢金榜活动15' ? <Yjbhd curData={this.state.curData}/>:
+                                            <div></div>
+                                        )
+                                    )
                                 )
+                                
                             )
                         }
                     </div>

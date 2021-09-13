@@ -1,0 +1,79 @@
+$src:'../../asses/activity/package_15/';
+
+.Xzdlphb{
+    background-image:url($src+"bg/jd_event_rightFrame.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 280px;
+    height: 180px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    .bg{
+        background-image:url($src+"bg/jd_event.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: -58px -2px;
+        width: 340px;
+        height: 200px;
+        color: white;
+        position: relative;
+    }
+    .group{
+        width: 90px;
+        height: 105px;
+        position: absolute;
+        left: 28px;
+        top: 66px;
+        overflow: hidden;
+        .title{
+        }
+        .line{
+            display: flex;
+            height: 9.5px;
+            .li1{
+                width: 26px;
+            }
+            .li2{
+                width: 30px;
+            }
+            .li3{
+                width: 32px;
+                .btn_linqu{
+                    width: 18px;
+                    height: 8px;
+                    background-image: url($src+"sprite/jd_event_btn_linqui.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 18px;
+                    height: 8px;
+                    background-image: url($src+"sprite/jd_event_btn_done.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+    .label1{
+        position: absolute;
+        left: 210px;
+        top: 73px;
+        color: rgb(247,81,0);
+        font-size: 9px;
+    }
+    .rule{
+        position: absolute;
+        width: 140px;
+        left: 123px;
+        line-height: 6px;
+        top: 90px;
+        color: rgb(73,89,104);
+        font-size: 5.5px;
+        p{
+            margin: 0px
+        }
+    }
+}

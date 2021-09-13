@@ -1,0 +1,66 @@
+$src:'../../asses/activity/package_15/';
+
+.Jcbshl{
+    background-image:url($src+"bg/jd_event_rightFrame.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 280px;
+    height: 180px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    .bg{
+        background-image:url($src+"bg/event_20210911_JD.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: -30px;
+        width: 310px;
+        height: 170px;
+        color: white;
+        position: relative;
+    }
+    .group{
+        width: 140px;
+        height: 135px;
+        position: absolute;
+        left: 33px;
+        top: 31px;
+        .title{
+            color: white;
+        }
+        .line{
+            display: flex;
+            height: 8.3px;
+            .li1{
+                width: 47px;
+                font-size: 4px;
+                line-height: 4px;
+                
+            }
+            .li2{
+                width: 22px;
+            }
+            .li3{
+                width: 27px;
+            }
+            .li4{
+                width: 22px;
+            }
+            .li5{
+                width: 20px;
+            }
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 85px;
+        left: 182px;
+        line-height: 6px;
+        top: 46px;
+        color: rgb(73,89,104);
+        p{
+            margin: 0px
+        }
+    }
+}

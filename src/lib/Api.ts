@@ -40,4 +40,10 @@ export const Api ={
     receiveGoldInfo:"/api/activity/receiveGoldInfo",
     receiveGold:"/api/activity/receiveGold",
     activityList:"/api/activity/activityList",
+    game_getHaoLiPlayerData:"/szffc/api/getHaoLiPlayerData",
+    center_GetWinRankLista:"/Operation/api/GetWinRankList",
+    getRankByProxyPid:"/api/activity/getRankByProxyPid",
+    getGameUsersWinAndLoseByDate:"/api/activity/getGameUsersWinAndLoseByDate",
+    receiveRankGoldByPid:"/api/activity/receiveRankGoldByPid",
+    receiveGoldByWin:"/api/activity/receiveGoldByWin",
 }

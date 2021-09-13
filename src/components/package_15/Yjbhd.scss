@@ -1,0 +1,123 @@
+$src:'../../asses/activity/package_15/';
+
+.Yjbhd{
+    background-image:url($src+"bg/jd_event_rightFrame.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 280px;
+    height: 180px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    .bg{
+        background-image:url($src+"bg/yjyxb.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0px 20px;
+        width:  250px;
+        height: 200px;
+        color: white;
+        position: relative;
+        left: 25px;
+    }
+    .group{
+        width: 200px;
+        height: 95px;
+        position: absolute;
+        left: 25px;
+        top: 45px;
+        overflow: hidden;
+        .title{
+
+        }
+        .line{
+            display: flex;
+            height: 8.7px;
+            .li1{
+                width: 24px;
+            }
+            .li2{
+                width: 29px;
+            }
+            .li3{
+                width: 33px;
+            }
+            .li4{
+                width: 31px;
+            }
+            .li5{
+                width: 26px;
+                .btn_linqu{
+                    width: 20px;
+                    height: 9px;
+                    background-image: url($src+"sprite/jd_event_btn_linqui.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 20px;
+                    height: 9px;
+                    background-image: url($src+"sprite/jd_event_btn_done.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+    .foot{
+        position: absolute;
+        left: 25px;
+        top: 145px;
+        width: 140px;
+        height: 50px;
+        .line{
+            width: 100%;
+            height: 10px;
+            display: flex;
+            margin-bottom: 2px;
+            .icon1{
+                width: 60px;
+                height: 10px;
+                background-image:url($src+"sprite/ZRR.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .icon2{
+                width: 60px;
+                height: 10px;
+                margin-left: 5px;
+                background-image:url($src+"sprite/icon2.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                padding-left: 2px;
+                line-height: 10px;
+                font-size: 8px;
+            }
+            .icon3{
+                width: 60px;
+                height: 10px;
+                background-image:url($src+"sprite/JR.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 90px;
+        left: 177px;
+        line-height: 7px;
+        top: 35px;
+        color: rgb(73,89,104);
+        font-size: 6px;
+        .guize{
+            font-size: 8px;
+            color: black;
+            line-height: 15px;
+        }
+        p{
+            margin: 0px
+        }
+    }
+}

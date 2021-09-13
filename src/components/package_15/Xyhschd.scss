@@ -5,7 +5,7 @@ $src:'../../asses/activity/package_15/';
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: 0px;
-    width: 310px;
+    width: 280px;
     height: 180px;
     font-size: 5px;
     color: white;
@@ -14,7 +14,7 @@ $src:'../../asses/activity/package_15/';
         background-image:url($src+"bg/event_20210906_JD.png");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: -30px;
+        background-position: -40px;
         width: 310px;
         height: 180px;
         color: white;
@@ -24,7 +24,7 @@ $src:'../../asses/activity/package_15/';
         width: 200px;
         height: 100px;
         position: absolute;
-        left: 95px;
+        left: 85px;
         top: 47px;
         .title{
             color: rgb(111,116,214)
@@ -102,7 +102,7 @@ $src:'../../asses/activity/package_15/';
     .rule{
         position: absolute;
         width: 190px;
-        left: 75px;
+        left: 70px;
         line-height: 6px;
         top: 103px;
         color: rgb(73,89,104);
