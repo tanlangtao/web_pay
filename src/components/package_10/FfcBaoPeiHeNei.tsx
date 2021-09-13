@@ -25,6 +25,7 @@ export default class FfcBaoPeiHeNei extends React.Component<Props,State>{
             end:0,
             bet_max:0,
             bet_min:0,
+            round:0,
             lose_range:[
                 {
                     gold:0,
@@ -197,6 +198,9 @@ export default class FfcBaoPeiHeNei extends React.Component<Props,State>{
                         <div className="flexBox">开放时间</div>
                         <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
                     </div>
+                    <div className = "label1">连续{this.state.info.round}局</div>
+                    <div className = "label2">{this.state.info.bet_min}-{this.state.info.bet_max}</div>
+                    <div className = "label3">彩金{this.state.info.flow_rate}倍流水</div>
                 </div>
                 <div className = "rule">
                     <p>1. 新会员注册好账号，需先绑定好手机号码与银行卡后联系上级或进线客服进行申请，申请完毕后前往当前活动界面进行确认申请，确认申请开放时间： 每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。<span style={{color:"#ff0000"}}>所有未进行确认申请的玩家无法领取活动彩金。</span></p>
