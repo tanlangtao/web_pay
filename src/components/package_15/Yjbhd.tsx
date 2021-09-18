@@ -138,7 +138,7 @@ export default class Yjbhd extends React.Component<Props,State>{
                 return <div className ="line" key={index}>
                     <div className ="li1 flexBox">第{index+1}名</div>
                     <div className ="li2 flexBox">{e.game_nick}</div>
-                    <div className ="li3 flexBox">{e.win}</div>
+                    <div className ="li3 flexBox">{gHandler.toDecimal(e.win)}</div>
                     <div className ="li4 flexBox">{this.state.info.bonus[index]}</div>
                     <div className ="li5 flexBox"> 
                         {

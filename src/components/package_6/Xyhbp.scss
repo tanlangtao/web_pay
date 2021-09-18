@@ -1,0 +1,99 @@
+$src:'../../asses/activity/package_11/';
+
+.Xyhbp6{
+    background-image:url($src+"bg/event_20210918_91-2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -65px -20px;
+    width: 360px;
+    height: 220px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .group{
+        width: 300px;
+        height: 71px;
+        position: absolute;
+        left: 11px;
+        top: 46px;
+        position: relative;
+        .line{
+            display: flex;
+            height: 10px;
+            .li1{
+                width: 34px;
+            }
+            .li2{
+                width: 34px;
+            }
+            .li3{
+                width: 38px;
+            }
+            .li4{
+                width: 36px;
+            }
+            .li5{
+                width: 26px;
+                .btn_linqu{
+                    width: 20px;
+                    height: 9px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 20px;
+                    height: 9px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .applyBtn{
+            position: absolute;
+            width: 35px;
+            height: 12px;
+            top: 3px;
+            left: 168px;
+            background-image:url($src+"sprite/btn_apply2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .applyFilter{
+            position: absolute;
+            width: 35px;
+            height: 12px;
+            top: 3px;
+            left: 168px;
+            background-image:url($src+"sprite/btn_apply2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyYlingqu{
+            background-image:url($src+"sprite/btn_done2.png");
+        }
+        .applyBtnLabel{
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            top: 14px;
+            left: 166px;
+            font-size: 5px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 255px;
+        left: 18px;
+        line-height: 6.5px;
+        top: 88px;
+        color: #FEFFC9;
+        font-size: 5.5px;
+        p{
+            margin: 0px;
+        }
+    }
+}

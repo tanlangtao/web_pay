@@ -145,6 +145,11 @@ class gHandlerC  {
     }
     //保留两位小数
     public toDecimal(num:any) {
+        let isFUshu = 0
+        console.log(num)
+        if(num <0){
+            isFUshu = 1
+        }
         num = Math.abs(num).toFixed(7)
         var result = num.toString()
         if (isNaN(result)) {
@@ -154,6 +159,9 @@ class gHandlerC  {
         var pos_decimal = newNum.indexOf('.')
         while (newNum.length > 1 && newNum.length <= pos_decimal + 2) {
             newNum += '0'
+        }
+        if(isFUshu ===1 ){
+            return `-${newNum}`
         }
         return newNum
     }
