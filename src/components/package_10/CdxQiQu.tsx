@@ -38,7 +38,6 @@ export default class CdxQiQu extends React.Component<Props,State>{
         },()=>{
             console.log(this.state.info)
         })
-        this.Axios_HandleQiQuWin()
         this.Axios_getRewardHeNeiWinFlag()
     }
     renderBtn(){
@@ -86,7 +85,7 @@ export default class CdxQiQu extends React.Component<Props,State>{
             message.error(response.msg)
         }
     }
-    private async  Axios_HandleQiQuWin(){
+    private async  Axios_game_HandleQiQuWin(){
         let gameHost = gHandler.UrlData.host.replace("pay","game")
         let url = `${gameHost}${Api.game_HandleQiQuWin}?user_id=${gHandler.UrlData.user_id}&level_amount=${this.state.info.win}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
@@ -94,7 +93,7 @@ export default class CdxQiQu extends React.Component<Props,State>{
         }).catch(err=>{
             return message.error("failed to load response data")
         })
-        if( response.status === 0){
+        if( response.code === 0){
             this.setState({
                 game_count:response.data.list.game_count,
             },()=>{
@@ -105,7 +104,7 @@ export default class CdxQiQu extends React.Component<Props,State>{
         }
     }
     private async  Axios_getRewardHeNeiWinFlag(){
-        let url = `${gHandler.UrlData.host}${Api.game_HandleQiQuWin}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+        let url = `${gHandler.UrlData.host}${Api.getRewardHeNeiWinFlag}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -115,7 +114,7 @@ export default class CdxQiQu extends React.Component<Props,State>{
             this.setState({
                 is_received:response.data.is_received,
             },()=>{
-                this.renderBtn()
+                this.Axios_game_HandleQiQuWin()
             })
         }else{
             message.error(response.msg)
@@ -154,7 +153,7 @@ export default class CdxQiQu extends React.Component<Props,State>{
                     {
                         rangeLine()
                     }
-                    <div className ="label1">河内分分彩</div>
+                    <div className ="label1">奇趣分分彩</div>
                     <div className ="label2 flexBox">不低于{this.state.info.win}金币</div>
                     <div className ="label3">彩金{this.state.info.flow_rate}倍流水</div>
                 </div>

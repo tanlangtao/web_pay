@@ -10,14 +10,13 @@ interface Props {
     curData:ConfigItem
 }
 interface Item{
-    id:string,
-    ren:number
+    Key:string,
+    Value:number
 }
 interface State {
     info:any,
     is_received:number,
-    lastweek:any,
-    lastweekList:Item[],
+    lastweek:Item[],
     num:number
 }
 export default class Xzdlphb extends React.Component<Props,State>{
@@ -28,10 +27,9 @@ export default class Xzdlphb extends React.Component<Props,State>{
             bonus:[]
         },
         is_received:0,
-        lastweek: {},
-        lastweekList:[{
-            id:"",
-            ren:0
+        lastweek:[{
+            Key:"",
+            Value:0
         }],
         num:0,
     }
@@ -40,23 +38,6 @@ export default class Xzdlphb extends React.Component<Props,State>{
             info:this.props.curData.info
         })
         this.Axios_getRankByProxyPid()
-    }
-    renderBtn(){
-        let objectSource:any = this.state.lastweek;
-        let arr = []
-        for(var k in objectSource){
-            if(objectSource.hasOwnProperty(k)){
-                let item:Item = {
-                    "id":k,
-                    "ren":Number(objectSource[k])
-                }
-                arr.push(item)
-            }
-        }
-        arr.sort((a,b)=>b.ren-a.ren)
-        this.setState({
-            lastweekList:arr
-        })
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
@@ -102,7 +83,7 @@ export default class Xzdlphb extends React.Component<Props,State>{
                 is_received:response.data.is_received,
                 lastweek:response.data.lastweek,
                 num:response.data.num
-            },()=>{this.renderBtn()})
+            })
             
         }else{
             message.error(response.msg)
@@ -116,7 +97,7 @@ export default class Xzdlphb extends React.Component<Props,State>{
                     <div className ="li2 flexBox">{e}</div>
                     <div className ="li3 flexBox"> 
                         {
-                            this.state.lastweekList[index] && this.state.lastweekList[index].id === gHandler.UrlData.user_id?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.lastweek[index] && this.state.lastweek[index].Key === gHandler.UrlData.user_id?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }

@@ -161,7 +161,7 @@ class gHandlerC  {
             newNum += '0'
         }
         if(isFUshu ===1 ){
-            return `-${newNum}`
+            return `0.00`
         }
         return newNum
     }

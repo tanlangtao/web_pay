@@ -33,6 +33,7 @@ export const Api ={
     signInByWeek:"/api/activity/signInByWeek",
     receiveHandleHeNeiWin:"/api/activity/receiveHandleHeNeiWin",
     game_HandleQiQuWin:"/caidaxiao/api/HandleQiQuWin",
+    game_HandleHeNeiWin:"/caidaxiao/api/HandleHeNeiWin",
     receiveFishPassGold:"/api/activity/receiveFishPassGold",
     getReceiveFishInfo:"/api/activity/getReceiveFishInfo",
     getTask:"/api/activity/getTask",
@@ -46,4 +47,5 @@ export const Api ={
     getGameUsersWinAndLoseByDate:"/api/activity/getGameUsersWinAndLoseByDate",
     receiveRankGoldByPid:"/api/activity/receiveRankGoldByPid",
     receiveGoldByWin:"/api/activity/receiveGoldByWin",
+    getRewardHeNeiWinFlag:"/api/activity/getRewardHeNeiWinFlag",
 }
