@@ -14,6 +14,8 @@ import Xyhschd15 from 'components/package_15/Xyhschd';
 import Jcbshl from 'components/package_15/Jcbshl';
 import Xzdlphb from 'components/package_15/Xzdlphb';
 import Yjbhd from 'components/package_15/Yjbhd';
+import Xyhbp15 from 'components/package_15/Xyhbp';
+import Lyhsc15 from 'components/package_15/Lyhsc';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -128,6 +130,7 @@ export default class Activity15 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
+                            <div className ="version">v:1.0.1</div>
                         </div>
                     </div>
                     <div className="content" style={{
@@ -140,7 +143,11 @@ export default class Activity15 extends Component<{}, State> {
                                 (this.state.title==='新用户首存活动15' ? <Xyhschd15 curData={this.state.curData}/>:
                                     (this.state.title==='新增代理排行榜15' ? <Xzdlphb curData={this.state.curData}/>:
                                         (this.state.title==='赢金榜活动15' ? <Yjbhd curData={this.state.curData}/>:
-                                            <div></div>
+                                            (this.state.title==='新用户包赔活动15' ? <Xyhbp15 curData={this.state.curData}/>:
+                                                (this.state.title==='每日充值赠金活动15' ? <Lyhsc15 curData={this.state.curData}/>:
+                                                    <div></div>
+                                                )
+                                            )
                                         )
                                     )
                                 )
@@ -148,6 +155,7 @@ export default class Activity15 extends Component<{}, State> {
                             )
                         }
                     </div>
+                    
                 </div>
             </div>
                 :<FirstComponent></FirstComponent>

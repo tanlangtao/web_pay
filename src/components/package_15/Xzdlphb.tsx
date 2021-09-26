@@ -17,14 +17,17 @@ interface State {
     info:any,
     is_received:number,
     lastweek:Item[],
-    num:number
+    num:number,
+    btnActive:Boolean
 }
 export default class Xzdlphb extends React.Component<Props,State>{
     state = {
         info:{
             hour:0,
             flow_rate:0,
-            bonus:[]
+            bonus:[],
+            game_statement:0,
+            recharge_amount:0
         },
         is_received:0,
         lastweek:[{
@@ -32,10 +35,20 @@ export default class Xzdlphb extends React.Component<Props,State>{
             Value:0
         }],
         num:0,
+        btnActive:false
     }
     componentDidMount(){
+        
         this.setState({
             info:this.props.curData.info
+        },()=>{
+            let day = new Date().getDay()
+            let hour = new Date().getHours()
+            if(day === 1 && hour > this.state.info.hour){
+                this.setState({
+                    btnActive:true
+                })
+            }
         })
         this.Axios_getRankByProxyPid()
     }
@@ -90,6 +103,7 @@ export default class Xzdlphb extends React.Component<Props,State>{
         }
     }
     render (){
+        
         let rangeLine = ()=>{
             return  this.state.info.bonus.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
@@ -97,7 +111,7 @@ export default class Xzdlphb extends React.Component<Props,State>{
                     <div className ="li2 flexBox">{e}</div>
                     <div className ="li3 flexBox"> 
                         {
-                            this.state.lastweek[index] && this.state.lastweek[index].Key === gHandler.UrlData.user_id?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.state.lastweek[index] && this.state.lastweek[index].Key === gHandler.UrlData.user_id?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -122,8 +136,8 @@ export default class Xzdlphb extends React.Component<Props,State>{
                     <p>活动规则：</p>
                     <p>1. 玩家需要绑定手机号码和银行卡才能参与此活动。</p>
                     <p>2. 会员的直属玩家发展一名有效玩家，则计算为该会员新增了一名有效代理。</p>
-                    <p>3. 有效玩家定义：绑定手机号码+绑定银行卡+充值金额100以上且有效流水100以上。</p>
-                    <p>4. 领取时间：每周一12:00-23:59:59，逾期未领取视为自动放弃。</p>
+                    <p>3. 有效玩家定义：绑定手机号码+绑定银行卡+充值金额{this.state.info.recharge_amount}以上且有效流水{this.state.info.game_statement}以上。</p>
+                    <p>4. 领取时间：每周一{gHandler.transitionTime(this.state.info.hour)}-23:59:59，逾期未领取视为自动放弃。</p>
                     <p>5. 同一用户（同IP同设备视为同一用户）仅限参加一次活动。</p>
                     <p>6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
                 </div>

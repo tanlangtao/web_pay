@@ -48,4 +48,6 @@ export const Api ={
     receiveRankGoldByPid:"/api/activity/receiveRankGoldByPid",
     receiveGoldByWin:"/api/activity/receiveGoldByWin",
     getRewardHeNeiWinFlag:"/api/activity/getRewardHeNeiWinFlag",
+    receiveFreeGoldByDay:"/api/activity/receiveFreeGoldByDay",
+    getFreeGoldFlag:"/api/activity/getFreeGoldFlag",
 }

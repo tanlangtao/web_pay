@@ -1,0 +1,155 @@
+$src:'../../asses/activity/package_11/';
+
+.DailySign6{
+    background-image:url($src+"bg/event_20210923_bg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:0px -8px;
+    width: 320px;
+    height: 180px;
+    color: white;
+    position: relative;
+    .guizeBtn{
+        position: absolute;
+        top: 10px;
+        left: 190px;
+        width: 35px;
+        height: 10px;
+        background-image:url($src+"sprite/btn_rule.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: -148px;
+            top: 12px;
+            background-image:url($src+"sprite/rule_bg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: rgb(207,194,173);
+            font-size: 6px;
+            line-height: 10px;
+            padding-top: 8px;
+            p{
+                margin: 0px;
+                width: 180px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .group{
+        width: 260px;
+        height: 130px;
+        position: relative;
+        left: 16px;
+        top:30px;
+        font-size: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        .li1{
+            margin-right: 8px;
+            width: 57px;
+            height: 60px;
+            background-image:url($src+"sprite/di.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .font{
+            height: 12px;
+            width: 50px;
+            margin-left: 2px;
+            margin-top: 2px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        
+        .icon{
+            width: 40px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            .yilingqu{
+                background-image:url($src+"sprite/check_mask.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 57px;
+                height: 60px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .waitToCheck{
+                background-image:url($src+"sprite/waitToCheck.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 26px;
+                height: 10px;
+                position: absolute;
+                left:28px;
+                top: 38px;
+            }
+            .guang{
+                background-image:url($src+"sprite/guang.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 57px;
+                height: 60px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+        }
+        .foot{
+            height: 10px;
+            width: 57px;
+            display: flex;
+            flex-direction: row;
+            .jinbi{
+                width: 10px;
+                height: 10px;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image:url($src+"sprite/icon_gold.png");
+                margin-left: 15px;
+            }
+            .zi{
+                font-size: 7px;
+                color: rgb(255,229,98);
+            }
+        }
+        
+        .icon1{
+            background-image:url($src+"sprite/reward_01.png");
+        }
+        .icon2{
+            background-image:url($src+"sprite/reward_02.png");
+        }
+        .icon3{
+            background-image:url($src+"sprite/reward_03.png");
+        }
+        .icon4{
+            background-image:url($src+"sprite/reward_04.png");
+        }
+        .icon5{
+            background-image:url($src+"sprite/reward_05.png");
+        }
+        .icon6{
+            background-image:url($src+"sprite/reward_06.png");
+        }
+        .icon7{
+            background-image:url($src+"sprite/reward_07.png");
+        }
+        .day1{ background-image:url($src+"sprite/day_01.png")}
+        .day2{ background-image:url($src+"sprite/day_02.png")}
+        .day3{ background-image:url($src+"sprite/day_03.png")}
+        .day4{ background-image:url($src+"sprite/day_04.png")}
+        .day5{ background-image:url($src+"sprite/day_05.png")}
+        .day6{ background-image:url($src+"sprite/day_06.png")}
+        .day7{ background-image:url($src+"sprite/day_07.png")}
+    }
+}

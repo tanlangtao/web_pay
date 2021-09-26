@@ -1,0 +1,77 @@
+$src:'../../asses/activity/package_15/';
+
+.Lyhsc15{
+    background-image:url($src+"bg/jd_event_rightFrame.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 280px;
+    height: 180px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    .bg{
+        background-image: url($src+"bg/regs.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 10px 10px;
+        width: 270px;
+        height: 171px;
+        color: white;
+        position: relative;
+    }
+    .group{
+        width: 190px;
+        height: 100px;
+        position: absolute;
+        left: 92px;
+        top: 40px;
+        .line{
+            display: flex;
+            height: 9.4px;
+            .li1{
+                width: 36px;
+            }
+            .li2{
+                width: 35px;
+            }
+            .li3{
+                width: 42px;
+            }
+            .li4{
+                width: 30px;
+                .btn_linqu{
+                    width: 20px;
+                    height: 10px;
+                    background-image: url($src+"sprite/jd_event_btn_linqui.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 20px;
+                    height: 10px;
+                    background-image: url($src+"sprite/jd_event_btn_done.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .label1{
+            position: absolute;
+            left: 80px;
+            top: 30px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 240px;
+        left: 28px;
+        line-height: 6.5px;
+        top: 114px;
+        color: rgb(73,89,104);
+        font-size: 5px;
+        p{
+            margin: 0px;
+        }
+    }
+}

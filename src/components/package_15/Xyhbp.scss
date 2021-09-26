@@ -1,6 +1,6 @@
 $src:'../../asses/activity/package_15/';
 
-.Xyhschd15{
+.Xyhbp15{
     background-image:url($src+"bg/jd_event_rightFrame.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -11,12 +11,12 @@ $src:'../../asses/activity/package_15/';
     color: white;
     position: relative;
     .bg{
-        background-image:url($src+"bg/event_20210906_JD.png");
+        background-image:url($src+"bg/jd_event_bp.png");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: -40px;
-        width: 310px;
-        height: 180px;
+        background-position: -50px -2px;
+        width: 330px;
+        height: 190px;
         color: white;
         position: relative;
     }
@@ -24,22 +24,22 @@ $src:'../../asses/activity/package_15/';
         width: 200px;
         height: 100px;
         position: absolute;
-        left: 80px;
-        top: 42px;
-        .title{
-            color: rgb(111,116,214)
-        }
+        left: 32px;
+        top: 65px;
         .line{
             display: flex;
-            height: 9.5px;
+            height: 9px;
+            .title{
+                font-size: 4.5px;
+            }
             .li1{
-                width: 35px;
+                width: 27px;
             }
             .li2{
-                width: 34px;
+                width: 29px;
             }
             .li3{
-                width: 35px;
+                width: 32px;
             }
             .li4{
                 width: 28px;
@@ -59,28 +59,22 @@ $src:'../../asses/activity/package_15/';
                 }
             }
         }
-        .label1{
-            position: absolute;
-            width: 50px;
-            bottom: 50px;
-            left: 62px;
-        }
         .applyBtn{
             position: absolute;
-            width: 30px;
+            width: 40px;
             height: 12px;
-            bottom: 60px;
-            left: 135px;
+            top: 10px;
+            left: 150px;
             background-image:url($src+"sprite/jd_event_btn_confirm.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
-            width: 30px;
+            width: 40px;
             height: 12px;
-            bottom: 60px;
-            left: 135px;
+            top: 10px;
+            left: 150px;
             background-image:url($src+"sprite/jd_event_btn_confirm.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -95,48 +89,21 @@ $src:'../../asses/activity/package_15/';
             position: absolute;
             width: 50px;
             height: 20px;
-            bottom: 40px;
-            left: 126px;
-        }
-    }
-    .guizeBtn{
-        position: absolute;
-        top: 20px;
-        left: 235px;
-        width: 35px;
-        height: 10px;
-        background-image:url($src+"sprite/jd_btn_rule.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        .guizeMask{
-            width: 180px;
-            height: 100px;
-            position: absolute;
-            left: -140px;
-            top: 12px;
-            background-image:url($src+"sprite/jd_rule_bg.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            color: white;
+            top: 25px;
+            left: 140px;
             font-size: 5.5px;
-            line-height: 7.5px;
-            padding-top: 8px;
-            p{
-                margin: 0px;
-                width: 165px;
-                margin-left: 5px;
-            }
         }
     }
     .rule{
         position: absolute;
-        width: 205px;
-        left: 62px;
-        line-height: 7px;
-        top: 130px;
+        width: 228px;
+        left: 32px;
+        line-height: 6px;
+        top: 115px;
         color: rgb(73,89,104);
+        font-size: 5px;
         p{
-            margin: 0px
+            margin: 0px;
         }
     }
 }
