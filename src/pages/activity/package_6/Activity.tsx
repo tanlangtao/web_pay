@@ -15,6 +15,7 @@ import Lyhsc6 from 'components/package_6/Lyhsc';
 import Zcsyj from 'components/package_6/Zcsyj';
 import Xyhbp6 from 'components/package_6/Xyhbp';
 import DailySign6 from 'components/package_6/DailySign';
+import Ryjhd6 from 'components/package_6/Ryjhd';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -139,7 +140,9 @@ export default class Activity6 extends Component<{}, State> {
                                     (this.state.title==='注册送佣金6' ? <Zcsyj curData={this.state.curData}/>:
                                         (this.state.title==='新用户包赔活动6' ? <Xyhbp6 curData={this.state.curData}/>:
                                             (this.state.title==='每日免费礼金6' ? <DailySign6 curData={this.state.curData}/>:
-                                                <div></div>
+                                                (this.state.title==='日业绩活动6' ? <Ryjhd6 curData={this.state.curData}/>:
+                                                    <div></div>
+                                                )
                                             )
                                         )
                                     )

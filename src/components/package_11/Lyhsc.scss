@@ -4,9 +4,9 @@ $src:'../../asses/activity/package_11/';
     background-image: url($src+"bg/event_xh_20210913.png") ;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -70px -30px;
-    width: 380px;
-    height: 270px;
+    background-position: -8px -14px;
+    width: 305px;
+    height: 200px;
     font-size: 6px;
     color: white;
     position: relative;
@@ -15,31 +15,31 @@ $src:'../../asses/activity/package_11/';
         height: 100px;
         position: absolute;
         left: 16px;
-        top: 40px;
+        top: 42px;
         .line{
             display: flex;
-            height: 10px;
+            height: 9.1px;
             .li1{
-                width: 46px;
+                width: 43px;
             }
             .li2{
-                width: 42px;
+                width: 41px;
             }
             .li3{
-                width: 44px;
+                width: 42px;
             }
             .li4{
-                width: 28px;
+                width: 27px;
                 .btn_linqu{
                     width: 20px;
-                    height: 12px;
+                    height: 8px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
                     width: 20px;
-                    height: 12px;
+                    height: 8px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
@@ -48,16 +48,16 @@ $src:'../../asses/activity/package_11/';
         }
         .label1{
             position: absolute;
-            left: 96px;
-            top: 27px;
+            left: 89px;
+            top: 29px;
         }
     }
     .rule{
         position: absolute;
-        width: 266px;
+        width: 250px;
         left: 20px;
         line-height: 7.5px;
-        top: 104px;
+        top: 122px;
         color: #FEFFC9;
         p{
             margin: 0px;

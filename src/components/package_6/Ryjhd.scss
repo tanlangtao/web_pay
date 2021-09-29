@@ -1,64 +1,60 @@
 $src:'../../asses/activity/package_11/';
 
-.Lyhsc6{
-    background-image: url($src+"bg/event_91_20210825-2.png") ;
+.Ryjhd6{
+    background-image:url($src+"bg/91_event_20210929.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -70px -28px;
-    width: 380px;
-    height: 270px;
+    background-position:5px -8px;
+    width: 310px;
+    height: 180px;
     font-size: 6px;
     color: white;
     position: relative;
     .group{
-        width: 190px;
-        height: 100px;
+        width: 185px;
+        height: 105px;
         position: absolute;
-        left: 16px;
-        top: 37px;
+        left: 146px;
+        top: 31px;
+        padding-top: 1px;
         .line{
             display: flex;
-            height: 9.5px;
+            height: 9.8px;
             .li1{
-                width: 46px;
+                width: 36px;
             }
             .li2{
-                width: 42px;
+                width: 32px;
             }
             .li3{
-                width: 44px;
+                width: 33px;
             }
             .li4{
-                width: 28px;
+                width: 27px;
                 .btn_linqu{
                     width: 20px;
-                    height: 9px;
+                    height: 8px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
                     width: 20px;
-                    height: 9px;
+                    height: 8px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
             }
         }
-        .label1{
-            position: absolute;
-            left: 96px;
-            top: 27px;
-        }
     }
     .rule{
         position: absolute;
-        width: 266px;
-        left: 20px;
-        line-height: 8px;
-        top: 108px;
-        color: #FEFFC9;
+        width: 265px;
+        left: 15px;
+        line-height: 7.5px;
+        top: 116px;
+        color: #E8C999;
         p{
             margin: 0px;
         }

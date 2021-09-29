@@ -15,7 +15,8 @@ interface State {
     is_received:number,
     btnActive :boolean,
     applyBtnInteractable : boolean,
-    is_apply : boolean
+    is_apply : boolean,
+    showGuize:boolean
 }
 export default class Xyhbp6 extends React.Component<Props,State>{
     state = {
@@ -41,7 +42,8 @@ export default class Xyhbp6 extends React.Component<Props,State>{
         is_received:0,
         btnActive :false,
         applyBtnInteractable : true,
-        is_apply : false
+        is_apply : false,
+        showGuize:false
     }
     btnIndex= 0 
     
@@ -74,6 +76,11 @@ export default class Xyhbp6 extends React.Component<Props,State>{
     }
     onClick =(e:any)=>{
         this.Axios_reimburse()
+    }
+    guizeClick = ()=>{
+        this.setState({
+            showGuize:!this.state.showGuize
+        })
     }
     applyBtnonClick =()=>{
         if(this.state.applyBtnInteractable){
@@ -200,14 +207,20 @@ export default class Xyhbp6 extends React.Component<Props,State>{
                     </div>
                 </div>
                 <div className = "rule">
-                    <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
-                    <p>2. 平台中的新玩家活动只能参加其中一个。</p>
-                    <p>3. 参加活动的玩家只能进行《财神到》《捕鱼·聚宝盆》《捕鱼·海王》《水果机》指定游戏，进行其他游戏视为放弃活动。</p>
-                    <p>4. 在规定游戏中投注对应档位最高单注金额内，亏损至余额低于10金币时即可在本活动界面领取活动彩金，当日23:59:59未进行领取视为自动放弃。</p>
-                    <p>5. 赢金到规定金额不兑换视为放弃包赔资格（输完不赔付）。</p>
-                    <p>6. 同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金无需流水限制可直接申请兑换。</p>
-                    <p>7. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台</p>
-                    <p>有权根据实际情况，随时调整活动内容。</p>
+                    
+                </div>
+                <div className="guizeBtn" onClick={this.guizeClick}>
+                    {
+                        this.state.showGuize ?<div className="guizeMask">
+                            <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
+                            <p>2. 平台中的新玩家活动只能参加其中一个。</p>
+                            <p>3. 参加活动的玩家只能进行《财神到》《捕鱼·聚宝盆》《捕鱼·海王》《水果机》指定游戏，进行其他游戏视为放弃活动。</p>
+                            <p>4. 在规定游戏中投注对应档位最高单注金额内，亏损至余额低于10金币时即可在本活动界面领取活动彩金，当日23:59:59未进行领取视为自动放弃。</p>
+                            <p>5. 赢金到规定金额不兑换视为放弃包赔资格（输完不赔付）。</p>
+                            <p>6. 同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金无需流水限制可直接申请兑换。</p>
+                            <p>7. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                        </div>:null
+                    }
                 </div>
             </div>
         )

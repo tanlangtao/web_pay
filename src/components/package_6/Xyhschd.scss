@@ -4,32 +4,61 @@ $src:'../../asses/activity/package_11/';
     background-image:url($src+"bg/event_91_20210825-1.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -70px -28px;
-    width: 380px;
-    height: 270px;
-    font-size: 6px;
+    background-position:-12px -15px;
+    width: 320px;
+    height: 182px;
+    font-size: 5px;
     color: white;
     position: relative;
+    .guizeBtn{
+        position: absolute;
+        top: 15px;
+        left: 230px;
+        width: 35px;
+        height: 10px;
+        background-image:url($src+"sprite/btn_rule.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 200px;
+            height: 100px;
+            position: absolute;
+            left: -148px;
+            top: 12px;
+            background-image:url($src+"sprite/rule_bg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: rgb(207,194,173);
+            font-size: 5px;
+            line-height: 8px;
+            padding-top: 8px;
+            p{
+                margin: 0px;
+                width: 180px;
+                margin-left: 5px;
+            }
+        }
+    }
     .group{
         width: 250px;
         height: 80px;
         position: absolute;
-        left:85px;
-        top: 8px;
+        left:78px;
+        top: 36px;
         .line{
             display: flex;
-            height: 11.5px;
+            height: 10.5px;
             .li1{
-                width: 44px;
+                width: 38px;
             }
             .li2{
-                width: 40px;
+                width: 38px;
             }
             .li3{
-                width: 42px;
+                width: 38px;
             }
             .li4{
-                width: 36px;
+                width: 30px;
                 .btn_linqu{
                     width: 22px;
                     height: 10px;
@@ -49,25 +78,25 @@ $src:'../../asses/activity/package_11/';
         .label1{
             position: absolute;
             width: 50px;
-            bottom: 38px;
-            left: 80px;
+            bottom: 42px;
+            left: 70px;
         }
         .applyBtn{
             position: absolute;
-            width: 40px;
-            height: 15px;
-            bottom: 60px;
-            left: 165px;
+            width: 30px;
+            height: 10px;
+            bottom: 55px;
+            left: 153px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
-            width: 40px;
-            height: 15px;
-            bottom: 60px;
-            left: 165px;
+            width: 30px;
+            height: 10px;
+            bottom: 55px;
+            left: 153px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -81,8 +110,9 @@ $src:'../../asses/activity/package_11/';
             position: absolute;
             width: 70px;
             height: 20px;
-            bottom: 42px;
-            left: 150px;
+            bottom: 35px;
+            left: 134px;
+            font-size: 5px;
         }
     }
     .rule{

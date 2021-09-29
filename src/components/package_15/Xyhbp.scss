@@ -43,15 +43,18 @@ $src:'../../asses/activity/package_15/';
             }
             .li4{
                 width: 28px;
+            }
+            .li5{
+                width: 28px;
                 .btn_linqu{
-                    width: 22px;
+                    width: 20px;
                     height: 10px;
                     background-image: url($src+"sprite/jd_event_btn_linqui.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 22px;
+                    width: 20px;
                     height: 10px;
                     background-image: url($src+"sprite/jd_event_btn_done.png") ;
                     background-repeat: no-repeat;

@@ -47,6 +47,9 @@ export default class DailySign6 extends React.Component<Props,State>{
     onClick =(e:any)=>{
         this.Axios_receiveFreeGoldByDay()
     }
+    tipClick =(e:any)=>{
+        message.info("您不符合领取资格!")
+    }
     guizeClick = ()=>{
         this.setState({
             showGuize:!this.state.showGuize
@@ -97,12 +100,12 @@ export default class DailySign6 extends React.Component<Props,State>{
         let rangeLine = ()=>{
             return  this.state.info.range.map((e:any,index:number) => {
                 if(index<7){
-                    return <div className ="li1 flexBox" onClick={this.onClick} key={index}>
+                    return <div className ="li1 flexBox"  key={index} onClick={this.tipClick}>
                         <div className={`font day${index+1}`}></div>
                         <div className={`icon icon${index+1} `}>
                             {
                                 flagData.check_receive && flagData.day===index ?
-                                    (flagData.is_received === 0 ?<div className="guang"><div className="waitToCheck"></div></div>:<div className="yilingqu"></div>):
+                                    (flagData.is_received === 0 ?<div className="guang" onClick={this.onClick}><div className="waitToCheck"></div></div>:<div className="yilingqu"></div>):
                                     (index < flagData.day?<div className="yilingqu"></div>:null)
                                     
                             }
