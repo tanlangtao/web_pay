@@ -53,10 +53,10 @@ export default class Ryjhd extends React.Component<Props,State>{
                 }
             })
         }
-        if(this.state.PerformanceInfo.received_info && this.state.PerformanceInfo.received_info[0].receive_amount> 0){
+        if(this.state.PerformanceInfo.received_info && Number(this.state.PerformanceInfo.received_info[0].receive_amount)> 0){
             this.state.PerformanceInfo.received_info.forEach((e)=>{
                 this.state.info.range.forEach((item,index)=>{
-                    if(e.receive_amount === item.gold){
+                    if(Number(e.receive_amount) === item.gold){
                         this.setState({
                             is_received:true
                         })

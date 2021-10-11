@@ -50,4 +50,6 @@ export const Api ={
     getRewardHeNeiWinFlag:"/api/activity/getRewardHeNeiWinFlag",
     receiveFreeGoldByDay:"/api/activity/receiveFreeGoldByDay",
     getFreeGoldFlag:"/api/activity/getFreeGoldFlag",
+    getPayBonusByDay:"/api/activity/getPayBonusByDay",
+    receivePayBonusGold:"/api/activity/receivePayBonusGold",
 }

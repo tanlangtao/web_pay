@@ -41,7 +41,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         },()=>{
             console.log(this.state.info)
         })
-        this.Axios_getPayAmountByDay()
+        this.Axios_getPayBonusByDay()
     }
     renderBtn(){
         if(this.state.is_received === 0 && this.state.pay_amount_byday!==0){
@@ -61,7 +61,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         }
     }
     onClick =(e:any)=>{
-        this.Axios_receivePaymentGold()
+        this.Axios_receivePayBonusGold()
     }
     applyBtnonClick =()=>{
         if(this.state.applyBtnInteractable){
@@ -70,8 +70,8 @@ export default class Lyhsc11 extends React.Component<Props,State>{
             message.info('未到开放时间！')
         }
     }
-    private async Axios_receivePaymentGold(){
-        let url = `${gHandler.UrlData.host}${Api.receivePaymentGold}`;
+    private async Axios_receivePayBonusGold(){
+        let url = `${gHandler.UrlData.host}${Api.receivePayBonusGold}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
@@ -89,7 +89,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         })
         if(response.status === 0){
             message.success('领取成功！');
-            this.Axios_getPayAmountByDay();
+            this.Axios_getPayBonusByDay();
         }else{
             message.error(response.msg)
         }
@@ -120,8 +120,8 @@ export default class Lyhsc11 extends React.Component<Props,State>{
             message.error(response.msg)
         }
     }
-    private async  Axios_getPayAmountByDay(){
-        let url = `${gHandler.UrlData.host}${Api.getPayAmountByDay}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+    private async  Axios_getPayBonusByDay(){
+        let url = `${gHandler.UrlData.host}${Api.getPayBonusByDay}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -129,7 +129,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         })
         if(response.status === 0){
             this.setState({
-                pay_amount_byday:response.data.pay_amount_byday,
+                pay_amount_byday:response.data.first_pay_amount_today,
                 is_received:response.data.is_received
             },()=>{
                 this.renderBtn()
