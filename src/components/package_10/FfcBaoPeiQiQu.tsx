@@ -51,7 +51,7 @@ export default class FfcBaoPeiQiQu extends React.Component<Props,State>{
         this.getLocal()
     }
     renderBtn(){
-        if(this.state.is_received === 0 && this.state.lose_amount !==0){
+        if(this.state.lose_amount !==0){
             this.state.info.lose_range.forEach((item,index)=>{
                 if(this.state.lose_amount >= item.first_pay_min) {
                     this.btnIndex = index

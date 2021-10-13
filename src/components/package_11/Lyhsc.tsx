@@ -15,7 +15,8 @@ interface State {
     is_received:number,
     btnActive :boolean,
     applyBtnInteractable : boolean,
-    is_apply : boolean
+    is_apply : boolean,
+    ruleActive:boolean
 }
 export default class Lyhsc11 extends React.Component<Props,State>{
     state = {
@@ -32,7 +33,8 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         pay_amount_byday:0,
         btnActive :false,
         applyBtnInteractable : true,
-        is_apply : false
+        is_apply : false,
+        ruleActive:false
     }
     btnIndex= 0 
     componentDidMount(){
@@ -44,7 +46,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         this.Axios_getPayBonusByDay()
     }
     renderBtn(){
-        if(this.state.is_received === 0 && this.state.pay_amount_byday!==0){
+        if( this.state.pay_amount_byday!==0){
             this.state.info.range.forEach((item,index)=>{
                 if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
@@ -62,6 +64,11 @@ export default class Lyhsc11 extends React.Component<Props,State>{
     }
     onClick =(e:any)=>{
         this.Axios_receivePayBonusGold()
+    }
+    ruleBtnClick = (e:any)=>{
+        this.setState({
+            ruleActive:!this.state.ruleActive
+        }) 
     }
     applyBtnonClick =()=>{
         if(this.state.applyBtnInteractable){
@@ -158,7 +165,7 @@ export default class Lyhsc11 extends React.Component<Props,State>{
         return (
             <div className ="Lyhsc11" >
                 <div className = "group">
-                    <div className="line">
+                    <div className="line titile">
                         <div className ="li1 flexBox" style={{color:"#E8B56F"}}>充值金额</div>
                         <div className ="li2 flexBox" style={{color:"#E8B56F"}}>赠送金额</div>
                         <div className ="li3 flexBox" style={{color:"#E8B56F"}}>流水要求</div>
@@ -179,13 +186,15 @@ export default class Lyhsc11 extends React.Component<Props,State>{
                         <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
                     </div> */}
                 </div>
-                <div className = "rule">
-                    <p>活动规则：</p>
-                    <p>1. 绑定手机和银行卡即可参加，单日充值金额累加统计，达到档位即可领取赠送彩金。</p>
-                    <p>2. 每日23:59:59，活动计算的当日充值金额累加归零。</p>
-                    <p>3. 每一个账号(同一IP，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
-                    <p>4. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
-                </div>
+                <div className = "ruleBtn" onClick={this.ruleBtnClick}></div>
+                {
+                    this.state.ruleActive ? <div className = "rule">
+                        <p>1. 绑定手机和银行卡即可参加，单日充值金额累加统计，达到档位即可领取赠送彩金。</p>
+                        <p>2. 每日23:59:59，活动计算的当日充值金额累加归零。</p>
+                        <p>3. 每一个账号(同一IP，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
+                        <p>4. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                    </div> :null
+                }
             </div>
         )
     }

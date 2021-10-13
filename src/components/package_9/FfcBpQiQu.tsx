@@ -49,7 +49,7 @@ export default class FfcBpQiQu extends React.Component<Props,State>{
         this.Axios_getRewardFFCFlag()
     }
     renderBtn(){
-        if(this.state.is_received === "0" &&this.state.lose_amount!==0){
+        if(this.state.lose_amount!==0){
             this.state.info.lose_range.forEach((item,index)=>{
                 if(this.state.lose_amount >= item.lose_min && this.state.lose_amount < item.lose_max) {
                     this.btnIndex = index

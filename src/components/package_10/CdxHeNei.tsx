@@ -41,7 +41,7 @@ export default class CdxHeNei extends React.Component<Props,State>{
         this.Axios_getRewardHeNeiWinFlag()
     }
     renderBtn(){
-        if(this.state.is_received === 0 && this.state.game_count!==0){
+        if(this.state.game_count!==0){
             this.state.info.range.forEach((item,index)=>{
                 if(this.state.game_count >= item.win_round) {
                     this.btnIndex = index

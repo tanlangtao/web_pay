@@ -47,7 +47,7 @@ export default class Xyhschd12 extends React.Component<Props,State>{
         this.Axios_getFristPayAmount()
     }
     renderBtn(){
-        if(this.state.is_received === 0 && this.state.frist_pay_amount !==0){
+        if(this.state.frist_pay_amount !==0){
             this.state.info.range.forEach((item,index)=>{
                 if(this.state.frist_pay_amount >= item.recharge_amount) {
                     this.btnIndex = index

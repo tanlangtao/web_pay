@@ -65,29 +65,6 @@ export default class Ryjhd6 extends React.Component<Props,State>{
             })
         }
     }
-    renderBtn(){
-        if(this.state.info.range[0].performance !==0 ){
-            this.state.info.range.forEach((item,index)=>{
-                if(index < 6 &&  this.state.PerformanceInfo.amount >=item.performance && this.state.PerformanceInfo.grant >=item.grant) {
-                    this.btnIndex = index
-                    this.setState({
-                        btnActive:true
-                    })
-                }
-            })
-        }
-        if(this.state.PerformanceInfo.received_info && Number(this.state.PerformanceInfo.received_info[0].receive_amount)> 0){
-            this.state.PerformanceInfo.received_info.forEach((e)=>{
-                this.state.info.range.forEach((item,index)=>{
-                    if(Number(e.receive_amount) === item.gold){
-                        this.setState({
-                            is_received:true
-                        })
-                    }
-                })
-            })
-        }
-    }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
             return

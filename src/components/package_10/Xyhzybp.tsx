@@ -54,7 +54,7 @@ export default class Xyhzybp extends React.Component<Props,State>{
         this.getLocal()
     }
     renderBtn(){
-        if(this.state.is_received === 0 && this.state.frist_pay_amount !==0){
+        if(this.state.frist_pay_amount !==0){
             this.state.info.conf.forEach((item,index)=>{
                 if(this.state.frist_pay_amount >= item.first_pay_min) {
                     this.btnIndex = index

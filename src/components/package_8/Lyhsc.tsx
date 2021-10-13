@@ -42,7 +42,7 @@ export default class Lyhsc8 extends React.Component<Props,State>{
         this.Axios_getPayAmountByDay()
     }
     renderBtn(){
-        if(this.state.is_received === 0 && this.state.pay_amount_byday!==0){
+        if(this.state.pay_amount_byday!==0){
             this.state.info.forEach((item,index)=>{
                 if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
