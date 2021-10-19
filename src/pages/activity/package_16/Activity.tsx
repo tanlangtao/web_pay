@@ -22,7 +22,7 @@ interface State{
     title :string,
     curData:ConfigItem
 }
-export default class Activity15 extends Component<{}, State> {
+export default class Activity16 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -39,15 +39,7 @@ export default class Activity15 extends Component<{}, State> {
         this.setState({
             loading:false
         })
-        if(this.getLocal()){
-            let data :any= this.getLocal().data
-            let self = this
-            setTimeout(() => {
-                self.setNavArr(data)
-            }, 1);
-        }else{
-            this.AxiosIndex()
-        }
+        this.AxiosIndex()
     }
     //请求首页
     private async  AxiosIndex(){
@@ -116,14 +108,14 @@ export default class Activity15 extends Component<{}, State> {
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity15'>
+            return <div className='Activity16'>
                 {/* <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                 </div> */}
             </div>
         }
         return (
-            !this.state.loading ?<div className='activity15'>
+            !this.state.loading ?<div className='Activity16'>
                 <div className ="contentBox">
                     <div className='sider' style={{
                         zIndex:2,

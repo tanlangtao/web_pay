@@ -146,7 +146,6 @@ class gHandlerC  {
     //保留两位小数
     public toDecimal(num:any) {
         let isFUshu = 0
-        console.log(num)
         if(num <0){
             isFUshu = 1
         }
