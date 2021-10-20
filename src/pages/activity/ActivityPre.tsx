@@ -31,7 +31,8 @@ export default class ActivityPre extends Component<{}, State> {
                                                 gHandler.UrlData.package_id==='13' ?<Activity13/>:
                                                     gHandler.UrlData.package_id==='18' ?<Activity18/>:
                                                         gHandler.UrlData.package_id==='16' ?<Activity16/>:
-                                                            <Activity1></Activity1>   
+                                                            gHandler.UrlData.package_id==='1' ?<Activity1/>:
+                                                                <Activity18></Activity18>      
                 )
         )
     }
