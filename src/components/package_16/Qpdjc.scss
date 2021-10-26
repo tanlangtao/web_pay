@@ -1,0 +1,105 @@
+$src:'../../asses/activity/package_16/';
+
+.Qpdjc{
+    background-image:url($src+"bg/92_hd_di.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 280px;
+    height: 180px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    .bg{
+        background-image:url($src+"bg/92_qpdjc.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 2px 1px;
+        width: 310px;
+        height: 170px;
+        color: white;
+        position: relative;
+    }
+    .group1{
+        width: 268px;
+        height: 45px;
+        position: absolute;
+        left: 6px;
+        top:131px;
+        .title{
+            color: white;
+        }
+        .line{
+            display: flex;
+            height: 19px;
+            
+            .li1{
+                width: 47px;
+                font-size: 4px;
+                line-height: 4px;
+                color: rgb(206,182,152);
+                font-size: 6px;
+            }
+            .li2{
+                width: 173px;
+                display: flex;
+                flex-direction: column;
+                
+                .title{
+                    width: 100%;
+                    height: 9px;
+                    display: flex;
+                    .item{
+                        width: 33%;
+                        color: rgb(206,182,152);
+                        font-size: 6px;
+                    }
+                }
+                .content{
+                    width: 100%;
+                    height: 9px;
+                }
+            }
+            .lingqu{
+                background-image:url($src+"sprite/btn_lq.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 40px;
+                height: 20px;
+                margin-top: 2px;
+                margin-left: 3px;
+            }
+            .ylingqu{
+                background-image:url($src+"sprite/btn_ylq.png");
+            }
+        }
+    }
+    .ruleBtn{
+        background-image:url($src+"sprite/btn_rule.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 20px;
+        position: absolute;
+        left: 230px;
+        top: 20px;
+    }
+    .rule{
+        background-image:url($src+"bg/popwin_rule.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        width: 190px;
+        height: 85px;
+        left: 60px;
+        line-height: 8px;
+        top: 35px;
+        color: rgb(223,216,185);
+        padding: 10px;
+        padding-top: 12px;
+        font-size: 5.5px;
+        p{
+            margin: 0px
+        }
+    }
+}
