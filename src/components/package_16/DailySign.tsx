@@ -46,6 +46,9 @@ export default class DailySign16 extends React.Component<Props,State>{
     }
     onClick =(e:any)=>{
         this.Axios_receiveFreeGoldByDay()
+        //阻止冒泡
+        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
     }
     tipClick =(e:any)=>{
         message.info("您不符合领取资格!")
@@ -100,20 +103,19 @@ export default class DailySign16 extends React.Component<Props,State>{
         let rangeLine = ()=>{
             return  this.state.info.range.map((e:any,index:number) => {
                 if(index<7){
-                    return <div className ="li1 flexBox"  key={index} onClick={this.tipClick}>
-                        <div className={`font day${index+1}`}></div>
-                        <div className={`icon icon${index+1} `}>
+                    return <div className ={`li1 flexBox `}  key={index} onClick={this.tipClick}>
+                        <div className={`icon icon${index+1}`}>
                             {
                                 flagData.check_receive && flagData.day===index ?
-                                    (flagData.is_received === 0 ?<div className="guang" onClick={this.onClick}><div className="waitToCheck"></div></div>:<div className="yilingqu"></div>):
+                                    (flagData.is_received === 1 ?<div className ="lingqu" onClick={this.onClick}><div className="waitToCheck"></div></div>:<div className="yilingqu"></div>):
                                     (index < flagData.day?<div className="yilingqu"></div>:null)
-                                    
                             }
+                            <div className="foot">
+                                <div className = "jinbi"></div>
+                                <div className='zi'>{e.bonus}</div>
+                            </div>
                         </div>
-                        <div className="foot">
-                            <div className='jinbi'></div>
-                            <div className='zi'>{e.bonus}</div>
-                        </div>
+                        
                     </div>
                 }else{
                     return null
@@ -131,11 +133,11 @@ export default class DailySign16 extends React.Component<Props,State>{
                 <div className="guizeBtn" onClick={this.guizeClick}>
                     {
                         this.state.showGuize ?<div className="guizeMask">
-                            <p>1. 用户需要绑定银行卡方可参加此活动。</p>
+                            {/* <p>1. 用户需要绑定银行卡方可参加此活动。</p>
                             <p>2. 昨日活跃用户，次日可领取免费礼金3.8金币，可连续领取7日，礼金无流水限制。</p>
                             <p>3. 活跃用户定义：玩家单日有效投注满200即可（沙巴体育，真人视讯，彩票游戏不参与统计）。</p>
                             <p>4. 同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金无需流水限制可直接申请兑换。</p>
-                            <p>5. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                            <p>5. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p> */}
                         </div>:null
                     }
                 </div>

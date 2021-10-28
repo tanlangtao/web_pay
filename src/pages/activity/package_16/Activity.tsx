@@ -17,6 +17,7 @@ import Yjbhd from 'components/package_15/Yjbhd';
 import Xyhbp15 from 'components/package_15/Xyhbp';
 import Lyhsc15 from 'components/package_15/Lyhsc';
 import Qpdjc from 'components/package_16/Qpdjc';
+import DailySign16 from 'components/package_16/DailySign';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -147,7 +148,9 @@ export default class Activity16 extends Component<{}, State> {
                     }}>
                         {
                             (this.state.title==='棋牌大奖池16' ? <Qpdjc curData={this.state.curData}/>:
-                                <Qpdjc curData={this.state.curData}/>
+                                (this.state.title==='每日免费礼金16' ? <DailySign16 curData={this.state.curData}/>:
+                                    <div></div>
+                                )
                             )
                         }
                     </div>

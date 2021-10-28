@@ -27,8 +27,9 @@ $src:'../../../asses/activity/package_16/';
     }
     .sider{
         background:transparent;
-        width: 60px;
+        width: 63px;
         height: 180px;
+        margin-left: 2px;
         .navBox{
             height: 180px;
             color: white;
@@ -53,7 +54,7 @@ $src:'../../../asses/activity/package_16/';
                 }
             }
             .curNavItem{
-                width: 60px;
+                width: 63px;
                 background-image: url($src+"sprite/youcexuanzhong.png");
                 background-repeat: no-repeat;
                 background-size: contain;

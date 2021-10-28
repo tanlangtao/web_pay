@@ -46,6 +46,9 @@ export default class DailySign6 extends React.Component<Props,State>{
     }
     onClick =(e:any)=>{
         this.Axios_receiveFreeGoldByDay()
+        //阻止冒泡
+        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
     }
     tipClick =(e:any)=>{
         message.info("您不符合领取资格!")
