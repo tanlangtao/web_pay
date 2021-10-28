@@ -16,6 +16,10 @@ import Xzdlphb from 'components/package_15/Xzdlphb';
 import Yjbhd from 'components/package_15/Yjbhd';
 import Xyhbp15 from 'components/package_15/Xyhbp';
 import Lyhsc15 from 'components/package_15/Lyhsc';
+import DailySign18 from 'components/package_18/DailySign';
+import Xyhschd18 from 'components/package_18/Xyhschd';
+import Lyhsc18 from 'components/package_18/Lyhsc';
+import Xyhbp18 from 'components/package_18/Xyhbp';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -145,15 +149,11 @@ export default class Activity18 extends Component<{}, State> {
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
-                            (this.state.title==='奖池榜送豪礼15' ? <Jcbshl curData={this.state.curData}/>:
-                                (this.state.title==='新用户首存活动15' ? <Xyhschd15 curData={this.state.curData}/>:
-                                    (this.state.title==='新增代理排行榜15' ? <Xzdlphb curData={this.state.curData}/>:
-                                        (this.state.title==='赢金榜活动15' ? <Yjbhd curData={this.state.curData}/>:
-                                            (this.state.title==='新用户包赔活动15' ? <Xyhbp15 curData={this.state.curData}/>:
-                                                (this.state.title==='每日充值赠金活动15' ? <Lyhsc15 curData={this.state.curData}/>:
-                                                    <div></div>
-                                                )
-                                            )
+                            (this.state.title==='每日免费礼金18' ? <DailySign18 curData={this.state.curData}/>:
+                                (this.state.title==='新用户首存活动18' ? <Xyhschd18 curData={this.state.curData}/>:
+                                    (this.state.title==='老用户首存活动18' ? <Lyhsc18 curData={this.state.curData}/>:
+                                        (this.state.title==='新用户包赔活动18' ? <Xyhbp18 curData={this.state.curData}/>:
+                                            <div></div>
                                         )
                                     )
                                 )

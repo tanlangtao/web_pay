@@ -27,8 +27,9 @@ $src:'../../../asses/activity/package_18/';
     }
     .sider{
         background:transparent;
-        width: 60px;
+        width: 63px;
         height: 180px;
+        margin-left: 1px;
         .navBox{
             height: 180px;
             color: white;
@@ -52,7 +53,7 @@ $src:'../../../asses/activity/package_18/';
                 }
             }
             .curNavItem{
-                width: 60px;
+                width: 63px;
                 background-image: url($src+"sprite/bq1.png");
                 background-repeat: no-repeat;
                 background-size: contain;
