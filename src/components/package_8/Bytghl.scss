@@ -1,11 +1,11 @@
 $src:'../../asses/activity/package_12/';
 
-.Lyhsc8{
-    background-image: url($src+"bg/event12-3_lhysc_content.png") ;
+.Bytghl8{
+    background-image: url($src+"bg/xs_event_content_20211029-2.png") ;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -10px -10px;
-    width: 320px;
+    background-position: 2px 0px;
+    width: 290px;
     height: 180px;
     font-size: 6px;
     color: white;
@@ -40,35 +40,43 @@ $src:'../../asses/activity/package_12/';
         }
     }
     .group{
-        width: 150px;
-        height: 100px;
+        width: 250px;
+        height: 140px;
         position: absolute;
-        left: 12px;
-        top: 47px;
+        left: 10px;
+        top: 55px;
+        padding-top: 1px;
+
         .line{
             display: flex;
-            height: 12px;
+            height: 11.2px;
             .li1{
                 width: 40px;
             }
             .li2{
-                width: 38px;
+                width: 34px;
             }
             .li3{
-                width: 42px;
+                width: 36px;
             }
             .li4{
-                width: 28px;
+                width: 29px;
+            }
+            .li5{
+                width: 32px;
+            }
+            .li6{
+                width: 26px;
                 .btn_linqu{
-                    width: 26px;
-                    height: 11px;
+                    width: 21px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 26px;
-                    height: 11px;
+                    width: 21px;
+                    height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
@@ -77,18 +85,22 @@ $src:'../../asses/activity/package_12/';
         }
         .label1{
             position: absolute;
-            left: 85px;
-            top: 40px;
+            left: 5px;
+            top: 55px;
+        }
+        .label2{
+            position: absolute;
+            left: 145px;
+            top: 55px;
         }
     }
     .rule{
         position: absolute;
-        width: 200px;
-        left: 20px;
-        line-height: 6px;
-        top: 122px;
+        width: 82px;
+        left: 215px;
+        line-height: 7px;
+        top: 18px;
         color: #FEFFC9;
-        font-size: 5.5px;
         p{
             margin: 0px;
         }

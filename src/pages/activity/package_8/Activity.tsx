@@ -9,14 +9,15 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
+import FirstComponent from '../../../FirstComponent';
+import Bytghl8 from 'components/package_8/Bytghl';
 import RedRain8 from 'components/package_8/RedRain';
 import Lyhsc8 from 'components/package_8/Lyhsc';
-import FirstComponent from '../../../FirstComponent';
 interface State{
+    loading:Boolean,
     navArr :ConfigItem[],
     title :string,
-    curData:ConfigItem,
-    loading:Boolean
+    curData:ConfigItem
 }
 export default class Activity8 extends Component<{}, State> {
     state = {
@@ -59,12 +60,11 @@ export default class Activity8 extends Component<{}, State> {
             }else{
                 console.log("请检查配置信息！",e.name)
             }
-            if(e.is_close === "2" && (e.name === "四季发财红包雨8" ||e.name === "老会员每日首存活动8")){
+            if(e.is_close === "2"){
                 navArr.push(e)
             } 
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
-        console.log(navArr)
         if(navArr.length>0){
             this.setState({
                 navArr:navArr,
@@ -90,40 +90,32 @@ export default class Activity8 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
-                        <div className={`navText ${
-                            item.name==="四季发财红包雨8"?(item.name ===this.state.title ?"btn_redRain1":"btn_redRain2"):
-                                item.name==="老会员每日首存活动8"?(item.name ===this.state.title ?"btn_lyhbc1":"btn_lyhbc2"):""
-                        }`} ></div>
+                        <div className = "btnline"></div>
+                        <div className ="navText flexBox">
+                            <p>{item.name.length<=7?item.name.substring(0,item.name.length-1):item.name.substring(0,item.name.length-1).substring(0,7)}</p>
+                            <p>{item.name.substring(0,item.name.length-1).length>7?item.name.substring(7,item.name.length-1):""}</p>
+                        </div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity8'>
-                {/* <div className='headerBox' >
-                    <div className="returnToHall" onClick={this.returnToHall}></div>
-                </div> */}
+            return <div className='Activity8'>
             </div>
         }
         return (
             !this.state.loading?<div className='activity8'>
-                {/* <div className='headerBox' >
-                    <div className="returnToHall" onClick={this.returnToHall}></div>
-                    <div className={`title ${
-                        this.state.title==="四季发财红包雨8"?"db_redrain":
-                            this.state.title==="老会员每日首存活动8"?"event_xl_lyhsc_title":""
-                    }`} ></div>
-                </div> */}
                 <div className ="contentBox">
-                    <div className='sider' style={{
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
-                    }}>
+                    <div
+                        className='sider' style={{
+                            transform:`scale(${gHandler.getFontsizeScale()})`,
+                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
+                        }} >
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100*gHandler.getHeightDiff()}
+                                height={65*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -136,15 +128,17 @@ export default class Activity8 extends Component<{}, State> {
                             </Swiper>
                         </div>
                     </div>
-                    <div className="content"style={{
+                    <div className="content" style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
                         marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
-                            (this.state.title==='四季发财红包雨8' ? <RedRain8 curData={this.state.curData}/>:
-                                (this.state.title==='老会员每日首存活动8' ? <Lyhsc8 curData={this.state.curData}/>:
-                                    <div></div> 
+                            (this.state.title==='每日充值赠金活动8' ? <Lyhsc8 curData={this.state.curData}/>:
+                                (this.state.title==='捕鱼通关豪礼8' ? <Bytghl8 curData={this.state.curData}/>:
+                                    (this.state.title==='四季发财红包雨8' ? <RedRain8 curData={this.state.curData}/>:
+                                        <div></div>
+                                    )
                                 )
                             )
                         }

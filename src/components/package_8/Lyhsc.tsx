@@ -15,25 +15,31 @@ interface State {
     is_received:number,
     btnActive :boolean,
     applyBtnInteractable : boolean,
-    is_apply : boolean
+    is_apply : boolean,
+    showGuize: boolean
 }
 export default class Lyhsc8 extends React.Component<Props,State>{
     state = {
-        info:[
-            {
-                bonus:0,
-                recharge_amount:0,
-                flow_rate:0
-            }
-        ],
+        info:{
+            range:[
+                {
+                    bonus:0,
+                    recharge_amount:0,
+                    flow_rate:0
+                }
+            ],
+            flow_rate:0
+        },
         is_received:0,
         pay_amount_byday:0,
         btnActive :false,
         applyBtnInteractable : true,
-        is_apply : false
+        is_apply : false,
+        showGuize:false,
     }
     btnIndex= 0 
     componentDidMount(){
+        console.log(this.props.curData.info)
         this.setState({
             info:this.props.curData.info
         },()=>{
@@ -43,7 +49,7 @@ export default class Lyhsc8 extends React.Component<Props,State>{
     }
     renderBtn(){
         if(this.state.pay_amount_byday!==0){
-            this.state.info.forEach((item,index)=>{
+            this.state.info.range.forEach((item,index)=>{
                 if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
                     this.setState({
@@ -68,6 +74,12 @@ export default class Lyhsc8 extends React.Component<Props,State>{
             message.info('未到开放时间！')
         }
     }
+    guizeClick =()=>{
+        this.setState({
+            showGuize :!this.state.showGuize
+        })
+    }
+    
     private async Axios_receivePaymentGold(){
         let url = `${gHandler.UrlData.host}${Api.receivePaymentGold}`;
         let data = new FormData();
@@ -138,7 +150,7 @@ export default class Lyhsc8 extends React.Component<Props,State>{
     }
     render (){
         let rangeLine = ()=>{
-            return  this.state.info.map((e:any,index:number) => {
+            return  this.state.info.range.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
                     <div className ="li1 flexBox">{e.recharge_amount}</div>
                     <div className ="li2 flexBox">{e.bonus}</div>
@@ -157,58 +169,33 @@ export default class Lyhsc8 extends React.Component<Props,State>{
             <div className ="Lyhsc8" >
                 <div className = "group">
                     <div className="line">
-                        <div className ="li1 flexBox" style={{color:"#6F6BDA"}}>充值金额</div>
-                        <div className ="li2 flexBox" style={{color:"#6F6BDA"}}>赠送金额</div>
-                        <div className ="li3 flexBox" style={{color:"#6F6BDA"}}>流水要求</div>
+                        <div className ="li1 flexBox" style={{color:"rgb(209,182,144)"}}>充值金额</div>
+                        <div className ="li2 flexBox" style={{color:"rgb(209,182,144)"}}>赠送金额</div>
+                        <div className ="li3 flexBox" style={{color:"rgb(209,182,144)"}}>流水要求</div>
                     </div>
                     {
                         rangeLine()
                     }
                     <div className ="label1 ">
                         <div className="flexBox">本金1倍</div>
-                        <div className="flexBox">彩金{this.state.info[0].flow_rate}倍流水</div>
+                        <div className="flexBox">彩金{this.state.info.range[0].flow_rate}倍流水</div>
                     </div>
-                    {/* <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
-                        console.log("申请")
-                        this.applyBtnonClick()
-                    }}></div>
-                    <div className ="applyBtnLabel">
-                        <div className="flexBox">开放时间</div>
-                        <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
-                    </div> */}
                 </div>
-                <div className = "rule">
-                    <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
-                    <p>2.游戏规则：仅限参与财神到，水果机，捕鱼·海王，捕鱼·聚宝盆，百人牛牛，红包乱斗，二八杠，21点，奔驰宝马游戏。</p>
-                    <p>3.单日充值金额累加统计，当日累计充值金额达到指定档位，即可领取活动规定的相应金币。</p>
-                    <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
-                    <p>5.每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
-                    <p>6. 本活动最终解释权归新盛所有。</p>
+                <div className="guizeBtn" onClick={this.guizeClick}>
+                    {
+                        this.state.showGuize ?<div className="guizeMask">
+                            <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
+                            <p>2.游戏规则：仅限参与财神到，水果机，捕鱼·海王，捕鱼·聚宝盆，百人牛牛，红包乱斗，二八杠，21点，奔驰宝马游戏。</p>
+                            <p>3.单日充值金额累加统计，当日累计充值金额达到指定档位，即可领取活动规定的相应金币。</p>
+                            <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
+                            <p>5.每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
+                            <p>6. 本活动最终解释权归新盛所有。</p>
+                        </div>:null
+                    }
                 </div>
             </div>
         )
     }
-    // ApplyBtnInit(){
-    //     let h = new Date().getHours()
-    //     if(this.getLocal()){
-    //         if(h < this.state.info.start || h >= this.state.info.end){
-    //             this.setState({
-    //                 applyBtnInteractable:false
-    //             })
-    //         }else{
-    //             this.setState({
-    //                 applyBtnInteractable:true
-    //             })
-    //         }
-    //         this.setState({
-    //             is_apply:false
-    //         })
-    //     }else{
-    //         this.setState({
-    //             is_apply:true
-    //         })
-    //     }
-    // }
     getLocal(){
         let local = localStorage.getItem(`ApplyLyhsc_${gHandler.UrlData.user_id}`)
         if(local){
