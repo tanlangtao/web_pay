@@ -20,12 +20,12 @@ $src:'../../asses/activity/package_12/';
         background-repeat: no-repeat;
         background-size: contain;
         .guizeMask{
-            width: 190px;
+            width: 185px;
             height: 90px;
             position: absolute;
             left: -140px;
             top: 16px;
-            background-image:url($src+"bg/ruleBg.png");
+            background-image:url($src+"bg/rule_bg.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             font-size: 5px;
@@ -36,6 +36,7 @@ $src:'../../asses/activity/package_12/';
                 margin: 0px;
                 width: 180px;
                 margin-left: 5px;
+                color: rgb(224,198,171);
             }
         }
     }

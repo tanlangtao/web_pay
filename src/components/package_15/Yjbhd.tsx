@@ -188,10 +188,10 @@ export default class Yjbhd extends React.Component<Props,State>{
     }
     getTodayDate(){
         let today =  new Date()
-        let y = today.getFullYear()
-        let m :any= today.getMonth()+1
-        let d :any= today.getDate()-1
-
+        let yesterday = new Date(today.getTime() - 86400000)
+        let y = yesterday.getFullYear()
+        let m :any= yesterday.getMonth()+1
+        let d :any= yesterday.getDate()
         if(m<10){
             m = `0${m}`
         }

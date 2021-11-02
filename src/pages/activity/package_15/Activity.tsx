@@ -40,11 +40,7 @@ export default class Activity15 extends Component<{}, State> {
             loading:false
         })
         if(this.getLocal()){
-            let data :any= this.getLocal().data
-            let self = this
-            setTimeout(() => {
-                self.setNavArr(data)
-            }, 1);
+            this.setNavArr(this.getLocal().data)
         }else{
             this.AxiosIndex()
         }
@@ -181,7 +177,7 @@ export default class Activity15 extends Component<{}, State> {
             let content = JSON.parse(local)
             let newTime = new Date().getTime()/1000
             //超过3小时，重新请求数据
-            if((newTime - content.time) <1800){
+            if((newTime - content.time) <600){
                 return content
             }else{
                 return false

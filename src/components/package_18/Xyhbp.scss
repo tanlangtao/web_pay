@@ -20,21 +20,21 @@ $src:'../../asses/activity/package_18/';
         background-repeat: no-repeat;
         background-size: contain;
         .guizeMask{
-            width: 200px;
+            width: 250px;
             height: 105px;
             position: absolute;
-            left: -160px;
-            top: 16px;
+            left: -206px;
+            top: 15px;
             background-image:url($src+"bg/ruleBg.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
             font-size: 5px;
             line-height: 7.5px;
-            padding-top: 12px;
+            padding-top: 10px;
             font-weight: bold;
             p{
                 margin: 0px;
-                width: 180px;
+                width: 240px;
                 margin-left: 5px;
             }
         }

@@ -43,7 +43,11 @@ export default class Activity18 extends Component<{}, State> {
         this.setState({
             loading:false
         })
-        this.AxiosIndex()
+        if(this.getLocal()){
+            this.setNavArr(this.getLocal().data)
+        }else{
+            this.AxiosIndex()
+        }
     }
     //请求首页
     private async  AxiosIndex(){
@@ -140,7 +144,7 @@ export default class Activity18 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.0.3</div>
+                            <div className ="version">v:1.0.4</div>
                         </div>
                     </div>
                     <div className="content" style={{
@@ -173,7 +177,7 @@ export default class Activity18 extends Component<{}, State> {
             let content = JSON.parse(local)
             let newTime = new Date().getTime()/1000
             //超过3小时，重新请求数据
-            if((newTime - content.time) <1800){
+            if((newTime - content.time) <600){
                 return content
             }else{
                 return false

@@ -42,7 +42,11 @@ export default class Activity10 extends Component<{}, State> {
         this.setState({
             loading:false
         })
-        this.AxiosIndex()
+        if(this.getLocal()){
+            this.setNavArr(this.getLocal().data)
+        }else{
+            this.AxiosIndex()
+        }
     }
     //请求首页
     private async  AxiosIndex(){
@@ -54,6 +58,7 @@ export default class Activity10 extends Component<{}, State> {
         })
         if(response.status === 0){
             this.setNavArr(response.data)
+            this.setLocal(response.data)
         }else{
             message.error(response.msg)
         }
@@ -177,5 +182,28 @@ export default class Activity10 extends Component<{}, State> {
             </div>
                 :<FirstComponent></FirstComponent>
         )
+    }
+    getLocal(){
+        let local = localStorage.getItem(`ActivityConfig_${gHandler.UrlData.package_id}`)
+        if(local){
+            let content = JSON.parse(local)
+            let newTime = new Date().getTime()/1000
+            //超过3小时，重新请求数据
+            if((newTime - content.time) <600){
+                return content
+            }else{
+                return false
+            }
+        }else{
+            return false
+        }
+    }
+    setLocal(data:ConfigItem[]){
+        let newTime = new Date().getTime()/1000
+        let content = {
+            time: newTime,
+            data :data
+        }
+        localStorage.setItem(`ActivityConfig_${gHandler.UrlData.package_id}`,JSON.stringify(content))
     }
 }
