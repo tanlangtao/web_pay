@@ -61,7 +61,11 @@ export default class Activity8 extends Component<{}, State> {
         let navArr:ConfigItem[] = []
         data.forEach(e=>{
             if(e.info !== "" && e.info !== "{}"){
-                e.info = JSON.parse(e.info)
+                try{
+                    e.info = JSON.parse(e.info)
+                }catch{
+
+                }
             }else{
                 console.log("请检查配置信息！",e.name)
             }
@@ -131,6 +135,7 @@ export default class Activity8 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
+                            <div className ="version">v:1.0.2</div>
                         </div>
                     </div>
                     <div className="content" style={{

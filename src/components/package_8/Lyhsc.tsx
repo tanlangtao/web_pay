@@ -45,10 +45,10 @@ export default class Lyhsc8 extends React.Component<Props,State>{
         },()=>{
             console.log(this.state.info)
         })
-        this.Axios_getPayAmountByDay()
+        this.Axios_getPayBonusByDay()
     }
     renderBtn(){
-        if(this.state.pay_amount_byday!==0){
+        if( this.state.pay_amount_byday!==0){
             this.state.info.range.forEach((item,index)=>{
                 if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
@@ -65,11 +65,10 @@ export default class Lyhsc8 extends React.Component<Props,State>{
         }
     }
     onClick =(e:any)=>{
-        this.Axios_receivePaymentGold()
+        this.Axios_receivePayBonusGold()
     }
     applyBtnonClick =()=>{
         if(this.state.applyBtnInteractable){
-            this.Axios_applyFristPay()
         }else{
             message.info('未到开放时间！')
         }
@@ -79,9 +78,8 @@ export default class Lyhsc8 extends React.Component<Props,State>{
             showGuize :!this.state.showGuize
         })
     }
-    
-    private async Axios_receivePaymentGold(){
-        let url = `${gHandler.UrlData.host}${Api.receivePaymentGold}`;
+    private async Axios_receivePayBonusGold(){
+        let url = `${gHandler.UrlData.host}${Api.receivePayBonusGold}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
@@ -99,39 +97,13 @@ export default class Lyhsc8 extends React.Component<Props,State>{
         })
         if(response.status === 0){
             message.success('领取成功！');
-            this.Axios_getPayAmountByDay();
+            this.Axios_getPayBonusByDay();
         }else{
             message.error(response.msg)
         }
     }
-    //确认申请
-    private async Axios_applyFristPay(){
-        let url = `${gHandler.UrlData.host}${Api.applyFristPay}`;
-        let data = new FormData();
-        data.append('user_id',gHandler.UrlData.user_id);
-        data.append('user_name',decodeURI(gHandler.UrlData.user_name));
-        data.append('package_id',gHandler.UrlData.package_id);
-        data.append('activity_id',this.props.curData.id);
-        data.append('login_ip',gHandler.UrlData.login_ip?gHandler.UrlData.login_ip:gHandler.UrlData.regin_ip);
-        data.append('regin_ip',gHandler.UrlData.regin_ip);
-        data.append('device_id',gHandler.UrlData.device_id);
-        data.append('center_auth',gHandler.UrlData.center_auth);
-        data.append('token',gHandler.token);
-        let response = await Axios.post(url,data).then(response=>{
-            return response.data;
-        }).catch(err=>{
-            return message.error("failed to load response data")
-        })
-        if(response.status === 0){
-            message.success('申请成功！');
-            //缓存申请结果
-            this.setLocal()
-        }else{
-            message.error(response.msg)
-        }
-    }
-    private async  Axios_getPayAmountByDay(){
-        let url = `${gHandler.UrlData.host}${Api.getPayAmountByDay}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+    private async  Axios_getPayBonusByDay(){
+        let url = `${gHandler.UrlData.host}${Api.getPayBonusByDay}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -139,7 +111,7 @@ export default class Lyhsc8 extends React.Component<Props,State>{
         })
         if(response.status === 0){
             this.setState({
-                pay_amount_byday:response.data.pay_amount_byday,
+                pay_amount_byday:response.data.first_pay_amount_today,
                 is_received:response.data.is_received
             },()=>{
                 this.renderBtn()

@@ -71,7 +71,11 @@ export default class Activity9 extends Component<{}, State> {
         let navArr:ConfigItem[] = []
         data.forEach(e=>{
             if(e.info !== "" && e.info !== "{}"){
-                e.info = JSON.parse(e.info)
+                try{
+                    e.info = JSON.parse(e.info)
+                }catch{
+
+                }
             }else{
                 console.log("请检查配置信息！",e.name)
             }

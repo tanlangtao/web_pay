@@ -140,7 +140,7 @@ export default class Activity15 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.0.3</div>
+                            <div className ="version">v:1.0.4</div>
                         </div>
                     </div>
                     <div className="content" style={{
