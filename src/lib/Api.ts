@@ -42,7 +42,7 @@ export const Api ={
     receiveGold:"/api/activity/receiveGold",
     activityList:"/api/activity/activityList",
     game_getHaoLiPlayerData:"/szffc/api/getHaoLiPlayerData",
-    center_GetWinRankLista:"/Operation/api/GetWinRankList",
+    GetWinRankList:"/Operation/Api/GetWinRankList",
     getRankByProxyPid:"/api/activity/getRankByProxyPid",
     getGameUsersWinAndLoseByDate:"/api/activity/getGameUsersWinAndLoseByDate",
     receiveRankGoldByPid:"/api/activity/receiveRankGoldByPid",

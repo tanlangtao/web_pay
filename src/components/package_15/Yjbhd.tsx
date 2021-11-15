@@ -56,7 +56,7 @@ export default class Yjbhd extends React.Component<Props,State>{
         this.setState({
             info:this.props.curData.info
         })
-        this.Axios_center_GetWinRankLista()
+        this.Axios_center_GetWinRankList()
         this.Axios_getGameUsersWinAndLoseByDate()
     }
     componentWillUnmount(){
@@ -110,9 +110,8 @@ export default class Yjbhd extends React.Component<Props,State>{
             message.error(response.msg)
         }
     }
-    private async  Axios_center_GetWinRankLista(){
-        let centerHost = gHandler.UrlData.host.replace("pay","center")
-        let url = `${centerHost}${Api.center_GetWinRankLista}?platform_key=654321&package_id=${gHandler.UrlData.package_id}&date=${this.getTodayDate()}&limit=10`;
+    private async  Axios_center_GetWinRankList(){
+        let url = `${gHandler.UrlData.host}${Api.GetWinRankList}?platform_key=654321&package_id=${gHandler.UrlData.package_id}&date=${this.getTodayDate()}&limit=10`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{

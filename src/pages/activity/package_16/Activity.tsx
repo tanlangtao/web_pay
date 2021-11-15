@@ -10,14 +10,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
-import Xyhschd15 from 'components/package_15/Xyhschd';
-import Jcbshl from 'components/package_15/Jcbshl';
-import Xzdlphb from 'components/package_15/Xzdlphb';
-import Yjbhd from 'components/package_15/Yjbhd';
-import Xyhbp15 from 'components/package_15/Xyhbp';
-import Lyhsc15 from 'components/package_15/Lyhsc';
 import Qpdjc from 'components/package_16/Qpdjc';
 import DailySign16 from 'components/package_16/DailySign';
+import Jtfl from 'components/package_16/Jtfl';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -142,7 +137,7 @@ export default class Activity16 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.0.4</div>
+                            <div className ="version">v:1.0.5</div>
                         </div>
                     </div>
                     <div className="content" style={{
@@ -153,7 +148,9 @@ export default class Activity16 extends Component<{}, State> {
                         {
                             (this.state.title==='棋牌大奖池16' ? <Qpdjc curData={this.state.curData}/>:
                                 (this.state.title==='每日免费礼金16' ? <DailySign16 curData={this.state.curData}/>:
-                                    <div></div>
+                                    (this.state.title==='集团福利16' ? <Jtfl curData={this.state.curData}/>:
+                                        <div></div>
+                                    )
                                 )
                             )
                         }
