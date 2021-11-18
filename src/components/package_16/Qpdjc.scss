@@ -3,10 +3,9 @@ $src:'../../asses/activity/package_16/';
 .Qpdjc{
     background-image:url($src+"bg/92_hd_di.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
     background-position: 0px;
-    width: 280px;
-    height: 180px;
+    width: 295px;
+    height: 190px;
     font-size: 5px;
     color: white;
     position: relative;
@@ -15,24 +14,23 @@ $src:'../../asses/activity/package_16/';
         background-repeat: no-repeat;
         background-size: contain;
         background-position: 2px 1px;
-        width: 275px;
-        height: 170px;
+        width: 290px;
+        height: 190px;
         color: white;
         position: relative;
     }
     .group1{
-        width: 268px;
+        width: 280px;
         height: 45px;
         position: absolute;
         left: 6px;
-        top:131px;
+        top:138px;
         .title{
             color: white;
         }
         .line{
             display: flex;
             height: 19px;
-            
             .li1{
                 width: 47px;
                 font-size: 4px;
@@ -41,7 +39,7 @@ $src:'../../asses/activity/package_16/';
                 font-size: 6px;
             }
             .li2{
-                width: 173px;
+                width: 185px;
                 display: flex;
                 flex-direction: column;
                 
@@ -82,21 +80,21 @@ $src:'../../asses/activity/package_16/';
         height: 20px;
         position: absolute;
         left: 230px;
-        top: 20px;
+        top: 10px;
     }
     .rule{
         background-image:url($src+"bg/popwin_rule.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
         position: absolute;
-        width: 190px;
-        height: 85px;
-        left: 60px;
-        line-height: 8px;
-        top: 35px;
+        width: 240px;
+        height: 140px;
+        left: 20px;
+        line-height: 6.5px;
+        top: 25px;
         color: rgb(223,216,185);
-        padding: 10px;
-        padding-top: 12px;
+        padding: 5px;
+        padding-top: 18px;
         font-size: 5.5px;
         font-weight: bold;
         p{

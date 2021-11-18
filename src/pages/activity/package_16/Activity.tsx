@@ -75,6 +75,31 @@ export default class Activity16 extends Component<{}, State> {
             } 
         })
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
+        console.log(navArr,decodeURI(gHandler.UrlData.firstPage))
+        let firstPage :any= []
+        if(decodeURI(gHandler.UrlData.firstPage) === "棋牌大奖池"){
+            navArr.forEach((e,index) => {
+                if(e.name === "棋牌大奖池16"){
+                    //截取放到首位
+                    firstPage = navArr.splice(index,1)
+                }
+            });
+        }else if(decodeURI(gHandler.UrlData.firstPage) === "每日免费礼金"){
+            navArr.forEach((e,index) => {
+                if(e.name === "每日免费礼金16"){
+                    //截取放到首位
+                    firstPage = navArr.splice(index,1)
+                }
+            });
+        }else if(decodeURI(gHandler.UrlData.firstPage) === "集团福利"){
+            navArr.forEach((e,index) => {
+                if(e.name === "集团福利16"){
+                    //截取放到首位
+                    firstPage = navArr.splice(index,1)
+                }
+            });
+        }
+        navArr.unshift(firstPage[0])
         if(navArr.length>0){
             this.setState({
                 navArr:navArr,
@@ -137,7 +162,7 @@ export default class Activity16 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.0.5</div>
+                            <div className ="version">v:1.0.7</div>
                         </div>
                     </div>
                     <div className="content" style={{

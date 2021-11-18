@@ -45,16 +45,16 @@ export default class Qpdjc extends React.Component<Props,State>{
         this.setState({
             info:this.props.curData.info
         })
-        this.Axios_getFristPayAmount()
+        // this.Axios_proxy_GetBonusPool()
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
             return
         }
     }
-    private async  Axios_getFristPayAmount(){
-        let gameHost = gHandler.UrlData.host.replace("pay","game")
-        let url = `${gameHost}${Api.game_getHaoLiPlayerData}?user_id=${gHandler.UrlData.user_id}&game_id=5b1f3a3cb76a451e210820&room_id=1`;
+    private async  Axios_proxy_GetBonusPool(){
+        let proxyHost = gHandler.UrlData.host.replace("pay","proxy")
+        let url = `${proxyHost}${Api.proxy_GetBonusPool}?user_id=${gHandler.UrlData.user_id}&user_name=${gHandler.UrlData.user_name}&game_id=5b1f3a3cb76a451e210820&room_id=1`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -103,7 +103,6 @@ export default class Qpdjc extends React.Component<Props,State>{
                                 <div className = "item flexBox"></div>
                             </div>
                         </div>
-                        <div className ={`flexBox lingqu`}></div>
                     </div>
                     <div className ="line title" >
                         <div className ="li1 flexBox">上周</div>
@@ -119,7 +118,7 @@ export default class Qpdjc extends React.Component<Props,State>{
                                 <div className = "item flexBox"></div>
                             </div>
                         </div>
-                        <div className ={`flexBox lingqu`}></div>
+                        {/* <div className ={`flexBox lingqu`}></div> */}
 
                     </div>
                 </div>
@@ -127,13 +126,18 @@ export default class Qpdjc extends React.Component<Props,State>{
                 {
                     this.state.showRule ? <div className = "rule">
                         <p>棋牌奖金池发放原则:</p>
-                        <p>1. 每周平台会累计棋牌奖金池金额，发放给满足条件的棋牌玩家。</p>
-                        <p>2. 平台的棋牌流水 = 平台所有人棋牌类有效投注总和。</p>
-                        <p>3. 参与本活动个人棋牌有效投注要求不低于10万。</p>
-                        <p>4. 奖金池占比 = 我的个人棋牌有效投注 / 平台所有人棋牌有效投注。</p>
-                        <p>5. 系统自动依据奖金池占比派发奖金。</p>
-                        <p>6. 奖金池金额领取时间为每周一的12:00开放到每周日的12:00。</p>
-                        <p>7. 平台保留此活动最终解释权。</p>
+                        <p>1.每周一至每周日平台会累积棋牌奖金池金额，发放给满足条件的棋牌玩家。</p>
+                        <p>2.当周累计的奖金池金额则在下周清空重新计算。</p>
+                        <p>3.奖金池占比 = 我的个人棋牌有效投注 / 平台所有人棋牌有效投注。</p>
+                        <p>4.平台的棋牌有效投注 = 平台所有人棋牌类有效投注总和。</p>
+                        <p>5.如何累积棋牌有效投注:</p>
+                        <p>用户仅需进入以下游戏游玩，即可累积棋牌有效投注《彩源龙虎斗》，《彩源猜大小》，《聚宝盆捕鱼》，《疯狂旋涡》，《龙虎斗》，《百人牛牛》，《斗地主》，《奔驰宝马》，《抢庄牛牛》，《百家乐》，《十三水》，《二八杠》，《炸金花》，《红包乱斗》，《德州扑克》，《红黑大战》，《跑得快》，《轮盘》，《二人麻将》，《水果机》，《海王捕鱼》，《骰宝》，《21点》，《狮子王国》，《城堡争霸》，《多福多财》，《梭哈》，《财神到》，《发财推币机》。</p>
+                        <p>6.参予本活动个人棋牌有效投注要求不低于3万。</p>
+                        <p>7.系统自动依据奖金池占比派发奖金。</p>
+                        <p>8.领取的奖金需打满一倍流水限制后才可进行兑换。</p>    
+                        <p>9.奖金池金额领取时间为每周一的12:00开放到每周日的12:00。</p>    
+                        <p>10.用户若在当期领取时间内无采取领取动作，视为放弃红利。</p>    
+                        <p>11.平台保留此活动最终解释权。</p>    
                     </div> :null
                 }
             </div>

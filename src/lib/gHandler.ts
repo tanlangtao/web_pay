@@ -14,6 +14,7 @@ interface UrlData{
     login_ip:string,
     regin_ip:string,
     device_id:string,
+    firstPage:string
 }
 class gHandlerC  {
 
@@ -33,6 +34,7 @@ class gHandlerC  {
         login_ip:'',
         regin_ip:'',
         device_id:'',
+        firstPage:'',
     }
     constructor(){
         this.UrlData =this.getUrlData()

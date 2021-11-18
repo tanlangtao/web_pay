@@ -4,17 +4,17 @@ $src:'../../asses/activity/package_16/';
     background-image:url($src+"bg/mflj.png");
     background-repeat: no-repeat;
     background-size: contain;
-    width: 275px;
-    height: 180px;
+    width: 295px;
+    height: 200px;
     color: white;
     position: relative;
     .guizeBtn{
         position: absolute;
         top: 10px;
-        left: 202px;
+        left: 230px;
         width: 50px;
         height: 15px;
-        background-image:url($src+"sprite/btn_rule.png");
+        background-image:url($src+"sprite/btn_rule2.png");
         background-repeat: no-repeat;
         background-size: contain;
         .guizeMask{

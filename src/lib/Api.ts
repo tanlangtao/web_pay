@@ -52,4 +52,5 @@ export const Api ={
     getFreeGoldFlag:"/api/activity/getFreeGoldFlag",
     getPayBonusByDay:"/api/activity/getPayBonusByDay",
     receivePayBonusGold:"/api/activity/receivePayBonusGold",
+    proxy_GetBonusPool:"/proxy/user/GetBonusPool",
 }
