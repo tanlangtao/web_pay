@@ -98,6 +98,8 @@ export default class Activity16 extends Component<{}, State> {
                     firstPage = navArr.splice(index,1)
                 }
             });
+        }else{
+            firstPage = navArr.splice(0,1)
         }
         navArr.unshift(firstPage[0])
         if(navArr.length>0){
@@ -147,6 +149,7 @@ export default class Activity16 extends Component<{}, State> {
                         zIndex:2,
                         transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
+                        <div className="navBoxBg"></div>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
@@ -162,7 +165,7 @@ export default class Activity16 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.0.7</div>
+                            <div className ="version">v:1.1.0</div>
                         </div>
                     </div>
                     <div className="content" style={{

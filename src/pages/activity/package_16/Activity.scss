@@ -8,6 +8,7 @@ $src:'../../../asses/activity/package_16/';
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    
     .headerBox{
         margin-top: 6px;
         margin-bottom: 10px;
@@ -29,15 +30,21 @@ $src:'../../../asses/activity/package_16/';
         height: 180px;
         margin-left: 2px;
         margin-right: 5px;
-        .navBox{
+        .navBoxBg{
             height: 180px;
             width: 64px;
             color: white;
             background-image:url($src+"sprite/huodonNav.png");
             background-repeat: no-repeat;
             background-size: cover;
+            position: absolute;
+        }
+        .navBox{
+            height: 180px;
+            width: 67px;
+            color: white;
             .navItem{
-                width: 60px;
+                width: 66px;
                 height: 24px;
                 background-image: url($src+"sprite/youceweixuanzhong.png");
                 background-repeat: no-repeat;
@@ -57,7 +64,7 @@ $src:'../../../asses/activity/package_16/';
                 }
             }
             .curNavItem{
-                width: 63px;
+                width: 67px;
                 background-image: url($src+"sprite/youcexuanzhong.png");
                 background-repeat: no-repeat;
                 background-size: contain;
