@@ -12,6 +12,7 @@ import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
 import Xyhschd13 from 'components/package_13/Xyhschd';
 import Lyhsc13 from 'components/package_13/Lyhsc';
+import Xyhbp13 from 'components/package_13/Xyhbp';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -100,15 +101,6 @@ export default class activity13 extends Component<{}, State> {
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className = "btnline"></div>
-                        {/* <div className={`navText ${
-                            item.name==="捕鱼通关豪礼11"?(item.name ===this.state.title ?"btn_bytghl1":"btn_bytghl2"):
-                                item.name==="新用户首存活动11"?(item.name ===this.state.title ?"btn_db_xyhsccj1":"btn_db_xyhsccj2"):
-                                    item.name==="老会员每日首存活动11"?(item.name ===this.state.title ?"btn_lhyschd1":"btn_lhyschd2"):
-                                        item.name==="四季发财红包雨11"?(item.name ===this.state.title ?"btn_redRain1":"btn_redRain2"):
-                                            item.name==="幸运轮盘11"?(item.name ===this.state.title ?"btn_xyzp1":"btn_xyzp2"):
-                                                item.name==="每日任务11"?(item.name ===this.state.title ?"btn_dailyMission1":"btn_dailyMission2"):   
-                                                    item.name==="每日签到11"?(item.name ===this.state.title ?"btn_qd1":"btn_qd2"):""
-                        }`} ></div> */}
                         <div className ="navText flexBox">
                             <p>{item.name.length<=7?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,7)}</p>
                             <p>{item.name.substring(0,item.name.length-2).length>7?item.name.substring(7,item.name.length-2):""}</p>
@@ -126,18 +118,6 @@ export default class activity13 extends Component<{}, State> {
         }
         return (
             !this.state.loading?<div className='activity11'>
-                {/* <div className='headerBox' >
-                    <div className="returnToHall" onClick={this.returnToHall}></div>
-                    <div className={`title ${
-                        this.state.title==="捕鱼通关豪礼11"?"dm_title_bytghl":
-                            this.state.title==="新用户首存活动11"?"dm_title_xyhsc":
-                                this.state.title==="老会员每日首存活动11"?"dm_title_lhyschd":
-                                    this.state.title==="四季发财红包雨11"?"db_redrain":
-                                        this.state.title==="幸运轮盘11"?"xingyunlunpan":
-                                            this.state.title==="每日任务11"?"dm_title":   
-                                                this.state.title==="每日签到11"?"mrqd":""
-                    }`} ></div>
-                </div> */}
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
@@ -169,7 +149,9 @@ export default class activity13 extends Component<{}, State> {
                         {
                             (this.state.title==='老用户首存活动13' ? <Lyhsc13 curData={this.state.curData}/>:
                                 (this.state.title==='新用户首存活动13' ? <Xyhschd13 curData={this.state.curData}/>:
-                                    <div></div>
+                                    (this.state.title==='新用户包赔活动13' ? <Xyhbp13 curData={this.state.curData}/>:
+                                        <div></div>
+                                    )
                                 )
                             )
                         }

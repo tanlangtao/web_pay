@@ -116,6 +116,19 @@ export default class Qpdjc extends React.Component<Props,State>{
     onClick =(e:any)=>{
         this.Axios_receiveBonusPool()
     }
+    getTime(){
+        let hour  = new Date().getHours()
+        let day  = new Date().getDay()
+        //周一中午12点之前不能领
+        if(day === 1 && hour < 12 ){
+            return false
+        //周日中午12点之后不能领
+        }else if(day === 7 && hour >=12){
+            return false
+        }else{
+            return true
+        }
+    }
     render (){
         let Font = gHandler.toDecimal(this.state.data.currentweek.bonus_pool)
         let FontArr = Font.split("")
@@ -180,11 +193,10 @@ export default class Qpdjc extends React.Component<Props,State>{
                             </div>
                         </div>
                         {
-                            this.state.data.lastweek.bonus_pool*this.state.data.lastweek.player_bonus_pool_ratio >0 ?
+                            this.state.data.lastweek.bonus_pool*this.state.data.lastweek.player_bonus_pool_ratio >0 && this.getTime() ?
                                 <div className ={`flexBox ${this.state.data.is_received === 0 ?"lingqu" : "ylingqu"}`} onClick={this.onClick}></div> :
                                 null
                         }
-
                     </div>
                 </div>
                 <div className = "ruleBtn" onClick={this.ruleBtnClick}></div>
