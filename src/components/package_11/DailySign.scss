@@ -5,12 +5,13 @@ $src:'../../asses/activity/DailySign/';
     background-repeat: no-repeat;
     background-size: cover;
     width: 300px;
-    height: 215px;
+    height: 180px;
+    margin-left: 5px;
     color: white;
     position: relative;
     .title{
         position: absolute;
-        top: 10px;
+        top: 2px;
         font-size: 10px;
         width: 100%;
     }
@@ -19,7 +20,7 @@ $src:'../../asses/activity/DailySign/';
         height: 170px;
         position: relative;
         left: 10px;
-        top:30px;
+        top:15px;
         font-size: 9px;
         display: flex;
         flex-wrap: wrap;

@@ -4,9 +4,9 @@ $src:'../../asses/activity/package_12/';
     background-image: url($src+"bg/xs_event_content_20211029-2.png") ;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 2px 0px;
-    width: 290px;
-    height: 180px;
+    background-position: 3px -2px;
+    width: 310px;
+    height: 183px;
     font-size: 6px;
     color: white;
     position: relative;
@@ -43,30 +43,30 @@ $src:'../../asses/activity/package_12/';
         width: 250px;
         height: 140px;
         position: absolute;
-        left: 10px;
-        top: 55px;
+        left: 12px;
+        top: 57px;
         padding-top: 1px;
 
         .line{
             display: flex;
-            height: 11.2px;
+            height: 11.6px;
             .li1{
                 width: 40px;
             }
             .li2{
-                width: 34px;
-            }
-            .li3{
                 width: 36px;
             }
+            .li3{
+                width: 40px;
+            }
             .li4{
-                width: 29px;
+                width: 34px;
             }
             .li5{
-                width: 32px;
+                width: 30px;
             }
             .li6{
-                width: 26px;
+                width: 28px;
                 .btn_linqu{
                     width: 21px;
                     height: 10px;
@@ -85,12 +85,12 @@ $src:'../../asses/activity/package_12/';
         }
         .label1{
             position: absolute;
-            left: 5px;
+            left: 8px;
             top: 55px;
         }
         .label2{
             position: absolute;
-            left: 145px;
+            left: 152px;
             top: 55px;
         }
     }

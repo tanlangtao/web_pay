@@ -6,7 +6,7 @@ $src:'../../asses/activity/package_11/';
     background-size: contain;
     background-position:-2px -15px;
     width: 320px;
-    height: 182px;
+    height: 195px;
     font-size: 5px;
     color: white;
     position: relative;
@@ -43,26 +43,26 @@ $src:'../../asses/activity/package_11/';
         width: 300px;
         height: 71px;
         position: absolute;
-        left: 10px;
-        top: 44px;
+        left: 13px;
+        top: 49px;
         position: relative;
         .line{
             display: flex;
-            height: 9.5px;
+            height: 10px;
             .li1{
                 width: 32px;
             }
             .li2{
-                width: 31px;
-            }
-            .li3{
-                width: 38px;
-            }
-            .li4{
                 width: 34px;
             }
+            .li3{
+                width: 40px;
+            }
+            .li4{
+                width: 36px;
+            }
             .li5{
-                width: 22px;
+                width: 24px;
                 .btn_linqu{
                     width: 20px;
                     height: 9px;
@@ -84,7 +84,7 @@ $src:'../../asses/activity/package_11/';
             width: 30px;
             height: 10px;
             top: 3px;
-            left: 160px;
+            left: 170px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -94,7 +94,7 @@ $src:'../../asses/activity/package_11/';
             width: 30px;
             height: 10px;
             top: 3px;
-            left: 160px;
+            left: 170px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -109,7 +109,7 @@ $src:'../../asses/activity/package_11/';
             width: 40px;
             height: 20px;
             top: 13px;
-            left: 156px;
+            left: 166px;
             font-size: 5px;
         }
     }

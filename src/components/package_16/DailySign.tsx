@@ -133,11 +133,11 @@ export default class DailySign16 extends React.Component<Props,State>{
                 <div className="guizeBtn" onClick={this.guizeClick}>
                     {
                         this.state.showGuize ?<div className="guizeMask">
-                            {/* <p>1. 用户需要绑定银行卡方可参加此活动。</p>
+                            <p>1. 用户需要绑定银行卡方可参加此活动。</p>
                             <p>2. 昨日活跃用户，次日可领取免费礼金3.8金币，可连续领取7日，礼金无流水限制。</p>
                             <p>3. 活跃用户定义：玩家单日有效投注满200即可（沙巴体育，真人视讯，彩票游戏不参与统计）。</p>
                             <p>4. 同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金无需流水限制可直接申请兑换。</p>
-                            <p>5. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p> */}
+                            <p>5. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
                         </div>:null
                     }
                 </div>

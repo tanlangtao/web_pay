@@ -13,11 +13,16 @@ import FirstComponent from '../../../FirstComponent';
 import Qpdjc from 'components/package_16/Qpdjc';
 import DailySign16 from 'components/package_16/DailySign';
 import Jtfl from 'components/package_16/Jtfl';
+import Lyhsc16 from 'components/package_16/Lyhsc';
+import Xyhschd16 from 'components/package_16/Xyhschd';
+import Xyhbp16 from 'components/package_16/Xyhbp';
+import BtnLightBox from './BtnLightBox';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
     title :string,
-    curData:ConfigItem
+    curData:ConfigItem,
+    btn_light_left:number
 }
 export default class Activity16 extends Component<{}, State> {
     state = {
@@ -30,8 +35,11 @@ export default class Activity16 extends Component<{}, State> {
             is_close:"",
             order_by:"",
         },
-        loading:true
+        loading:true,
+        btn_light_left:-100
     }
+    timer :any= null
+    btn_light_left =0
     componentDidMount(){
         this.setState({
             loading:false
@@ -60,6 +68,45 @@ export default class Activity16 extends Component<{}, State> {
     }
     private setNavArr(data:ConfigItem[]){
         let navArr:ConfigItem[] = []
+        // let item = {
+        //     created_at: "1638453029",
+        //     id: "162",
+        //     info: "{\"range\": [{\"bonus\": 18, \"recharge_amount\": 300}, {\"bonus\": 28, \"recharge_amount\": 500}, {\"bonus\": 38, \"recharge_amount\": 1000}, {\"bonus\": 58, \"recharge_amount\": 2000}, {\"bonus\": 128, \"recharge_amount\": 5000}, {\"bonus\": 168, \"recharge_amount\": 10000}], \"game_id\": [\"5b1f3a3cb76a591e7f251730\", \"5b1f3a3cb76a591e7f251712\", \"5b1f3a3cb76a591e7f2517a6\", \"5c6a62be56209ac117d446aa\", \"5b1f3a3cb76a591e7f251731\", \"5b1f3a3cb76a59n210407n738\", \"5b1f3a3cb76a591e7f251735\", \"5b1f3a3cb76a591e7f251737\", \"5b1f3a3cb76a451e7f251739\", \"5b1f3a3cb1005251736\", \"5b1f3a3cb76a451e211110\", \"5b1f3a3cb76a451e210629\", \"5b1f3a3cb76a591e7f251736\"], \"flow_rate\": 1, \"withdraw_check_switch\": 1}",
+        //     is_close: "2",
+        //     is_del: "0",
+        //     name: "老用户首存活动16",
+        //     need_bankcard: "1",
+        //     need_mobile: "1",
+        //     order_by: "4",
+        //     package_id: "19",
+        // }
+        // let item2 = {
+        //     created_at: "1638445002",
+        //     id: "161",
+        //     info: "{\"end\": 22, \"conf\": [{\"gold\": 150, \"first_pay_max\": 500, \"first_pay_min\": 300}, {\"gold\": 250, \"first_pay_max\": 100000, \"first_pay_min\": 500}], \"start\": 12, \"balance\": 10, \"game_id\": [\"5c6a62be56209ac117d446aa\", \"5b1f3a3cb76a591e7f2517a6\", \"5b1f3a3cb76a591e7f251712\", \"5b1f3a3cb76a591e7f251730\"], \"flow_rate\": 0, \"start_date\": \"2021-12-01\", \"withdraw_conf\": {\"is_open\": 1, \"condition\": [{\"recharge_amount\": 300, \"max_withdraw_amount\": 600}, {\"recharge_amount\": 500, \"max_withdraw_amount\": 1000}]}, \"recharge_min_amount\": 300}",
+        //     is_close: "2",
+        //     is_del: "0",
+        //     name: "新用户包赔活动16",
+        //     need_bankcard: "1",
+        //     need_mobile: "1",
+        //     order_by: "3",
+        //     package_id: "19"
+        // }
+        // let item3 = {
+        //     created_at: "1638441263",
+        //     id: "160",
+        //     info: "{\"end\": 24, \"range\": [{\"bonus\": 58, \"recharge_amount\": 300}, {\"bonus\": 88, \"recharge_amount\": 500}, {\"bonus\": 128, \"recharge_amount\": 1000}, {\"bonus\": 168, \"recharge_amount\": 2000}], \"start\": 0, \"game_id\": [\"5b1f3a3cb76a591e7f251730\", \"5b1f3a3cb76a591e7f251712\", \"5b1f3a3cb76a591e7f2517a6\", \"5c6a62be56209ac117d446aa\", \"5b1f3a3cb76a591e7f251731\", \"5b1f3a3cb76a59n210407n738\", \"5b1f3a3cb76a591e7f251735\", \"5b1f3a3cb76a591e7f251737\", \"5b1f3a3cb76a451e7f251739\", \"5b1f3a3cb1005251736\", \"5b1f3a3cb76a451e211110\", \"5b1f3a3cb76a451e210629\", \"5b1f3a3cb76a591e7f251736\"], \"flow_rate\": 8, \"withdraw_check_switch\": 1}",
+        //     is_close: "2",
+        //     is_del: "0",
+        //     name: "新用户首存活动16",
+        //     need_bankcard: "1",
+        //     need_mobile: "1",
+        //     order_by: "2",
+        //     package_id: "19",
+        // }
+        // data.push(item)
+        // data.push(item2)
+        // data.push(item3)
         data.forEach(e=>{
             if(e.info !== "" && e.info !== "{}"){
                 try{
@@ -74,6 +121,7 @@ export default class Activity16 extends Component<{}, State> {
                 navArr.push(e)
             } 
         })
+        
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
         console.log(navArr,decodeURI(gHandler.UrlData.firstPage))
         let firstPage :any= []
@@ -102,6 +150,7 @@ export default class Activity16 extends Component<{}, State> {
             firstPage = navArr.splice(0,1)
         }
         navArr.unshift(firstPage[0])
+        console.log(navArr)
         if(navArr.length>0){
             this.setState({
                 navArr:navArr,
@@ -113,6 +162,7 @@ export default class Activity16 extends Component<{}, State> {
     returnToHall(){
         gHandler.closewebview()
     }
+
     render() {
         //渲染左侧导航
         let mapNav=()=>{
@@ -131,6 +181,9 @@ export default class Activity16 extends Component<{}, State> {
                             <p>{item.name.length<=8?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,8)}</p>
                             <p>{item.name.substring(0,item.name.length-2).length>8?item.name.substring(8,item.name.length-2):""}</p>
                         </div>
+                        {
+                            item.name ===this.state.title?<BtnLightBox></BtnLightBox>:null
+                        }
                     </div>
                 </SwiperSlide>
             })
@@ -160,10 +213,6 @@ export default class Activity16 extends Component<{}, State> {
                             >
                                 {mapNav()}
                                 <SwiperSlide></SwiperSlide>
-                                <SwiperSlide></SwiperSlide>
-                                <SwiperSlide></SwiperSlide>
-                                <SwiperSlide></SwiperSlide>
-                                <SwiperSlide></SwiperSlide>
                             </Swiper>
                             <div className ="version">v:1.1.1</div>
                         </div>
@@ -177,7 +226,13 @@ export default class Activity16 extends Component<{}, State> {
                             (this.state.title==='棋牌大奖池16' ? <Qpdjc curData={this.state.curData}/>:
                                 (this.state.title==='每日免费礼金16' ? <DailySign16 curData={this.state.curData}/>:
                                     (this.state.title==='集团福利16' ? <Jtfl curData={this.state.curData}/>:
-                                        <div></div>
+                                        (this.state.title==='老用户首存活动16' ? <Lyhsc16 curData={this.state.curData}/>:
+                                            (this.state.title==='新用户首存活动16' ? <Xyhschd16 curData={this.state.curData}/>:
+                                                (this.state.title==='新用户包赔活动16' ? <Xyhbp16 curData={this.state.curData}/>:
+                                                    <div></div>
+                                                )
+                                            )
+                                        )
                                     )
                                 )
                             )

@@ -6,7 +6,7 @@ $src:'../../asses/activity/package_11/';
     background-size: contain;
     background-position:-12px -15px;
     width: 320px;
-    height: 182px;
+    height: 195px;
     font-size: 5px;
     color: white;
     position: relative;
@@ -43,19 +43,19 @@ $src:'../../asses/activity/package_11/';
         width: 250px;
         height: 80px;
         position: absolute;
-        left:78px;
-        top: 36px;
+        left:85px;
+        top: 40px;
         .line{
             display: flex;
-            height: 10.5px;
+            height: 11px;
             .li1{
                 width: 38px;
             }
             .li2{
-                width: 38px;
+                width: 42px;
             }
             .li3{
-                width: 38px;
+                width: 42px;
             }
             .li4{
                 width: 30px;
@@ -86,7 +86,7 @@ $src:'../../asses/activity/package_11/';
             width: 30px;
             height: 10px;
             bottom: 55px;
-            left: 153px;
+            left: 165px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -96,7 +96,7 @@ $src:'../../asses/activity/package_11/';
             width: 30px;
             height: 10px;
             bottom: 55px;
-            left: 153px;
+            left: 165px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -111,7 +111,7 @@ $src:'../../asses/activity/package_11/';
             width: 70px;
             height: 20px;
             bottom: 35px;
-            left: 134px;
+            left: 145px;
             font-size: 5px;
         }
     }

@@ -10,6 +10,8 @@ $src:'../../../asses/activity/package_12/';
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    user-select:none;
+    touch-action:none;
     .headerBox{
         margin-top: 6px;
         margin-bottom: 10px;
@@ -91,19 +93,17 @@ $src:'../../../asses/activity/package_12/';
                 background-size: 100% 100%;
                 color: #fffee6;
             }
-            .version{
-                position: absolute;
-                left: 2px;
-                top:170px;
-                height: 10px;
-                width: 20px;
-                font-size: 5px;
-            }
         }
-       
+        .version{
+            position: absolute;
+            left: 2px;
+            top:170px;
+            height: 10px;
+            width: 20px;
+        }
     }
     .content{
-        width: 370px;
+        width: 100px;
         height: 200px;
     }
 }

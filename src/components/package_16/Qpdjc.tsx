@@ -126,7 +126,7 @@ export default class Qpdjc extends React.Component<Props,State>{
         if(day === 1 && hour < 12 ){
             return false
         //周日中午12点之后不能领
-        }else if(day === 7 && hour >=12){
+        }else if(day === 0 && hour >=12){
             return false
         }else{
             return true
@@ -209,38 +209,17 @@ export default class Qpdjc extends React.Component<Props,State>{
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={30*gHandler.getHeightDiff()}
+                                height={80*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
-                                <SwiperSlide><p>棋牌奖金池发放原则:</p></SwiperSlide>
-                                <SwiperSlide><p>1.每周一至每周日平台会累积棋牌奖金池金额，发放给满足条件</p></SwiperSlide>
-                                <SwiperSlide><p>的棋牌玩家。</p></SwiperSlide>
-                                <SwiperSlide><p>2.当周累计的奖金池金额则在下周清空重新计算。</p></SwiperSlide>
-                                <SwiperSlide><p>3.奖金池占比 = 我的个人棋牌有效投注 / 平台的棋牌有效投注。</p></SwiperSlide>
-                                <SwiperSlide><p>4.平台的棋牌有效投注 = 平台所有人棋牌类有效投注总和。</p></SwiperSlide>
-                                <SwiperSlide><p>5.如何累积棋牌有效投注:</p></SwiperSlide>
-                                <SwiperSlide><p>用户仅需进入以下游戏游玩，即可累积棋牌有效投注《彩源龙虎</p></SwiperSlide>
-                                <SwiperSlide><p>斗》，《彩源猜大小》，《聚宝盆捕鱼》，《疯狂旋涡》，《</p></SwiperSlide>
-                                <SwiperSlide><p>龙虎斗》，《百人牛牛》，《斗地主》，《奔驰宝马》，《抢庄</p></SwiperSlide>
-                                <SwiperSlide><p>牛牛》，《百家乐》，《十三水》，《二八杠》，《炸金花》</p></SwiperSlide>
-                                <SwiperSlide><p>，《红包乱斗》，《德州扑克》，《红黑大战》，《跑得快》</p></SwiperSlide>
-                                <SwiperSlide><p>，《轮盘》，《二人麻将》，《水果机》，《海王捕鱼》，《骰</p></SwiperSlide>
-                                <SwiperSlide><p>宝》，《21点》，《狮子王国》，《城堡争霸》，《多福多财》</p></SwiperSlide>
-                                <SwiperSlide><p>，《梭哈》，《财神到》，《发财推币机》。</p></SwiperSlide>
+                                <SwiperSlide><div className ="txt_rule"></div></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
-                                <SwiperSlide><p>6.参予本活动个人棋牌有效投注要求不低于3万。</p></SwiperSlide>
-                                <SwiperSlide><p>7.系统自动依据奖金池占比派发奖金。</p></SwiperSlide>
-                                <SwiperSlide><p>8.领取的奖金需打满一倍流水限制后才可进行兑换。</p></SwiperSlide>  
-                                <SwiperSlide><p>9.奖金池金额领取时间为每周一的12:00开放到每周日的12:00。</p></SwiperSlide>   
-                                <SwiperSlide><p>10.用户若在当期领取时间内无采取领取动作，视为放弃红利。</p> </SwiperSlide>  
-                                <SwiperSlide><p>11.本活动领取金额以最终奖金领取为准。</p> </SwiperSlide>
-                                <SwiperSlide><p>12.平台保留此活动最终解释权。</p> </SwiperSlide>
-                            </Swiper>  
-                            <div className ="jiantou flexBox">
-                                <div className = "arrow"></div>
-                            </div>
-                        </div> 
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                            </Swiper>
+                        </div>
                     </div> :null
                 }
             </div>

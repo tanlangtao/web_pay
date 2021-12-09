@@ -10,6 +10,8 @@ $src:'../../../asses/activity/package_15/';
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+    user-select:none;
+    touch-action:none;
     .headerBox{
         margin-top: 6px;
         margin-bottom: 10px;

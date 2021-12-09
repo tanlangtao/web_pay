@@ -10,6 +10,8 @@ $src:'../../../asses/activity/package_9/';
     height: 100vh;
     overflow: hidden;
     position: absolute;
+    user-select:none;
+    touch-action:none;
     .sider{
         background:transparent;
         width: 50px;

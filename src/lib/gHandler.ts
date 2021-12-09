@@ -166,5 +166,27 @@ class gHandlerC  {
         }
         return newNum
     }
+    getDeviceScale(){
+        let clientWidth = document.documentElement.clientWidth
+        let clientHeight = document.documentElement.clientHeight
+        let deviceName = ""
+        if(clientWidth === 2778 && clientHeight === 1284){
+            deviceName = "iPhone12ProMax"
+        }else if(clientWidth === 2532 && clientHeight === 1170){
+            deviceName = "iPhone12Pro"
+        }else if(clientWidth === 2340 && clientHeight === 1080){
+            deviceName = "iPhone12Mini"
+        }else if(clientWidth === 2688 && clientHeight === 1242){
+            deviceName = "iPhone11ProMax"
+        }else if(clientWidth === 2436 && clientHeight === 1125){
+            deviceName = "iPhone11Pro"
+        }
+        console.log("deviceName:",deviceName)
+        if(deviceName === "iPhone12ProMax" || deviceName=== "iPhone12Pro"||deviceName === "iPhone12Mini" || deviceName === "iPhone11ProMax" || deviceName === "iPhone11Pro"){
+            return true
+        }else{
+            return false
+        }
+    }
 }
 export const gHandler = new gHandlerC()

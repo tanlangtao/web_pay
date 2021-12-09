@@ -16,9 +16,10 @@ $src:'../../asses/activity/package_16/';
         background-image:url($src+"bg/jtflContent.png");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: 2px 1px;
+        background-position: 0px 1px;
         width: 290px;
         height: 1000px;
+        margin-left: 2px;
         color: white;
         position: relative;
     }

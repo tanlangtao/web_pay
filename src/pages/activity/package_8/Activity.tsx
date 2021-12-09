@@ -4,22 +4,22 @@ import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
 import {ConfigItem} from '../../../interface/activity_interface';
-import './Activity.scss';
+import '../package_8/Activity.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
 import Bytghl8 from 'components/package_8/Bytghl';
-import RedRain8 from 'components/package_8/RedRain';
 import Lyhsc8 from 'components/package_8/Lyhsc';
+import RedRain8 from 'components/package_8/RedRain';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
     title :string,
     curData:ConfigItem
 }
-export default class Activity8 extends Component<{}, State> {
+export default class activity8 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -109,7 +109,7 @@ export default class Activity8 extends Component<{}, State> {
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='Activity8'>
+            return <div className='activity8'>
             </div>
         }
         return (
@@ -118,7 +118,6 @@ export default class Activity8 extends Component<{}, State> {
                     <div
                         className='sider' style={{
                             transform:`scale(${gHandler.getFontsizeScale()})`,
-                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }} >
                         <div className="navBox">
                             <Swiper
@@ -135,17 +134,15 @@ export default class Activity8 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.0.2</div>
                         </div>
                     </div>
                     <div className="content" style={{
                         transform:`scale(${gHandler.getFontsizeScale()})`,
                         marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
-                            (this.state.title==='每日充值赠金活动8' ? <Lyhsc8 curData={this.state.curData}/>:
-                                (this.state.title==='捕鱼通关豪礼8' ? <Bytghl8 curData={this.state.curData}/>:
+                            (this.state.title==='捕鱼通关豪礼8' ? <Bytghl8 curData={this.state.curData}/>:
+                                (this.state.title==='每日充值赠金活动8' ? <Lyhsc8 curData={this.state.curData}/>:
                                     (this.state.title==='四季发财红包雨8' ? <RedRain8 curData={this.state.curData}/>:
                                         <div></div>
                                     )

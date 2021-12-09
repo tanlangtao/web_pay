@@ -138,30 +138,22 @@ $src:'../../asses/activity/package_16/';
         line-height: 9px;
         top: 25px;
         color: rgb(223,216,185);
-        padding: 5px;
-        padding-top: 15px;
         font-size: 8px;
         font-weight: bold;
+        padding-left: 6px;
+        padding-top: 16px;
         .ruleContent{
             width: 230px;
-            height: 120px;
+            height: 125px;
             overflow: hidden;
-            .jiantou{
-                width: 240px;
-                height: 20px;
-                position: absolute;
-                left: 0px;
-                bottom: 2px;
-                .arrow{
-                    background-image:url($src+"sprite/arrow.png");
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    width: 35px;
-                    height: 20px;
-                }
+            .txt_rule{
+                background-image:url($src+"sprite/txt_rule.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 220px;
+                height: 250px;
             }
         }
-        
         p{
             margin: 0px
         }

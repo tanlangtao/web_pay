@@ -23,16 +23,17 @@ $src:'../../asses/activity/package_16/';
             position: absolute;
             left: -190px;
             top: 16px;
-            background-image:url($src+"sprite/rule_bg.png");
+            background-image:url($src+"sprite/ruleBg2.png");
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            font-size: 6px;
+            font-size: 7px;
             line-height: 10px;
             padding-top: 12px;
             font-weight: bold;
+            color: #e6d6b1;
             p{
                 margin: 0px;
-                width: 180px;
+                width: 230px;
                 margin-left: 5px;
             }
         }
