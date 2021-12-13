@@ -120,7 +120,7 @@ export default class Activity3 extends Component<{}, State> {
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
-                            transform:`scale(${gHandler.getFontsizeScale()})`,
+                            // transform:`scale(${gHandler.getFontsizeScale()})`,
                         }}>
                         <div className="navBox">
                             <Swiper
@@ -142,8 +142,8 @@ export default class Activity3 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             this.state.title==='流水闯关活动' ?<ChuangGuan curData={this.state.curData}></ChuangGuan>:<div></div>

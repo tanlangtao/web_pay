@@ -4,6 +4,7 @@ $src:'../../asses/activity/package_9/';
     background-image:url($src+"bg/usdtck_bg.png");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: 5px;
     height: 170px;
     font-size: 6px;
     width: 380px;
@@ -13,7 +14,7 @@ $src:'../../asses/activity/package_9/';
         width: 250px;
         height: 60px;
         position: absolute;
-        left: 0px;
+        left: 5px;
         top: 82px;
         background-image:url($src+"sprite/biao.png");
         background-repeat: no-repeat;
@@ -57,15 +58,15 @@ $src:'../../asses/activity/package_9/';
     }
     .rule{
         position: absolute;
-        width: 300px;
-        left:0px;
+        width: 290px;
+        left:5px;
         line-height: 7px;
         height: 65px;
         bottom: -50px;
         background-image:url($src+"2.png");
         background-repeat: no-repeat;
         background-size: contain;
-        padding-left: 3px;
+        padding-left: 4px;
         padding-top: 3px;
         p{
             margin: 0rem;

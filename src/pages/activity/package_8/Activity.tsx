@@ -117,7 +117,7 @@ export default class activity8 extends Component<{}, State> {
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
-                            transform:`scale(${gHandler.getFontsizeScale()})`,
+                            // transform:`scale(${gHandler.getFontsizeScale()})`,
                         }} >
                         <div className="navBox">
                             <Swiper
@@ -137,8 +137,8 @@ export default class activity8 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             (this.state.title==='捕鱼通关豪礼8' ? <Bytghl8 curData={this.state.curData}/>:

@@ -121,8 +121,8 @@ export default class activity13 extends Component<{}, State> {
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
-                            transform:`scale(${gHandler.getFontsizeScale()})`,
-                            marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
+                            // transform:`scale(${gHandler.getFontsizeScale()})`,
+                            // marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                         }} >
                         <div className="navBox">
                             <Swiper
@@ -142,9 +142,9 @@ export default class activity13 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
-                        marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
+                        // marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
                     }}>
                         {
                             (this.state.title==='老用户首存活动13' ? <Lyhsc13 curData={this.state.curData}/>:

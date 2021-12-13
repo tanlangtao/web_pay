@@ -127,50 +127,52 @@ export default class Activity9 extends Component<{}, State> {
         }
         return (
             !this.state.loading?<div className='activity9'>
-                <div className='sider' style={{
-                    zIndex:2,
-                    transform:`scale(${gHandler.getFontsizeScale()})`,
-                    marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${80/gHandler.getFontsizeScale()}px` }`
-                }}>
-                    {/* <div className='headerBox' >
-                        <div className='title_jchd'></div>
-                    </div> */}
-                    <div className="navBox">
-                        <Swiper
-                            direction={"vertical"}
-                            spaceBetween={0}
-                            height={70*gHandler.getHeightDiff()}
-                            // onSlideChange={() => console.log('slide change')}
-                            // onSwiper={(swiper) => console.log(swiper)}
-                        >
-                            {mapNav()}
-                            <SwiperSlide></SwiperSlide>
-                            <SwiperSlide></SwiperSlide>
-                            <SwiperSlide></SwiperSlide>
-                            <SwiperSlide></SwiperSlide>
-                            <SwiperSlide></SwiperSlide>
-                        </Swiper>
+                <div className = "contentBox">
+                    <div className='sider' style={{
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${80/gHandler.getFontsizeScale()}px` }`
+                    }}>
+                        {/* <div className='headerBox' >
+                            <div className='title_jchd'></div>
+                        </div> */}
+                        <div className="navBox">
+                            <Swiper
+                                direction={"vertical"}
+                                spaceBetween={0}
+                                height={70*gHandler.getHeightDiff()}
+                                // onSlideChange={() => console.log('slide change')}
+                                // onSwiper={(swiper) => console.log(swiper)}
+                            >
+                                {mapNav()}
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                                <SwiperSlide></SwiperSlide>
+                            </Swiper>
+                        </div>
                     </div>
-                </div>
-                <div className="content"style={{
-                    zIndex:1,
-                    transform:`scale(${gHandler.getFontsizeScale()})`,
-                    marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
-                    marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${80/gHandler.getFontsizeScale()}px` }`
-                }}>
-                    {
-                        this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
-                            (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
-                                (this.state.title === "新用户首存活动9" ? <Xyhschd curData={this.state.curData}/>:
-                                    (this.state.title === "老会员每日首存活动9" ? <Lyhsc curData={this.state.curData}/>:
-                                        (this.state.title === "老用户包赔活动9" ? <Lyhbp curData={this.state.curData}/>:
-                                            (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
-                                                (this.state.title === "日业绩活动9" ? <Ryjhd curData={this.state.curData}/>:
-                                                    (this.state.title === "USDT存款大礼包9" ? <UsdtCunKuan curData={this.state.curData}/>:
-                                                        (this.state.title === "新用户包赔大放送9" ? <Xyhbpdfs curData={this.state.curData}/>:
-                                                            (this.state.title === "每日签到9" ? <DailySign curData={this.state.curData}/>:
-                                                                (this.state.title === "每日任务9" ? <DailyActivity curData={this.state.curData}/>:
-                                                                    <div></div>
+                    <div className="content"style={{
+                        // zIndex:1,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        // marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${80/gHandler.getFontsizeScale()}px` }`
+                    }}>
+                        {
+                            this.state.title==='百万扶持奖励9' ? <Bwfcjl curData={this.state.curData}/>:
+                                (this.state.title==="分分彩猜大小奇趣包赔9"?<FfcBpQiQu curData={this.state.curData}/>:
+                                    (this.state.title === "新用户首存活动9" ? <Xyhschd curData={this.state.curData}/>:
+                                        (this.state.title === "老会员每日首存活动9" ? <Lyhsc curData={this.state.curData}/>:
+                                            (this.state.title === "老用户包赔活动9" ? <Lyhbp curData={this.state.curData}/>:
+                                                (this.state.title === "四季发财红包雨9" ? <RedRain curData={this.state.curData}/>:
+                                                    (this.state.title === "日业绩活动9" ? <Ryjhd curData={this.state.curData}/>:
+                                                        (this.state.title === "USDT存款大礼包9" ? <UsdtCunKuan curData={this.state.curData}/>:
+                                                            (this.state.title === "新用户包赔大放送9" ? <Xyhbpdfs curData={this.state.curData}/>:
+                                                                (this.state.title === "每日签到9" ? <DailySign curData={this.state.curData}/>:
+                                                                    (this.state.title === "每日任务9" ? <DailyActivity curData={this.state.curData}/>:
+                                                                        <div></div>
+                                                                    )
                                                                 )
                                                             )
                                                         )
@@ -180,10 +182,9 @@ export default class Activity9 extends Component<{}, State> {
                                         )
                                     )
                                 )
-                            )
-                    }
+                        }
+                    </div>
                 </div>
-                {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
             </div>
                 :<FirstComponent></FirstComponent>
         )

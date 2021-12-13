@@ -199,8 +199,8 @@ export default class Activity16 extends Component<{}, State> {
             !this.state.loading ?<div className='Activity16'>
                 <div className ="contentBox">
                     <div className='sider' style={{
-                        zIndex:2,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBoxBg"></div>
                         <div className="navBox">
@@ -214,13 +214,13 @@ export default class Activity16 extends Component<{}, State> {
                                 {mapNav()}
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.1.1</div>
+                            <div className ="version">v:1.1.5</div>
                         </div>
                     </div>
                     <div className="content" style={{
-                        zIndex:1,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        // zIndex:1,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             (this.state.title==='棋牌大奖池16' ? <Qpdjc curData={this.state.curData}/>:

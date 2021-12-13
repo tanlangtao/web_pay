@@ -122,8 +122,8 @@ export default class Activity15 extends Component<{}, State> {
             !this.state.loading ?<div className='activity15'>
                 <div className ="contentBox">
                     <div className='sider' style={{
-                        zIndex:2,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -144,9 +144,9 @@ export default class Activity15 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        zIndex:1,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        // zIndex:1,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             (this.state.title==='奖池榜送豪礼15' ? <Jcbshl curData={this.state.curData}/>:

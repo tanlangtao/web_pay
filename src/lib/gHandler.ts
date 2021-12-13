@@ -169,24 +169,34 @@ class gHandlerC  {
     getDeviceScale(){
         let clientWidth = document.documentElement.clientWidth
         let clientHeight = document.documentElement.clientHeight
-        let deviceName = ""
-        if(clientWidth === 2778 && clientHeight === 1284){
-            deviceName = "iPhone12ProMax"
-        }else if(clientWidth === 2532 && clientHeight === 1170){
-            deviceName = "iPhone12Pro"
-        }else if(clientWidth === 2340 && clientHeight === 1080){
-            deviceName = "iPhone12Mini"
-        }else if(clientWidth === 2688 && clientHeight === 1242){
-            deviceName = "iPhone11ProMax"
-        }else if(clientWidth === 2436 && clientHeight === 1125){
-            deviceName = "iPhone11Pro"
-        }
-        console.log("deviceName:",deviceName)
-        if(deviceName === "iPhone12ProMax" || deviceName=== "iPhone12Pro"||deviceName === "iPhone12Mini" || deviceName === "iPhone11ProMax" || deviceName === "iPhone11Pro"){
-            return true
+        if(clientHeight/clientWidth <0.47){
+            return 1.2
         }else{
-            return false
+            return 1
         }
+        // let deviceName = ""
+        // if(clientWidth === 2778 && clientHeight === 1284){
+        //     deviceName = "iPhone12ProMax"
+        // }else if(clientWidth === 2532 && clientHeight === 1170){
+        //     deviceName = "iPhone12Pro"
+        // }else if(clientWidth === 2340 && clientHeight === 1080){
+        //     deviceName = "iPhone12Mini"
+        // }else if(clientWidth === 2688 && clientHeight === 1242){
+        //     deviceName = "iPhone11ProMax"
+        // }else if(clientWidth === 2436 && clientHeight === 1125){
+        //     deviceName = "iPhone11Pro"
+        // }else if(clientWidth === 2208 && clientHeight === 1242){
+        //     deviceName = "iPhone6sPlus"
+        // }
+        // if( deviceName=== "iPhone12Pro"||deviceName === "iPhone12Mini" || deviceName === "iPhone11ProMax" || deviceName === "iPhone11Pro"){
+        //     return 1.1
+        // }else if(deviceName === "iPhone6sPlus"){
+        //     return 1.1
+        // }else if(deviceName === "iPhone12ProMax"){
+        //     return 1.1
+        // }else{
+        //     return 1
+        // }
     }
 }
 export const gHandler = new gHandlerC()

@@ -57,7 +57,7 @@ $src:'../../../asses/activity/package_15/';
                 }
             }
             .curNavItem{
-                width: 60px;
+                width: 62px;
                 background-image: url($src+"sprite/jd_event_btn_1.png");
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -66,7 +66,7 @@ $src:'../../../asses/activity/package_15/';
             .version{
                 position: absolute;
                 left: 2px;
-                top:170px;
+                top:220px;
                 height: 10px;
                 width: 20px;
             }
@@ -76,6 +76,7 @@ $src:'../../../asses/activity/package_15/';
         width: 356px;
         height: 210px;
         justify-self: start;
+        margin-left: 10px;
     }
     
 }

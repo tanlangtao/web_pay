@@ -1,0 +1,132 @@
+$src:'../../asses/activity/package_21/';
+
+.DailySign21{
+    background-image:url($src+"bg/BJ.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 300px;
+    height: 180px;
+    font-size: 6px;
+    margin-left: 5px;
+    color: white;
+    position: relative;
+    .guizeBtn{
+        position: absolute;
+        top: 25px;
+        left: 220px;
+        width: 40px;
+        height: 20px;
+        background-image:url($src+"sprite/btn_rule.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 220px;
+            height: 100px;
+            position: absolute;
+            left: -170px;
+            top: 12px;
+            background-image:url($src+"sprite/rule_bg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            line-height: 7px;
+            padding-top: 10px;
+            color: rgb(233,197,168);
+            p{
+                margin: 0px;
+                width: 210px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .group{
+        width: 260px;
+        height: 140px;
+        position: relative;
+        left: 20px;
+        top:40px;
+        font-size: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        .li{
+            margin-right: 8px;
+            width: 57px;
+            height: 65px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .icon{
+            width: 40px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            .yilingqu{
+                background-image:url($src+"sprite/check_mask.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 57px;
+                height: 65px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .waitToCheck{
+                background-image:url($src+"sprite/waitToCheck.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 26px;
+                height: 10px;
+                position: absolute;
+                left:25px;
+                top: 42px;
+            }
+            .guang{
+                width: 57px;
+                height: 60px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-image:url($src+"sprite/guang.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+        }
+        .foot{
+            height: 12px;
+            width: 57px;
+            display: flex;
+            flex-direction: row;
+            margin-left: 45px;
+            .zi{
+                font-size: 8px;
+                font-weight: bold;
+                color: rgb(255,229,98);
+            }
+        }
+        
+        .li1{
+            background-image:url($src+"sprite/1.png");
+        }
+        .li2{
+            background-image:url($src+"sprite/2.png");
+        }
+        .li3{
+            background-image:url($src+"sprite/3.png");
+        }
+        .li4{
+            background-image:url($src+"sprite/4.png");
+        }
+        .li5{
+            background-image:url($src+"sprite/5.png");
+        }
+        .li6{
+            background-image:url($src+"sprite/6.png");
+        }
+        .li7{
+            background-image:url($src+"sprite/6.png");
+        }
+    }
+}

@@ -126,8 +126,8 @@ export default class Activity18 extends Component<{}, State> {
             !this.state.loading ?<div className='Activity18'>
                 <div className ="contentBox">
                     <div className='sider' style={{
-                        zIndex:2,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -148,9 +148,9 @@ export default class Activity18 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        zIndex:1,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        // zIndex:1,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             (this.state.title==='每日免费礼金18' ? <DailySign18 curData={this.state.curData}/>:

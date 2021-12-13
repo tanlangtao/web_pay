@@ -15,6 +15,7 @@ import Activity18 from './package_18/Activity';
 import Activity16 from './package_16/Activity';
 import Activity19 from './package_19/Activity';
 import Activity20 from './package_20/Activity';
+import Activity21 from './package_21/Activity';
 interface State{
 }
 export default class ActivityPre extends Component<{}, State> {
@@ -36,15 +37,17 @@ export default class ActivityPre extends Component<{}, State> {
                                                             gHandler.UrlData.package_id==='1' ?<Activity1/>:
                                                                 gHandler.UrlData.package_id==='19' ?<Activity19/>:
                                                                     gHandler.UrlData.package_id==='20' ?<Activity20/>:
-                                                                        <Activity18></Activity18>   
+                                                                        gHandler.UrlData.package_id==='21' ?<Activity21/>:
+                                                                            <Activity18></Activity18>   
                 )
         )
     }
     componentDidMount(){
-        if(gHandler.getDeviceScale()){
-            let body =document.getElementsByTagName("body")[0];
-            body.style.zoom = "1.2";
-            body.style.marginTop = "-100px"
+        let scale = gHandler.getDeviceScale()
+        let body =document.getElementsByTagName("body")[0];
+        body.style.zoom = `${scale}`;
+        if(scale !== 1){
+            body.style.marginTop = `${-80*scale}px`
         }
     }
 }

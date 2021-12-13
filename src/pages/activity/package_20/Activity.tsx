@@ -126,8 +126,8 @@ export default class Activity20 extends Component<{}, State> {
             !this.state.loading ?<div className='Activity20'>
                 <div className ="contentBox">
                     <div className='sider' style={{
-                        zIndex:2,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -148,9 +148,9 @@ export default class Activity20 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        zIndex:1,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-40/gHandler.getFontsizeScale()}px` }`,
+                        // zIndex:1,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-40/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             (this.state.title==='新用户首存活动20' ? <Xyhschd20 curData={this.state.curData}/>:

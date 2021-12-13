@@ -57,7 +57,7 @@ $src:'../../../asses/activity/package_20/';
                 }
             }
             .curNavItem{
-                width: 60px;
+                width: 62px;
                 background-image: url($src+"sprite/jd_event_btn_1.png");
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -66,7 +66,7 @@ $src:'../../../asses/activity/package_20/';
             .version{
                 position: absolute;
                 left: 2px;
-                top:170px;
+                top:220px;
                 height: 10px;
                 width: 20px;
             }
@@ -79,6 +79,7 @@ $src:'../../../asses/activity/package_20/';
         background-image: url($src+"bg/rightKuang.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
+        margin-left: 10px;
     }
     
 }

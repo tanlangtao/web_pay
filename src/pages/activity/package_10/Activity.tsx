@@ -135,8 +135,8 @@ export default class Activity10 extends Component<{}, State> {
                 </div> */}
                 <div className ="contentBox">
                     <div className='sider' style={{
-                        zIndex:2,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBox">
                             <Swiper
@@ -156,9 +156,9 @@ export default class Activity10 extends Component<{}, State> {
                         </div>
                     </div>
                     <div className="content" style={{
-                        zIndex:1,
-                        transform:`scale(${gHandler.getFontsizeScale()})`,
-                        marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
+                        // zIndex:1,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
                             (this.state.title==='专线包赔活动10' ? <Xyhbp10 curData={this.state.curData}/>:

@@ -4,8 +4,8 @@ $src:'../../asses/activity/package_18/';
     background-image: url($src+"bg/lyhsc.png") ;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 300px;
-    height: 176px;
+    width: 320px;
+    height: 182px;
     font-size: 6px;
     color: white;
     position: relative;
@@ -14,21 +14,21 @@ $src:'../../asses/activity/package_18/';
         height: 100px;
         position: absolute;
         left: 12px;
-        top: 35px;
+        top: 36px;
         .line{
             display: flex;
-            height: 10.6px;
+            height: 11px;
             .li1{
-                width: 46px;
+                width: 51px;
             }
             .li2{
-                width: 44px;
+                width: 51px;
             }
             .li3{
-                width: 44px;
+                width: 45px;
             }
             .li4{
-                width: 30px;
+                width: 35px;
                 .btn_linqu{
                     width: 20px;
                     height: 9px;
@@ -47,17 +47,17 @@ $src:'../../asses/activity/package_18/';
         }
         .label1{
             position: absolute;
-            left: 96px;
+            left: 108px;
             top: 27px;
         }
     }
     .rule{
         position: absolute;
-        width: 260px;
-        left: 3px;
-        font-size: 5.4px;
+        width: 288px;
+        left: 5px;
+        font-size: 5.7px;
         line-height: 6.7px;
-        top: 117px;
+        top: 122px;
         color: #FEFFC9;
         p{
             margin: 0px;

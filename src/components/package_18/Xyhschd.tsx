@@ -151,11 +151,10 @@ export default class Xyhschd18 extends React.Component<Props,State>{
     }
     render (){
         let rangeLine = ()=>{
-            
             return  this.state.info.range.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
-                    <div className ="li1 flexBox"></div>
-                    <div className ="li2 flexBox"></div>
+                    <div className ="li1 flexBox">{e.recharge_amount}</div>
+                    <div className ="li2 flexBox">{e.bonus}</div>
                     <div className ="li3 flexBox"></div>
                     <div className ="li4 flexBox"> 
                         {
@@ -170,26 +169,26 @@ export default class Xyhschd18 extends React.Component<Props,State>{
         return (
             <div className ="Xyhschd18" >
                 <div className = "group">
-                    {/* <div className="line"> 
-                        <div className="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>
-                        <div className="li2 flexBox" style={{color:"#E8B56F"}}>活动彩金</div>
-                        <div className="li3 flexBox" style={{color:"#E8B56F"}}>提现流水要求</div>
-                    </div> */}
+                    <div className="line"> 
+                        <div className="li1 flexBox" >首充金额</div>
+                        <div className="li2 flexBox" >活动彩金</div>
+                        <div className="li3 flexBox" >提现流水要求</div>
+                    </div>
                     {
                         rangeLine()
                     }
-                    {/* <div className ="label1 ">
+                    <div className ="label1 ">
                         <div className="flexBox">本金一倍+</div>
                         <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
-                    </div> */}
+                    </div>
                     <div className ={ `applyBtn ${this.state.applyBtnInteractable ?"":"applyFilter"} ${this.state.is_apply?"applyYlingqu":''}`} onClick={()=>{
                         console.log("申请")
                         this.applyBtnonClick()
                     }}></div>
-                    {/* <div className ="applyBtnLabel">
+                    <div className ="applyBtnLabel">
                         <div className="flexBox">开放时间</div>
                         <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
-                    </div> */}
+                    </div>
                 </div>
                 <div className = "rule">
                     
