@@ -150,7 +150,7 @@ export default class Lyhsc8 extends React.Component<Props,State>{
                     }
                     <div className ="label1 ">
                         <div className="flexBox">本金1倍</div>
-                        <div className="flexBox">彩金{this.state.info.range[0].flow_rate}倍流水</div>
+                        <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
                     </div>
                 </div>
                 <div className="guizeBtn" onClick={this.guizeClick}>

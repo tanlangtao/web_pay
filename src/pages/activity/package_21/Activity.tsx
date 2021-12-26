@@ -4,7 +4,7 @@ import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
 import {ConfigItem} from '../../../interface/activity_interface';
-import '../package_11/Activity.scss';
+import '../package_21/Activity.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -110,11 +110,11 @@ export default class Activity21 extends Component<{}, State> {
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity11'>
+            return <div className='activity21'>
             </div>
         }
         return (
-            !this.state.loading?<div className='activity11'>
+            !this.state.loading?<div className='activity21'>
                 <div className ="contentBox">
                     <div
                         className='sider' style={{

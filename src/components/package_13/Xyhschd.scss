@@ -4,8 +4,8 @@ $src:'../../asses/activity/package_11/';
     background-image:url($src+"bg/xyhsc_13.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -70px -30px;
-    width: 380px;
+    background-position: -75px -30px;
+    width: 390px;
     height: 270px;
     font-size: 6px;
     color: rgb(216,215,192);
@@ -15,13 +15,13 @@ $src:'../../asses/activity/package_11/';
         height: 80px;
         position: absolute;
         left: 46px;
-        top: 49px;
+        top: 51px;
         .title{
             height: 15px;
         }
         .line{
             display: flex;
-            height: 11px;
+            height: 11.2px;
             .li1{
                 width: 38px;
             }
@@ -29,7 +29,7 @@ $src:'../../asses/activity/package_11/';
                 width: 36px;
             }
             .li3{
-                width: 50px;
+                width: 52px;
             }
             .li4{
                 width: 40px;
@@ -60,7 +60,7 @@ $src:'../../asses/activity/package_11/';
             width: 40px;
             height: 15px;
             bottom: 50px;
-            left: 170px;
+            left: 174px;
             background-image:url($src+"sprite/btn_wysq.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -70,7 +70,7 @@ $src:'../../asses/activity/package_11/';
             width: 40px;
             height: 15px;
             bottom: 50px;
-            left: 170px;
+            left: 174px;
             background-image:url($src+"sprite/btn_wysq.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -85,17 +85,17 @@ $src:'../../asses/activity/package_11/';
             width: 50px;
             height: 20px;
             bottom: 30px;
-            left: 167px;
+            left: 170px;
         }
     }
     .rule{
         position: absolute;
         width: 285px;
         left: 12px;
-        line-height: 7px;
-        top: 110px;
+        line-height: 6.5px;
+        top: 113px;
         color: rgb(208,191,160);
-        font-size: 5px;
+        font-size: 5.5px;
         p{
             margin: 0rem;
         }

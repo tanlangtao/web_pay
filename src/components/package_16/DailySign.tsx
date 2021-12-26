@@ -107,7 +107,9 @@ export default class DailySign16 extends React.Component<Props,State>{
                         <div className={`icon icon${index+1}`}>
                             {
                                 flagData.check_receive && flagData.day===index ?
-                                    (flagData.is_received === 1 ?<div className ="lingqu" onClick={this.onClick}><div className="waitToCheck"></div></div>:<div className="yilingqu"></div>):
+                                    (flagData.is_received === 0 ?<div className ="lingqu" onClick={this.onClick}>
+                                        <div className="waitToCheck"></div>
+                                    </div>:<div className="yilingqu"></div>):
                                     (index < flagData.day?<div className="yilingqu"></div>:null)
                             }
                             <div className="foot">

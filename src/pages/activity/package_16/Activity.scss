@@ -39,6 +39,12 @@ $src:'../../../asses/activity/package_16/';
             background-repeat: no-repeat;
             background-size: cover;
             position: absolute;
+            padding-top: 170px;
+            .version{
+                height: 8px;
+                width: 20px;
+                color: black;
+            }
         }
         .navBox{
             height: 180px;
@@ -72,13 +78,7 @@ $src:'../../../asses/activity/package_16/';
                 height: 24px;
                 color: rgb(62,16,0);
             }
-            .version{
-                position: absolute;
-                left: 2px;
-                top:220px;
-                height: 10px;
-                width: 20px;
-            }
+            
             .btn_lightBox{
                 width: 67px;
                 height: 24px;

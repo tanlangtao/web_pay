@@ -202,7 +202,9 @@ export default class Activity16 extends Component<{}, State> {
                         // zIndex:2,
                         // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
-                        <div className="navBoxBg"></div>
+                        <div className="navBoxBg">
+                            <div className ="version">v:1.1.7</div>
+                        </div>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
@@ -214,7 +216,7 @@ export default class Activity16 extends Component<{}, State> {
                                 {mapNav()}
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
-                            <div className ="version">v:1.1.5</div>
+                            
                         </div>
                     </div>
                     <div className="content" style={{

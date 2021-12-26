@@ -1,0 +1,88 @@
+$src:'../../asses/activity/package_12/';
+
+.RedRain12{
+    background-image:url($src+"bg/QT1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -5px 1px;
+    width: 290px;
+    height: 190px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .group{
+        width: 300px;
+        height: 105px;
+        position: absolute;
+        left: 27px;
+        top: 58px;
+        font-size: 5px;
+        .title{
+            color: #CD7358;
+            display: flex;
+            height: 21px;
+            .li1{
+                width:42px;
+            }
+            .li2{
+                width: 40px;
+            }
+            .li3{
+                width: 38px;
+            }
+            .li4{
+                width: 32px;
+            }
+            .li5{
+                width:34px;
+            }
+            .li6{
+                width:32px;
+            }
+            .li7{
+                width:32px;
+            }
+        }
+        .line{
+            display: flex;
+            height: 11.6px;
+            .li1{
+                width:42px;
+            }
+            .li2{
+                width: 40px;
+            }
+            .li3{
+                width: 38px;
+            }
+            .li4{
+                width: 33px;
+            }
+            .li5{
+                width:34px;
+            }
+            .li6{
+                width:32px;
+            }
+            .li7{
+                width:30px;
+            }
+        }
+        .label1{
+            position: absolute;
+            left: 226px;
+            top: 35px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 350px;
+        left: 10px;
+        line-height: 6px;
+        top: 145px;
+        color: #E8C999;
+        p{
+            margin: 3px;
+        }
+    }
+}

@@ -4,7 +4,7 @@ import {gHandler} from '../../lib/gHandler'
 import { Api } from '../../lib/Api';
 import Axios from 'axios';
 import {message, Button} from 'antd';
-import "./Lyhsc.scss";
+import "./Bytghl.scss";
 import {ConfigItem} from '../../interface/activity_interface';
 interface Props {
     curData:ConfigItem
@@ -14,18 +14,18 @@ interface State {
     pay_amount_byday:number,
     is_received:number,
     btnActive :boolean,
-    applyBtnInteractable : boolean,
-    is_apply : boolean,
-    showGuize: boolean
+    ReceiveFishInfo:any,
+    showGuize:boolean
 }
-export default class Lyhsc12 extends React.Component<Props,State>{
+export default class Bytghl12 extends React.Component<Props,State>{
     state = {
         info:{
+            start:0,
+            end:0,
             range:[
                 {
-                    bonus:0,
-                    recharge_amount:0,
-                    flow_rate:0
+                    bet:0,
+                    gold:0
                 }
             ],
             flow_rate:0
@@ -33,29 +33,55 @@ export default class Lyhsc12 extends React.Component<Props,State>{
         is_received:0,
         pay_amount_byday:0,
         btnActive :false,
-        applyBtnInteractable : true,
-        is_apply : false,
-        showGuize:false,
+        ReceiveFishInfo:{
+            bet_amount:0,
+            received_info:[{
+                receive_amount:0
+            }]
+        },
+        showGuize:false
     }
     btnIndex= 0 
+    guanka =[
+        "一",
+        "二",
+        "三",
+        "四",
+        "五",
+        "六",
+        "七",
+        "八",
+        "九",
+    ]
     componentDidMount(){
-        console.log(this.props.curData.info)
         this.setState({
             info:this.props.curData.info
         },()=>{
             console.log(this.state.info)
         })
-        this.Axios_getPayBonusByDay()
+        this.Axios_getReceiveFishInfo()
     }
     renderBtn(){
-        if( this.state.pay_amount_byday!==0){
+        console.log(this.state.ReceiveFishInfo.bet_amount)
+        if(this.state.ReceiveFishInfo.bet_amount>=0){
             this.state.info.range.forEach((item,index)=>{
-                if(this.state.pay_amount_byday >= item.recharge_amount) {
+                if(this.state.ReceiveFishInfo.bet_amount >= item.bet) {
                     this.btnIndex = index
                     this.setState({
                         btnActive : true
                     })
                 }
+            })
+        }
+        if(this.state.ReceiveFishInfo["received_info"]){
+            this.state.ReceiveFishInfo.received_info.forEach((e)=>{
+                this.state.info.range.forEach((item,index)=>{
+                    if(e.receive_amount === item.gold){
+                        this.setState({
+                            is_received:1
+                        })
+                    }
+                })
             })
         }
     }
@@ -65,24 +91,19 @@ export default class Lyhsc12 extends React.Component<Props,State>{
         }
     }
     onClick =(e:any)=>{
-        this.Axios_receivePayBonusGold()
+        this.Axios_receiveFishPassGold()
     }
-    applyBtnonClick =()=>{
-        if(this.state.applyBtnInteractable){
-        }else{
-            message.info('未到开放时间！')
-        }
-    }
-    guizeClick =()=>{
+    guizeClick =(e:any)=>{
         this.setState({
-            showGuize :!this.state.showGuize
+            showGuize:!this.state.showGuize
         })
     }
-    private async Axios_receivePayBonusGold(){
-        let url = `${gHandler.UrlData.host}${Api.receivePayBonusGold}`;
+    private async Axios_receiveFishPassGold(){
+        let url = `${gHandler.UrlData.host}${Api.receiveFishPassGold}`;
         let data = new FormData();
         data.append('user_id',gHandler.UrlData.user_id);
         data.append('user_name',decodeURI(gHandler.UrlData.user_name));
+        data.append('index',`${this.btnIndex}`);
         data.append('package_id',gHandler.UrlData.package_id);
         data.append('activity_id',this.props.curData.id);
         data.append('login_ip',gHandler.UrlData.login_ip?gHandler.UrlData.login_ip:gHandler.UrlData.regin_ip);
@@ -97,13 +118,13 @@ export default class Lyhsc12 extends React.Component<Props,State>{
         })
         if(response.status === 0){
             message.success('领取成功！');
-            this.Axios_getPayBonusByDay();
+            this.Axios_getReceiveFishInfo();
         }else{
             message.error(response.msg)
         }
     }
-    private async  Axios_getPayBonusByDay(){
-        let url = `${gHandler.UrlData.host}${Api.getPayBonusByDay}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+    private async  Axios_getReceiveFishInfo(){
+        let url = `${gHandler.UrlData.host}${Api.getReceiveFishInfo}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -111,8 +132,7 @@ export default class Lyhsc12 extends React.Component<Props,State>{
         })
         if(response.status === 0){
             this.setState({
-                pay_amount_byday:response.data.first_pay_amount_today,
-                is_received:response.data.is_received
+                ReceiveFishInfo:response.data
             },()=>{
                 this.renderBtn()
             })
@@ -124,10 +144,12 @@ export default class Lyhsc12 extends React.Component<Props,State>{
         let rangeLine = ()=>{
             return  this.state.info.range.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
-                    <div className ="li1 flexBox">{e.recharge_amount}</div>
-                    <div className ="li2 flexBox">{e.bonus}</div>
-                    <div className ="li3 flexBox"></div>
-                    <div className ="li4 flexBox"> 
+                    <div className ="li1 flexBox"></div>
+                    <div className ="li2 flexBox">关卡{this.guanka[index]}</div>
+                    <div className ="li3 flexBox">{e.bet}</div>
+                    <div className ="li4 flexBox">{e.gold}</div>
+                    <div className ="li5 flexBox"></div>
+                    <div className ="li6 flexBox"> 
                         {
                             this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received===1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
@@ -138,23 +160,21 @@ export default class Lyhsc12 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhsc12" >
+            <div className ="Bytghl12" >
                 <div className = "group">
                     {
                         rangeLine()
                     }
-                    <div className ="label1 ">
-                        <div className="flexBox">本金1倍</div>
-                        <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
-                    </div>
+                    <div className ="label1 ">全体玩家</div>
+                    <div className ="label2 ">一倍流水</div>
                 </div>
                 <div className="guizeBtn" onClick={this.guizeClick}>
                     {
                         this.state.showGuize ?<div className="guizeMask">
-                            {/* <p>1. 本活动需要完成手机和银行卡绑定后才能参与。</p>
-                            <p>2. 每日首笔充值金额达到对应档位，即可前往活动界面领取活动规定的相应金币。</p>
-                            <p>3. 每日23:59:59，活动计算的当日充值金额累加归零。</p>
-                            <p>4. 每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
+                            {/* <p>1.玩家需要绑定手机号码和银行卡才能参与此活动。</p>
+                            <p>2.游戏限制：仅限《疯狂漩涡》捕鱼游戏，玩家昨日游戏有效投注达标即可前往活动界面领取奖励。</p>
+                            <p>3.领取时间：每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}，逾期未领取视为自动放弃。</p>
+                            <p>4.同一用户（同IP同设备视为同一用户）仅限参加一次活动，活动彩金需要1倍流水方可申请兑换。</p>
                             <p>5. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p> */}
                         </div>:null
                     }

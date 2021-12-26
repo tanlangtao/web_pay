@@ -9,19 +9,17 @@ import './Activity.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
-import Bybphd from 'components/package_12/Bybphd';
-import Xyhschd12 from 'components/package_12/Xyhschd';
-import Lyhsc12 from 'components/package_12/Lyhsc';
-import Xyhbp12 from 'components/package_12/Xyhbp';
-import Bwfcjl12 from 'components/package_12/Bwfcjl';
 import FirstComponent from '../../../FirstComponent';
+import Bytghl12 from 'components/package_12/Bytghl';
+import RedRain12 from 'components/package_12/RedRain';
+import Lyhsc12 from 'components/package_12/Lyhsc';
 interface State{
+    loading:Boolean,
     navArr :ConfigItem[],
     title :string,
-    curData:ConfigItem,
-    loading:Boolean
+    curData:ConfigItem
 }
-export default class Activity12 extends Component<{}, State> {
+export default class Activity15 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -54,6 +52,7 @@ export default class Activity12 extends Component<{}, State> {
         })
         if(response.status === 0){
             this.setNavArr(response.data)
+            //缓存config
             this.setLocal(response.data)
         }else{
             message.error(response.msg)
@@ -101,45 +100,33 @@ export default class Activity12 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
-                        <div className={`navText ${
-                            item.name==="捕鱼包赔活动12"?(item.name ===this.state.title ?"btn_bybp1":"btn_bybp2"):
-                                item.name==="新用户首存活动12"?(item.name ===this.state.title ?"btn_xyhschd1":"btn_xyhschd2"):
-                                    item.name==="老用户首存活动12"?(item.name ===this.state.title ?"btn_lyhbc1":"btn_lyhbc2"):
-                                        item.name==="新用户包赔活动12"?(item.name ===this.state.title ?"btn_xyhbp1":"btn_xyhbp2"):
-                                            item.name==="百万扶持奖励活动12"?(item.name ===this.state.title ?"btn_bwfc1":"btn_bwfc2"):""
-                        }`} ></div>
+                        <div className ="navText flexBox">
+                            <p>{item.name.length<=8?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,8)}</p>
+                            <p>{item.name.substring(0,item.name.length-2).length>8?item.name.substring(8,item.name.length-2):""}</p>
+                        </div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity12'>
+            return <div className='activity15'>
                 {/* <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                 </div> */}
             </div>
         }
         return (
-            !this.state.loading?<div className='activity12'>
-                {/* <div className='headerBox' >
-                    <div className="returnToHall" onClick={this.returnToHall}></div>
-                    <div className={`title ${
-                        this.state.title==="捕鱼包赔活动12"?"event_xl_bybp_title":
-                            this.state.title==="新用户首存活动12"?"event_xl_xyhsc_title":
-                                this.state.title==="老用户首存活动12"?"event_xl_lyhsc_title":
-                                    this.state.title==="新用户包赔活动12"?"event_xl_xyhbp_title":
-                                        this.state.title==="百万扶持奖励活动12"?"event_xl_bwfc_title":""
-                    }`} ></div>
-                </div> */}
+            !this.state.loading ?<div className='activity15'>
                 <div className ="contentBox">
                     <div className='sider' style={{
+                        // zIndex:2,
                         // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={100*gHandler.getHeightDiff()}
+                                height={68*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -150,26 +137,25 @@ export default class Activity12 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
+                            <div className ="version">v:1.0.1</div>
                         </div>
                     </div>
                     <div className="content" style={{
+                        // zIndex:1,
                         // transform:`scale(${gHandler.getFontsizeScale()})`,
                         // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
-                            (this.state.title==='捕鱼包赔活动12' ? <Bybphd curData={this.state.curData}/>:
-                                (this.state.title==='新用户首存活动12' ? <Xyhschd12 curData={this.state.curData}/>:
-                                    (this.state.title==='老用户首存活动12' ? <Lyhsc12 curData={this.state.curData}/>:
-                                        (this.state.title==='新用户包赔活动12' ? <Xyhbp12 curData={this.state.curData}/>:
-                                            (this.state.title==='百万扶持奖励活动12' ? <Bwfcjl12 curData={this.state.curData}/>:
-                                                <div></div>
-                                            )
-                                        )
+                            (this.state.title==='捕鱼通关豪礼12' ? <Bytghl12 curData={this.state.curData}/>:
+                                (this.state.title==='四季发财红包雨12' ? <RedRain12 curData={this.state.curData}/>:
+                                    (this.state.title==='每日充值赠金活动12' ? <Lyhsc12 curData={this.state.curData}/>:
+                                        <div></div>
                                     )
                                 )
                             )
                         }
                     </div>
+                    
                 </div>
             </div>
                 :<FirstComponent></FirstComponent>
