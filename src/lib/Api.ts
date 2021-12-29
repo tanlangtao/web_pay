@@ -54,4 +54,6 @@ export const Api ={
     receivePayBonusGold:"/api/activity/receivePayBonusGold",
     getBonusPool:"/api/activity/getBonusPool",
     receiveBonusPool:"/api/activity/receiveBonusPool",
+    getTopTenLeaderBoardByDate:"/api/activity/getTopTenLeaderBoardByDate",
+    receiveTopTenLeaderBoardByDate:"/api/activity/receiveTopTenLeaderBoardByDate",
 }

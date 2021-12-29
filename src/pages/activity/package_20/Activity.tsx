@@ -20,6 +20,7 @@ import Yjbhd20 from 'components/package_20/Yjbhd';
 import Xyhbp20 from 'components/package_20/Xyhbp';
 import Lyhsc20 from 'components/package_20/Lyhsc';
 import Xyhschd20 from 'components/package_20/Xyhschd';
+import Mrlsb20 from 'components/package_20/Mrlsb';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -157,7 +158,9 @@ export default class Activity20 extends Component<{}, State> {
                                 (this.state.title==='赢金榜活动20' ? <Yjbhd20 curData={this.state.curData}/>:
                                     (this.state.title==='新用户包赔活动20' ? <Xyhbp20 curData={this.state.curData}/>:
                                         (this.state.title==='每日充值赠金活动20' ? <Lyhsc20 curData={this.state.curData}/>:
-                                            <div></div>
+                                            (this.state.title==='每日流水榜20' ? <Mrlsb20 curData={this.state.curData}/>:
+                                                <div></div>
+                                            )
                                         )
                                     )
                                 )

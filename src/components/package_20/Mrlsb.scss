@@ -1,0 +1,200 @@
+$src:'../../asses/activity/package_20/';
+
+.Mrlsb20{
+    margin-left: 4px;
+    margin-top: 4px;
+    background-image:url($src+"bg/di2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 280px;
+    height: 180px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .bg{
+        background-image:url($src+"bg/mrlsbBg.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: -0px 0px;
+        width: 270px;
+        height: 180px;
+        color: white;
+        position: relative;
+        left: 10px;
+    }
+    .group{
+        width: 132px;
+        height: 105px;
+        position: absolute;
+        left: 11px;
+        top: 37px;
+        overflow: hidden;
+        .title{
+            font-size: 7px;
+            font-weight: bold;
+            height: 15px;
+            display: flex;
+            .li1{
+                width: 18px;
+            }
+            .li2{
+                width: 33px;
+            }
+            .li3{
+                width: 33px;
+            }
+            .li4{
+                width: 20px;
+            }
+            .li5{
+                width: 26px;
+            }
+        }
+        .line{
+            display: flex;
+            height: 11px;
+            .li1{
+                width: 18px;
+            }
+            .li2{
+                width: 33px;
+            }
+            .li3{
+                width: 33px;
+            }
+            .li4{
+                width: 20px;
+            }
+            .li5{
+                width: 26px;
+                .btn_linqu{
+                    margin-top: 2px;
+                    width: 20px;
+                    height: 11px;
+                    background-image: url($src+"sprite/jd_event_btn_linqui.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    margin-top: 2px;
+                    width: 20px;
+                    height: 11px;
+                    background-image: url($src+"sprite/jd_event_btn_done.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+    .group2{
+        width: 138px;
+        height: 104px;
+        position: absolute;
+        left: 141px;
+        top: 37px;
+        overflow: hidden;
+        .title{
+            font-size: 7px;
+            font-weight: bold;
+            height: 15px;
+            display: flex;
+            .li1{
+                width: 19px;
+            }
+            .li2{
+                width: 33px;
+            }
+            .li3{
+                width: 33px;
+            }
+            .li4{
+                width: 20px;
+            }
+            .li5{
+                width: 30px;
+            }
+        }
+        .line{
+            display: flex;
+            height: 11px;
+            .li1{
+                width: 19px;
+            }
+            .li2{
+                width: 33px;
+            }
+            .li3{
+                width: 33px;
+            }
+            .li4{
+                width: 20px;
+            }
+            .li5{
+                width: 30px;
+                .btn_linqu{
+                    margin-top: 2px;
+                    width: 20px;
+                    height: 11px;
+                    background-image: url($src+"sprite/jd_event_btn_linqui.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    margin-top: 2px;
+                    width: 20px;
+                    height: 11px;
+                    background-image: url($src+"sprite/jd_event_btn_done.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+    .foot{
+        position: absolute;
+        left: 78px;
+        top: 151px;
+        width: 195px;
+        height: 10px;
+        display: flex;
+        justify-content: space-between;
+        .icon2{
+            width: 60px;
+            height: 10px;
+            margin-left: 5px;
+            padding-left: 2px;
+            line-height: 10px;
+            font-size: 8px;
+        }
+    }
+    .guizeBtn{
+        position: absolute;
+        top: 39px;
+        left: 248px;
+        width: 80px;
+        height: 12px;
+        background-image:url($src+"sprite/btn.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 180px;
+            height: 100px;
+            position: absolute;
+            left: -148px;
+            top: 12px;
+            background-image:url($src+"sprite/xyhscRuleBg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            line-height: 8px;
+            padding-top: 8px;
+            font-size: 6.5px;
+            p{
+                margin: 0px;
+                width: 175px;
+                margin-left: 5px;
+                color: rgb(225,217,127);
+            }
+        }
+    }
+}
