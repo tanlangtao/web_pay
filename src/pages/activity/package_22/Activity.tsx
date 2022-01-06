@@ -4,23 +4,27 @@ import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
 import {ConfigItem} from '../../../interface/activity_interface';
-import '../package_11/Activity.scss';
+import './Activity.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
-import Xyhschd13 from 'components/package_13/Xyhschd';
-import Lyhsc13 from 'components/package_13/Lyhsc';
-import Xyhbp13 from 'components/package_13/Xyhbp';
-import DailySign13 from 'components/package_13/DailySign';
+import DailySign18 from 'components/package_18/DailySign';
+import Xyhschd18 from 'components/package_18/Xyhschd';
+import Lyhsc18 from 'components/package_18/Lyhsc';
+import Xyhbp18 from 'components/package_18/Xyhbp';
+import DailySign22 from 'components/package_22/DailySign';
+import Xyhschd22 from 'components/package_22/Xyhschd';
+import Xyhbp22 from 'components/package_22/Xyhbp';
+import Lyhsc22 from 'components/package_22/Lyhsc';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
     title :string,
     curData:ConfigItem
 }
-export default class activity13 extends Component<{}, State> {
+export default class Activity22 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -101,35 +105,33 @@ export default class activity13 extends Component<{}, State> {
                         })
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
-                        <div className = "btnline"></div>
                         <div className ="navText flexBox">
-                            <p>{item.name.length<=7?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,7)}</p>
-                            <p>{item.name.substring(0,item.name.length-2).length>7?item.name.substring(7,item.name.length-2):""}</p>
+                            <p>{item.name.length<=8?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,8)}</p>
+                            <p>{item.name.substring(0,item.name.length-2).length>8?item.name.substring(8,item.name.length-2):""}</p>
                         </div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity11'>
+            return <div className='Activity22'>
                 {/* <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                 </div> */}
             </div>
         }
         return (
-            !this.state.loading?<div className='activity11'>
+            !this.state.loading ?<div className='Activity22'>
                 <div className ="contentBox">
-                    <div
-                        className='sider' style={{
-                            // transform:`scale(${gHandler.getFontsizeScale()})`,
-                            // marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
-                        }} >
+                    <div className='sider' style={{
+                        // zIndex:2,
+                        // transform:`scale(${gHandler.getFontsizeScale()})`,
+                    }}>
                         <div className="navBox">
                             <Swiper
                                 direction={"vertical"}
                                 spaceBetween={0}
-                                height={65*gHandler.getHeightDiff()}
+                                height={68*gHandler.getHeightDiff()}
                                 // onSlideChange={() => console.log('slide change')}
                                 // onSwiper={(swiper) => console.log(swiper)}
                             >
@@ -140,25 +142,28 @@ export default class activity13 extends Component<{}, State> {
                                 <SwiperSlide></SwiperSlide>
                                 <SwiperSlide></SwiperSlide>
                             </Swiper>
+                            <div className ="version">v:1.0.1</div>
                         </div>
                     </div>
                     <div className="content" style={{
+                        // zIndex:1,
                         // transform:`scale(${gHandler.getFontsizeScale()})`,
-                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
-                        // marginTop:`${gHandler.getFontsizeScale()===1?"0px":`${40/gHandler.getFontsizeScale()}px` }`
+                        // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
-                            (this.state.title==='老用户首存活动13' ? <Lyhsc13 curData={this.state.curData}/>:
-                                (this.state.title==='新用户首存活动13' ? <Xyhschd13 curData={this.state.curData}/>:
-                                    (this.state.title==='新用户包赔活动13' ? <Xyhbp13 curData={this.state.curData}/>:
-                                        (this.state.title==='每日免费礼金13' ? <DailySign13 curData={this.state.curData}/>:
+                            (this.state.title==='每日免费礼金22' ? <DailySign22 curData={this.state.curData}/>:
+                                (this.state.title==='新用户首存活动22' ? <Xyhschd22 curData={this.state.curData}/>:
+                                    (this.state.title==='老用户首存活动22' ? <Lyhsc22 curData={this.state.curData}/>:
+                                        (this.state.title==='新用户包赔活动22' ? <Xyhbp22 curData={this.state.curData}/>:
                                             <div></div>
                                         )
                                     )
                                 )
+                                
                             )
                         }
                     </div>
+                    
                 </div>
             </div>
                 :<FirstComponent></FirstComponent>

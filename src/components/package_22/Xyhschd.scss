@@ -1,0 +1,132 @@
+$src:'../../asses/activity/package_22/';
+
+.Xyhschd22{
+    background-image:url($src+"bg/xyhscBg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:0px 0px;
+    width: 320px;
+    height: 182px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .guizeBtn{
+        position: absolute;
+        top: 30px;
+        left: 220px;
+        width: 50px;
+        height: 15px;
+        background-image:url($src+"sprite/btn_rule.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 260px;
+            height: 110px;
+            position: absolute;
+            left: -190px;
+            top: 16px;
+            background-image:url($src+"bg/ruleBg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            font-size: 5.4px;
+            line-height: 8px;
+            padding-top: 12px;
+            font-weight: bold;
+            color: rgb(201,179,145);
+            p{
+                margin: 0px;
+                width: 250px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .group{
+        width: 250px;
+        height: 80px;
+        position: absolute;
+        left: 66px;
+        top: 48px;
+        .line{
+            display: flex;
+            height: 10.7px;
+            .li1{
+                width: 42px;
+            }
+            .li2{
+                width: 48px;
+            }
+            .li3{
+                width: 45px;
+            }
+            .li4{
+                width: 38px;
+                .btn_linqu{
+                    width: 22px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 22px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .title{
+            height: 14px;
+        }
+        .label1{
+            position: absolute;
+            width: 50px;
+            bottom: 42px;
+            left: 88px;
+        }
+        .applyBtn{
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            bottom: 58px;
+            left: 180px;
+            background-image:url($src+"sprite/btn_apply2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .applyFilter{
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            bottom: 58px;
+            left: 180px;
+            background-image:url($src+"sprite/btn_apply2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyYlingqu{
+            background-image:url($src+"sprite/btn_done2.png");
+        }
+        .applyBtnLabel{
+            position: absolute;
+            width: 70px;
+            height: 20px;
+            bottom: 35px;
+            left: 160px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 240px;
+        left: 62px;
+        line-height: 7px;
+        top: 92px;
+        color: white;
+        p{
+            margin: 0rem;
+        }
+    }
+}
