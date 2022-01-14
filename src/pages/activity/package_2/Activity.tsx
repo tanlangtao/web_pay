@@ -4,7 +4,7 @@ import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
 import {ConfigItem} from '../../../interface/activity_interface';
-import '../package_11/Activity.scss';
+import '../package_2/Activity.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -14,6 +14,8 @@ import FirstComponent from '../../../FirstComponent';
 import RedRain2 from 'components/package_2/RedRain';
 import Xyhschd2 from 'components/package_2/Xyhschd';
 import Fxpyq from 'components/package_2/Fxpyq';
+import Zcs58 from 'components/package_2/Zcs58';
+import Jtfl2 from 'components/package_2/Jtfl';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -47,6 +49,7 @@ export default class Activity2 extends Component<{}, State> {
     }
     //请求首页
     private async  AxiosIndex(){
+        Axios.defaults.timeout = 30000 //超时时间
         let url = `${gHandler.UrlData.host}${Api.activityConfig}?package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
@@ -72,10 +75,16 @@ export default class Activity2 extends Component<{}, State> {
             }else{
                 console.log("请检查配置信息！",e.name)
             }
-            if(e.is_close === "2" && (e.name === "分享朋友圈活动3" || e.name === "新会员首存活动三重奏2" || e.name === "老会员每日首存活动非自动领取2" || e.name === "四季发财红包雨2")){
+            if(e.is_close === "2"){
                 navArr.push(e)
             } 
         })
+        let item :any= {
+            name :"集团福利2",
+            info:{
+            }
+        }
+        // navArr.push(item)
         navArr.sort((a,b)=>Number(a.order_by)-Number(b.order_by));
         console.log(navArr)
         if(navArr.length>0){
@@ -104,29 +113,29 @@ export default class Activity2 extends Component<{}, State> {
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className = "btnline"></div>
-                        {/* <div className={`navText ${
-                            item.name==="分享朋友圈活动3"?(item.name ===this.state.title ?"btn_fpyq1":"btn_fpyq2"):
-                                item.name==="新会员首存活动三重奏2"?(item.name ===this.state.title ?"btn_xhysc1":"btn_xhysc2"):
-                                    item.name==="老会员每日首存活动非自动领取2"?(item.name ===this.state.title ?"btn_lhysc1":"btn_lhysc2"):
-                                        item.name==="四季发财红包雨2"?(item.name ===this.state.title ?"btn_redRain1":"btn_redRain2"):""
-                        }`} ></div> */}
-                        <div className ="navText flexBox">
+                        <div className={`navText ${
+                            item.name==="老用户首存活动2"?(item.name ===this.state.title ?"btn_lhysc1":"btn_lhysc2"):
+                                item.name==="开业前三千名注册送58元2"?(item.name ===this.state.title ?"zcs58_1":"zcs58_2"):
+                                    item.name==="新用户首存活动2"?(item.name ===this.state.title ?"btn_xhysc1":"btn_xhysc2"):
+                                        item.name==="集团福利2"?(item.name ===this.state.title ?"jtfl1":"jtfl2"):""
+                        }`} ></div>
+                        {/* <div className ="navText flexBox">
                             <p>{item.name.length<=7?item.name.substring(0,item.name.length-1):item.name.substring(0,item.name.length-1).substring(0,7)}</p>
                             <p>{item.name.substring(0,item.name.length-1).length>7?item.name.substring(7,item.name.length-1):""}</p>
-                        </div>
+                        </div> */}
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity11'>
+            return <div className='activity2'>
                 <div className='headerBox' >
                     {/* <div className="returnToHall" onClick={this.returnToHall}></div> */}
                 </div>
             </div>
         }
         return (
-            !this.state.loading?<div className='activity11'>
+            !this.state.loading?<div className='activity2'>
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
@@ -156,10 +165,10 @@ export default class Activity2 extends Component<{}, State> {
                         // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-20/gHandler.getFontsizeScale()}px` }`,
                     }} >
                         {
-                            (this.state.title==='分享朋友圈活动3' ? <Fxpyq curData={this.state.curData}/>:
-                                (this.state.title==='新会员首存活动三重奏2' ? <Xyhschd2 curData={this.state.curData}/>:
-                                    (this.state.title==='老会员每日首存活动非自动领取2' ? <Lyhsc2 curData={this.state.curData}/>:
-                                        (this.state.title==='四季发财红包雨2' ? <RedRain2 curData={this.state.curData}/>:
+                            (this.state.title==='老用户首存活动2' ? <Lyhsc2 curData={this.state.curData}/>:
+                                (this.state.title==='开业前三千名注册送58元2' ? <Zcs58 curData={this.state.curData}/>:
+                                    (this.state.title==='新用户首存活动2' ? <Xyhschd2 curData={this.state.curData}/>:
+                                        (this.state.title==='集团福利2' ? <Jtfl2 curData={this.state.curData}/>:
                                             <div></div>
                                         )
                                     )

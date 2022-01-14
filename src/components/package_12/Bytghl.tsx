@@ -76,7 +76,7 @@ export default class Bytghl12 extends React.Component<Props,State>{
         if(this.state.ReceiveFishInfo["received_info"]){
             this.state.ReceiveFishInfo.received_info.forEach((e)=>{
                 this.state.info.range.forEach((item,index)=>{
-                    if(e.receive_amount === item.gold){
+                    if(Number(e.receive_amount) === Number(item.gold)){
                         this.setState({
                             is_received:1
                         })

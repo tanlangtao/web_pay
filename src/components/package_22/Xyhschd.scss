@@ -6,7 +6,7 @@ $src:'../../asses/activity/package_22/';
     background-size: contain;
     background-position:0px 0px;
     width: 320px;
-    height: 182px;
+    height: 180px;
     font-size: 6px;
     color: white;
     position: relative;
@@ -44,11 +44,11 @@ $src:'../../asses/activity/package_22/';
         width: 250px;
         height: 80px;
         position: absolute;
-        left: 66px;
+        left: 65px;
         top: 48px;
         .line{
             display: flex;
-            height: 10.7px;
+            height: 10.5px;
             .li1{
                 width: 42px;
             }
@@ -83,14 +83,14 @@ $src:'../../asses/activity/package_22/';
             position: absolute;
             width: 50px;
             bottom: 42px;
-            left: 88px;
+            left: 87px;
         }
         .applyBtn{
             position: absolute;
             width: 30px;
             height: 10px;
             bottom: 58px;
-            left: 180px;
+            left: 179px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -100,7 +100,7 @@ $src:'../../asses/activity/package_22/';
             width: 30px;
             height: 10px;
             bottom: 58px;
-            left: 180px;
+            left: 179px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -115,7 +115,8 @@ $src:'../../asses/activity/package_22/';
             width: 70px;
             height: 20px;
             bottom: 35px;
-            left: 160px;
+            left: 158px;
+            font-size: 5.5px;
         }
     }
     .rule{

@@ -1,0 +1,26 @@
+$src:'../../asses/activity/package_22/';
+
+.Jtfl22{
+    background-image:url($src+"bg/contetn.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 295px;
+    height: 180px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 2px;
+    .bg{
+        background-image:url($src+"bg/jtfl.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0px 1px;
+        width: 290px;
+        height: 1000px;
+        margin-left: 2px;
+        color: white;
+        position: relative;
+    }
+}

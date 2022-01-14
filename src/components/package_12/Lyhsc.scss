@@ -48,7 +48,6 @@ $src:'../../asses/activity/package_12/';
         top: 57px;
         font-weight: bold;
         font-size: 8px;
-        -webkit-text-stroke: 0.2px rgb(0,80,184);
         .line{
             display: flex;
             height: 14.2px;
@@ -66,14 +65,14 @@ $src:'../../asses/activity/package_12/';
                 .btn_linqu{
                     width: 26px;
                     height: 11px;
-                    background-image: url($src+"sprite/lingqu_lepai.png") ;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
                     width: 26px;
                     height: 11px;
-                    background-image: url($src+"sprite/ylingqu_lepai.png") ;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }

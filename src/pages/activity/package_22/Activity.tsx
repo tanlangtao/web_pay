@@ -18,6 +18,7 @@ import DailySign22 from 'components/package_22/DailySign';
 import Xyhschd22 from 'components/package_22/Xyhschd';
 import Xyhbp22 from 'components/package_22/Xyhbp';
 import Lyhsc22 from 'components/package_22/Lyhsc';
+import Jtfl22 from 'components/package_22/Jtfl';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -49,6 +50,7 @@ export default class Activity22 extends Component<{}, State> {
     }
     //请求首页
     private async  AxiosIndex(){
+        Axios.defaults.timeout = 30000 //超时时间
         let url = `${gHandler.UrlData.host}${Api.activityConfig}?package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
@@ -155,7 +157,9 @@ export default class Activity22 extends Component<{}, State> {
                                 (this.state.title==='新用户首存活动22' ? <Xyhschd22 curData={this.state.curData}/>:
                                     (this.state.title==='老用户首存活动22' ? <Lyhsc22 curData={this.state.curData}/>:
                                         (this.state.title==='新用户包赔活动22' ? <Xyhbp22 curData={this.state.curData}/>:
-                                            <div></div>
+                                            (this.state.title==='集团福利22' ? <Jtfl22 curData={this.state.curData}/>:
+                                                <div></div>
+                                            )
                                         )
                                     )
                                 )

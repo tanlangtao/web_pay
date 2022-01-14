@@ -4,7 +4,7 @@ $src:'../../../asses/activity/package_22/';
     font-size: 6.5px;
     background-image:url($src+"bg/redBg.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 120%;
     background-position: 0px -8px;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@ $src:'../../../asses/activity/package_22/';
     .sider{
         background:transparent;
         width: 63px;
-        height: 178px;
+        height: 180px;
         margin-left: 2px;
         background-image: url($src+"bg/redNav.png");
         background-repeat: no-repeat;
@@ -78,6 +78,7 @@ $src:'../../../asses/activity/package_22/';
         width: 356px;
         height: 210px;
         justify-self: start;
+        margin-left: 5px;
     }
     
 }

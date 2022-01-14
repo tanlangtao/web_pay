@@ -41,6 +41,7 @@ export default class activity1 extends Component<{}, State> {
     }
     //请求首页
     private async  AxiosIndex(){
+        Axios.defaults.timeout = 30000 //超时时间
         let url = `${gHandler.UrlData.host}${Api.activityConfig}?package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data

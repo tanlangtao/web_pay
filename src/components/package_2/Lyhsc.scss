@@ -1,24 +1,27 @@
-$src:'../../asses/activity/package_11/';
+$src:'../../asses/activity/package_2/';
 
 .Lyhsc2{
-    background-image: url($src+"bg/event12-3_lhysc_content.png") ;
+    background-image: url($src+"bg/lyhscBg.png") ;
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -70px -30px;
-    width: 380px;
+    width: 295px;
     height: 270px;
     font-size: 6px;
+    margin-left: 5px;
     color: white;
     position: relative;
+    font-weight: bold;
     .group{
         width: 190px;
-        height: 100px;
+        height: 76px;
         position: absolute;
-        left: 39px;
-        top: 40px;
+        left: 110px;
+        top: 36px;
+        font-size: 7px;
+        overflow: hidden;
         .line{
             display: flex;
-            height: 9.6px;
+            height: 12.5px;
             .li1{
                 width: 46px;
             }
@@ -29,8 +32,9 @@ $src:'../../asses/activity/package_11/';
                 width: 44px;
             }
             .li4{
-                width: 28px;
+                width: 36px;
                 .btn_linqu{
+                    margin-top: 2px;
                     width: 26px;
                     height: 11px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
@@ -38,6 +42,7 @@ $src:'../../asses/activity/package_11/';
                     background-size: contain;
                 }
                 .btn_Ylinqu{
+                    margin-top: 2px;
                     width: 26px;
                     height: 11px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
@@ -48,18 +53,17 @@ $src:'../../asses/activity/package_11/';
         }
         .label1{
             position: absolute;
-            left: 95px;
+            left: 90px;
             top: 30px;
         }
     }
     .rule{
         position: absolute;
-        width: 200px;
-        left: 20px;
-        line-height: 6px;
+        width: 280px;
+        left: 10px;
+        line-height: 6.5px;
+        font-size: 5.4px;
         top: 126px;
-        font-size: 5px;
-        color: #FEFFC9;
         p{
             margin: 0px;
         }

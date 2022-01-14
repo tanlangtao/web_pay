@@ -6,129 +6,241 @@ import Axios from 'axios';
 import {message, Button} from 'antd';
 import "./Xyhschd.scss";
 import {ConfigItem} from '../../interface/activity_interface';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
-import 'swiper/swiper.scss';
 interface Props {
     curData:ConfigItem
 }
 interface State {
-    Day1:any,
-    Day2:any,
+    info:any,
+    frist_pay_amount:number,
+    is_received:number,
+    btnActive :boolean,
+    applyBtnInteractable : boolean,
+    is_apply : boolean,
+    showGuize:Boolean
 }
 export default class Xyhschd2 extends React.Component<Props,State>{
-    state={
-        Day1:[
-            { recharge:100,gold:28 },
-            { recharge:500,gold:68 },
-            { recharge:1000,gold:98 },
-            { recharge:3000,gold:388 },
-            { recharge:5000,gold:588 },
-            { recharge:10000,gold:1188 },
-        ],
-        Day2:[
-            { recharge:100,gold:18 },
-            { recharge:500,gold:38 },
-            { recharge:1000,gold:88 },
-            { recharge:3000,gold:188 },
-            { recharge:5000,gold:388 },
-            { recharge:10000,gold:688 },
-        ]
+    state = {
+        info:{
+            flow_rate:0,
+            start:0,
+            end:0,
+            range:[
+                {
+                    bonus:0,
+                    flow_rate:0,
+                    recharge_amount:0
+                }
+            ]
+        },
+        is_received:0,
+        btnActive :false,
+        frist_pay_amount:0,
+        applyBtnInteractable : true,
+        is_apply : false,
+        showGuize:false
+    }
+    btnIndex= 0 
+    componentDidMount(){
+        this.setState({
+            info:this.props.curData.info
+        },()=>{
+            this.ApplyBtnInit()
+        })
+        this.Axios_getFristPayAmount()
+    }
+    renderBtn(){
+        if(this.state.frist_pay_amount !==0){
+            this.state.info.range.forEach((item,index)=>{
+                if(this.state.frist_pay_amount >= item.recharge_amount) {
+                    this.btnIndex = index
+                    this.setState({
+                        btnActive:true
+                    })
+                }
+            })
+        }
     }
     componentWillUnmount(){
         this.setState = (state,callback)=>{
             return
         }
     }
-    render (){
-        let data1 = ()=>{
-            return  this.state.Day1.map((e:any,index:number) => {
-                return <div className ="line" key={index}>
-                    <div className ="li1 flexBox">{e.recharge}</div>
-                    <div className ="li2 flexBox">{e.gold}</div>
-                </div>
-            })
+    onClick =(e:any)=>{
+        this.Axios_receiveFristPayGold()
+    }
+    guizeClick = ()=>{
+        this.setState({
+            showGuize:!this.state.showGuize
+        })
+    }
+    applyBtnonClick =()=>{
+        if(this.state.applyBtnInteractable){
+            this.Axios_applyFristPay()
+        }else{
+            message.info('未到开放时间！')
         }
-        let data2 = ()=>{
-            return  this.state.Day2.map((e:any,index:number) => {
+    }
+    private async Axios_receiveFristPayGold(){
+        let url = `${gHandler.UrlData.host}${Api.receiveFristPayGold}`;
+        let data = new FormData();
+        data.append('user_id',gHandler.UrlData.user_id);
+        data.append('user_name',decodeURI(gHandler.UrlData.user_name));
+        data.append('package_id',gHandler.UrlData.package_id);
+        data.append('activity_id',this.props.curData.id);
+        data.append('login_ip',gHandler.UrlData.login_ip?gHandler.UrlData.login_ip:gHandler.UrlData.regin_ip);
+        data.append('regin_ip',gHandler.UrlData.regin_ip);
+        data.append('device_id',gHandler.UrlData.device_id);
+        data.append('center_auth',gHandler.UrlData.center_auth);
+        data.append('token',gHandler.token);
+        let response = await Axios.post(url,data).then(response=>{
+            return response.data;
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
+        if(response.status === 0){
+            message.success('领取成功！');
+            this.Axios_getFristPayAmount();
+        }else{
+            message.error(response.msg)
+        }
+    }
+    //确认申请
+    private async Axios_applyFristPay(){
+        let url = `${gHandler.UrlData.host}${Api.applyFristPay}`;
+        let data = new FormData();
+        data.append('user_id',gHandler.UrlData.user_id);
+        data.append('user_name',decodeURI(gHandler.UrlData.user_name));
+        data.append('package_id',gHandler.UrlData.package_id);
+        data.append('activity_id',this.props.curData.id);
+        data.append('login_ip',gHandler.UrlData.login_ip?gHandler.UrlData.login_ip:gHandler.UrlData.regin_ip);
+        data.append('regin_ip',gHandler.UrlData.regin_ip);
+        data.append('device_id',gHandler.UrlData.device_id);
+        data.append('center_auth',gHandler.UrlData.center_auth);
+        data.append('token',gHandler.token);
+        let response = await Axios.post(url,data).then(response=>{
+            return response.data;
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
+        if(response.status === 0){
+            message.success('申请成功！');
+            //缓存申请结果
+            this.setLocal()
+            this.ApplyBtnInit()
+        }else{
+            message.error(response.msg)
+        }
+    }
+    private async  Axios_getFristPayAmount(){
+        let url = `${gHandler.UrlData.host}${Api.getFristPayAmount}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&lottery=PTXFFC&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+        let response = await Axios.get(url).then(response=>{
+            return response.data
+        }).catch(err=>{
+            return message.error("failed to load response data")
+        })
+        if(response.status === 0){
+            this.setState({
+                frist_pay_amount:response.data.frist_pay_amount,
+                is_received:response.data.is_received
+            },()=>{
+                this.renderBtn()
+            })
+        }else{
+            message.error(response.msg)
+        }
+    }
+    render (){
+        let rangeLine = ()=>{
+            return  this.state.info.range.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
-                    <div className ="li1 flexBox">{e.recharge}</div>
-                    <div className ="li2 flexBox">{e.gold}</div>
+                    <div className ="li1 flexBox">{e.recharge_amount}</div>
+                    <div className ="li2 flexBox">{e.bonus}</div>
+                    <div className ="li3 flexBox"></div>
+                    <div className ="li4 flexBox"> 
+                        {
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received === 1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                                onClick={this.onClick}
+                            ></div> :null
+                        }
+                    </div>
                 </div>
             })
         }
         return (
             <div className ="Xyhschd2" >
-                <div className = "bg">
-                    <div className="navBox">
-                        <Swiper
-                            direction={"vertical"}
-                            spaceBetween={0}
-                            height={240*gHandler.getHeightDiff()}
-                            // onSlideChange={() => console.log('slide change')}
-                            // onSwiper={(swiper) => console.log(swiper)}
-                        >
-                            <SwiperSlide>
-                                <div className = "group">
-                                    <div className="line"> 
-                                        <div className="li1 flexBox" >充值金额</div>
-                                        <div className="li2 flexBox" >赠送金额</div>
-                                        <div className="li3 flexBox" >兑换限制</div>
-                                    </div>
-                                    {
-                                        data1()
-                                    }
-                                    <div className="label1">第一天</div>
-                                    <div className="label2">3倍流水</div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className = "group">
-                                    <div className="line"> 
-                                        <div className="li1 flexBox" >充值金额</div>
-                                        <div className="li2 flexBox" >赠送金额</div>
-                                        <div className="li3 flexBox" >兑换限制</div>
-                                    </div>
-                                    {
-                                        data2()
-                                    }
-                                    <div className="label1">第二天</div>
-                                    <div className="label2">1倍流水</div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className = "group">
-                                    <div className="line"> 
-                                        <div className="li1 flexBox" >充值金额</div>
-                                        <div className="li2 flexBox" >赠送金额</div>
-                                        <div className="li3 flexBox" >兑换限制</div>
-                                    </div>
-                                    {
-                                        data2()
-                                    }
-                                    <div className="label1">第三天</div>
-                                    <div className="label2">1倍流水</div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className = "group2">
-                                    <div className="rule"> 
-                                        <p>申请条件：</p>
-                                        <p>1. 当天新注册用户，需先绑定好手机号码，银行卡(ip关联2个以下)。</p>
-                                        <p>2. 实名限制2及2个以上不符合。</p>
-                                        <p>3. 只限游戏（财神到，水果机，捕鱼，百人牛牛，红包乱斗，二八杠，21点，奔驰宝马）。</p>
-                                        <p>4. 每个账号一天只限第一次充值（如果遇到无法一笔充值达到有效的档位，可充值两次以上）充值成功未下注之前找专线客服专员申请。</p>
-                                        <p>5. 每一个账号（同一ip，同一设备，同一姓名）视为一个账号，只能申请一次。</p>
-                                        <p>6. 本活动最终解释权归德比所有。</p>
-                                    </div>
-                                </div>
-                            </SwiperSlide>
-                        </Swiper>
+                <div className = "group">
+                    <div className="line title"> 
+                        <div className="li1 flexBox" >首充金额</div>
+                        <div className="li2 flexBox" >活动彩金</div>
+                        <div className="li3 flexBox" >提现流水要求</div>
                     </div>
+                    {
+                        rangeLine()
+                    }
+                    <div className ="label1 ">
+                        <div className="flexBox">本金一倍+</div>
+                        <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
+                    </div>
+                    <div className ={ `applyBtn ${this.state.applyBtnInteractable ?"":"applyFilter"} ${this.state.is_apply?"applyYlingqu":''}`} onClick={()=>{
+                        console.log("申请")
+                        this.applyBtnonClick()
+                    }}></div>
+                    <div className ="applyBtnLabel">
+                        <div className="flexBox">开放时间</div>
+                        <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
+                    </div>
+                </div>
+                <div className = "rule">
                     
+                </div>
+                <div className="guizeBtn" onClick={this.guizeClick}>
+                    {
+                        this.state.showGuize ?<div className="guizeMask">
+                            <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
+                            <p>2. 平台中的新用户活动只能参加一个。</p>
+                            <p>3. 玩家必须充值成功未下注时进行领取，需满足首充金额一倍流水+赠送彩金的{this.state.info.flow_rate}倍流水才能申请兑换。</p>
+                            <p>4. 游戏规则：仅参加以下游戏《财神到》《水果机》《捕鱼 ‧ 海王》《捕鱼 ‧ 聚宝盆》《多福多财》《疯狂漩涡》《CQ9电子游戏》《PT电子游戏》《JDB电子游戏》《PG电子游戏》《PG2电子游戏》《AG电子游戏》《PP电子游戏》。</p>
+                            <p>6. 领取彩金前，进行规定外游戏，将无法领取彩金；领取彩金后，进行规定外游戏，后续提交兑换订单时，系统将会自动扣除彩金部份；领取彩金大于兑换金额，进行规定外游戏，后续将无法提交订单。</p>
+                            <p>7. 同一用户仅限领取一次，恶意套利者将封号处理。</p>
+                            <p>8. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                        </div>:null
+                    }
                 </div>
             </div>
         )
+    }
+    ApplyBtnInit(){
+        let h = new Date().getHours()
+        if(this.getLocal()){
+            if(h < this.state.info.start || h >= this.state.info.end){
+                this.setState({
+                    applyBtnInteractable:false
+                })
+            }else{
+                this.setState({
+                    applyBtnInteractable:true
+                })
+            }
+            this.setState({
+                is_apply:false
+            },()=>{
+                console.log("is_apply",this.state.is_apply)
+            })
+        }else{
+            this.setState({
+                is_apply:true
+            })
+        }
+    }
+    getLocal(){
+        let local = localStorage.getItem(`ApplyXyhschd_${gHandler.UrlData.user_id}`)
+        if(local){
+            return false
+        }else{
+            return true
+        }
+    }
+    setLocal(){
+        localStorage.setItem(`ApplyXyhschd_${gHandler.UrlData.user_id}`,JSON.stringify(true))
     }
 }

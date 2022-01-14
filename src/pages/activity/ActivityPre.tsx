@@ -48,7 +48,6 @@ export default class ActivityPre extends Component<{}, State> {
         let scale = gHandler.getDeviceScale()
         let body =document.getElementsByTagName("body")[0];
         body.style.zoom = `${scale}`;
-        console.log(scale)
         if(scale===1.2){
             body.style.marginTop = `-99px`
         }else if(scale===1.3){

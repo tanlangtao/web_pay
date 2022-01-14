@@ -1,85 +1,131 @@
-$src:'../../asses/activity/package_11/';
+$src:'../../asses/activity/package_2/';
 
 .Xyhschd2{
-    background-image:url($src+"bg/event12-2_xhysc_bg.png");
+    background-image:url($src+"bg/xyh.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: -70px -30px;
-    width: 380px;
-    height: 270px;
+    width: 300px;
+    height: 180px;
     font-size: 6px;
+    margin-left: 5px;
     color: white;
     position: relative;
-    overflow: hidden;
-    .bg{
-        background-image:url($src+"bg/event12-2_xhysc_ren.png");
+    .guizeBtn{
+        position: absolute;
+        top: 20px;
+        left: 230px;
+        width: 40px;
+        height: 20px;
+        background-image:url($src+"sprite/btn_rule.png");
         background-repeat: no-repeat;
         background-size: contain;
-        background-position: -70px -30px;
-        width: 380px;
-        height: 270px;
-        font-size: 6px;
-        .navBox{
-            width: 200px;
-            height: 110px;
+        .guizeMask{
+            width: 280px;
+            height: 120px;
             position: absolute;
-            top: 60px;
-            left: 15px;
-            overflow: hidden;
-            .group{
-                background-image:url($src+"sprite/event12-2_xhysc_frame.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                width: 200px;
-                height: 90px;
-                position: relative;
-                .line{
-                    margin-left: 17px;
-                    display: flex;
-                    height: 11.8px;
-                    .li1{
-                        width: 66px;
-                    }
-                    .li2{
-                        width: 60px;
-                    }
-                    .li3{
-                        width: 55px;
-                    }
-                }
-                .label1{
-                    position: absolute;
-                    width: 10px;
-                    left: 6px;
-                    top: 30px;
-                }
-                .label2{
-                    position: absolute;
-                    left: 160px;
-                    top: 40px;
-                }
+            left: -225px;
+            top: 15px;
+            background-image:url($src+"sprite/ruleBg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            font-size: 6px;
+            line-height: 7px;
+            padding-top: 10px;
+            p{
+                margin: 0px;
+                width: 275px;
+                margin-left: 5px;
             }
-            .group2{
-                background-image:url($src+"sprite/event12-2_xhysc_rule_bg.png");
-                background-repeat: no-repeat;
-                background-size: contain;
-                width: 200px;
-                height: 90px;
-                position: relative;
-                .rule{
-                    font-size: 5px;
-                    line-height: 6px;
-                    position: absolute;
-                    left: 15px;
-                    top: 8px;
-                    color: #FEFFC9;
-                    p{
-                        margin: 0px;
-                    }
+        }
+    }
+    .group{
+        width: 250px;
+        height: 80px;
+        position: absolute;
+        left:74px;
+        top: 43px;
+        .line{
+            display: flex;
+            height: 9.6px;
+            .li1{
+                width: 37px;
+            }
+            .li2{
+                width: 38px;
+            }
+            .li3{
+                width: 42px;
+            }
+            .li4{
+                width: 40px;
+                .btn_linqu{
+                    width: 22px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    margin-top: 1px;
+                }
+                .btn_Ylinqu{
+                    margin-top: 1px;
+                    width: 22px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
                 }
             }
         }
-        
+        .label1{
+            position: absolute;
+            width: 50px;
+            bottom: 42px;
+            left: 71px;
+        }
+        .applyBtn{
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            bottom: 55px;
+            left: 168px;
+            background-image:url($src+"sprite/apply.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .applyFilter{
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            bottom: 55px;
+            left: 168px;
+            background-image:url($src+"sprite/apply.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyYlingqu{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyBtnLabel{
+            position: absolute;
+            width: 70px;
+            height: 20px;
+            bottom: 30px;
+            left: 148px;
+            font-size: 5.5px;
+        }
     }
-    
+    .rule{
+        position: absolute;
+        width: 240px;
+        left: 62px;
+        line-height: 7px;
+        top: 92px;
+        color: white;
+        p{
+            margin: 0rem;
+        }
+    }
 }
