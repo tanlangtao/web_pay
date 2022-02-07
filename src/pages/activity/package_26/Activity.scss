@@ -1,0 +1,135 @@
+$src:'../../../asses/activity/package_11/';
+.Activity26{
+    font-family: 'Microsoft Yahei';
+    font-size: 8px;
+    background-image:url($src+"bg/hd_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select:none;
+    touch-action:none;
+    .headerBox{
+        margin-top: 6px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 30px;
+        background: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+        .returnToHall{
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url($src+"sprite/fanhui.png");
+            height: 30px;
+            width: 40px;
+            position: absolute;
+            left:0px;
+            top: -5px;
+        }
+        .title{
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 12px;
+            width: 66px;
+            position: absolute;
+            right: 0px;
+            top: 2px;
+        }
+        .dm_title_bytghl{background-image: url($src+"title/dm_title_bytghl.png")}
+        .dm_title_xyhsc{background-image: url($src+"title/dm_title_xyhsc.png")}
+        .dm_title_lhyschd{background-image: url($src+"title/dm_title_lhyschd.png")}
+        .db_redrain{background-image: url($src+"title/db_redrain.png")}
+        .xingyunlunpan{background-image: url($src+"title/xingyunlunpan.png")}
+        .dm_title{background-image: url($src+"title/dm_title.png")}
+        .mrqd{background-image: url($src+"title/mrqd.png")}
+    }
+    .contentBox{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 175px;
+    }
+    .sider{
+        background:transparent;
+        width: 60px;
+        height: 180px;
+        background-image: url($src+"bg/hd_bg_menu.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        .navBox{
+            height:200px;
+            color: white;
+            .navItem{
+                width: 60px;
+                height: 20px;
+                color: rgb(161,159,155);
+                padding-top:1px;
+                .btnline{
+                    height: 2px;
+                    width: 56px;
+                    background-image:url($src+"sprite/btnline.png");
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    position: absolute;
+                    top: -2.5px;
+                }
+                .navText{
+                    width: 55px;
+                    height: 20px;
+                    padding-left: 2%;
+                    line-height: 9px;
+                    justify-content: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    flex-direction: column;
+                    font-size: 6px;
+                    p{
+                        margin: 0px;
+                    }
+                }
+                .btn_bytghl1{ background-image: url($src+"menu/btn_bytghl1.png");}
+                .btn_bytghl2{ background-image: url($src+"menu/btn_bytghl2.png");}
+                .btn_db_xyhsccj1{ background-image: url($src+"menu/btn_db_xyhsccj1.png");}
+                .btn_db_xyhsccj2{ background-image: url($src+"menu/btn_db_xyhsccj2.png");}
+                .btn_lhyschd1{ background-image: url($src+"menu/btn_lhyschd1.png");}
+                .btn_lhyschd2{ background-image: url($src+"menu/btn_lhyschd2.png");}
+                .btn_redRain1{ background-image: url($src+"menu/btn_redRain1.png");}
+                .btn_redRain2{ background-image: url($src+"menu/btn_redRain2.png");}
+                .btn_xyzp1{ background-image: url($src+"menu/btn_xyzp1.png");}
+                .btn_xyzp2{ background-image: url($src+"menu/btn_xyzp2.png");}
+                .btn_dailyMission1{ background-image: url($src+"menu/btn_dailyMission1.png");}
+                .btn_dailyMission2{ background-image: url($src+"menu/btn_dailyMission2.png");}
+                .btn_qd1{ background-image: url($src+"menu/btn_qd1.png");}
+                .btn_qd2{ background-image: url($src+"menu/btn_qd2.png");}
+            }
+            .curNavItem{
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-image: url($src+"menu/menu_bg.png");
+                background-size: 100% 100%;
+                color: #fffee6;
+            }
+        }
+        .version{
+            position: absolute;
+            left: 2px;
+            top:220px;
+            height: 10px;
+            width: 20px;
+        }
+    }
+    .content{
+        width: 100px;
+        height: 200px;
+    }
+}
+.flexBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

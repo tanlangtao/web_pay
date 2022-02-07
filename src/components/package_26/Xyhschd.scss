@@ -1,74 +1,44 @@
-$src:'../../asses/activity/package_22/';
+$src:'../../asses/activity/package_26/';
 
-.Xyhschd22{
+.Xyhschd26{
     background-image:url($src+"bg/xyhscBg.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position:0px 0px;
-    width: 320px;
-    height: 180px;
+    width: 292px;
+    height: 200px;
+    margin-left: 5px;
     font-size: 6px;
     color: white;
     position: relative;
-    .guizeBtn{
-        position: absolute;
-        top: 30px;
-        left: 220px;
-        width: 50px;
-        height: 15px;
-        background-image:url($src+"sprite/btn_rule.png");
-        background-repeat: no-repeat;
-        background-size: contain;
-        .guizeMask{
-            width: 280px;
-            height: 110px;
-            position: absolute;
-            left: -210px;
-            top: 16px;
-            background-image:url($src+"bg/ruleBg.png");
-            background-repeat: no-repeat;
-            background-size: 100% 100%;
-            font-size: 5.4px;
-            line-height: 8px;
-            padding-top: 8px;
-            font-weight: bold;
-            color: rgb(201,179,145);
-            p{
-                margin: 0px;
-                width: 270px;
-                margin-left: 5px;
-            }
-        }
-    }
     .group{
         width: 250px;
         height: 80px;
         position: absolute;
-        left: 65px;
-        top: 48px;
+        left: 12px;
+        top: 53px;
         .line{
             display: flex;
-            height: 10.5px;
+            height: 10.6px;
             .li1{
-                width: 42px;
+                width: 46px;
             }
             .li2{
-                width: 48px;
+                width: 46px;
             }
             .li3{
-                width: 45px;
+                width: 40px;
             }
             .li4{
-                width: 38px;
+                width: 32px;
                 .btn_linqu{
-                    width: 22px;
+                    width: 21px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 22px;
+                    width: 21px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
@@ -76,55 +46,67 @@ $src:'../../asses/activity/package_22/';
                 }
             }
         }
-        .title{
-            height: 14px;
-        }
         .label1{
             position: absolute;
             width: 50px;
-            bottom: 42px;
-            left: 87px;
+            bottom: 40px;
+            left: 88px;
         }
         .applyBtn{
             position: absolute;
             width: 30px;
-            height: 10px;
-            bottom: 58px;
-            left: 179px;
-            background-image:url($src+"sprite/btn_apply2.png");
+            height: 15px;
+            bottom: 50px;
+            left: 166px;
+            background-image:url($src+"sprite/apply.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
             width: 30px;
-            height: 10px;
-            bottom: 58px;
-            left: 179px;
-            background-image:url($src+"sprite/btn_apply2.png");
+            height: 15px;
+            bottom: 50px;
+            left: 166px;
+            background-image:url($src+"sprite/apply.png");
             background-repeat: no-repeat;
             background-size: contain;
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%)
         }
         .applyYlingqu{
-            background-image:url($src+"sprite/btn_done2.png");
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
         }
         .applyBtnLabel{
             position: absolute;
             width: 70px;
             height: 20px;
             bottom: 35px;
-            left: 158px;
-            font-size: 5.5px;
+            left: 146px;
+            font-size: 5px;
         }
     }
-    .rule{
+    .ruleBtn{
+        background-image: url($src+"sprite/ruleBtn.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 12px;
         position: absolute;
+        left: 220px;
+        top: 90px;
+    }
+    .rule{
+        background-image: url($src+"sprite/ruleBg3.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 20px;
         width: 240px;
-        left: 62px;
+        height: 120px;
         line-height: 7px;
-        top: 92px;
+        top: 100px;
         color: white;
         p{
             margin: 0rem;

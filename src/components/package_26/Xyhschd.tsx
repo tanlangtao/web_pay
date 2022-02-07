@@ -16,9 +16,9 @@ interface State {
     btnActive :boolean,
     applyBtnInteractable : boolean,
     is_apply : boolean,
-    showGuize:Boolean
+    ruleActive :boolean
 }
-export default class Xyhschd22 extends React.Component<Props,State>{
+export default class Xyhschd26 extends React.Component<Props,State>{
     state = {
         info:{
             flow_rate:0,
@@ -37,7 +37,7 @@ export default class Xyhschd22 extends React.Component<Props,State>{
         frist_pay_amount:0,
         applyBtnInteractable : true,
         is_apply : false,
-        showGuize:false
+        ruleActive:false
     }
     btnIndex= 0 
     componentDidMount(){
@@ -68,10 +68,10 @@ export default class Xyhschd22 extends React.Component<Props,State>{
     onClick =(e:any)=>{
         this.Axios_receiveFristPayGold()
     }
-    guizeClick = ()=>{
+    ruleBtnClick = (e:any)=>{
         this.setState({
-            showGuize:!this.state.showGuize
-        })
+            ruleActive:!this.state.ruleActive
+        }) 
     }
     applyBtnonClick =()=>{
         if(this.state.applyBtnInteractable){
@@ -151,6 +151,7 @@ export default class Xyhschd22 extends React.Component<Props,State>{
     }
     render (){
         let rangeLine = ()=>{
+            
             return  this.state.info.range.map((e:any,index:number) => {
                 return <div className ="line" key={index}>
                     <div className ="li1 flexBox">{e.recharge_amount}</div>
@@ -167,12 +168,12 @@ export default class Xyhschd22 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhschd22" >
+            <div className ="Xyhschd26" >
                 <div className = "group">
-                    <div className="line title"> 
-                        <div className="li1 flexBox" >首充金额</div>
-                        <div className="li2 flexBox" >活动彩金</div>
-                        <div className="li3 flexBox" >提现流水要求</div>
+                    <div className="line"> 
+                        <div className="li1 flexBox" style={{color:"rgb(92,46,0)"}}>首充金额</div>
+                        <div className="li2 flexBox" style={{color:"rgb(92,46,0)"}}>活动彩金</div>
+                        <div className="li3 flexBox" style={{color:"rgb(92,46,0)"}}>提现流水要求</div>
                     </div>
                     {
                         rangeLine()
@@ -190,22 +191,17 @@ export default class Xyhschd22 extends React.Component<Props,State>{
                         <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
                     </div>
                 </div>
-                <div className = "rule">
-                    
-                </div>
-                <div className="guizeBtn" onClick={this.guizeClick}>
-                    {
-                        this.state.showGuize ?<div className="guizeMask">
-                            <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
-                            <p>2. 平台中的新用户活动只能参加一个。</p>
-                            <p>3. 玩家必须充值成功未下注时进行领取，需满足首充金额一倍流水+赠送彩金的{this.state.info.flow_rate}倍流水才能申请兑换。</p>
-                            <p>4. 游戏规则：仅参加以下游戏《财神到》《水果机》《捕鱼 ‧ 海王》《捕鱼 ‧ 聚宝盆》《多福多财》《疯狂漩涡》《CQ9电子游戏》《PT电子游戏》《JDB电子游戏》《PG电子游戏》《PG2电子游戏》《AG电子游戏》《PP电子游戏》《MG电子游戏》。</p>
-                            <p>6. 领取彩金前，进行规定外游戏，将无法领取彩金；领取彩金后，进行规定外游戏，后续提交兑换订单时，系统将会自动扣除彩金部份；领取彩金大于兑换金额，进行规定外游戏，后续将无法提交订单。</p>
-                            <p>7. 同一用户仅限领取一次，恶意套利者将封号处理。</p>
-                            <p>8. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
-                        </div>:null
-                    }
-                </div>
+                <div className = "ruleBtn" onClick={this.ruleBtnClick}></div>
+                {
+                    this.state.ruleActive ? <div className = "rule">
+                        {/* <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
+                        <p>2.平台中的新用户活动只能参加一个，申请后即视为参加此活动。</p>
+                        <p>3. 玩家必须充值成功未下注时进行领取，需满足首充金额一倍流水+赠送彩金的{this.state.info.flow_rate}倍流水才能申请兑换。</p>
+                        <p>4. 游戏规则：仅参加以下游戏《财神到》《水果机》《捕鱼·海王》《捕鱼·聚宝盆》《多福多财》《疯狂旋涡》《CQ9电子游戏》《PT电子游戏》《JDB电子游戏》《PG电子游戏》《AG电子游戏》。</p>
+                        <p>5. 同一用户仅限领取一次，恶意套利者将封号处理。</p>
+                        <p>6. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p> */}
+                    </div> :null
+                }
             </div>
         )
     }

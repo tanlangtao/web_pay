@@ -56,4 +56,6 @@ export const Api ={
     receiveBonusPool:"/api/activity/receiveBonusPool",
     getTopTenLeaderBoardByDate:"/api/activity/getTopTenLeaderBoardByDate",
     receiveTopTenLeaderBoardByDate:"/api/activity/receiveTopTenLeaderBoardByDate",
+    getDailyFirstPay:"/api/activity/getDailyFirstPay",
+    receiveDailyFirstPay:"/api/activity/receiveDailyFirstPay",
 }

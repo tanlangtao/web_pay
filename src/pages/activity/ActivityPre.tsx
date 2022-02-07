@@ -17,6 +17,8 @@ import Activity19 from './package_19/Activity';
 import Activity20 from './package_20/Activity';
 import Activity21 from './package_21/Activity';
 import Activity22 from './package_22/Activity';
+import Activity25 from './package_25/Activity';
+import Activity26 from './package_26/Activity';
 interface State{
 }
 export default class ActivityPre extends Component<{}, State> {
@@ -40,7 +42,9 @@ export default class ActivityPre extends Component<{}, State> {
                                                                     gHandler.UrlData.package_id==='20' ?<Activity20/>:
                                                                         gHandler.UrlData.package_id==='21' ?<Activity21/>:
                                                                             gHandler.UrlData.package_id==='22' ?<Activity22/>:
-                                                                                <Activity18></Activity18>   
+                                                                                gHandler.UrlData.package_id==='25' ?<Activity25/>:
+                                                                                    gHandler.UrlData.package_id==='26' ?<Activity26/>:
+                                                                                        <Activity18></Activity18>    
                 )
         )
     }

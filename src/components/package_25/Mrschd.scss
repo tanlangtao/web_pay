@@ -1,0 +1,130 @@
+$src:'../../asses/activity/package_25/';
+
+.Mrschd25{
+    background-image:url($src+"bg/mrsc.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 300px;
+    height: 185px;
+    font-size: 5px;
+    color: white;
+    position: relative;
+    .group{
+        width: 200px;
+        height: 100px;
+        position: absolute;
+        left: 26px;
+        top: 39px;
+        .title{
+        }
+        .line{
+            display: flex;
+            height: 10.2px;
+            .li1{
+                width: 30px;
+            }
+            .li2{
+                width: 34px;
+            }
+            .li3{
+                width: 35px;
+            }
+            .li4{
+                width: 35px;
+                .btn_linqu{
+                    width: 22px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 22px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .label1{
+            position: absolute;
+            width: 50px;
+            bottom: 55px;
+            left: 58px;
+        }
+        .applyBtn{
+            position: absolute;
+            width: 30px;
+            height: 12px;
+            bottom: 60px;
+            left: 135px;
+            background-image:url($src+"sprite/applyBtn.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .applyFilter{
+            position: absolute;
+            width: 30px;
+            height: 12px;
+            bottom: 60px;
+            left: 135px;
+            background-image:url($src+"sprite/applyBtn.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyYlingqu{
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
+        }
+        .applyBtnLabel{
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            bottom: 40px;
+            left: 126px;
+        }
+    }
+    .guizeBtn{
+        position: absolute;
+        top: 20px;
+        left: 235px;
+        width: 35px;
+        height: 10px;
+        background-image:url($src+"sprite/ruleBtn.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 180px;
+            height: 100px;
+            position: absolute;
+            left: -140px;
+            top: 12px;
+            background-image:url($src+"sprite/ruleBg.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: white;
+            font-size: 5.5px;
+            line-height: 7.5px;
+            padding-top: 8px;
+            p{
+                margin: 0px;
+                width: 165px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 290px;
+        left: 5px;
+        line-height: 6px;
+        top: 118px;
+        p{
+            margin: 0px
+        }
+    }
+}

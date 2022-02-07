@@ -1,0 +1,85 @@
+$src:'../../asses/activity/package_26/';
+
+.Lyhsc26{
+    background-image: url($src+"bg/lyhscBg.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 292px;
+    height: 200px;
+    margin-left: 5px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .group{
+        width: 140px;
+        height: 100px;
+        position: absolute;
+        left: 147px;
+        top: 50px;
+        .line{
+            display: flex;
+            height: 10.1px;
+            .li1{
+                width: 30px;
+            }
+            .li2{
+                width: 35px;
+            }
+            .li3{
+                width: 35px;
+            }
+            .li4{
+                width: 32px;
+                .btn_linqu{
+                    width: 21px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 21px;
+                    height: 10px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .titile{
+            height: 11px;
+        }
+        .label1{
+            position: absolute;
+            left: 67px;
+            top: 20px;
+        }
+    }
+    .ruleBtn{
+        background-image: url($src+"sprite/ruleBtn.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 40px;
+        height: 12px;
+        position: absolute;
+        left: 110px;
+        top: 100px;
+    }
+    .rule{
+        background-image: url($src+"sprite/ruleBg2.png") ;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        width: 220px;
+        height: 120px;
+        left: 60px;
+        line-height: 7.5px;
+        top: 110px;
+        color: #FEFFC9;
+        padding-top: 10px;
+        p{
+
+            margin: 5px;
+        }
+    }
+}
