@@ -15,10 +15,9 @@ interface State {
     is_received:number,
     btnActive :boolean,
     applyBtnInteractable : boolean,
-    is_apply : boolean,
-    ruleActive:boolean
+    is_apply : boolean
 }
-export default class Lyhsc26 extends React.Component<Props,State>{
+export default class Lyhsc29 extends React.Component<Props,State>{
     state = {
         info:{
             range:[
@@ -33,8 +32,7 @@ export default class Lyhsc26 extends React.Component<Props,State>{
         pay_amount_byday:0,
         btnActive :false,
         applyBtnInteractable : true,
-        is_apply : false,
-        ruleActive:false
+        is_apply : false
     }
     btnIndex= 0 
     componentDidMount(){
@@ -46,7 +44,7 @@ export default class Lyhsc26 extends React.Component<Props,State>{
         this.Axios_getPayAmountByDay()
     }
     renderBtn(){
-        if( this.state.pay_amount_byday!==0){
+        if(this.state.pay_amount_byday!==0){
             this.state.info.range.forEach((item,index)=>{
                 if(this.state.pay_amount_byday >= item.recharge_amount) {
                     this.btnIndex = index
@@ -64,11 +62,6 @@ export default class Lyhsc26 extends React.Component<Props,State>{
     }
     onClick =(e:any)=>{
         this.Axios_receivePaymentGold()
-    }
-    ruleBtnClick = (e:any)=>{
-        this.setState({
-            ruleActive:!this.state.ruleActive
-        }) 
     }
     applyBtnonClick =()=>{
         if(this.state.applyBtnInteractable){
@@ -154,7 +147,7 @@ export default class Lyhsc26 extends React.Component<Props,State>{
                     <div className ="li3 flexBox"></div>
                     <div className ="li4 flexBox"> 
                         {
-                            this.state.btnActive  && this.btnIndex === index ?<div className = { this.state.is_received===1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
+                            this.state.btnActive && this.btnIndex === index ?<div className = { this.state.is_received===1 ? `btn_Ylinqu`:"btn_linqu" } data-index={index} 
                                 onClick={this.onClick}
                             ></div> :null
                         }
@@ -163,13 +156,18 @@ export default class Lyhsc26 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhsc26" >
+            <div className ="Lyhsc29" >
                 <div className = "group">
+                    <div className="line title">
+                        <div className ="li1 flexBox" >充值金额</div>
+                        <div className ="li2 flexBox" >赠送金额</div>
+                        <div className ="li3 flexBox" >流水要求</div>
+                    </div>
                     {
                         rangeLine()
                     }
                     <div className ="label1 ">
-                        <div className="flexBox">本金1倍+</div>
+                        <div className="flexBox">本金1倍</div>
                         <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
                     </div>
                     {/* <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
@@ -181,40 +179,17 @@ export default class Lyhsc26 extends React.Component<Props,State>{
                         <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
                     </div> */}
                 </div>
-                <div className = "ruleBtn" onClick={this.ruleBtnClick}></div>
-                {
-                    this.state.ruleActive ? <div className = "rule">
-                        {/* <p>1. 本活动需要完成手机和银行卡绑定后才能参与。</p>
-                        <p>2. 每日首笔充值金额达到对应档位，即可前往活动界面领取活动规定的相应金币。</p>
-                        <p>3. 每日23:59:59，活动计算的当日充值金额累加归零。</p>
-                        <p>4. 每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
-                        <p>5. 平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p> */}
-                    </div> :null
-                }
+                <div className = "rule">
+                    <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
+                    <p>2.游戏规则：仅参加以下游戏《财神到》《水果机》《海王捕鱼》《聚宝盆捕鱼》《多福多财》《疯狂漩涡》《CQ9电子游戏》《AG电子游戏》《PT电子游戏》《JDB电子游戏》《PG电子游戏》《PG2电子游戏》《PP电子游戏》《MG电子游戏》。</p>
+                    <p>3.单日充值金额累加统计，单日累计充值金额达到指定档位，即可领取活动规定的相应金币。</p>
+                    <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
+                    <p>5.每一个账号（同一ip，同一设备，同一姓名视为一个账号）每天只能领取一次。</p>
+                    <p>6.平台拥有最终解释权，严禁一切恶意行为，出现违规情况，一律封号处理；同时平台有权根据实际情况，随时调整活动内容。</p>
+                </div>
             </div>
         )
     }
-    // ApplyBtnInit(){
-    //     let h = new Date().getHours()
-    //     if(this.getLocal()){
-    //         if(h < this.state.info.start || h >= this.state.info.end){
-    //             this.setState({
-    //                 applyBtnInteractable:false
-    //             })
-    //         }else{
-    //             this.setState({
-    //                 applyBtnInteractable:true
-    //             })
-    //         }
-    //         this.setState({
-    //             is_apply:false
-    //         })
-    //     }else{
-    //         this.setState({
-    //             is_apply:true
-    //         })
-    //     }
-    // }
     getLocal(){
         let local = localStorage.getItem(`ApplyLyhsc_${gHandler.UrlData.user_id}`)
         if(local){

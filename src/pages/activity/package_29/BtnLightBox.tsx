@@ -5,7 +5,7 @@ import './Activity.scss';
 interface State{
     btn_light_left:number
 }
-export default class BtnLightBox extends Component<{}, State> {
+export default class BtnLightBox29 extends Component<{}, State> {
     state = {
         btn_light_left:-100
     }

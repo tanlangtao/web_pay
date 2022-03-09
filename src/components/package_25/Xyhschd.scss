@@ -1,26 +1,24 @@
 $src:'../../asses/activity/package_25/';
 
-.Mrschd25{
-    background-image:url($src+"bg/mrsc.png");
+.Xyhschd25{
+    background-image:url($src+"bg/xyhsc.png");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: 0px;
+    background-size: contain;
     width: 300px;
-    height: 185px;
-    font-size: 5px;
+    height: 200px;
+    margin-left: 0px;
+    font-size: 6px;
     color: white;
     position: relative;
     .group{
-        width: 200px;
-        height: 100px;
+        width: 250px;
+        height: 80px;
         position: absolute;
-        left: 26px;
-        top: 39px;
-        .title{
-        }
+        left: 8px;
+        top: 44px;
         .line{
             display: flex;
-            height: 10.35px;
+            height: 10.6px;
             .li1{
                 width: 30px;
             }
@@ -28,19 +26,19 @@ $src:'../../asses/activity/package_25/';
                 width: 34px;
             }
             .li3{
-                width: 35px;
+                width: 44px;
             }
             .li4{
-                width: 35px;
+                width: 34px;
                 .btn_linqu{
-                    width: 22px;
+                    width: 21px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 22px;
+                    width: 21px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
@@ -50,27 +48,27 @@ $src:'../../asses/activity/package_25/';
         }
         .label1{
             position: absolute;
-            width: 50px;
-            bottom: 55px;
-            left: 58px;
+            width: 40px;
+            bottom: 40px;
+            left: 67px;
         }
         .applyBtn{
             position: absolute;
             width: 30px;
-            height: 12px;
-            bottom: 60px;
-            left: 135px;
-            background-image:url($src+"sprite/applyBtn.png");
+            height: 15px;
+            bottom: 50px;
+            left: 150px;
+            background-image:url($src+"sprite/btnApply2.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
             width: 30px;
-            height: 12px;
-            bottom: 60px;
-            left: 135px;
-            background-image:url($src+"sprite/applyBtn.png");
+            height: 15px;
+            bottom: 50px;
+            left: 150px;
+            background-image:url($src+"sprite/btnApply2.png");
             background-repeat: no-repeat;
             background-size: contain;
             -webkit-filter: grayscale(100%);
@@ -82,49 +80,33 @@ $src:'../../asses/activity/package_25/';
         }
         .applyBtnLabel{
             position: absolute;
-            width: 50px;
+            width: 70px;
             height: 20px;
-            bottom: 40px;
-            left: 126px;
+            bottom: 35px;
+            left: 130px;
+            font-size: 5px;
         }
     }
-    .guizeBtn{
-        position: absolute;
-        top: 20px;
-        left: 235px;
-        width: 35px;
-        height: 10px;
-        background-image:url($src+"sprite/ruleBtn.png");
+    .ruleBtn{
+        background-image: url($src+"sprite/ruleBtn.png") ;
         background-repeat: no-repeat;
         background-size: contain;
-        .guizeMask{
-            width: 180px;
-            height: 100px;
-            position: absolute;
-            left: -140px;
-            top: 12px;
-            background-image:url($src+"sprite/ruleBg.png");
-            background-repeat: no-repeat;
-            background-size: contain;
-            color: white;
-            font-size: 5.5px;
-            line-height: 7.5px;
-            padding-top: 8px;
-            p{
-                margin: 0px;
-                width: 165px;
-                margin-left: 5px;
-            }
-        }
+        width: 40px;
+        height: 12px;
+        position: absolute;
+        left: 220px;
+        top: 90px;
     }
     .rule{
         position: absolute;
-        width: 290px;
-        left: 5px;
-        line-height: 6px;
-        top: 118px;
+        left: 10px;
+        width: 280px;
+        height: 70px;
+        line-height: 7px;
+        top: 110px;
+        color: white;
         p{
-            margin: 0px
+            margin: 0rem;
         }
     }
 }

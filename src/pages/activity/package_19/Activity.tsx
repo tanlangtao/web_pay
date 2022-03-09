@@ -147,13 +147,9 @@ export default class Activity19 extends Component<{}, State> {
                         {
                             (this.state.title==='新用户首存活动19' ? <Xyhschd19 curData={this.state.curData}/>:
                                 (this.state.title==='老用户首存活动19' ? <Lyhsc19 curData={this.state.curData}/>:
-                                    (this.state.title==='注册送佣金6' ? <Zcsyj curData={this.state.curData}/>:
-                                        (this.state.title==='新用户包赔活动19' ? <Xyhbp19 curData={this.state.curData}/>:
-                                            (this.state.title==='每日免费礼金19' ? <DailySign19 curData={this.state.curData}/>:
-                                                (this.state.title==='日业绩活动6' ? <Ryjhd6 curData={this.state.curData}/>:
-                                                    <div></div>
-                                                )
-                                            )
+                                    (this.state.title==='新用户包赔活动19' ? <Xyhbp19 curData={this.state.curData}/>:
+                                        (this.state.title==='每日免费礼金19' ? <DailySign19 curData={this.state.curData}/>:
+                                            <div></div>
                                         )
                                     )
                                 )

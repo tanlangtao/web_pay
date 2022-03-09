@@ -1,0 +1,136 @@
+$src:'../../../asses/activity/package_16/';
+.Activity29{
+    font-family: 'Microsoft Yahei';
+    font-size: 6.5px;
+    background: rgb(58,57,55);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select:none;
+    touch-action:none;
+    .headerBox{
+        margin-top: 6px;
+        margin-bottom: 10px;
+        width: 100%;
+        height: 30px;
+        background: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .contentBox{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 185px;
+    }
+    .sider{
+        background:transparent;
+        width: 63px;
+        height: 180px;
+        margin-left: 2px;
+        margin-right: 5px;
+        .navBoxBg{
+            height: 180px;
+            width: 64px;
+            color: white;
+            background-image:url($src+"sprite/huodonNav.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            padding-top: 170px;
+            .version{
+                height: 8px;
+                width: 20px;
+                color: black;
+            }
+        }
+        .navBox{
+            height: 180px;
+            width: 67px;
+            color: white;
+            .navItem{
+                width: 66px;
+                height: 24px;
+                background-image: url($src+"sprite/youceweixuanzhong.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                color: rgb(197,171,142);
+                .navText{
+                    height: 7px;
+                    width:55px;
+                    line-height: 11px;
+                    justify-content: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    font-weight: bold;
+                    p{
+                        margin: 0px;
+                    }
+                }
+            }
+            .curNavItem{
+                width: 67px;
+                background-image: url($src+"sprite/youcexuanzhong.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                height: 24px;
+                color: rgb(62,16,0);
+            }
+            
+            .btn_lightBox{
+                width: 67px;
+                height: 24px;
+                position: absolute;
+                left: 0px;
+            }
+            .btn_light{
+                background-image: url($src+"sprite/btn_light.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 67px;
+                height: 24px;
+                position: relative;
+            }
+            .rightTopMask{
+                width: 20px;
+                height: 30px;
+                transform: rotate(74deg);
+                overflow: hidden;
+                background: rgb(58,57,55);
+                position: absolute;
+                right: -24px;
+                top:-10px;
+            }
+            .rightTopMask::before{
+                position: absolute;
+                content: '';
+                top: 0;left: 0;right: 0;bottom: 0;
+                transform: skewX(-45deg);
+                z-index: -1;
+            }
+            .rightBottomMask{
+                width: 20px;
+                height: 30px;
+                transform: rotate(-74deg);
+                overflow: hidden;
+                background: rgb(58,57,55);
+                position: absolute;
+                right: -24px;
+                bottom:-10px;
+            }
+        }
+    }
+    .content{
+        width: 356px;
+        height: 210px;
+        justify-self: start;
+    }
+    
+}
+.flexBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

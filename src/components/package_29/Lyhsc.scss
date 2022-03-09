@@ -1,0 +1,72 @@
+$src:'../../asses/activity/package_29/';
+
+.Lyhsc29{
+    background-image: url($src+"bg/lyhscBg.png") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+    width: 305px;
+    height: 182px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .group{
+        width: 190px;
+        height: 100px;
+        position: absolute;
+        left: 10px;
+        top: 33px;
+        
+        .line{
+            display: flex;
+            height: 10.4px;
+            .li1{
+                width: 41px;
+            }
+            .li2{
+                width: 48px;
+            }
+            .li3{
+                width: 46px;
+            }
+            .li4{
+                width: 36px;
+                margin-top: 1.5px;
+                .btn_linqu{
+                    width: 20px;
+                    height: 9px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 20px;
+                    height: 9px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .title{
+            color: rgb(62,39,0);
+            height:14px;
+        }
+        .label1{
+            position: absolute;
+            left: 96px;
+            top: 32px;
+        }
+    }
+    .rule{
+        position: absolute;
+        width: 266px;
+        left: 15px;
+        line-height: 6.8px;
+        top: 115px;
+        color: #e6d6b1;
+        p{
+            margin: 0px;
+        }
+    }
+}

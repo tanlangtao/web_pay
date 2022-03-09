@@ -1,0 +1,151 @@
+$src:'../../asses/activity/package_29/';
+
+.DailySign29{
+    background-image:url($src+"bg/mrmflj.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 293px;
+    height: 200px;
+    color: white;
+    position: relative;
+    .guizeBtn{
+        position: absolute;
+        top: 20px;
+        left: 230px;
+        width: 50px;
+        height: 15px;
+        background-image:url($src+"sprite/guizeBtn2.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 240px;
+            height: 110px;
+            position: absolute;
+            left: -190px;
+            top: 16px;
+            background-image:url($src+"bg/ruleBg.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            font-size: 7px;
+            line-height: 10px;
+            padding-top: 12px;
+            font-weight: bold;
+            color: #e6d6b1;
+            p{
+                margin: 0px;
+                width: 230px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .group{
+        width: 260px;
+        height: 130px;
+        position: relative;
+        left: 16px;
+        top:45px;
+        font-size: 9px;
+        display: flex;
+        flex-wrap: wrap;
+        .li1{
+            margin-right: 8px;
+            width: 52px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            position: relative;
+        }
+        .font{
+            height: 12px;
+            width: 50px;
+            margin-left: 2px;
+            margin-top: 2px;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .icon{
+            width: 52px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            position: relative;
+            .lingqu{
+                width: 52px;
+                height: 60px;
+                position: relative;
+            }
+            .yilingqu{
+                background-image:url($src+"sprite/check_mask.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 52px;
+                height: 60px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            .waitToCheck{
+                background-image:url($src+"sprite/waitToCheck.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 20px;
+                height: 10px;
+                position: absolute;
+                left:15px;
+                top: 44px;
+            }
+            .foot{
+                height: 10px;
+                width: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content:center;
+                position: absolute;
+                bottom: -1px;
+                left: 0px;
+                .jinbi{
+                    background-image:url($src+"sprite/icon_gold.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 8px;
+                    height: 8px;
+                }
+                .zi{
+                    font-size: 7px;
+                    color: rgb(255,229,98);
+                    font-weight: bold;
+                    line-height: 8px;
+                }
+            }
+        }
+        
+        
+        .icon1{
+            background-image:url($src+"sprite/day1.png");
+        }
+        .icon2{
+            background-image:url($src+"sprite/day2.png");
+        }
+        .icon3{
+            background-image:url($src+"sprite/day3.png");
+        }
+        .icon4{
+            background-image:url($src+"sprite/day4.png");
+        }
+        .icon5{
+            background-image:url($src+"sprite/day5.png");
+        }
+        .icon6{
+            background-image:url($src+"sprite/day6.png");
+        }
+        .icon7{
+            background-image:url($src+"sprite/day7.png");
+        }
+    }
+}
