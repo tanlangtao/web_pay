@@ -135,7 +135,7 @@ export default class DailySign19 extends React.Component<Props,State>{
                         this.state.showGuize ?<div className="guizeMask">
                             <p>1. 用户需要绑定银行卡方可参加此活动。</p>
                             <p>2. 昨日活跃用户， 次日可领取免费礼金3.80金币， 可连续领取7日礼金，兑换无流水限制。</p>
-                            <p>3. 活跃用户定义：玩家单日有效投注满200即可（沙巴体育，真人视讯，彩票游戏不参与统计）。</p>
+                            <p>3. 活跃用户定义：玩家单日有效投注满200即可（沙巴体育，三昇体育，视讯龙虎斗，视讯百家乐，彩票游戏不参与统计）。</p>
                             <p>4. 同一用户仅限领取一次，恶意套利者将封号处理。</p>
                             <p>5. 平台拥有最终解释权。</p>
                         </div>:null

@@ -25,6 +25,7 @@ import DailySign25 from 'components/package_25/DailySign';
 import Xyhschd25 from 'components/package_25/Xyhschd';
 import Mrschd25 from 'components/package_25/Mrschd';
 import Lyhsc25 from 'components/package_25/Lyhsc';
+import Xyhbp25 from 'components/package_25/Xyhbp';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -161,9 +162,11 @@ export default class Activity25 extends Component<{}, State> {
                         {
                             (this.state.title==='每日免费礼金25' ? <DailySign25 curData={this.state.curData}/>:
                                 (this.state.title==='每日首存活动25' ? <Mrschd25 curData={this.state.curData}/>:
-                                    (this.state.title==='新用户首存25' ? <Xyhschd25 curData={this.state.curData}/>:
-                                        (this.state.title==='老用户首存25' ? <Lyhsc25 curData={this.state.curData}/>:
-                                            <div></div>
+                                    (this.state.title==='新用户首存活动25' ? <Xyhschd25 curData={this.state.curData}/>:
+                                        (this.state.title==='老用户首存活动25' ? <Lyhsc25 curData={this.state.curData}/>:
+                                            (this.state.title==='新用户包赔活动25' ? <Xyhbp25 curData={this.state.curData}/>:
+                                                <div></div>
+                                            )
                                         )
                                     )
                                 )
