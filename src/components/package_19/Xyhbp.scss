@@ -6,15 +6,15 @@ $src:'../../asses/activity/package_19/';
     background-size: contain;
     background-position:-0px -0px;
     width: 300px;
-    height: 178px;
+    height: 179px;
     margin-left: 5px;
     font-size: 5px;
     color: white;
     position: relative;
     .guizeBtn{
         position: absolute;
-        top: 60px;
-        left: 220px;
+        top: 74px;
+        left: 225px;
         width: 35px;
         height: 20px;
         background-image:url($src+"sprite/ruleBtn2.png");
@@ -26,7 +26,7 @@ $src:'../../asses/activity/package_19/';
             position: absolute;
             left: -200px;
             top: 12px;
-            background-image:url($src+"sprite/rule_bg.png");
+            background-image:url($src+"sprite/rule_bg2.png");
             background-repeat: no-repeat;
             background-size: contain;
             color: rgb(207,194,173);
@@ -44,35 +44,37 @@ $src:'../../asses/activity/package_19/';
         width: 300px;
         height: 71px;
         position: absolute;
-        left: 12px;
-        top:58px;
+        left: 14px;
+        top:54px;
         position: relative;
+        font-size: 7px;
         .line{
             display: flex;
-            height: 10px;
+            height: 9.8px;
             .li1{
                 width: 32px;
             }
             .li2{
-                width: 34px;
+                width: 35px;
             }
             .li3{
-                width: 38px;
+                width: 40px;
             }
             .li4{
-                width: 36px;
+                width: 38px;
             }
             .li5{
-                width: 30px;
+                width: 32px;
+                margin-left: 4px;
                 .btn_linqu{
-                    width: 20px;
+                    width: 30px;
                     height: 9px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 20px;
+                    width: 30px;
                     height: 9px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
@@ -85,7 +87,7 @@ $src:'../../asses/activity/package_19/';
             width: 25px;
             height: 10px;
             top: 10px;
-            left: 175px;
+            left: 182px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -95,7 +97,7 @@ $src:'../../asses/activity/package_19/';
             width: 25px;
             height: 10px;
             top: 10px;
-            left: 175px;
+            left: 182px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -103,14 +105,15 @@ $src:'../../asses/activity/package_19/';
             filter: grayscale(100%)
         }
         .applyYlingqu{
-            background-image:url($src+"sprite/btn_done2.png");
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
         }
         .applyBtnLabel{
             position: absolute;
             width: 40px;
             height: 20px;
             top: 18px;
-            left: 167px;
+            left: 175px;
             font-size: 5px;
             line-height: 6px;
         }

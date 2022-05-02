@@ -189,10 +189,6 @@ export default class Xyhbp19 extends React.Component<Props,State>{
             <div className ="Xyhbp19" >
                 <div className = "group">
                     <div className ="line">
-                        <div className ="li1 flexBox" style={{color:"#E8B56F"}}>首充金额</div>
-                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>包赔金额</div>
-                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>最高兑换金额</div>
-                        <div className ="li4 flexBox" style={{color:"#E8B56F"}}>限制最高注</div>
                     </div>
                     {
                         rangeLine()
@@ -212,13 +208,6 @@ export default class Xyhbp19 extends React.Component<Props,State>{
                 <div className="guizeBtn" onClick={this.guizeClick}>
                     {
                         this.state.showGuize ?<div className="guizeMask">
-                            <p>1. 新注册玩家完成手机以及银行卡绑定后前往当前活动进行申请， 申请开放时间为每天{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}。所有未进行申请的玩家无法领取活动彩金。</p>
-                            <p>2. 平台中的新玩家活动只能参加其中一个。</p>
-                            <p>3. 参加活动的玩家只能进行《财神到》《捕鱼·聚宝盆》《捕鱼·海王》《水果机》游戏，进行其他游戏视为放弃活动。</p>
-                            <p>4. 在规定游戏中投注对应档位最高单注金额内，亏损至余额低于10金币时即可在本活动界面领取活动彩金，活动彩金无需流水可直接申请兑换，当日23:59:59未领取视为自动放弃。</p>
-                            <p>5. 赢金到规定金额不兑换视为放弃包赔资格（输完不赔付）。</p>
-                            <p>6. 同一用户仅限领取一次，恶意套利者将封号处理。</p>
-                            <p>7. 平台拥有最终解释权。</p>
                         </div>:null
                     }
                 </div>

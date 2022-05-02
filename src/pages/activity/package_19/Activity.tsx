@@ -4,19 +4,15 @@ import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
 import {ConfigItem} from '../../../interface/activity_interface';
-import '../package_11/Activity.scss';
+import '../package_2/Activity.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
-import Zcsyj from 'components/package_6/Zcsyj';
-import Ryjhd6 from 'components/package_6/Ryjhd';
 import Xyhschd19 from 'components/package_19/Xyhschd';
 import Lyhsc19 from 'components/package_19/Lyhsc';
 import Xyhbp19 from 'components/package_19/Xyhbp';
-import DailySign19 from 'components/package_19/DailySign';
-import Kyzcs19 from 'components/package_19/Kyzcs';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -114,11 +110,11 @@ export default class Activity19 extends Component<{}, State> {
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity11'>
+            return <div className='activity2'>
             </div>
         }
         return (
-            !this.state.loading?<div className='activity11'>
+            !this.state.loading?<div className='activity2'>
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
@@ -149,11 +145,7 @@ export default class Activity19 extends Component<{}, State> {
                             (this.state.title==='新用户首存活动19' ? <Xyhschd19 curData={this.state.curData}/>:
                                 (this.state.title==='老用户首存活动19' ? <Lyhsc19 curData={this.state.curData}/>:
                                     (this.state.title==='新用户包赔活动19' ? <Xyhbp19 curData={this.state.curData}/>:
-                                        (this.state.title==='每日免费礼金19' ? <DailySign19 curData={this.state.curData}/>:
-                                            (this.state.title==='注册送38元19' ? <Kyzcs19 curData={this.state.curData}/>:
-                                                <div></div>
-                                            )
-                                        )
+                                        <div></div>
                                     )
                                 )
                             )

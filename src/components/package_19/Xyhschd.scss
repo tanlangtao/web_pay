@@ -5,7 +5,7 @@ $src:'../../asses/activity/package_19/';
     background-repeat: no-repeat;
     background-size: contain;
     background-position:-0px -0px;
-    width: 300px;
+    width: 292px;
     height: 195px;
     margin-left: 5px;
     font-size: 5px;
@@ -13,7 +13,7 @@ $src:'../../asses/activity/package_19/';
     position: relative;
     .guizeBtn{
         position: absolute;
-        top: 15px;
+        top: 20px;
         left: 230px;
         width: 35px;
         height: 20px;
@@ -41,15 +41,13 @@ $src:'../../asses/activity/package_19/';
         }
     }
     .group{
-        background-image:url($src+"sprite/group.png");
-        background-repeat: no-repeat;
-        background-size: contain;
         width: 210px;
         height: 80px;
         position: absolute;
-        left:66px;
-        top: 50px;
+        left:67px;
+        top: 49px;
         padding-top: 1px;
+        font-size: 7px;
         .line{
             display: flex;
             height: 10.8px;
@@ -63,16 +61,16 @@ $src:'../../asses/activity/package_19/';
                 width: 42px;
             }
             .li4{
-                width: 35px;
+                width: 40px;
                 .btn_linqu{
-                    width: 22px;
+                    width: 28px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 22px;
+                    width: 28px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
@@ -84,14 +82,14 @@ $src:'../../asses/activity/package_19/';
             position: absolute;
             width: 50px;
             bottom: 42px;
-            left: 83px;
+            left: 86px;
         }
         .applyBtn{
             position: absolute;
             width: 30px;
             height: 10px;
             bottom: 55px;
-            left: 173px;
+            left: 178px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -101,7 +99,7 @@ $src:'../../asses/activity/package_19/';
             width: 30px;
             height: 10px;
             bottom: 55px;
-            left: 173px;
+            left: 178px;
             background-image:url($src+"sprite/btn_apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
@@ -109,14 +107,15 @@ $src:'../../asses/activity/package_19/';
             filter: grayscale(100%)
         }
         .applyYlingqu{
-            background-image:url($src+"sprite/btn_done2.png");
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%)
         }
         .applyBtnLabel{
             position: absolute;
             width: 70px;
             height: 20px;
             bottom: 35px;
-            left: 153px;
+            left: 158px;
             font-size: 5px;
         }
     }

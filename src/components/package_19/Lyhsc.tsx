@@ -158,11 +158,6 @@ export default class Lyhsc19 extends React.Component<Props,State>{
         return (
             <div className ="Lyhsc19" >
                 <div className = "group">
-                    <div className="line">
-                        <div className ="li1 flexBox" style={{color:"#E8B56F"}}>充值金额</div>
-                        <div className ="li2 flexBox" style={{color:"#E8B56F"}}>赠送金额</div>
-                        <div className ="li3 flexBox" style={{color:"#E8B56F"}}>流水要求</div>
-                    </div>
                     {
                         rangeLine()
                     }
@@ -170,47 +165,12 @@ export default class Lyhsc19 extends React.Component<Props,State>{
                         <div className="flexBox">本金1倍</div>
                         <div className="flexBox">彩金{this.state.info.flow_rate}倍流水</div>
                     </div>
-                    {/* <div className ={ `applyBtn ${this.applyBtnInteractable ?"":"applyFilter"} ${this.is_apply?"applyYlingqu":''}`} onClick={()=>{
-                        console.log("申请")
-                        this.applyBtnonClick()
-                    }}></div>
-                    <div className ="applyBtnLabel">
-                        <div className="flexBox">开放时间</div>
-                        <div className="flexBox">{gHandler.transitionTime(this.state.info.start)}-{gHandler.transitionTime(this.state.info.end)}</div>
-                    </div> */}
                 </div>
                 <div className = "rule">
-                    <p>1.本活动需要完成手机和银行卡绑定后才能参与。</p>
-                    <p>2.游戏规则：仅参加以下游戏《财神到》《水果机》《捕鱼·海王》《捕鱼·聚宝盆》《多福多财》《疯狂旋涡》《PG电子游戏》《PG2电子游戏》《CQ9电子游戏》《JDB电子游戏》《AG电子游戏》《PT电子游戏》《PP电子游戏》《MG电子游戏》《QT电子游戏》。</p>
-                    <p>3.单日充值金额累加统计，达到指定档位即可前往活动界面领取活动规定的彩金。</p>
-                    <p>4.每日23:59:59，活动计算的当日充值金额累加归零。</p>
-                    <p>5.同一用户每天仅限领取一次，恶意套利者将封号处理。</p>
-                    <p>6.平台拥有最终解释权。</p>
                 </div>
             </div>
         )
     }
-    // ApplyBtnInit(){
-    //     let h = new Date().getHours()
-    //     if(this.getLocal()){
-    //         if(h < this.state.info.start || h >= this.state.info.end){
-    //             this.setState({
-    //                 applyBtnInteractable:false
-    //             })
-    //         }else{
-    //             this.setState({
-    //                 applyBtnInteractable:true
-    //             })
-    //         }
-    //         this.setState({
-    //             is_apply:false
-    //         })
-    //     }else{
-    //         this.setState({
-    //             is_apply:true
-    //         })
-    //     }
-    // }
     getLocal(){
         let local = localStorage.getItem(`ApplyLyhsc_${gHandler.UrlData.user_id}`)
         if(local){
