@@ -20,6 +20,7 @@ import Activity22 from './package_22/Activity';
 import Activity25 from './package_25/Activity';
 import Activity26 from './package_26/Activity';
 import Activity29 from './package_29/Activity';
+import Activity35 from './package_35/Activity';
 interface State{
 }
 export default class ActivityPre extends Component<{}, State> {
@@ -46,7 +47,8 @@ export default class ActivityPre extends Component<{}, State> {
                                                                                 gHandler.UrlData.package_id==='25' ?<Activity25/>:
                                                                                     gHandler.UrlData.package_id==='26' ?<Activity26/>:
                                                                                         gHandler.UrlData.package_id==='29' ?<Activity29/>:
-                                                                                            <Activity18></Activity18>    
+                                                                                            gHandler.UrlData.package_id==='35' ?<Activity35/>:
+                                                                                                <Activity18></Activity18>       
                 )
         )
     }
@@ -58,6 +60,10 @@ export default class ActivityPre extends Component<{}, State> {
             body.style.marginTop = `-99px`
         }else if(scale===1.3){
             body.style.marginTop = `-60px`
+        }else if(scale == 2.6){
+            body.style.marginTop = `-220px`
+        }else if(scale == 1.95){
+            body.style.marginTop = `-145px`
         }
     }
 }

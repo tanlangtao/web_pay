@@ -1,0 +1,78 @@
+$src:'../../asses/activity/package_35/';
+
+.Lyhsc35{
+    background-image: url($src+"bg/lyhscBg.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+    width: 305px;
+    height: 182px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .group{
+        width: 145px;
+        height: 65px;
+        position: absolute;
+        left: 5px;
+        top: 42px;
+        .line{
+            display: flex;
+            height: 12.2px;
+            .li1{
+                width: 36px;
+            }
+            .li2{
+                width: 36px;
+            }
+            .li3{
+                width: 34px;
+            }
+            .li4{
+                width: 38px;
+                margin-top: 1.5px;
+                
+                .btn_linqu{
+                    width: 34px;
+                    height: 12px;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 34px;
+                    height: 12px;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+        .label1{
+            position: absolute;
+            left: 96px;
+            top: 27px;
+        }
+    }
+    .liushui{
+        position: absolute;
+        width: 30px;
+        height: 60px;
+        top: 42px;
+        left: 80px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .rule{
+        position: absolute;
+        width: 266px;
+        left: 15px;
+        line-height: 7px;
+        top: 112px;
+        color: #e6d6b1;
+        p{
+            margin: 0px;
+        }
+    }
+}

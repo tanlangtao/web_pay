@@ -1,0 +1,26 @@
+$src:'../../asses/activity/package_19/';
+
+.Jtfl19{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: 0px;
+    width: 295px;
+    height: 180px;
+    font-size: 5px;
+    margin-left: 3px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding-top: 2px;
+    .bg{
+        background-image:url($src+"bg/jtfl.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 0px 0px;
+        width: 290px;
+        height: 1000px;
+        margin-left: 2px;
+        color: white;
+        position: relative;
+    }
+}

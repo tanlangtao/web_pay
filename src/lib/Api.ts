@@ -58,4 +58,12 @@ export const Api ={
     receiveTopTenLeaderBoardByDate:"/api/activity/receiveTopTenLeaderBoardByDate",
     getDailyFirstPay:"/api/activity/getDailyFirstPay",
     receiveDailyFirstPay:"/api/activity/receiveDailyFirstPay",
+    reqlist28Gold:"/api/activity/list28Gold",
+    reqreceive28Gold:"/api/activity/receive28Gold",
+    reqgetSecondPayBonusGold:"/api/activity/getSecondPayBonusGold",
+    reqreceiveSecondPayBonusGold:"/api/activity/receiveSecondPayBonusGold",
+    reqfristPaylist:"/api/activity/fristPay/list",
+    reqfristPayreceive:"/api/activity/fristPay/receive",
+    reqfristPayapply:"/api/activity/fristPay/apply",
+    reqfristPaystatus:"/api/activity/fristPay/status",
 }

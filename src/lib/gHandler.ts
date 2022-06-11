@@ -179,7 +179,55 @@ class gHandlerC  {
                 scale = 1.2
             }
         }
-        return scale
+        return this.browserRedirect(scale)
     }
+    browserRedirect(scale) {
+        let newScale = 0
+        var sUserAgent :any= navigator.userAgent.toLowerCase();
+        console.log(sUserAgent)
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+        
+        
+        console.log("sUserAgent",sUserAgent)
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            //移动端页面
+            scale = scale
+            console.log("bIsIpad",bIsIpad,"bIsIphoneOs",bIsIphoneOs,bIsMidp,bIsUc7,bIsUc,"bIsAndroid",bIsAndroid,bIsCE,bIsWM)
+        }
+        if (this.os.isTablet) { 
+            console.log("平板")
+            newScale = 1.95
+        } else if ( this.os.isPc) {
+            console.log("电脑")
+            newScale = 1.95
+        }
+        console.log("newScale",newScale)
+        return newScale
+    }
+
+    os = function (){
+        var ua = navigator.userAgent,
+            isWindowsPhone = /(?:Windows Phone)/.test(ua),
+            isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+            isAndroid = /(?:Android)/.test(ua),
+            isFireFox = /(?:Firefox)/.test(ua),
+            isChrome = /(?:Chrome|CriOS)/.test(ua),
+            isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+            isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+            isPc = !isPhone && !isAndroid && !isSymbian;
+        return {
+            isTablet: isTablet,
+            isPhone: isPhone,
+            isAndroid: isAndroid,
+            isPc: isPc
+        };	
+    }();
 }
 export const gHandler = new gHandlerC()

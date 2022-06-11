@@ -1,0 +1,92 @@
+$src:'../../../asses/activity/package_19/';
+.activity19{
+    font-family: 'Microsoft Yahei';
+    font-size: 8px;
+    background-image:url($src+"bg/bg2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+    background-position: 0px -35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select:none;
+    touch-action:none;
+    .contentBox{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        height: 175px;
+    }
+    .sider{
+        background:transparent;
+        width: 60px;
+        height: 215px;
+        background-image: url($src+"bg/bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 0px -35px;
+        .navBox{
+            height:200px;
+            color: white;
+            .navItem{
+                width: 60px;
+                height: 20px;
+                color: rgb(161,159,155);
+                padding-top:1px;
+                .btnline{
+                    height: 2px;
+                    width: 56px;
+                    background: rgb(57,33,149);
+                    position: absolute;
+                    top: -2.5px;
+                }
+                .navText{
+                    width: 55px;
+                    height: 20px;
+                    padding-left: 2%;
+                    line-height: 9px;
+                    justify-content: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    flex-direction: column;
+                    font-size: 6px;
+                    p{
+                        margin: 0px;
+                    }
+                }
+                .mflj_1{ background-image: url($src+"menu/mwirimianfei1.png");}
+                .mflj_2{ background-image: url($src+"menu/mwirimianfei2.png");}
+                .xyhsc_1{ background-image: url($src+"menu/xinyoghu1.png");}
+                .xyhsc_2{ background-image: url($src+"menu/xinyoghu2.png");}
+                .xyhbp_1{ background-image: url($src+"menu/xinyonghubaopei1.png");}
+                .xyhbp_2{ background-image: url($src+"menu/xinyonghubaopei2.png");}
+                .lyhsc_1{ background-image: url($src+"menu/ly1.png");}
+                .lyhsc_2{ background-image: url($src+"menu/ly2.png");}
+                .jtfl_1{ background-image: url($src+"menu/jituanfuli1.png");}
+                .jtfl_2{ background-image: url($src+"menu/jituanfuli2.png");}
+            }
+            .curNavItem{
+                background-size: 100% 100%;
+                color: #fffee6;
+            }
+        }
+        .version{
+            position: absolute;
+            left: 2px;
+            top:220px;
+            height: 10px;
+            width: 20px;
+        }
+    }
+    .content{
+        width: 100px;
+        height: 200px;
+    }
+}
+.flexBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

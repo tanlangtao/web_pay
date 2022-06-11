@@ -4,7 +4,7 @@ import { gHandler } from './../../../lib/gHandler';
 import { Api } from '../../../lib/Api';
 import Axios from 'axios';
 import {ConfigItem} from '../../../interface/activity_interface';
-import '../package_2/Activity.scss';
+import '../package_19/Activity.scss';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -13,6 +13,8 @@ import FirstComponent from '../../../FirstComponent';
 import Xyhschd19 from 'components/package_19/Xyhschd';
 import Lyhsc19 from 'components/package_19/Lyhsc';
 import Xyhbp19 from 'components/package_19/Xyhbp';
+import DailySign19 from 'components/package_19/DailySign';
+import Jtfl19 from 'components/package_19/Jtfl';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -101,20 +103,24 @@ export default class Activity19 extends Component<{}, State> {
                         console.log("点击nav",item.name)
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className = "btnline"></div>
-                        <div className ="navText flexBox">
-                            <p>{item.name.length<=7?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,7)}</p>
-                            <p>{item.name.substring(0,item.name.length-2).length>7?item.name.substring(7,item.name.length-2):""}</p>
-                        </div>
+                        <div className={`navText ${
+                            item.name==="每日免费礼金19"?(item.name ===this.state.title ?"mflj_1":"mflj_2"):
+                                item.name==="新用户首存活动19"?(item.name ===this.state.title ?"xyhsc_1":"xyhsc_2"):
+                                    item.name==="新用户包赔活动19"?(item.name ===this.state.title ?"xyhbp_1":"xyhbp_2"):
+                                        item.name==="老用户首存活动19"?(item.name ===this.state.title ?"lyhsc_1":"lyhsc_2"):
+                                            item.name==="集团福利19"?(item.name ===this.state.title ?"jtfl_1":"jtfl_2"):""
+                                                
+                        }`} ></div>
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='activity2'>
+            return <div className='activity19'>
             </div>
         }
         return (
-            !this.state.loading?<div className='activity2'>
+            !this.state.loading?<div className='activity19'>
                 <div className ="contentBox">
                     <div
                         className='sider' style={{
@@ -145,7 +151,11 @@ export default class Activity19 extends Component<{}, State> {
                             (this.state.title==='新用户首存活动19' ? <Xyhschd19 curData={this.state.curData}/>:
                                 (this.state.title==='老用户首存活动19' ? <Lyhsc19 curData={this.state.curData}/>:
                                     (this.state.title==='新用户包赔活动19' ? <Xyhbp19 curData={this.state.curData}/>:
-                                        <div></div>
+                                        (this.state.title==='每日免费礼金19' ? <DailySign19 curData={this.state.curData}/>:
+                                            (this.state.title==='集团福利19' ? <Jtfl19 curData={this.state.curData}/>:
+                                                <div></div>
+                                            )
+                                        )
                                     )
                                 )
                             )

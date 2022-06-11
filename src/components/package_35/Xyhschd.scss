@@ -1,76 +1,73 @@
-$src:'../../asses/activity/package_19/';
+$src:'../../asses/activity/package_35/';
 
-.Xyhschd19{
+.Xyhschd35{
     background-image:url($src+"bg/xyhscBg.png");
     background-repeat: no-repeat;
     background-size: contain;
-    background-position:-0px -0px;
-    width: 292px;
-    height: 195px;
-    margin-left: 5px;
-    font-size: 5px;
+    background-position:-0px 0px;
+    width: 300px;
+    height: 180px;
+    font-size: 6px;
     color: white;
     position: relative;
     .guizeBtn{
         position: absolute;
-        top: 20px;
-        left: 230px;
-        width: 50px;
+        top: 72px;
+        left: 232px;
+        width: 36px;
         height: 20px;
-        background-image:url($src+"sprite/btn_rule.png");
+        background-image:url($src+"sprite/guizeBtn1.jpeg");
         background-repeat: no-repeat;
         background-size: contain;
         .guizeMask{
-            width: 230px;
-            height: 120px;
+            width: 260px;
+            height: 100px;
             position: absolute;
-            left: -185px;
+            left: -220px;
             top: 12px;
-            background-image:url($src+"sprite/rule_bg.png");
+            background-image:url($src+"sprite/ruleBgXyhsc.png");
             background-repeat: no-repeat;
             background-size: contain;
-            color: rgb(207,194,173);
-            font-size: 6px;
-            line-height: 8px;
-            padding-top: 8px;
+            color: #e6d6b1;
+            line-height: 7px;
+            padding-top: 10px;
             p{
                 margin: 0px;
-                width: 222px;
+                width: 250px;
                 margin-left: 5px;
             }
         }
     }
     .group{
-        width: 210px;
+        width: 145px;
         height: 80px;
         position: absolute;
-        left:67px;
-        top: 49px;
-        padding-top: 1px;
-        font-size: 7px;
+        left:12px;
+        top: 41px;
         .line{
             display: flex;
-            height: 10.8px;
+            height: 12px;
             .li1{
                 width: 38px;
             }
             .li2{
-                width: 50px;
+                width: 36px;
             }
             .li3{
-                width: 42px;
+                width: 32px;
             }
             .li4{
-                width: 40px;
+                width: 36px;
+                margin-top: 1px;
                 .btn_linqu{
-                    width: 28px;
+                    width: 30px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 28px;
+                    width: 30px;
                     height: 10px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
@@ -80,27 +77,31 @@ $src:'../../asses/activity/package_19/';
         }
         .label1{
             position: absolute;
-            width: 50px;
-            bottom: 42px;
-            left: 86px;
+            width: 30px;
+            height: 60px;
+            top: 0px;
+            left: 74px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
         }
         .applyBtn{
             position: absolute;
             width: 30px;
-            height: 10px;
-            bottom: 55px;
-            left: 178px;
-            background-image:url($src+"sprite/btn_apply2.png");
+            height: 50px;
+            bottom: 28px;
+            left: 152px;
+            background-image:url($src+"sprite/apply1.png");
             background-repeat: no-repeat;
             background-size: contain;
         }
         .applyFilter{
             position: absolute;
             width: 30px;
-            height: 10px;
-            bottom: 55px;
-            left: 178px;
-            background-image:url($src+"sprite/btn_apply2.png");
+            height: 50px;
+            bottom: 28px;
+            left: 152px;
+            background-image:url($src+"sprite/apply2.png");
             background-repeat: no-repeat;
             background-size: contain;
             -webkit-filter: grayscale(100%);
@@ -114,9 +115,9 @@ $src:'../../asses/activity/package_19/';
             position: absolute;
             width: 70px;
             height: 20px;
-            bottom: 35px;
-            left: 158px;
-            font-size: 5px;
+            bottom: 32px;
+            left: 162px;
+            font-size: 5.5px;
         }
     }
     .rule{
