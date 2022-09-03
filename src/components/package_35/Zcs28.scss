@@ -26,3 +26,29 @@ $src:'../../asses/activity/package_35/';
         background-image: url($src+"sprite/btn_Ylinqu2.png") ;
     }
 }
+.Zcs28h5{
+    background-image: url($src+"bg/Zcs28.jpg") ;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0px 0px;
+    width: 438px;
+    height: 270px;
+    font-size: 6px;
+    color: white;
+    position: relative;
+    .Btn{
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 70px;
+        height: 23px;
+        position: absolute;
+        right: 20px;
+        bottom: 5px;
+    }
+    .linqu{
+        background-image: url($src+"sprite/btn_linqu2.png") ;
+    }
+    .Ylinqu{
+        background-image: url($src+"sprite/btn_Ylinqu2.png") ;
+    }
+}

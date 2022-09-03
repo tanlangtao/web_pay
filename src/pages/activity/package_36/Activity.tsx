@@ -10,11 +10,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 import FirstComponent from '../../../FirstComponent';
-import BtnLightBox from './BtnLightBox';
-import Lyhsc35 from 'components/package_35/Lyhsc';
-import Xyhschd35 from 'components/package_35/Xyhschd';
-import Zcs28 from 'components/package_35/Zcs28';
-import Xyhbp35 from 'components/package_35/Xyhbp';
+import Wrnn from 'components/package_36/Wrnn';
+import Ysz from 'components/package_36/Ysz';
 interface State{
     loading:Boolean,
     navArr :ConfigItem[],
@@ -22,7 +19,7 @@ interface State{
     curData:ConfigItem,
     btn_light_left:number
 }
-export default class Activity35 extends Component<{}, State> {
+export default class Activity36 extends Component<{}, State> {
     state = {
         navArr:[],
         title:'',
@@ -173,36 +170,31 @@ export default class Activity35 extends Component<{}, State> {
                             title:item.name,
                             curData:item
                         })
-                        console.log("点击nav",item.name)
-                        console.log(item.name == "新用戶包陪活动35" )
                     }} className={`navItem flexBox ${item.name ===this.state.title?"curNavItem":"" } ${this.state.title===""&&index ===0?"curNavItem":""}`}>
                         <div className ="navText flexBox">
                             <p>{item.name.length<=8?item.name.substring(0,item.name.length-2):item.name.substring(0,item.name.length-2).substring(0,8)}</p>
                             <p>{item.name.substring(0,item.name.length-2).length>8?item.name.substring(8,item.name.length-2):""}</p>
                         </div>
-                        {
-                            item.name ===this.state.title?<BtnLightBox></BtnLightBox>:null
-                        }
                     </div>
                 </SwiperSlide>
             })
         }
         if(this.state.curData.id ===""){
-            return <div className='Activity35'>
+            return <div className='Activity36'>
                 {/* <div className='headerBox' >
                     <div className="returnToHall" onClick={this.returnToHall}></div>
                 </div> */}
             </div>
         }
         return (
-            !this.state.loading ?<div className={`${!gHandler.getDeviceisIphone() && gHandler.UrlData.client == "h5"?"Activity35H5":"Activity35"}`}>
+            !this.state.loading ?<div className={`${!gHandler.getDeviceisIphone() && gHandler.UrlData.client == "h5"?"Activity36H5":"Activity36"}`}>
                 <div className ="contentBox">
                     <div className='sider' style={{
                         // zIndex:2,
                         // transform:`scale(${gHandler.getFontsizeScale()})`,
                     }}>
                         <div className="navBoxBg">
-                            <div className ="version">v:1.2.5</div>
+                            <div className ="version">v:1.0.0</div>
                         </div>
                         <div className="navBox">
                             <Swiper
@@ -224,13 +216,9 @@ export default class Activity35 extends Component<{}, State> {
                         // marginLeft:`${gHandler.getFontsizeScale()===1?"0px":`${-60/gHandler.getFontsizeScale()}px` }`,
                     }}>
                         {
-                            (this.state.title==='次存活动35' ? <Lyhsc35 curData={this.state.curData}/>:
-                                (this.state.title==='新用户首存活动35' ? <Xyhschd35 curData={this.state.curData}/>:
-                                    (this.state.title==='新用户包赔活动35' ? <Xyhbp35 curData={this.state.curData}/>:
-                                        (this.state.title==='注册送28金币35' ? <Zcs28 curData={this.state.curData}/>:
-                                            <div></div>
-                                        )
-                                    )
+                            (this.state.title==='五人牛牛专场牌型36' ? <Wrnn curData={this.state.curData}/>:
+                                (this.state.title==='赢三张专场牌型36' ? <Ysz curData={this.state.curData}/>:
+                                    <div></div>
                                 )
                             )
                         }

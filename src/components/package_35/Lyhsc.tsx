@@ -126,7 +126,7 @@ export default class Lyhsc35 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Lyhsc35" >
+            <div className ={`${!gHandler.getDeviceisIphone() && gHandler.UrlData.client == "h5"?"Lyhsc35h5":"Lyhsc35"}`} >
                 <div className = "group">
                     {
                         rangeLine()

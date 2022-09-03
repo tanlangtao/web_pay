@@ -141,7 +141,7 @@ export default class Xyhschd35 extends React.Component<Props,State>{
         }
     }
     private async  Axios_reqfristPaystatus(){
-        let url = `${gHandler.UrlData.host}${Api.reqfristPaystatus}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
+        let url = `${gHandler.UrlData.host}${Api.reqfristPaystatus}?user_id=${gHandler.UrlData.user_id}&activity_id=${this.props.curData.id}&package_id=${gHandler.UrlData.package_id}&token=${gHandler.token}&center_auth=${gHandler.UrlData.center_auth}`;
         let response = await Axios.get(url).then(response=>{
             return response.data
         }).catch(err=>{
@@ -177,7 +177,7 @@ export default class Xyhschd35 extends React.Component<Props,State>{
             })
         }
         return (
-            <div className ="Xyhschd35" >
+            <div className ={`${!gHandler.getDeviceisIphone() && gHandler.UrlData.client == "h5"?"Xyhschd35h5":"Xyhschd35"}`} >
                 <div className = "group">
                     {
                         rangeLine()

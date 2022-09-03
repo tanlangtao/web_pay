@@ -91,7 +91,7 @@ export default class Zcs28 extends React.Component<Props,State>{
     }
     render (){
         return (
-            <div className ="Zcs28" >
+            <div className ={`${!gHandler.getDeviceisIphone() && gHandler.UrlData.client == "h5"?"Zcs28h5":"Zcs28"}`} >
                 {
                     this.state.is_apply && this.state.can_receive? 
                         <div 

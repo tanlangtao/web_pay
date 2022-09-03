@@ -184,7 +184,6 @@ class gHandlerC  {
     browserRedirect(scale) {
         let newScale = 0
         var sUserAgent :any= navigator.userAgent.toLowerCase();
-        console.log(sUserAgent)
         var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
         var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
         var bIsMidp = sUserAgent.match(/midp/i) == "midp";
@@ -193,25 +192,34 @@ class gHandlerC  {
         var bIsAndroid = sUserAgent.match(/android/i) == "android";
         var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        
-        
-        console.log("sUserAgent",sUserAgent)
         if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
             //移动端页面
-            scale = scale
+            newScale = scale
             console.log("bIsIpad",bIsIpad,"bIsIphoneOs",bIsIphoneOs,bIsMidp,bIsUc7,bIsUc,"bIsAndroid",bIsAndroid,bIsCE,bIsWM)
         }
         if (this.os.isTablet) { 
             console.log("平板")
+            this.UrlData.client = ""
             newScale = 1.95
         } else if ( this.os.isPc) {
             console.log("电脑")
+            this.UrlData.client = ""
             newScale = 1.95
+        }else if(!bIsIphoneOs && this.UrlData.client == "h5"){
+            newScale = 1
         }
         console.log("newScale",newScale)
         return newScale
     }
-
+    getDeviceisIphone(){
+        var sUserAgent :any= navigator.userAgent.toLowerCase();
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        if(bIsIphoneOs){
+            return true
+        }else{
+            return false
+        }
+    }
     os = function (){
         var ua = navigator.userAgent,
             isWindowsPhone = /(?:Windows Phone)/.test(ua),

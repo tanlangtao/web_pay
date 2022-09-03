@@ -1,8 +1,10 @@
-$src:'../../../asses/activity/package_35/';
-.Activity35{
+$src:'../../../asses/activity/package_36/';
+.Activity36{
     font-family: 'Microsoft Yahei';
     font-size: 6.5px;
-    background: rgb(58,57,55);
+    background-image:url($src+"bg/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,12 +34,13 @@ $src:'../../../asses/activity/package_35/';
         margin-left: 2px;
         margin-right: 5px;
         .navBoxBg{
-            height: 180px;
-            width: 64px;
+            height: 185px;
+            width: 66px;
             color: white;
             background-image:url($src+"sprite/huodonNav.png");
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: -4px 0;
             position: absolute;
             padding-top: 170px;
             .version{
@@ -53,10 +56,9 @@ $src:'../../../asses/activity/package_35/';
             .navItem{
                 width: 66px;
                 height: 24px;
-                background-image: url($src+"sprite/youceweixuanzhong.png");
+                background-image: url($src+"sprite/item.png");
                 background-repeat: no-repeat;
                 background-size: contain;
-                color: rgb(197,171,142);
                 .navText{
                     height: 7px;
                     width:55px;
@@ -72,11 +74,10 @@ $src:'../../../asses/activity/package_35/';
             }
             .curNavItem{
                 width: 67px;
-                background-image: url($src+"sprite/youcexuanzhong.png");
+                background-image: url($src+"sprite/curitem.png");
                 background-repeat: no-repeat;
                 background-size: contain;
                 height: 24px;
-                color: rgb(62,16,0);
             }
             
             .btn_lightBox{
@@ -86,8 +87,6 @@ $src:'../../../asses/activity/package_35/';
                 left: 0px;
             }
             .btn_light{
-                background-image: url($src+"sprite/btn_light.png");
-                background-repeat: no-repeat;
                 background-size: contain;
                 width: 67px;
                 height: 24px;
@@ -134,7 +133,7 @@ $src:'../../../asses/activity/package_35/';
     justify-content: center;
     align-items: center;
 }
-.Activity35H5{
+.Activity36H5{
     font-family: 'Microsoft Yahei';
     font-size: 6.5px;
     background: rgb(58,57,55);
@@ -155,15 +154,16 @@ $src:'../../../asses/activity/package_35/';
     .sider{
         background:transparent;
         width: 65px;
-        margin-left: 2px;
+        margin-left: 0px;
         margin-right: 5px;
         .navBoxBg{
             height: 270px;
-            width: 64px;
+            width: 66px;
             color: white;
             background-image:url($src+"sprite/huodonNav.png");
             background-repeat: no-repeat;
             background-size: cover;
+            background-position: -4px 0;
             position: absolute;
             padding-top: 240px;
             .version{
@@ -179,10 +179,9 @@ $src:'../../../asses/activity/package_35/';
             .navItem{
                 width: 66px;
                 height: 24px;
-                background-image: url($src+"sprite/youceweixuanzhong.png");
+                background-image: url($src+"sprite/item.png");
                 background-repeat: no-repeat;
                 background-size: contain;
-                color: rgb(197,171,142);
                 .navText{
                     height: 7px;
                     width:55px;
@@ -198,11 +197,10 @@ $src:'../../../asses/activity/package_35/';
             }
             .curNavItem{
                 width: 67px;
-                background-image: url($src+"sprite/youcexuanzhong.png");
+                background-image: url($src+"sprite/curitem.png");
                 background-repeat: no-repeat;
                 background-size: contain;
                 height: 24px;
-                color: rgb(62,16,0);
             }
             
             .btn_lightBox{
@@ -212,9 +210,6 @@ $src:'../../../asses/activity/package_35/';
                 left: 0px;
             }
             .btn_light{
-                background-image: url($src+"sprite/btn_light.png");
-                background-repeat: no-repeat;
-                background-size: contain;
                 width: 67px;
                 height: 24px;
                 position: relative;

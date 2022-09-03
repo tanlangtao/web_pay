@@ -46,35 +46,33 @@ $src:'../../asses/activity/package_35/';
         left: 12px;
         top: 50px;
         position: relative;
-        border: 0.1px solid red;
         .line{
             display: flex;
             height: 15px;
-            border: 0.1px solid blue;
             .li1{
-                width: 32px;
+                width: 38px;
             }
             .li2{
-                width: 32px;
+                width: 35px;
             }
             .li3{
-                width: 38px;
+                width: 34px;
             }
             .li4{
                 width: 36px;
             }
             .li5{
-                width: 30px;
+                width: 36px;
                 .btn_linqu{
-                    width: 24px;
-                    height: 9px;
+                    width: 34px;
+                    height: 11px;
                     background-image: url($src+"sprite/btn_linqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
                 }
                 .btn_Ylinqu{
-                    width: 24px;
-                    height: 9px;
+                    width: 34px;
+                    height: 11px;
                     background-image: url($src+"sprite/btn_Ylinqu.png") ;
                     background-repeat: no-repeat;
                     background-size: contain;
@@ -130,3 +128,86 @@ $src:'../../asses/activity/package_35/';
         }
     }
 }
+.Xyhbp35h5{
+    background-image:url($src+"bg/xyhbpBg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:0px -0px;
+    width: 438px;
+    height: 270px;
+    font-size: 8px;
+    color: white;
+    position: relative;
+    .guizeBtn{
+        position: absolute;
+        top: 40%;
+        left: 80%;
+        width: 12%;
+        height: 8%;
+        background-image:url($src+"sprite/guizeBtn1.jpeg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        .guizeMask{
+            width: 350px;
+            height: 150px;
+            position: absolute;
+            left: -300px;
+            top: 20px;
+            background-image:url($src+"sprite/ruleBg2.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            color: #e6d6b1;
+            font-size: 6px;
+            line-height: 7px;
+            padding-top: 10px;
+            p{
+                margin: 0px;
+                width: 260px;
+                margin-left: 5px;
+            }
+        }
+    }
+    .group{
+        width:61%;
+        height: 27%;
+        left: 4%;
+        top: 27%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        .line{
+            display: flex;
+            height: 33%;
+            .li1{
+                width: 21%;
+            }
+            .li2{
+                width: 19%;
+            }
+            .li3{
+                width: 18%;
+            }
+            .li4{
+                width: 21%;
+            }
+            .li5{
+                width: 20%;
+                .btn_linqu{
+                    width: 80%;
+                    height: 60%;
+                    background-image: url($src+"sprite/btn_linqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .btn_Ylinqu{
+                    width: 80%;
+                    height: 60%;
+                    background-image: url($src+"sprite/btn_Ylinqu.png") ;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+

@@ -66,4 +66,8 @@ export const Api ={
     reqfristPayreceive:"/api/activity/fristPay/receive",
     reqfristPayapply:"/api/activity/fristPay/apply",
     reqfristPaystatus:"/api/activity/fristPay/status",
+    reqreimbursestatus:"/api/activity/reimburse/status",
+    reqreimburselist:"/api/activity/reimburse/list",
+    reqreimbursereceive:"/api/activity/reimburse/receive",
+    reqreimburseapply:"/api/activity/reimburse/apply",
 }
